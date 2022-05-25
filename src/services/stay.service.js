@@ -22,7 +22,7 @@ async function query() {
         stays = require('../assets/data/stay.json')
         storageService.postMany(STORAGE_KEY, stays)
     }
-    console.log('stays from service', stays);
+    // console.log('stays from service', stays);
     return stays
 }
 

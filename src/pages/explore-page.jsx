@@ -21,15 +21,11 @@ export function ExplorePage() {
 
             explore
         </h1>
-            <StayList/>
-
-            <h3>filter</h3>
-            <h3>list of perview</h3>
-
-
 
             <button onClick={() =>goTo('/')}>home</button>
             <button onClick={() =>goTo('/stay')}>stay</button>
+
+            <StayList/>
         </>
     )
 }
