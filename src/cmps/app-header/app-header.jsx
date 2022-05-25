@@ -6,7 +6,7 @@ export function AppHeader() {
 
     return (
         <>
-            hi
+            header
         </>
     )
 }
