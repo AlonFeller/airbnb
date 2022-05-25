@@ -1,6 +1,6 @@
-import { storageService } from './async-storage.service.js'
-import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
+import { storageService } from './async-storage.service'
+import { utilService } from './util.service'
+// import { userService } from './user.service'
 
 const STORAGE_KEY = 'stayDB'
 // const stayChannel = new BroadcastChannel('stayChannel')
@@ -15,8 +15,15 @@ export const stayService = {
     // removeReview
 }
 
-function query() {
-    return storageService.query(STORAGE_KEY)
+async function query() {
+    let stays
+    stays = await storageService.query(STORAGE_KEY)
+    if (!stays.length) {
+        stays = require('../assets/data/stay.json')
+        storageService.postMany(STORAGE_KEY, stays)
+    }
+    console.log(stays);
+    return stays
 }
 
 function getById(stayId) {
@@ -32,7 +39,7 @@ async function save (stay) {
     if (stay._id) {
         savedStay = await storageService.put(STORAGE_KEY, stay)
     } else {
-        stay.host = userService.getLoggedinUser()
+        // stay.host = userService.getLoggedinUser()
         savedStay = await storageService.post(STORAGE_KEY, stay)
     }
 

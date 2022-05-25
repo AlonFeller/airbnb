@@ -1,4 +1,12 @@
 
+// import { myJson} from '../assets/data/stay.json'
+
+// const myJson = require('../assets/data/stay.json')
+
+
+
+
+
 export const storageService = {
     query,
     get,
@@ -8,7 +16,7 @@ export const storageService = {
     postMany
 }
 
-function query(entityType, delay = 600) {
+function query(entityType, delay = 200) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
 
     return new Promise((resolve, reject)=>{

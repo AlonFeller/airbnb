@@ -4,9 +4,8 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-
-import { stayReducer } from './stay.reducer.js'
-import { userReducer } from './user.reducer.js'
+import { stayReducer } from './stay/stay.reducer'
+import { userReducer } from './user/user.reducer.js'
 // import { reviewReducer } from './review.reducer'
 // import { systemReducer } from './system.reducer'
 
