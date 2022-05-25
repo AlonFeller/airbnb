@@ -14,6 +14,22 @@ export function HomePage() {
     return (
         <>
             hi from homepage
+
+            <h1>hero?</h1>
+
+            <h1>popular destinations list?</h1>
+            <h1>top rated list?</h1>
+            <h1>property type list?</h1>
+
+            <h1>picture?</h1>
+
+
+            <h1></h1>
+
+
+
+
+
             <button onClick={() => goTo('/explore')}>explore</button>
             <button onClick={() => goTo('/stay')}>stay</button>
         </>

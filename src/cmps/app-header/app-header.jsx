@@ -7,6 +7,15 @@ export function AppHeader() {
     return (
         <>
             header
+             
+            <h1>logo</h1>
+
+            <h1>navBar + become a host</h1>
+
+            <h1>searchBar</h1>
+        
         </>
+
+     
     )
 }

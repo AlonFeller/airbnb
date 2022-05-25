@@ -16,6 +16,11 @@ export function ExplorePage() {
         <>
             explore
 
+            <h1>filter</h1>
+            <h1>list of perview</h1>
+
+
+
             <button onClick={() =>goTo('/')}>home</button>
             <button onClick={() =>goTo('/stay')}>stay</button>
         </>
