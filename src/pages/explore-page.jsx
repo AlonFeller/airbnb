@@ -14,10 +14,13 @@ export function ExplorePage() {
 
     return (
         <>
-            explore
+        <h1>
 
-            <h1>filter</h1>
-            <h1>list of perview</h1>
+            explore
+        </h1>
+
+            <h3>filter</h3>
+            <h3>list of perview</h3>
 
 
 
