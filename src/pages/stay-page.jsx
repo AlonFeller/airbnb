@@ -6,7 +6,7 @@ export function StayPage() {
 
     return (
         <>
-            hi
+            hi from stay
         </>
     )
 }

@@ -6,7 +6,7 @@ export function HomePage() {
 
     return (
         <>
-            hi
+            hi from homepage 
         </>
     )
 }

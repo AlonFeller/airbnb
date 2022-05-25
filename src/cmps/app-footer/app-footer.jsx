@@ -6,7 +6,7 @@ export function AppFooter() {
 
     return (
         <>
-            hi
+            hi from footer
         </>
     )
 }

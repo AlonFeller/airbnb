@@ -6,7 +6,7 @@ export function BackOffice() {
 
     return (
         <>
-            hi
+            hi from backoffice 
         </>
     )
 }

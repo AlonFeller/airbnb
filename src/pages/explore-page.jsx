@@ -6,7 +6,7 @@ export function ExplorePage() {
 
     return (
         <>
-            hi
+            hi from explore
         </>
     )
 }
