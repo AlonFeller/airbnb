@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 export const StayPreview = (props) => {
     const [stay, setStay] = useState(props.stay)
     const [imgNum, setImgNum] = useState(0)
+    const [likeHeart, setLikeHeart] = useState(false)
 
     useEffect(() => {
     }, [])
@@ -28,7 +29,7 @@ export const StayPreview = (props) => {
     return (
         <section className='stay-preview'>
             <div className="img-container">
-                <div className="heart-btn">🤍</div>
+                <div className="heart-btn" onClick={() => setLikeHeart(!likeHeart)}>{(likeHeart)? '❤':'🤍'}</div>
                 <div className="cycle-btn-container">
                     <div className="back-btn" onClick={() => cycleImgs(-1)}>⪡</div>
                     <div className="next-btn" onClick={() => cycleImgs(1)}>⪢</div>
