@@ -9,6 +9,8 @@ import { AppHeader } from './cmps/app-header/app-header'
 import { AppFooter } from './cmps/app-footer/app-footer'
 // import { UserDetails } from './pages/user-details'
 
+import './styles/styles.scss';
+
 export class RootCmp extends React.Component {
 
     render() {

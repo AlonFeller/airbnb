@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
+import { ExploreFilter } from '../cmps/explore-page/filter'
 import { StayList } from '../cmps/explore-page/stay-list'
 
 
@@ -24,6 +25,8 @@ export function ExplorePage() {
 
             <button onClick={() =>goTo('/')}>home</button>
             <button onClick={() =>goTo('/stay')}>stay</button>
+
+            <ExploreFilter/>
 
             <StayList/>
         </>
