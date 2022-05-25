@@ -13,15 +13,18 @@ export function HomePage() {
 
     return (
         <>
+        <h1>
+
             hi from homepage
+        </h1>
 
-            <h1>hero?</h1>
+            <h3>hero?</h3>
 
-            <h1>popular destinations list?</h1>
-            <h1>top rated list?</h1>
-            <h1>property type list?</h1>
+            <h3>popular destinations list?</h3>
+            <h3>top rated list?</h3>
+            <h3>property type list?</h3>
 
-            <h1>picture?</h1>
+            <h3>picture?</h3>
 
 
             <h1></h1>

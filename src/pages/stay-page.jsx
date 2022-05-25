@@ -14,17 +14,20 @@ export function StayPage() {
 
     return (
         <>
+        <h1>
+
             stay
+        </h1>
 
-            <h1>pop header?</h1>
+            <h3>pop header?</h3>
 
-            <h1>reserve</h1>
+            <h3>reserve</h3>
 
-            <h1>photos</h1>
-            <h1>amenities</h1>
-            <h1>reviews</h1>
-            <h1>locations</h1>
-            <h1>map?</h1>
+            <h3>photos</h3>
+            <h3>amenities</h3>
+            <h3>reviews</h3>
+            <h3>locations</h3>
+            <h3>map?</h3>
 
 
 
