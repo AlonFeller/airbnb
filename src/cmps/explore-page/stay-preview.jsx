@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 // import img from '../../assets/Images/001.jpeg'
 
 
@@ -12,7 +13,8 @@ export const StayPreview = (props) => {
     useEffect(() => {
     }, [])
 
-    const cycleImgs = (diff) => {
+    const cycleImgs = ( diff) => {
+        // ev.preventDefault()
 
         if (stay.imgUrls.length === imgNum + diff) {
             setImgNum(0)
@@ -25,9 +27,15 @@ export const StayPreview = (props) => {
         setImgNum(imgNum + diff)
     }
 
+    const navigate = useNavigate()
+
+    const goTo = (path) => {
+        navigate('/stay/' + path)
+    }
+
 
     return (
-        <section className='stay-preview'>
+        <section className='stay-preview' onClick={() => goTo(stay._id)}>
             <div className="img-container">
                 <div className="heart-btn" onClick={() => setLikeHeart(!likeHeart)}>{(likeHeart)? '❤':'🤍'}</div>
                 <div className="cycle-btn-container">
@@ -37,8 +45,13 @@ export const StayPreview = (props) => {
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                     height='270' width='270' className="img-preview" alt="" />
             </div>
-            <h3>{stay.name}</h3>
-            <p>{stay.summary.substring(0, 35) + '...'}</p>
+            <div className="locatoing-rating">
+            <h3>{stay.address.city + ', ' + stay.address.country} </h3>
+            <h3>{stay.reviewScores.rating/20 + '⭐'}</h3>
+            </div>
+            <p>{stay.name}</p>
+            {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}
+            {/* <p>{stay.summary.substring(0, 35) + '...'}</p> */}
             <h3>{'$' + stay.price}</h3>
             <h4></h4>
         </section>
