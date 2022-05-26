@@ -13,15 +13,15 @@ export const StayPreview = (props) => {
     useEffect(() => {
     }, [])
 
-    const cycleImgs = ( diff) => {
-        // ev.preventDefault()
+    const cycleImgs = (ev, diff) => {
+        ev.stopPropagation()
 
         if (stay.imgUrls.length === imgNum + diff) {
             setImgNum(0)
             return
         }
         else if (imgNum + diff < 0) {
-            setImgNum(stay.imgUrls.length -1)
+            setImgNum(stay.imgUrls.length - 1)
             return
         }
         setImgNum(imgNum + diff)
@@ -37,17 +37,17 @@ export const StayPreview = (props) => {
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
             <div className="img-container">
-                <div className="heart-btn" onClick={() => setLikeHeart(!likeHeart)}>{(likeHeart)? '❤':'🤍'}</div>
+                <div className="heart-btn" onClick={() => setLikeHeart(!likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
                 <div className="cycle-btn-container">
-                    <div className="back-btn" onClick={() => cycleImgs(-1)}>⪡</div>
-                    <div className="next-btn" onClick={() => cycleImgs(1)}>⪢</div>
+                    <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}>⪡</div>
+                    <div className="next-btn" onClick={(event) => cycleImgs(event, 1)}>⪢</div>
                 </div>
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                     height='270' width='270' className="img-preview" alt="" />
             </div>
             <div className="locatoing-rating">
-            <h3>{stay.address.city + ', ' + stay.address.country} </h3>
-            <h3>{stay.reviewScores.rating/20 + '⭐'}</h3>
+                <h3>{stay.address.city + ', ' + stay.address.country} </h3>
+                <h3>{stay.reviewScores.rating / 20 + '⭐'}</h3>
             </div>
             <p>{stay.name}</p>
             {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}
