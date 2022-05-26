@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react'
-import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
-
+import React, { useEffect, useState } from 'react'
+import { uesSelector, useDispatch } from 'react-redux'
+import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
+import { stayService } from '../services/stay.service'
+import { loadStay } from '../store/stay/stay.actions'
 
 export function StayPage() {
-
+    const params = useParams()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(loadStay(params.id))
+        console.log(params)
+
+    }, [])
 
     const goTo = (path) => {
 
@@ -14,10 +23,6 @@ export function StayPage() {
 
     return (
         <>
-        <h1>
-
-            stay
-        </h1>
 
             <h3>pop header?</h3>
 
