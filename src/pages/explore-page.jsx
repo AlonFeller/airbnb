@@ -24,7 +24,7 @@ export function ExplorePage() {
         </h1>
 
             <button onClick={() =>goTo('/')}>home</button>
-            <button onClick={() =>goTo('/stay')}>stay</button>
+
 
             <ExploreFilter/>
 
