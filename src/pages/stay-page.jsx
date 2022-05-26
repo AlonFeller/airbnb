@@ -41,6 +41,9 @@ export function StayPage() {
                         {selectedStay.host.isSuperhost ? 'Superhost' : ''}
                     </h4>
                 </section>
+                <section className="stay-gallery">
+
+                </section>
             </section>
             <h3>photos</h3>
 
