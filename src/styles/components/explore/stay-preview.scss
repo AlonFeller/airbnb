@@ -53,7 +53,7 @@
 
 .next-btn {
     z-index: 10;
-    background-color: rgba(29, 26, 33, 0.383);
+    background-color: rgba(236, 232, 232, 0.81);
     border-radius: 50%;
     opacity: 0;
     width: 30px;
@@ -62,13 +62,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(233, 225, 232);
-    margin-right: 20px;
+    color: rgb(55, 55, 55);
+    margin-right: 10px;
     cursor: pointer;
 }
 .back-btn {
     z-index: 10;
-    background-color: rgba(29, 26, 33, 0.383);
+    background-color: rgba(236, 232, 232, 0.81);
     border-radius: 50%;
     opacity: 0;
     width: 30px;
@@ -76,8 +76,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(233, 225, 232);
-    margin-left: 9px;
+    color: rgb(55, 55, 55);
     cursor: pointer;
 }
 
@@ -97,9 +96,16 @@
 .img-container:hover .next-btn{
     opacity: 1;
     transition: 0.5s;
+    animation:next-btn .5s cubic-bezier(.25,.46,.45,.94) both
 }
 .img-container:hover .back-btn{
     opacity: 1;
     transition: 0.5s;
+    animation:back-btn .5s cubic-bezier(.25,.46,.45,.94) both
 }
+
+@keyframes back-btn{0%{transform:translateX(0)}100%{transform:translateX(10px)}}
+@keyframes next-btn{0%{transform:translateX(0)}100%{transform:translateX(-10px)}}
+
+
 

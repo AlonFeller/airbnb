@@ -30,7 +30,7 @@ export function loadStays() {
     return async (dispatch) => {
         try {
             const stays = await stayService.query()
-            console.log('Stays from DB:', stays)
+            // console.log('Stays from DB:', stays)
             dispatch({
                 type: 'SET_STAYS',
                 stays

@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { stayService } from '../../services/stay.service'
+import { loadStays } from '../../store/stay/stay.actions'
 import { StayPreview } from './stay-preview'
 
 
 export const StayList = (props) => {
-    const [stays, setStays] = useState([])
 
+    const dispatch = useDispatch() 
     useEffect(() => {
-        getStays()
+        dispatch(loadStays())
     }, [])
 
-    const getStays = async () => {
-        const stays = await stayService.query('stay')
-        setStays(stays.splice(0, 16))
-    }
-
-
-    // console.log('stays from list', stays);
+    const stays = useSelector(state => state.stayModule.stays)
 
     return (
         <section className='list-container'>
-           
 
         <section className='stay-list'>
 

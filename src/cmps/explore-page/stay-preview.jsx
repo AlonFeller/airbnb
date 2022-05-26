@@ -33,11 +33,16 @@ export const StayPreview = (props) => {
         navigate('/stay/' + path)
     }
 
+    const ToggleHeart = (ev) => {
+        ev.stopPropagation()
+        setLikeHeart(!likeHeart)
+    }
+
 
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
             <div className="img-container">
-                <div className="heart-btn" onClick={() => setLikeHeart(!likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
+                <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
                 <div className="cycle-btn-container">
                     <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}>⪡</div>
                     <div className="next-btn" onClick={(event) => cycleImgs(event, 1)}>⪢</div>
