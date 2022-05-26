@@ -14,7 +14,7 @@ export const StayGallery = (props) => {
             {
                 stay.imgUrls.forEach((imgUrl) => (
                     <div className="gallery-img-container">
-                        <img src={require("../../assets/Images/" + imgUrl)}
+                        <img src={require("../../assets/Images/"+imgUrl)}
                             height='270' width='270' alt="" />
                     </div >
                 ))
