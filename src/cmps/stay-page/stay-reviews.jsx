@@ -8,7 +8,7 @@ export const StayReviews = (props) => {
 
     return (
         <section className="stay-reviews">
-
+            
         </section>
     )
 }
