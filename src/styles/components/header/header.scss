@@ -1,0 +1,21 @@
+
+
+.searchbar {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.searchbar-form {
+
+    display: flex;
+    gap: 2%;
+}
+
+.searchbar-form-label {
+}
+
+input, label {
+    display:block;
+}

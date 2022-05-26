@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { Searchbar } from './searchbar'
 
 
 export function AppHeader() {
@@ -12,7 +13,7 @@ export function AppHeader() {
 
             <h1>navBar + become a host</h1>
 
-            <h1>searchBar</h1>
+            <Searchbar/>
         
         </>
 
