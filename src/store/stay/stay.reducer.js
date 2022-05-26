@@ -15,7 +15,7 @@ export function stayReducer(state = initialState, action) {
             newState = { ...state, stays: action.stays }
             break
         case 'SET_STAY':
-            newState = { ...state, stays: action.stay }
+            newState = { ...state, selectedStay: action.stay }
             break
         case 'ADD_STAY':
             newState = { ...state, stays: [...state.stays, action.stay] }
@@ -25,13 +25,10 @@ export function stayReducer(state = initialState, action) {
             newState = { ...state, stays: action.stays }
             break
         case 'REMOVE_STAY':
-            return { ...state, stays: state.stays.filter(stay => stay._id !== action.stayId) }
+            newState = { ...state, stays: state.stays.filter(stay => stay._id !== action.stayId) }
             break
         default:
     }
     return newState
-
-
-
 }
 

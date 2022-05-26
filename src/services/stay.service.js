@@ -26,8 +26,8 @@ async function query() {
     return stays
 }
 
-function getById(stayId) {
-    return storageService.get(STORAGE_KEY, stayId)
+async function getById(stayId) {
+    return await storageService.get(STORAGE_KEY, stayId)
 }
 
 async function remove (stayId) {

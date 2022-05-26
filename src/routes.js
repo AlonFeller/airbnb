@@ -1,6 +1,6 @@
 import { HomePage } from './pages/home-page.jsx'
 import { ExplorePage } from './pages/explore-page.jsx'
-import { StayPage } from './pages/stay-page.jsx'
+// import { StayPage } from './pages/stay-page.jsx'
 import { BackOffice } from './pages/back-office.jsx'
 // import { ReviewApp } from './pages/review-app.jsx'
 // import { ChatApp } from './pages/chat-app.jsx'
@@ -18,11 +18,11 @@ const routes = [
         component: <ExplorePage />,
         label: 'explore'
     },
-    {
-        path: 'stay',
-        component: <StayPage />,
-        label: 'stay'
-    },
+    // {
+    //     path: 'stay',
+    //     component: <StayPage />,
+    //     label: 'stay'
+    // },
     {
         path: 'back-office',
         component: <BackOffice />,
