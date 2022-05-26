@@ -41,12 +41,29 @@ export function loadStays() {
                 console.log('Cannot load stays', err)
             }
 
-        if (subscriber) stayService.unsubscribe(subscriber)
-        subscriber = (ev) => {
-            console.log('Got notified', ev.data)
-            dispatch(ev.data)
+        // if (subscriber) stayService.unsubscribe(subscriber)
+        // subscriber = (ev) => {
+        //     console.log('Got notified', ev.data)
+        //     dispatch(ev.data)
+        // }
+        // stayService.subscribe(subscriber)
+    }
+}
+
+export function loadStay(stayId) {
+    return async (dispatch) => {
+        try {
+        await stayService.getById(stayId)
+                console.log('Stays from DB:', stay)
+                dispatch({
+                    type: 'SET_STAY',
+                    stay
+                })
         }
-        stayService.subscribe(subscriber)
+        catch (err)  {
+                showErrorMsg('Cannot load stay')
+                console.log('Cannot load stay', err)
+            }
     }
 }
 

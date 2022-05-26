@@ -1,12 +1,12 @@
 import { stayService } from "../../services/stay.service";
 
-const initialState = { 
+const initialState = {
     stays: [],
     selectedStay: null,
 
 }
 
-export function stayReducer( state = initialState, action) {
+export function stayReducer(state = initialState, action) {
     let newState = state
     let stays
 
@@ -14,11 +14,14 @@ export function stayReducer( state = initialState, action) {
         case 'SET_STAYS':
             newState = { ...state, stays: action.stays }
             break
+        case 'SET_STAY':
+            newState = { ...state, stays: action.stay }
+            break
         case 'ADD_STAY':
-            newState = { ...state, stays: [ ...state.stays, action.stay] }
+            newState = { ...state, stays: [...state.stays, action.stay] }
             break
         case 'UPDATE_STAY':
-            stays = state.stays.map(stay => (stay._id === action.stay._id)? action.stay : stay)
+            stays = state.stays.map(stay => (stay._id === action.stay._id) ? action.stay : stay)
             newState = { ...state, stays: action.stays }
             break
         case 'REMOVE_STAY':
