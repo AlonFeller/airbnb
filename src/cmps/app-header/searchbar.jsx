@@ -1,7 +1,23 @@
+import { useDispatch, useSelector } from "react-redux"
+import { loadStays, setFilter } from "../../store/stay/stay.actions"
 
 export const Searchbar = (props) => {
 
 
+    const filterBy = useSelector(state => state.stayModule.filterBy) 
+
+
+    const dispatch = useDispatch() 
+    const onHandleChange = ({target}) => {
+        filterBy.location = target.value
+        dispatch(setFilter(filterBy))
+        dispatch(loadStays(filterBy))
+        
+    }
+        
+
+
+    
 
     return (
         <section className='searchbar'>
@@ -10,15 +26,7 @@ export const Searchbar = (props) => {
 
                 <div className="searchber-form-label">
                     <label htmlFor="">Location </label>
-                    <input type="text" placeholder="Anywhere" />
-                </div>
-                <div className="searchber-form-label">
-                    <label htmlFor="">Min price </label>
-                    <input type="number" placeholder="Min price" />
-                </div>
-                <div className="searchber-form-label">
-                    <label htmlFor="">Max price</label>
-                    <input type="number" placeholder="Max price" />
+                    <input type="text" name="location" placeholder="Anywhere" onChange={onHandleChange}/>
                 </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">Check in</label>

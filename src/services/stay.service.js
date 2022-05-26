@@ -15,14 +15,28 @@ export const stayService = {
     // removeReview
 }
 
-async function query() {
+async function query(filterBy) {
     let stays
     stays = await storageService.query(STORAGE_KEY)
     if (!stays.length) {
         stays = require('../assets/data/stay.json')
         storageService.postMany(STORAGE_KEY, stays)
     }
-    // console.log('stays from service', stays);
+    if (!filterBy) return stays
+    if (filterBy.location) {
+        const regex = new RegExp(filterBy.location, 'i')
+        stays = stays.filter( stay => regex.test(stay.address.city) || regex.test(stay.address.country))
+    }
+
+    if (filterBy.minPrice || filterBy.maxPrice) {
+        stays = stays.filter( stay => stay.price <= filterBy.maxPrice && stay.price >= filterBy.minPrice )
+    }
+
+    if (filterBy.tags.length) {
+        stays = stays.filter(stay => 
+            stay.amenities.filter( tag => filterBy.tags.includes(tag)).length === filterBy.tags.length)
+    }
+
     return stays
 }
 

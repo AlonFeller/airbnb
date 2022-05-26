@@ -1,6 +1,45 @@
 .explore-filter {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 20px
 }
+
+.filter-btns {
+    width: 80%;
+    display: flex;
+    justify-content: start;
+}
+
+.filter-label-btn {
+
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:4px;
+    background-color: rgb(70, 68, 72);
+    color: aliceblue;
+    border-radius: 20px;
+}
+
+.filter-label-btn-on {
+
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:4px;
+    background-color: rgb(157, 161, 165);
+    color: rgb(70, 68, 72);
+    border-radius: 20px;
+}
+
+.filter-form-label1 {
+    margin: 5px;
+    margin-left: 24px;
+}
+.filter-form-label2 {
+    margin: 5px;
+    margin-left: 5px;
+}
+

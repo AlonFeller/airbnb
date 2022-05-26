@@ -26,10 +26,10 @@ export function getActionUpdateStay(stay) {
 }
 
 
-export function loadStays() {
+export function loadStays(filterBy = null) {
     return async (dispatch) => {
         try {
-            const stays = await stayService.query()
+            const stays = await stayService.query(filterBy)
             // console.log('Stays from DB:', stays)
             dispatch({
                 type: 'SET_STAYS',
@@ -108,5 +108,14 @@ export function updateStay(stay) {
             showErrorMsg('Cannot update stay')
             console.log('Cannot save stay', err)
         }
+    }
+}
+
+export function setFilter(filterBy) {
+    return (dispatch) => {
+        return dispatch({
+            type: 'SET_FILTERBY',
+            filterBy,
+        })
     }
 }
