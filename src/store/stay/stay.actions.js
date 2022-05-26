@@ -29,17 +29,17 @@ export function getActionUpdateStay(stay) {
 export function loadStays() {
     return async (dispatch) => {
         try {
-        await stayService.query()
-                console.log('Stays from DB:', stays)
-                dispatch({
-                    type: 'SET_STAYS',
-                    stays
-                })
+            const stays = await stayService.query()
+            console.log('Stays from DB:', stays)
+            dispatch({
+                type: 'SET_STAYS',
+                stays
+            })
         }
-        catch (err)  {
-                showErrorMsg('Cannot load stays')
-                console.log('Cannot load stays', err)
-            }
+        catch (err) {
+            showErrorMsg('Cannot load stays')
+            console.log('Cannot load stays', err)
+        }
 
         // if (subscriber) stayService.unsubscribe(subscriber)
         // subscriber = (ev) => {
@@ -53,32 +53,32 @@ export function loadStays() {
 export function loadStay(stayId) {
     return async (dispatch) => {
         try {
-        await stayService.getById(stayId)
-                console.log('Stays from DB:', stay)
-                dispatch({
-                    type: 'SET_STAY',
-                    stay
-                })
+            const stay = await stayService.getById(stayId)
+            console.log('Stay from DB:', stay)
+            dispatch({
+                type: 'SET_STAY',
+                stay
+            })
         }
-        catch (err)  {
-                showErrorMsg('Cannot load stay')
-                console.log('Cannot load stay', err)
-            }
+        catch (err) {
+            showErrorMsg('Cannot load stay')
+            console.log('Cannot load stay', err)
+        }
     }
 }
 
 export function addStay(stay) {
     return async (dispatch) => {
         try {
-       await stayService.save(stay)
-                console.log('Added Stay', stay);
-                dispatch(getActionAddStay(stay))
-                showSuccessMsg('Stay added')
-            }
-            catch(err) {
-                showErrorMsg('Cannot add stay')
-                console.log('Cannot add stay', err)
-            }
+            await stayService.save(stay)
+            console.log('Added Stay', stay);
+            dispatch(getActionAddStay(stay))
+            showSuccessMsg('Stay added')
+        }
+        catch (err) {
+            showErrorMsg('Cannot add stay')
+            console.log('Cannot add stay', err)
+        }
     }
 }
 
@@ -99,14 +99,14 @@ export function removeStay(stayId) {
 export function updateStay(stay) {
     return async (dispatch) => {
         try {
-       await  stayService.save(stay)
-                console.log('Updated Stay:', stay);
-                dispatch(getActionUpdateStay(stay))
-                showSuccessMsg('Stay updated')
-            }
-            catch(err) {
-                showErrorMsg('Cannot update stay')
-                console.log('Cannot save stay', err)
-            }
+            await stayService.save(stay)
+            console.log('Updated Stay:', stay);
+            dispatch(getActionUpdateStay(stay))
+            showSuccessMsg('Stay updated')
+        }
+        catch (err) {
+            showErrorMsg('Cannot update stay')
+            console.log('Cannot save stay', err)
+        }
     }
 }

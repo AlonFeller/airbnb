@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import { uesSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
 import { stayService } from '../services/stay.service'
 import { loadStay } from '../store/stay/stay.actions'
 
-export function StayPage({stay, loadStay}) {
+export function StayPage() {
     const params = useParams()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        loadStay(stayId)
-        console.log(stay)
+        dispatch(loadStay(params.id))
+        console.log(params)
 
     }, [])
 
