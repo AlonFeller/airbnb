@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
 import { stayService } from '../services/stay.service'
 import { loadStay } from '../store/stay/stay.actions'
+import { StayGallery } from '../cmps/stay-page/stay-gallery'
 
 export function StayPage() {
     const params = useParams()
@@ -28,7 +29,7 @@ export function StayPage() {
             <h3>pop header?</h3>
 
             <h3>reserve</h3>
-            <section className="stay-page">
+            {selectedStay && <section className="stay-page">
 
                 <h2 className="stay-name">{selectedStay.name}</h2>
                 <section className="stay-info">
@@ -41,11 +42,8 @@ export function StayPage() {
                         {selectedStay.host.isSuperhost ? 'Superhost' : ''}
                     </h4>
                 </section>
-                <section className="stay-gallery">
-
-                </section>
-            </section>
-            <h3>photos</h3>
+                    <StayGallery key={selectedStay._id} stay={selectedStay}/>
+            </section>}
 
             <h3>amenities</h3>
             <h3>reviews</h3>
