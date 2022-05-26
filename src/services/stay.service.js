@@ -9,6 +9,7 @@ export const stayService = {
 
     query,
     getById,
+    getBy,
     save,
     remove,
     // addReview,
@@ -46,4 +47,10 @@ async function save (stay) {
     return savedStay
 }
 
+async function getBy() {
+    const stays = query()
+    console.log(stays);
+    const cities = await stays.from(new Set(cities))
+    return cities
+}
 
