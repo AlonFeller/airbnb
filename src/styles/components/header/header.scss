@@ -33,9 +33,10 @@ input, label {
 }
 
 .user-navbar {
-    border: 3px solid rgba(25, 25, 25, 0.609);
+    border: 1px solid rgba(25, 25, 25, 0.609);
     border-radius: 20px;
-    padding: 3px;
+    padding: 4px 6px 4px 6px;
+    
     display: flex;
     justify-content: center;
     align-items: center;

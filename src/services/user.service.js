@@ -50,7 +50,17 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    const users = await storageService.query('user')
+    console.log('got into login');
+    let users = await storageService.query('user')
+
+    if (!users.length) {
+
+        users = require('../assets/data/user.json')
+        storageService.postMany('user', users)
+    }
+
+
+
     const user = users.find(user => user.username === userCred.username)
     // const user = await httpService.post('auth/login', userCred)
     if (user) {
