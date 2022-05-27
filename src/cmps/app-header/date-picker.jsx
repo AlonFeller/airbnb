@@ -1,5 +1,5 @@
 import { useState } from "react"
-import DatePicker from "react-datepicker2";
+import DatePicker from "react-datepicker";
 import { useDispatch, useSelector } from "react-redux";
 import { setCheckInOut } from "../../store/user/user.actions";
 
