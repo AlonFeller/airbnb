@@ -1,15 +1,14 @@
-import { useState } from "react"
+import React from "react"
 
-export const StayGallery = (props) => {
-    const [stay, setStay] = useState(props.stay)
+export const StayGallery = ({stay}) => {
 
     return (
         <section className="stay-gallery">
             {
                 stay.imgUrls.map((imgUrl) =>
-                    <div className="gallery-img-container">
+                    <div className="gallery-img-container" key={imgUrl}>
                         <img src={require("../../assets/Images/" + imgUrl)}
-                            key={imgUrl} height='270' width='270' alt="" />
+                             height='270' width='270' alt="" />
                     </div >
                 )
 
