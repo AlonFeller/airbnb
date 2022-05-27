@@ -7,7 +7,7 @@ export const StayGallery = (props) => {
     }, [])
 
     return (
-        <section className="stay-gallery">
+        <section className="stay-gallery flex">
             {
                 stay.imgUrls.map((imgUrl) =>
                     <div className="gallery-img-container">

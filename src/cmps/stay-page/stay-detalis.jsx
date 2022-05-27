@@ -30,7 +30,7 @@ export const StayDetails = (props) => {
                     <hr />
                     <section className="stay-details-amenities">
                         <h2>What this place offers</h2>
-                        <ul className="amenities-list">
+                        <ul className="amenities-list flex">
                             {
                                 stay.amenities.map((amenity,index) =>
                                     <li className="amenity-container flex" key={index}>
