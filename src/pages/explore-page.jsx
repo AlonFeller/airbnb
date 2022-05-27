@@ -18,10 +18,6 @@ export function ExplorePage() {
 
     return (
         <>
-        <h1>
-
-            explore
-        </h1>
 
             <button onClick={() =>goTo('/')}>home</button>
 

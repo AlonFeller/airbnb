@@ -3,7 +3,7 @@ import React from "react"
 export const StayGallery = ({stay}) => {
 
     return (
-        <section className="stay-gallery">
+        <section className="stay-gallery flex">
             {
                 stay.imgUrls.map((imgUrl) =>
                     <div className="gallery-img-container" key={imgUrl}>
