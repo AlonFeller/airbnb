@@ -3,10 +3,10 @@ import React from "react"
 export const ReviewsList = ({ stay }) => {
 
     return (
-        <ul className="reviews-list">
+        <ul className="reviews-list-container">
             {
-                stay.reviews.map(review =>
-                    <li className="review-preview-container" key={review}>
+                stay.reviews.map((review, index) =>
+                    <li className="review-preview-container" key={index}>
                         <section>
                             <div className="review-preview-header">
                                 {/* <img src="" alt="" /> */}
