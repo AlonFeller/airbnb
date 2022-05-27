@@ -28,7 +28,6 @@ export function removeUser(userId) {
 
 export function onLogin(credentials) {
     return async (dispatch) => {
-        console.log('got into action');
         try {
             const user = await userService.login(credentials)
             dispatch({

@@ -50,7 +50,6 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    console.log('got into login');
     let users = await storageService.query('user')
 
     if (!users.length) {
