@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
+import { MyDatePicker } from "./date-picker"
 
 export const Searchbar = (props) => {
 
@@ -30,16 +31,18 @@ export const Searchbar = (props) => {
                 </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">Check in</label>
-                    <input type="date" />
+                    <MyDatePicker/>
                 </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">Check out</label>
-                    <input type="date" />
+                    <MyDatePicker/>
                 </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">Who</label>
                     <input type="number" placeholder="Guests" />
                 </div>
+
+                
 
             </form>
         </section>

@@ -119,3 +119,11 @@ export function setFilter(filterBy) {
         })
     }
 }
+export function setCheckinOut(filterBy) {
+    return (dispatch) => {
+        return dispatch({
+            type: 'SET_FILTERBY',
+            filterBy,
+        })
+    }
+}

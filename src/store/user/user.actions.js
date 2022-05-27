@@ -83,3 +83,10 @@ export function loadUser(userId) {
         }
     }
 }
+
+export function setCheckInOut(check) {
+
+    return  (dispach) => {
+        dispach({type: 'SET_CHECKINOUT', check})  
+    }
+}
