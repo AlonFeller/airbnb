@@ -15,6 +15,7 @@ export function StayPage() {
 
     useEffect(() => {
         dispatch(loadStay(params.id))
+        console.log(selectedStay)
     }, [params.id])
 
 
