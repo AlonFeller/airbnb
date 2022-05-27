@@ -25,29 +25,31 @@ export function HomePage() {
                     logo place holder
                     <button onClick={() => goTo('/explore')}>explore</button>
                 </header>
-                <img className="hero img" src={hero} alt="logo"></img>
-                <span className="title">Not sure where to go ? Perfect.</span>
+                <section className="main-body">
+                    <img className="hero-img" src={hero} alt="logo"></img>
+                    <span className="title">Not sure where to go ? Perfect.</span>
 
-                <section className="destinations container">
-                    <h3>popular destinations list?</h3>
-                    <section className="destiunations cards container flex">
-                        <div className="city continer ">
-                            <img src={nyc} className="square-ratio" alt="NYC" />
-                            <h4>New York City</h4>
-                        </div>
-                        <div className="city continer">
-                            <img src={madrid} className="square-ratio" alt="Madrid" />
-                            <h4>Madrid</h4>
-                        </div>
-                        <div className="city continer">
-                            <img src={tlv} className="square-ratio" alt="Tel Aviv" />
-                            <h4>Tel Aviv</h4>
-                        </div>
-                        <div className="city continer">
-                            <img src={paris} className="square-ratio" alt="Paris" />
-                            <h4>Paris</h4>
-                        </div>
-                        {/* <Leads/> */}
+                    <section className="destinations-container">
+                        <h3>popular destinations list?</h3>
+                        <section className="destiunations cards container flex">
+                            <div className="city-card">
+                                <img src={nyc} className="square-ratio" alt="NYC" />
+                                <h4>New York City</h4>
+                            </div>
+                            <div className="city-card">
+                                <img src={madrid} className="square-ratio" alt="Madrid" />
+                                <h4>Madrid</h4>
+                            </div>
+                            <div className="city-card">
+                                <img src={tlv} className="square-ratio" alt="Tel Aviv" />
+                                <h4>Tel Aviv</h4>
+                            </div>
+                            <div className="city-card">
+                                <img src={paris} className="square-ratio" alt="Paris" />
+                                <h4>Paris</h4>
+                            </div>
+                            {/* <Leads/> */}
+                        </section>
                     </section>
                 </section>
                 <h3>top rated list?</h3>
