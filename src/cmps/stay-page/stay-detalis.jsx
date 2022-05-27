@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 export const StayDetails = (props) => {
     const [stay, setStay] = useState(props.stay)
 
-    useEffect(() => {
-    }, [])
 
     return (
         <section className="stay-details">
