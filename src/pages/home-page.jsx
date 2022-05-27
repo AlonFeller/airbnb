@@ -16,22 +16,18 @@ export function HomePage() {
         navigate(path)
     }
 
-
-
     return (
         <>
             <section className="home-page .main-container">
-                <header>
-                    logo place holder
-                    <button onClick={() => goTo('/explore')}>explore</button>
-                </header>
                 <section className="main-body">
-                    <img className="hero-img" src={hero} alt="logo"></img>
-                    <span className="title">Not sure where to go ? Perfect.</span>
-
+                    <section className="hero-container">
+                        <img className="hero-img" src={hero} alt="logo"></img>
+                        <h1 className="title">Not sure where to go ? Perfect.</h1>
+                        <button onClick={() => goTo('/explore')}>I'm flexible</button>
+                    </section>
                     <section className="destinations-container">
-                        <h3>popular destinations list?</h3>
-                        <section className="destiunations cards container flex">
+                        <h3>Popular Destinations</h3>
+                        <section className="destinations-cards-container flex">
                             <div className="city-card">
                                 <img src={nyc} className="square-ratio" alt="NYC" />
                                 <h4>New York City</h4>
@@ -51,12 +47,12 @@ export function HomePage() {
                             {/* <Leads/> */}
                         </section>
                     </section>
+                    <h3>top rated list?</h3>
+                    <h3>property type list?</h3>
+
+                    <h3>picture?</h3>
+
                 </section>
-                <h3>top rated list?</h3>
-                <h3>property type list?</h3>
-
-                <h3>picture?</h3>
-
             </section>
 
 
