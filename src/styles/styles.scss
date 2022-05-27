@@ -10,9 +10,20 @@
 // @import 'basics/layout';
 
 // COMPONENTS
+
+// HEADER
+@import 'components/header/header.scss';
+
+// HOME PAGE
+@import 'components/home-page/home-page.scss';
+
+// EXPLORE PAGE
 @import 'components/explore/stay-list';
 @import 'components/explore/explore-filter';
 @import 'components/explore/stay-preview';
-@import 'components/header/header.scss';
-@import 'components/home-page/home-page.scss';
+
+// STAY PAGE
 @import 'components/stay-page/stay-page.scss';
+@import 'components/stay-page/stay-gallery.scss';
+
+
