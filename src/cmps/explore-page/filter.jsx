@@ -8,7 +8,7 @@ export const ExploreFilter = (props) => {
     const stays = useSelector(state => state.stayModule.stays)
     let filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
-    const [val, setVal] = useState([0, 3000])
+    const [val, setVal] = useState([0, 2000])
 
 
     const [kitchen, setKitchen] = useState(false)
@@ -23,7 +23,7 @@ export const ExploreFilter = (props) => {
         setTimeout(()=> {
             filterBy = { ...filterBy, minPrice: data[0], maxPrice: data[1] }
             dispatch(setFilter(filterBy))
-        },150)
+        },200)
         dispatch(loadStays(filterBy))
     }
 
@@ -82,7 +82,7 @@ export const ExploreFilter = (props) => {
                     <Slider
                     getAriaLabel={() => 'Temperature range'}
                         min={0}
-                        max={4000}
+                        max={2000}
                         valueLabelDisplay="auto"
                         value={val}
                         onChange={handleRangeChange}

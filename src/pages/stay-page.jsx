@@ -6,6 +6,7 @@ import { loadStay } from '../store/stay/stay.actions'
 import { StayGallery } from '../cmps/stay-page/stay-gallery'
 import { StayDetails } from '../cmps/stay-page/stay-detalis'
 import { StayReviews } from '../cmps/stay-page/stay-reviews'
+import { StayMap } from '../cmps/stay-page/stay-map'
 
 export function StayPage() {
     const params = useParams()
@@ -27,7 +28,7 @@ export function StayPage() {
 
     return (
         <>
-<button onClick={() =>goTo('/')}>home</button>
+            <button onClick={() => goTo('/')}>home</button>
             <h3>pop header?</h3>
 
             <h3>reserve</h3>
@@ -44,16 +45,11 @@ export function StayPage() {
                         {selectedStay.host.isSuperhost ? 'Superhost' : ''}
                     </h4>
                 </section>
-                    <StayGallery key="stay-gallery" stay={selectedStay}/>
-                    <StayDetails key="stay-details" stay={selectedStay}/>
-                    <StayReviews key="stay-reviews" stay={selectedStay}/>
+                <StayGallery key="stay-gallery" stay={selectedStay} />
+                <StayDetails key="stay-details" stay={selectedStay} />
+                <StayReviews key="stay-reviews" stay={selectedStay} />
+                <StayMap key="stay-map" stay={selectedStay} />
             </section>}
-
-            <h3>reviews</h3>
-            <h3>locations</h3>
-            <h3>map?</h3>
-
-
 
 
             <button onClick={() => goTo('/explore')}>explore</button>
