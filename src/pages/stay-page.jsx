@@ -35,7 +35,7 @@ export function StayPage() {
             {selectedStay && <section className="stay-page">
 
                 <h2 className="stay-name">{selectedStay.name}</h2>
-                <section className="stay-info">
+                <section className="stay-info flex ">
                     <span className="icon-star">⭐</span>
                     <h4 className="info-rating">{selectedStay.reviewScores.rating / 20}</h4>
                     <span className="info-point" >•</span>
@@ -48,7 +48,9 @@ export function StayPage() {
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details" stay={selectedStay} />
                 <StayReviews key="stay-reviews" stay={selectedStay} />
-                <StayMap key="stay-map" stay={selectedStay} />
+                <section className="stay-map">
+                    <StayMap key="stay-map" stay={selectedStay} />
+                </section>
             </section>}
 
 

@@ -1,8 +1,6 @@
-import { useState } from "react"
+import React from "react"
 
-export const StayDetails = (props) => {
-    const [stay, setStay] = useState(props.stay)
-
+export const StayDetails = ({stay}) => {
 
     return (
         <section className="stay-details">
