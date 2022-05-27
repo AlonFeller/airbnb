@@ -1,5 +1,6 @@
 import React from "react"
 import { StayScores } from './stay-scores'
+import { ReviewsList } from './reviews-list'
 
 export const StayReviews = ({ stay }) => {
 
@@ -12,27 +13,11 @@ export const StayReviews = ({ stay }) => {
                 <span>({stay.numOfReviews} reviews)</span>
             </h2>
             <div className="review-states">
-                <StayScores key="stay-map" stay={stay} />
+                <StayScores key="stay-scores" stay={stay} />
             </div>
 
             <section className="reviews-list-container">
-                <ul className="reviews-list">
-                    {
-                        stay.reviews.map((review, index) =>
-                            <li className="review-preview-container" key={index}>
-                                <section>
-                                    <div className="review-preview-header">
-                                        {/* <img src="" alt="" /> */}
-                                        <div className="review-preview-text-container">
-                                            <h4>{review.by.fullname}</h4>
-                                            <h5>{`${new Date(review.at).getUTCFullYear()} ${new Date(review.at).getUTCMonth() + 1}`}</h5>
-                                        </div>
-                                        <p>{review.txt}</p>
-                                    </div>
-                                </section>
-                            </li>)
-                    }
-                </ul>
+                <ReviewsList key="reviews-list" stay={stay} />
             </section>
         </section>
     )
