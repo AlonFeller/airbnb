@@ -15,15 +15,20 @@ export class RootCmp extends React.Component {
 
     render() {
         return (
-            <div>
-                <AppHeader />
+            <div className="app">
+                <div className="AppHeader">
+                    <AppHeader />
+                </div>
                 <main>
                     <Routes>
                         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
                         <Route path="stay/:id" element={<StayPage />} />
                     </Routes>
                 </main>
-                <AppFooter />
+                <div className="AppFooter">
+                    <AppFooter />
+                </div>
+
             </div>
         )
     }
