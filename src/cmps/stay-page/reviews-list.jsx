@@ -22,6 +22,7 @@ export const ReviewsList = ({ stay }) => {
                         </section>
                     </li>)
             }
+            
         </ul>
     )
 }

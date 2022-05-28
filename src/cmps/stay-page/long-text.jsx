@@ -4,7 +4,7 @@ import React from "react"
 export const LongText = ({txt}) => {
 
     let txtShow
-    console.log(txt)
+    
     if (txt.length < 100) {
         txtShow = txt;
     } else {
