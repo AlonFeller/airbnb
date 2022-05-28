@@ -19,6 +19,11 @@ const routes = [
         label: 'explore'
     },
     // {
+    //     path: 'explore/:location',
+    //     component: <ExplorePage />,
+    //     label: 'explore'
+    // },
+    // {
     //     path: 'stay',
     //     component: <StayPage />,
     //     label: 'stay'

@@ -8,6 +8,7 @@ import routes from './routes'
 import { AppHeader } from './cmps/app-header/app-header'
 import { AppFooter } from './cmps/app-footer/app-footer'
 import { StayPage } from './pages/stay-page'
+import { ExplorePage } from './pages/explore-page'
 
 import './styles/styles.scss';
 
@@ -21,7 +22,9 @@ export class RootCmp extends React.Component {
                 </div>
                 <main>
                     <Routes>
-                        {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
+                        {routes.map(route => <Route key={route.path} exact={(route.label === 'exploreLocation')?
+                         false : true} element={route.component} path={route.path} />)}
+                        <Route path="explore/:location" element={<ExplorePage />} />
                         <Route path="stay/:id" element={<StayPage />} />
                     </Routes>
                 </main>
