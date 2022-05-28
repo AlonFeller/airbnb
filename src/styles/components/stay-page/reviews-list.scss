@@ -1,0 +1,12 @@
+.reviews-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px 1px;
+
+    .review-preview-container {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 50%;
+    }
+}

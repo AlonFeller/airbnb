@@ -10,7 +10,7 @@ export const StayScores = ({ stay }) => {
                         return (
                             <div className="review-category flex" key={key}>
                                 <div className="title-category">{key}</div>
-                                <div className="score-category-container">
+                                <div className="score-category-container flex">
                                     <div className="line-loader-container">
                                         <div className="line-loader" style={{ width: `${stay.reviewScores[key] * 10}%` }}></div>
                                     </div>
