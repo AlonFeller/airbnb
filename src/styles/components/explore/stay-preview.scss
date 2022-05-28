@@ -1,20 +1,32 @@
+.list-container {
+    .stay-list {
+        .stay-preview {
+            height: 430px;
+            width: 280px;
+            margin: 10px;
+            margin-bottom: 5px;
+            margin-top: 0;
+            line-height: 18px;
+            background-color: rgb(245, 245, 245);
+            border-radius: 20px;
 
+            h3 {
+                margin: 5px;
+                padding: 0;
+            }
 
+            p {
+                margin: 5px;
+                padding: 0;
+            }
 
-.stay-preview {
-    height: 430px;
-    width: 280px;
-    margin: 10px;
-    margin-bottom: 5px;
-    margin-top: 0;
-    line-height: 18px;  
-    h3{
-        margin:5px;
-        padding:0;
-    } 
-    p{
-        margin:5px;
-        padding:0;
+            &:hover {
+                box-shadow: 0 0 5px rgba(255, 90, 95, 0.1);
+                // background-color: rgb(255, 90, 95);
+                // color: rgba(250, 250, 250, 0.9);
+                // transition: 0.3s;
+            }
+        }
     }
 }
 
@@ -34,12 +46,12 @@
     top: 70px;
     left: 230px;
     display: flex;
-    color:red;
+    color: rgb(255, 90, 95);
     font-size: 25px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
+
 }
 
 .cycle-btn-container {
@@ -66,6 +78,7 @@
     margin-right: 10px;
     cursor: pointer;
 }
+
 .back-btn {
     z-index: 10;
     background-color: rgba(236, 232, 232, 0.81);
@@ -80,32 +93,42 @@
     cursor: pointer;
 }
 
-
-
 .img-preview {
-
+    margin-top: 0;
     border-radius: 20px;
 }
-
-
-
-// .img-container:hover .heart-btn{
-//     opacity: 1;
-//     transition: 0.5s;
-// }
-.img-container:hover .next-btn{
+.img-container{
+    padding: 0;
+    margin: 0;
+}
+.img-container:hover .next-btn {
     opacity: 1;
     transition: 0.5s;
-    animation:next-btn .5s cubic-bezier(.25,.46,.45,.94) both
+    animation: next-btn .5s cubic-bezier(.25, .46, .45, .94) both
 }
-.img-container:hover .back-btn{
+
+.img-container:hover .back-btn {
     opacity: 1;
     transition: 0.5s;
-    animation:back-btn .5s cubic-bezier(.25,.46,.45,.94) both
+    animation: back-btn .5s cubic-bezier(.25, .46, .45, .94) both
 }
 
-@keyframes back-btn{0%{transform:translateX(0)}100%{transform:translateX(10px)}}
-@keyframes next-btn{0%{transform:translateX(0)}100%{transform:translateX(-10px)}}
+@keyframes back-btn {
+    0% {
+        transform: translateX(0)
+    }
 
+    100% {
+        transform: translateX(10px)
+    }
+}
 
+@keyframes next-btn {
+    0% {
+        transform: translateX(0)
+    }
 
+    100% {
+        transform: translateX(-10px)
+    }
+}

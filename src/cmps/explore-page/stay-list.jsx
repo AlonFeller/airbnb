@@ -7,7 +7,7 @@ import { StayPreview } from './stay-preview'
 
 export const StayList = (props) => {
 
-    const dispatch = useDispatch() 
+    const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadStays())
     }, [])
@@ -17,11 +17,11 @@ export const StayList = (props) => {
     return (
         <section className='list-container'>
 
-        <section className='stay-list'>
+            <section className='stay-list'>
 
-            {stays.map(stay => <StayPreview key={stay._id} stay={stay} />)}
+                {stays.map(stay => <StayPreview key={stay._id} stay={stay} />)}
 
-        </section>
+            </section>
         </section>
     )
 

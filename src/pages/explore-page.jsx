@@ -6,8 +6,8 @@ import { StayList } from '../cmps/explore-page/stay-list'
 
 export function ExplorePage() {
 
-    
-    
+
+
     const navigate = useNavigate()
 
     const goTo = (path) => {
@@ -18,8 +18,10 @@ export function ExplorePage() {
 
     return (
         <>
-            <ExploreFilter/>
-            <StayList/>
+            <div className="explore-page">
+                <ExploreFilter />
+                <StayList />
+            </div>
         </>
     )
 }

@@ -20,10 +20,10 @@ export const ExploreFilter = (props) => {
 
     const handleRangeChange = (ev, data) => {
         setVal(data)
-        setTimeout(()=> {
+        setTimeout(() => {
             filterBy = { ...filterBy, minPrice: data[0], maxPrice: data[1] }
             dispatch(setFilter(filterBy))
-        },200)
+        }, 200)
         dispatch(loadStays(filterBy))
     }
 
@@ -76,24 +76,23 @@ export const ExploreFilter = (props) => {
     return (
         <section className='explore-filter'>
 
-            <h3>{stays.length + ' stays'}</h3>
-                <div className="slider-container">
-                    <label htmlFor="">Price range</label>
-                    <Slider
+            <div className="slider-container">
+                <label htmlFor="">Price range</label>
+                <Slider
                     getAriaLabel={() => 'Temperature range'}
-                        min={0}
-                        max={2000}
-                        valueLabelDisplay="auto"
-                        value={val}
-                        onChange={handleRangeChange}
-                    />
-                </div>
+                    min={0}
+                    max={2000}
+                    valueLabelDisplay="auto"
+                    value={val}
+                    onChange={handleRangeChange}
+                />
+            </div>
             <section className="filter-btns">
                 {/* <div className="filter-form-label1">
                     <label htmlFor="">Min price </label>
                     <input type="number" name="minPrice" placeholder="Min price" onChange={onHandleChange} />
-                </div>
-                <div className="filter-form-label2">
+                    </div>
+                    <div className="filter-form-label2">
                     <label htmlFor="">Max price</label>
                     <input type="number" name="maxPrice" placeholder="Max price" onChange={onHandleChange} />
                 </div> */}
@@ -104,6 +103,7 @@ export const ExploreFilter = (props) => {
                 <div className={(pet) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Pet')}>Pets Allowed</div>
                 <div className={(smoking) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Smoking')}>Smoking</div>
             </section>
+            <h3>{stays.length + ' stays'}</h3>
 
 
         </section>

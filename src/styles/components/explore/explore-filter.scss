@@ -1,60 +1,71 @@
 .explore-filter {
     width: 100%;
+    height: 150px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+
+    h3 {
+        align-self: center;
+    }
+
+    .filter-btns {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+
+        .filter-label-btn {
+            width: 94px;
+            min-width: 85px;
+            height: 22px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 4px;
+            background-color: rgb(240, 240, 240);
+            border: 1px solid rgba(150,150,150,0.5);
+            color: rgb(75, 75, 75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            text-shadow: 0 0 0 2px rgba(200, 200, 200);
+        }
+
+        .filter-label-btn-on {
+            width:  94px;
+            box-shadow: 0 3px 6px 0 rgba(150,150,150,0.5);
+            height: 22px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 4px;
+            background-color: rgb(255, 90, 95);
+            color: rgb(240, 240, 240);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .filter-form-label1 {
+            margin: 5px;
+            margin-left: 24px;
+        }
+
+        .filter-form-label2 {
+            margin: 5px;
+            margin-left: 5px;
+        }
+    }
+    .slider-container {
+        width: 400px;
+        align-self: center;
+        .css-187mznn-MuiSlider-root{
+            color:rgb(255, 90, 95);
+        }
+    }
 }
 
-.filter-btns {
-    width: 80%;
-    display: flex;
-    justify-content: start;
-}
 
-.filter-label-btn {
-    width: 94px;
-    min-width: 85px;
-    height: 22px;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin:4px;
-    background-color: rgb(70, 68, 72);
-    color: aliceblue;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-}
 
-.filter-label-btn-on {
-    width: 85px;
-    box-shadow: 0 3px 6px 0 rgba(36, 35, 36, 0.728);
-    height: 22px;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin:4px;
-    background-color: rgb(157, 161, 165);
-    color: rgb(70, 68, 72);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.filter-form-label1 {
-    margin: 5px;
-    margin-left: 24px;
-}
-.filter-form-label2 {
-    margin: 5px;
-    margin-left: 5px;
-}
-
-.slider-container {
-    width: 400px;
-    margin: 20px;
-    margin-top: 10px;
-    margin-left: 30px;
-}
 
