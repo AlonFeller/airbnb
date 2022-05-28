@@ -1,5 +1,6 @@
 import React from "react"
 import { StayAmenities } from './stay-amenities'
+import { OrderNow } from "./stay-order"
 
 export const StayDetails = ({ stay }) => {
 
@@ -29,7 +30,7 @@ export const StayDetails = ({ stay }) => {
 
             </div>
             <div className="stay-details-order">
-
+                    <OrderNow/>
             </div>
         </section>
     )
