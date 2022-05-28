@@ -2,7 +2,7 @@ import React from "react"
 import { StayScores } from './stay-scores'
 import { ReviewsList } from './reviews-list'
 
-export const StayReviews = ({ stay }) => {
+export const StayReviews = ({ stay, reviews, isLongTxt = false }) => {
 
     return (
         <section className="stay-reviews">
@@ -17,7 +17,7 @@ export const StayReviews = ({ stay }) => {
             </div>
 
             <section className="reviews-container">
-                <ReviewsList key="reviews-list" stay={stay} />
+                <ReviewsList key="reviews-list" reviews={reviews} isLongTxt={isLongTxt} />
             </section>
         </section>
     )
