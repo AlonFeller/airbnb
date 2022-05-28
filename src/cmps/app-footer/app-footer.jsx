@@ -6,10 +6,7 @@ export function AppFooter() {
 
     return (
         <>
-            footer
-
             <h1>cofferights</h1>
-            <h1></h1>
         </>
     )
 }

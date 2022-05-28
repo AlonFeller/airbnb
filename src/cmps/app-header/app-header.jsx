@@ -13,16 +13,16 @@ export function AppHeader() {
     }
     return (
         <>
-                       
-            <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')}/>
-            <NavBar/>
-
-            <Searchbar/>
-            <LoginSignUp/>
-  <div className="login-screen" onClick={toggleLogin}></div>
+            <div className="header flex">
+                <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} />
+                <NavBar />
+                <Searchbar />
+                <LoginSignUp />
+                <div className="login-screen" onClick={toggleLogin}></div>
+            </div>
         </>
 
-     
+
     )
 }
 
@@ -30,5 +30,5 @@ function toggleLogin() {
     document.body.classList.toggle("login-page-open");
     document.body.classList.toggle("login-screen-open");
 
-  }
+}
 
