@@ -10,9 +10,6 @@ export const StayPreview = (props) => {
     const [imgNum, setImgNum] = useState(0)
     const [likeHeart, setLikeHeart] = useState(false)
 
-    useEffect(() => {
-    }, [])
-
     const cycleImgs = (ev, diff) => {
         ev.stopPropagation()
 
