@@ -14,7 +14,7 @@ export function StayPage() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
-    // const [isOpenModal, setIsOpenModal] = useState(false)
+    const [isOpenModal, setIsOpenModal] = useState(false)
 
     useEffect(() => {
         dispatch(loadStay(params.id))
@@ -27,10 +27,6 @@ export function StayPage() {
         navigate('/')
         navigate(path)
     }
-
-    // const OpenReviewsModal = () => {
-    //     isOpenModal ? { display: 'block' } : { display: 'none' }
-    // }
 
     return (
         <>
@@ -58,9 +54,9 @@ export function StayPage() {
                 </section>
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details" stay={selectedStay} />
-                <StayReviews key="stay-reviews" stay={selectedStay} />
-                {/* <ReviewsModal className="reviews-modal" style={OpenReviewsModal()} key="reviews-modal" stay={selectedStay} />
-                <button className="reviews-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {selectedStay.reviews.length} reviews</button> */}
+                <StayReviews key="stay-reviews" stay={selectedStay} reviews={selectedStay.reviews.slice(0, 6)} isLongTxt={true} />
+                {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} /> : null}
+                <button className="reviews-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {selectedStay.reviews.length} reviews</button>
                 <section className="stay-map">
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>
