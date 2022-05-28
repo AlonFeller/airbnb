@@ -21,8 +21,8 @@ export const NavBar = (props) =>  {
         <section className="header-navbar-container">
                 <div className="header-navbar">
 
-            <div className="nav-btn" onClick={()=> goTo('explore')}>Explore</div>
-            <div className="nav-btn">Become a Host</div>
+            <div className="nav-btn explore" onClick={()=> goTo('explore')}>Explore</div>
+            <div className="nav-btn host">Become a Host</div>
             <NotificationsIcon/>
             <div className="user-navbar">
                 <Dehaze/>

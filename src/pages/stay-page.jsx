@@ -7,12 +7,14 @@ import { StayGallery } from '../cmps/stay-page/stay-gallery'
 import { StayDetails } from '../cmps/stay-page/stay-detalis'
 import { StayReviews } from '../cmps/stay-page/stay-reviews'
 import { StayMap } from '../cmps/stay-page/stay-map'
+import { ReviewsModal } from '../cmps/stay-page/reviews-modal'
 
 export function StayPage() {
     const params = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
+    // const [isOpenModal, setIsOpenModal] = useState(false)
 
     useEffect(() => {
         dispatch(loadStay(params.id))
@@ -25,6 +27,10 @@ export function StayPage() {
         navigate('/')
         navigate(path)
     }
+
+    // const OpenReviewsModal = () => {
+    //     isOpenModal ? { display: 'block' } : { display: 'none' }
+    // }
 
     return (
         <>
@@ -53,14 +59,12 @@ export function StayPage() {
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details" stay={selectedStay} />
                 <StayReviews key="stay-reviews" stay={selectedStay} />
+                {/* <ReviewsModal className="reviews-modal" style={OpenReviewsModal()} key="reviews-modal" stay={selectedStay} />
+                <button className="reviews-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {selectedStay.reviews.length} reviews</button> */}
                 <section className="stay-map">
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>
             </section>}
-
-
-            <button onClick={() => goTo('/explore')}>explore</button>
-
         </>
     )
 }

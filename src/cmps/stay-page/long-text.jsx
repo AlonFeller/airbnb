@@ -1,10 +1,10 @@
 import React from "react"
 
 
-export const LongText = (txt) => {
+export const LongText = ({txt}) => {
 
     let txtShow
-
+    
     if (txt.length < 100) {
         txtShow = txt;
     } else {

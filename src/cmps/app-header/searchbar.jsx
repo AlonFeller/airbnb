@@ -52,7 +52,7 @@ export const Searchbar = (props) => {
                     <MyDatePicker className="date"/>
                 </div>
                 <div className="searchber-form-label">
-                    <label htmlFor="">Who</label>
+                    <label htmlFor="">How many</label>
                     <input type="number" placeholder="Guests" />
                 </div>
 

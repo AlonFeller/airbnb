@@ -4,7 +4,7 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 export const StayMap = ({stay}) => {
 
     const containerStyle = {
-        width: '400px',
+        width: '800px',
         height: '400px'
     };
 

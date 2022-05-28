@@ -21,7 +21,7 @@ export const StayDetails = ({ stay }) => {
                 </section>
                 <section className="stay-details-summery gray-box-shadow">
                     <h2> Stay Description</h2>
-                    {stay.summary}
+                    <p>{stay.summary}</p>
                 </section>
                 <section className="stay-details-amenities gray-box-shadow">
                     <h2>What this place offers</h2>
