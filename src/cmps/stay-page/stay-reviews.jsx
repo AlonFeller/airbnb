@@ -16,7 +16,7 @@ export const StayReviews = ({ stay }) => {
                 <StayScores key="stay-scores" stay={stay} />
             </div>
 
-            <section className="reviews-list-container">
+            <section className="reviews-container">
                 <ReviewsList key="reviews-list" stay={stay} />
             </section>
         </section>

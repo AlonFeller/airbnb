@@ -6,7 +6,7 @@ export const StayDetails = ({ stay }) => {
     return (
         <section className="stay-details">
             <div className="stay-details-info">
-                <section className="stay-details-shortly">
+                <section className="stay-details-shortly gray-box-shadow">
                     <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
                     {/* <img src={stay.host.pictureUrl} alt="" /> */}
                     <h4>{stay.capacity} guests ·
@@ -15,20 +15,16 @@ export const StayDetails = ({ stay }) => {
                         {stay.bathrooms} baths
                     </h4>
                 </section>
-                <hr />
-                <section className="stay-more-features">
+                <section className="stay-more-features gray-box-shadow">
                     this is not exict in the data file
                 </section>
-                <hr />
-                <section className="stay-details-summery">
+                <section className="stay-details-summery gray-box-shadow">
                     <h2> Stay Description</h2>
                     {stay.summary}
                 </section>
-                <hr />
-                <section className="stay-details-amenities">
+                <section className="stay-details-amenities gray-box-shadow">
                     <h2>What this place offers</h2>
                     <StayAmenities key="stay-amenities" stay={stay} />
-                    <hr />
                 </section>
 
             </div>
