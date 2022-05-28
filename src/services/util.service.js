@@ -1,8 +1,17 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { KitchenIcon, FireplaceIcon, BeachAccessIcon, OutdoorGrillIcon, KingBed, Deck, LocalLaundryService,
+Pool, Bathtub, RoomService, Speaker, SportsEsports, TvIcon, Balcony, Checkroom, CoffeeMaker, Crib, Iron } from '@mui/material';
+import {
+    FaSnowflake, FaBlender, FaCar, FaHotTub, FaPaw, FaSmoking, FaSmokingBan, FaWifi,
+    FaLock, FaThermometerHalf, FaDoorClosed, FaWineGlassAlt, FaSwimmingPool, FaAccessibleIcon
+} from 'react-icons/fa';
+
 export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive,
-    delay
+    delay,
+    // getAmenitiesIcons
 }
 
 function makeId(length = 6) {
@@ -15,6 +24,7 @@ function makeId(length = 6) {
 
     return txt;
 }
+
 
 function makeLorem(size = 100) {
     var words = ['The sky', 'above', 'the port', 'was', 'the color of television', 'tuned', 'to', 'a dead channel', '.', 'All', 'this happened', 'more or less', '.', 'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'in such cases', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn'];
@@ -37,4 +47,83 @@ function delay(ms = 1500) {
         setTimeout(resolve, ms)
     })
 }
+
+// function getAmenitiesIcons(amenity) {
+//     switch (amenity) {
+//         case 'TV':
+//             return <TvIcon />
+//         case 'Wifi':
+//             return <FaWifi />
+//         case 'Kitchen':
+//             return <KitchenIcon />
+//         case 'Smoking allowed':
+//             return <FaSmoking />
+//         case 'Hot tub':
+//             return <FaHotTub />
+//         case 'Pets allowed':
+//             return <FaPaw />
+//         case 'No smoking':
+//             return <FaSmokingBan />
+//         case 'Cooking basics':
+//             return <FaBlender />
+//         case 'Air conditioning':
+//             return <FaSnowflake />
+//         case 'Heating':
+//             return <FaThermometerHalf />
+//         case 'Pool':
+//             return <Pool />
+//         case 'Indoor fireplace':
+//             return <FireplaceIcon />
+//         case 'Refrigerator':
+//             return < KitchenIcon />
+//         case 'Refrigerator':
+//             return <FontAwesomeIcon icon="refrigerator" />
+//         case 'Dishwasher':
+//             return <LocalLaundryService />
+//         case 'Backyard':
+//             return <Deck />
+//         case 'BBQ grill':
+//             return <OutdoorGrillIcon />
+//         case 'Crib':
+//             return <Crib />
+//         case 'Private entrance':
+//             return <FaDoorClosed />
+//         case 'Lockbox':
+//             return <FaLock />
+//         case 'Beachfront':
+//             return <BeachAccessIcon />
+//         case 'Hangers':
+//             return < Checkroom />
+//         case 'Wine glasses':
+//             return <FaWineGlassAlt />
+//         case 'Free parking':
+//             return <FaCar />
+//         case 'Accessible':
+//             return <FaAccessibleIcon />
+//         case 'King size bed':
+//             return <KingBed />
+//         case 'Bathub':
+//             return <Bathtub />
+//         case 'Balcony':
+//             return <Balcony />
+//         case 'Iron':
+//             return <Iron />
+//         case 'Room service':
+//             return <RoomService />
+//         case 'Coffee machine':
+//             return <CoffeeMaker />
+//         case 'Laundry machine':
+//             return <LocalLaundryService />
+//         case 'Speakers':
+//             return < Speaker />
+//         case 'Gaming console':
+//             return < SportsEsports />
+//         default:
+//             break;
+
+//     }
+// }
+
+
+
 

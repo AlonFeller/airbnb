@@ -1,5 +1,5 @@
 import React from "react"
-import LongText from "./long-text"
+import {LongText} from "./long-text"
 
 
 export const ReviewsList = ({ stay }) => {
@@ -18,7 +18,7 @@ export const ReviewsList = ({ stay }) => {
                                     {/* <h5>{`${new Date(review.at).getUTCFullYear()} ${new Date(review.at).getUTCMonth() + 1}`}</h5> */}
                                 </div>
                                 <p>{review.txt}</p>
-                                {/* <p><LongText review={review} /></p> */}
+                                {/* <LongText key="long-text" txt={review.txt} /> */}
                             </div>
                         </section>
                     </li>)
