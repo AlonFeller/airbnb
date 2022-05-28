@@ -1,0 +1,23 @@
+.stay-scores{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    .review-category{
+        align-items: center;
+
+    }
+
+    .line-loader-container{
+        background-color: rgb(221, 221, 221);
+        width: 115px;
+        height: 5px;
+    
+        .line-loader{
+            background-color: rgb(0, 0, 0);
+            height: 5px;
+        }
+    }
+
+}
