@@ -1,20 +1,17 @@
 import React from "react"
 
 
-export const LongText = (review) => {
+export const LongText = ({txt}) => {
 
     let txtShow
-
-    if (review.txt.length < 100) {
-        txtShow = review.txt;
+    console.log(txt)
+    if (txt.length < 100) {
+        txtShow = txt;
     } else {
-        txtShow = review.txt.substring(0, 100) + '...';
+        txtShow = txt.substring(0, 100) + '...';
     }
 
-    return (
-        <div className="long-txt" >
+    return (     
             <p>{txtShow}</p>
-        </div>
     )
-
 }
