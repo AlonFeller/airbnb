@@ -29,19 +29,19 @@ export function HomePage() {
                         <h3>Popular Destinations</h3>
                         <section className="destinations-cards-container flex">
                             <div className="city-card">
-                                <img src={nyc} className="square-ratio" alt="NYC" />
+                                <img src={nyc} className="square-ratio" alt="NYC" onClick={() => goTo('/explore/New York')}/>
                                 <h4>New York City</h4>
                             </div>
                             <div className="city-card">
-                                <img src={madrid} className="square-ratio" alt="Madrid" />
+                                <img src={madrid} className="square-ratio" alt="Madrid" onClick={() => goTo('/explore/Madrid')} />
                                 <h4>Madrid</h4>
                             </div>
                             <div className="city-card">
-                                <img src={tlv} className="square-ratio" alt="Tel Aviv" />
+                                <img src={tlv} className="square-ratio" alt="Tel Aviv" onClick={() => goTo('/explore/Tel Aviv')} />
                                 <h4>Tel Aviv</h4>
                             </div>
                             <div className="city-card">
-                                <img src={paris} className="square-ratio" alt="Paris" />
+                                <img src={paris} className="square-ratio" alt="Paris" onClick={() => goTo('/explore/Paris')}/>
                                 <h4>Paris</h4>
                             </div>
                             {/* <Leads/> */}

@@ -31,11 +31,11 @@ export const Searchbar = (props) => {
                 </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">Check in</label>
-                    <MyDatePicker/>
+                    <MyDatePicker className="date"/>
                 </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">Check out</label>
-                    <MyDatePicker/>
+                    <MyDatePicker className="date"/>
                 </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">Who</label>
