@@ -57,10 +57,6 @@ export function StayPage() {
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>
             </section>}
-
-
-            <button onClick={() => goTo('/explore')}>explore</button>
-
         </>
     )
 }

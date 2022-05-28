@@ -15,8 +15,8 @@ export function AppHeader() {
         <>
             <div className="header flex">
                 <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} />
-                <NavBar />
                 <Searchbar />
+                <NavBar />
                 <LoginSignUp />
                 <div className="login-screen" onClick={toggleLogin}></div>
             </div>

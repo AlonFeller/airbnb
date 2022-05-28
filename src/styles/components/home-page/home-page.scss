@@ -23,7 +23,6 @@ body {
             .AppHeader {
                 display: flex;
                 align-items: center;
-                width: 100%;
                 justify-content: space-evenly;
                 height: 150px;
                 position: sticky;
@@ -32,21 +31,70 @@ body {
                 grid-column: 1/-1;
                 background-color: rgb(253, 253, 253, 1);
                 z-index: 20;
+                padding-left: 20px;
+                padding-right: 20px;
 
                 .header {
                     width: 100%;
                     display: flex;
                     align-items: center;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
                     align-self: center;
+
+                    .searchbar {
+                        background-color: rgb(245, 245, 245, 0.9);
+                        border-radius: 35px;
+                        max-width: 700px;
+                        min-height: 50px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .searchbar-form {
+                            align-self: center;
+                            max-width: 700px;
+                        }
+
+                        .searchber-form-label {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-self: center;
+                            width: 175px;
+                            text-align: center;
+                            border-radius: 35px;
+                            background-color: rgb(245, 245, 245, 0.9);
+
+                            .react-datepicker-wrapper .react-datepicker__input-container {
+                                align-self:center;
+                                width: auto;
+                            }
+
+                            input {
+                                max-width: 100px;
+                                align-self: center;
+                            }
+
+                            &:hover {
+                                transform: scale(1.2, 1.2);
+                                background-color: rgb(200, 200, 200);
+                                transition: 0.6s;
+                            }
+                        }
+                    }
+
+                    .header-navbar {
+                        max-width: 400px;
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .nav-btn .host {
+                            width: 125px;
+                        }
+                    }
 
                 }
 
-                .header-navbar {
-                    height: 100%;
-                    align-self: center;
-                    align-items: center;
-                }
+
 
                 img {
                     max-width: 250px;
