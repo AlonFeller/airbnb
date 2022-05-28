@@ -17,8 +17,7 @@ export const ReviewsList = ({ stay }) => {
                                     <h5>{`${new Date(review.at).toDateString()}`}</h5>
                                     {/* <h5>{`${new Date(review.at).getUTCFullYear()} ${new Date(review.at).getUTCMonth() + 1}`}</h5> */}
                                 </div>
-                                <p>{review.txt}</p>
-                                {/* <LongText key="long-text" txt={review.txt} /> */}
+                                <LongText key="long-text" txt={review.txt} />
                             </div>
                         </section>
                     </li>)
