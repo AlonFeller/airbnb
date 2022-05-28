@@ -17,12 +17,6 @@ export const NavBar = (props) =>  {
     }
 
 
-
-
-
-
-
-
     return (
         <section className="header-navbar-container">
                 <div className="header-navbar">
@@ -32,7 +26,7 @@ export const NavBar = (props) =>  {
             <NotificationsIcon/>
             <div className="user-navbar">
                 <Dehaze/>
-                <AccountCircleIcon/>
+                <AccountCircleIcon onClick={toggleLogin}/>
             </div>
             
                 </div>
@@ -40,3 +34,11 @@ export const NavBar = (props) =>  {
         </section>
     )
 }
+
+
+function toggleLogin() {
+    document.body.classList.toggle("login-page-open");
+    document.body.classList.toggle("login-screen-open");
+
+  }
+

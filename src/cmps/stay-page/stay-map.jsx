@@ -15,7 +15,7 @@ export const StayMap = ({stay}) => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyDIUJQYx31SYLYOJV8m2y-6F3QjobNIp4U"
+        googleMapsApiKey: "AIzaSyChsJkvGIVu1hup61TjMwjpjrpdm6fJ4k8"
     })
 
     const [map, setMap] = React.useState(null)

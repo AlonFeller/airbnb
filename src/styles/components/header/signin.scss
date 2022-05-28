@@ -1,0 +1,64 @@
+
+
+.login-page {
+
+    z-index: 100;
+    position: fixed;
+    right: 60px;
+    top:120px;
+    padding: 14px;
+    border: 2px solid rgba(44, 44, 44, 0.851);
+    border-radius: 20px;
+    background-color: white;
+    transform: translateX(150%);
+    transition: transform .6s;
+
+
+    .login-form{
+        width: 280px;
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .login-btn {
+            width: 80px;
+            padding: 4px;
+        }
+
+    }
+    .move-to-signup {
+        width: 80px;
+        padding: 4px;
+    }
+
+    .login-page-open & {
+        transform: translateX(0);
+        pointer-events: auto;
+        transition: transform .6s;
+    }
+ 
+}
+
+
+.login-screen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -10;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: rgba(20, 26, 33, 0.471);
+    opacity: 0;
+    transition:.8s;
+
+    .login-screen-open &{
+        opacity: 1;
+        z-index: 90;
+        transition:.8s;
+        
+
+
+    }
+}
+
