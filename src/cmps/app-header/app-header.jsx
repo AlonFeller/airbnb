@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-ro
 import { LoginSignUp } from './login-siginup'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
-import logo from '../../assets/Images/logo.png'
+import logo from '../../assets/Images/logo2.png'
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -15,8 +15,8 @@ export function AppHeader() {
         <>
             <div className="header flex">
                 <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} />
-                <NavBar />
                 <Searchbar />
+                <NavBar />
                 <LoginSignUp />
                 <div className="login-screen" onClick={toggleLogin}></div>
             </div>
