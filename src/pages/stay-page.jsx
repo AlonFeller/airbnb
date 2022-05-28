@@ -28,7 +28,6 @@ export function StayPage() {
 
     return (
         <>
-            <button onClick={() => goTo('/')}>home</button>
             <h3>pop header?</h3>
 
             <h3>reserve</h3>
@@ -55,7 +54,7 @@ export function StayPage() {
 
 
             <button onClick={() => goTo('/explore')}>explore</button>
-            <button onClick={() => goTo('/')}>home</button>
+
         </>
     )
 }

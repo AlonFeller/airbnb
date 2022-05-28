@@ -18,12 +18,7 @@ export function ExplorePage() {
 
     return (
         <>
-
-            <button onClick={() =>goTo('/')}>home</button>
-
-
             <ExploreFilter/>
-
             <StayList/>
         </>
     )
