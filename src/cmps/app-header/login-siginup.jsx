@@ -72,6 +72,7 @@ export function LoginSignUp(props) {
             </form>         
            </div>}
             {!isLogin && <div className="signup-section">
+            <button className='move-to-signup' onClick={() => setIsLogin(true)}>Login</button>
                 <form className="login-form" onSubmit={onSignupUser}>
                     <input
                         type="text"
