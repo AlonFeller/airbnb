@@ -38,4 +38,7 @@ export const NavBar = (props) =>  {
 
 function toggleLogin() {
     document.body.classList.toggle("login-page-open");
+    document.body.classList.toggle("login-screen-open");
+
   }
+

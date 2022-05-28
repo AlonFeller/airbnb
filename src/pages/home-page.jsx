@@ -47,10 +47,6 @@ export function HomePage() {
                             {/* <Leads/> */}
                         </section>
                     </section>
-                    <h3>top rated list?</h3>
-                    <h3>property type list?</h3>
-
-                    <h3>picture?</h3>
 
                 </section>
             </section>
