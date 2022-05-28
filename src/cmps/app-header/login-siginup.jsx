@@ -29,6 +29,7 @@ export function LoginSignUp(props) {
 
         clearState()
         document.body.classList.toggle("login-page-open");
+        document.body.classList.toggle("login-screen-open");
     }
 
     const onUploaded = (imgUrl) => {
@@ -41,6 +42,7 @@ export function LoginSignUp(props) {
         dispatch(onSignup(credentials));
         clearState()
         document.body.classList.toggle("login-page-open");
+        document.body.classList.toggle("login-screen-open");
     }
 
     

@@ -1,10 +1,13 @@
 import React from "react"
 import { StayAmenities } from './stay-amenities'
+import { OrderNow } from "./stay-order"
 
 export const StayDetails = ({ stay }) => {
 
+    
+
     return (
-        <section className="stay-details">
+        <section className="stay-details" >
             <div className="stay-details-info">
                 <section className="stay-details-shortly gray-box-shadow">
                     <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
@@ -29,7 +32,7 @@ export const StayDetails = ({ stay }) => {
 
             </div>
             <div className="stay-details-order">
-
+                    <OrderNow/>
             </div>
         </section>
     )

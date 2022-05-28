@@ -8,7 +8,7 @@ export const StayScores = ({ stay }) => {
                 Object.keys(stay.reviewScores).map(key => {
                     if (key !== 'rating') {
                         return (
-                            <div className="review-category flex" key={key}>
+                            <div className="review-category" key={key}>
                                 <div className="title-category">{key}</div>
                                 <div className="score-category-container flex">
                                     <div className="line-loader-container">

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { KitchenIcon, FireplaceIcon, BeachAccessIcon, OutdoorGrillIcon, KingBed, Deck, LocalLaundryService,
-Pool, Bathtub, RoomService, Speaker, SportsEsports, TvIcon, Balcony, Checkroom, CoffeeMaker, Crib, Iron } from '@mui/material';
+Pool, Bathtub, RoomService, Speaker, SportsEsports,  Balcony, Checkroom, CoffeeMaker, Crib, Iron } from '@mui/material';
 import {
     FaSnowflake, FaBlender, FaCar, FaHotTub, FaPaw, FaSmoking, FaSmokingBan, FaWifi,
     FaLock, FaThermometerHalf, FaDoorClosed, FaWineGlassAlt, FaSwimmingPool, FaAccessibleIcon
@@ -50,8 +50,8 @@ function delay(ms = 1500) {
 
 // function getAmenitiesIcons(amenity) {
 //     switch (amenity) {
-//         case 'TV':
-//             return <TvIcon />
+//         // case 'TV':
+//         //     return <TvIcon />
 //         case 'Wifi':
 //             return <FaWifi />
 //         case 'Kitchen':
