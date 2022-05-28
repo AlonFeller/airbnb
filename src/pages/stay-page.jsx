@@ -35,15 +35,21 @@ export function StayPage() {
             {selectedStay && <section className="stay-page">
 
                 <h2 className="stay-name">{selectedStay.name}</h2>
-                <section className="stay-info flex ">
-                    <span className="icon-star">⭐</span>
-                    <h4 className="info-rating">{selectedStay.reviewScores.rating / 20}</h4>
-                    <span className="info-point" >•</span>
-                    <h4 className="info-reviews">({selectedStay.numOfReviews} reviews)</h4>
-                    <span className="info-point" >•</span>
-                    <h4 className="info-super-host">
-                        {selectedStay.host.isSuperhost ? 'Superhost' : ''}
-                    </h4>
+                <section className="stay-info-line flex space-between">
+                    <div className="stay-info-container flex">
+                        <span className="icon-star">⭐</span>
+                        <h4 className="info-rating">{selectedStay.reviewScores.rating / 20}</h4>
+                        <span className="info-point" >•</span>
+                        <h4 className="info-reviews">({selectedStay.numOfReviews} reviews)</h4>
+                        <span className="info-point" >•</span>
+                        {selectedStay.host.isSuperhost && <h4 className="info-super-host">Superhost </h4>}
+                        {selectedStay.host.isSuperhost && <span className="info-point" >•</span>}
+                        <h4 className="info-host-address">{selectedStay.address.street}</h4>
+                    </div>
+                    <div className="info-user-btns flex space-between">
+                        <div>share</div>
+                        <div>save</div>
+                    </div>
                 </section>
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details" stay={selectedStay} />
