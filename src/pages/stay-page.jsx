@@ -60,7 +60,7 @@ export function StayPage() {
                 <StayDetails key="stay-details" stay={selectedStay} />
                 <StayReviews key="stay-reviews" stay={selectedStay} />
                 {/* <ReviewsModal className="reviews-modal" style={OpenReviewsModal()} key="reviews-modal" stay={selectedStay} />
-                <button className="reviews-modal-btn" onClick={() => setIsOpenModal(!isOpenModal)}>Show all {selectedStay.reviews.length} reviews</button> */}
+                <button className="reviews-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {selectedStay.reviews.length} reviews</button> */}
                 <section className="stay-map">
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>
