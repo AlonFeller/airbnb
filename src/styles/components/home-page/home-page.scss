@@ -18,8 +18,19 @@ body {
             }
 
             .AppHeader {
+                height: 300px;
+                position: sticky;
+                top: 0;
                 grid-row: 1/2;
                 grid-column: 1/4;
+
+            
+                img{
+                
+                    top:25px;
+                    left: 25px;
+                    max-width: 250px;
+                }
             }
 
             main {

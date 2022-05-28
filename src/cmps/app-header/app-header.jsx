@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react'
-import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
 import { LoginSignUp } from './login-siginup'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
-
+import logo from '../../assets/Images/logo.png'
 
 export function AppHeader() {
-
+    const navigate = useNavigate()
+    const goTo = (path) => {
+        navigate('/')
+        navigate(path)
+    }
     return (
         <>
-            header
-             
-            <h1>logo</h1>
-
+                       
+            <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')}/>
             <NavBar/>
 
             <Searchbar/>
