@@ -39,12 +39,13 @@ input, label {
 
 
     .login-slide-modal {
+
         width: 80px;
         background-color: rgb(255, 255, 255);
         height: 0;
         border: 1px solid rgba(25, 25, 25, 0.609);
         border-radius: 20px 0 20px 20px;
-        padding: 4px 6px 4px 6px;
+        // padding: 4px 6px 4px 6px;
         display: none;
         position: fixed;
         top: 91px;
@@ -52,16 +53,25 @@ input, label {
         justify-content: center;
         align-items: center;
 
+        :first-child {
+            border-radius: 20px 0 0  0;
+            padding-top: 8px;
+        }
+        :last-child {
+            border-radius: 0 0 20px  20px;
+        }
+
         .login-opt-btn{
-            padding:3px;
+            margin:0;
+            gap: 5px;
             width: 100%;
-            border-radius: 20px 20px 20px 20px;
+            // border-radius: 20px 20px 20px 20px;
             display: flex;
             justify-content: center;
 
             &:hover {
-                background-color: rgb(115, 119, 120);
-                color: rgb(232, 237, 238);
+                background-color: rgb(200, 200, 200);
+                // color: rgb(245, 245, 245);
             } 
         }
 
@@ -71,6 +81,7 @@ input, label {
             display: flex;
             gap: 5px;
             flex-direction: column;
+            justify-content: space-evenly;
             height: 88px;
             transition: 0.4s;
 
