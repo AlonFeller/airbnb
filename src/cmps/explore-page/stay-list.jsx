@@ -7,10 +7,10 @@ import { StayPreview } from './stay-preview'
 
 export const StayList = (props) => {
 
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(loadStays())
-    }, [])
+    // const dispatch = useDispatch()
+    // useEffect(() => {
+    //     dispatch(loadStays())
+    // }, [])
 
     const stays = useSelector(state => state.stayModule.stays)
 

@@ -27,6 +27,7 @@ export function getActionUpdateStay(stay) {
 
 
 export function loadStays(filterBy = null) {
+    console.log('loadstay', filterBy);
     return async (dispatch) => {
         try {
             const stays = await stayService.query(filterBy)
@@ -51,6 +52,7 @@ export function loadStays(filterBy = null) {
 }
 
 export function loadStay(stayId) {
+
     return async (dispatch) => {
         try {
             const stay = await stayService.getById(stayId)
@@ -112,6 +114,7 @@ export function updateStay(stay) {
 }
 
 export function setFilter(filterBy) {
+    console.log('action', filterBy);
     return (dispatch) => {
         return dispatch({
             type: 'SET_FILTERBY',
