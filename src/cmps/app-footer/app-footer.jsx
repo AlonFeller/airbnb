@@ -6,7 +6,8 @@ export function AppFooter() {
 
     return (
         <>
-            <h1>cofferights</h1>
+            <h4>cofferights</h4>
+            <p>Alon Feller, Eldar Nir, Omer Levi</p>
         </>
     )
 }

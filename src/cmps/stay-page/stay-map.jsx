@@ -9,13 +9,13 @@ export const StayMap = ({stay}) => {
     };
 
     const center = {
-        lat: stay.address.location.lat,
-        lng: stay.address.location.lan
+        lat: stay.address.location.lan,
+        lng: stay.address.location.lat
     };
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyChsJkvGIVu1hup61TjMwjpjrpdm6fJ4k8"
+        googleMapsApiKey: "AIzaSyBc6B28HMUZ02judRVCIxcRZkznBQ7AFgk"
     })
 
     const [map, setMap] = React.useState(null)
@@ -34,7 +34,7 @@ export const StayMap = ({stay}) => {
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={10}
+            zoom={300}
             onLoad={onLoad}
             onUnmount={onUnmount}
         >

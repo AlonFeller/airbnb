@@ -10,7 +10,7 @@
 
         grid-column: 1/2;
         grid-row: 1/-1;
-
+        max-height: 410px;
 
         img {
             width: 100%;
@@ -22,6 +22,8 @@
     }
 
     .gallery-img-container {
+
+        max-height: 200px;
 
         img {
             width: 100%;
