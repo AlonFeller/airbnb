@@ -3,8 +3,8 @@ import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-ro
 import hero from '../assets/Images/hero.png'
 import nyc from '../assets/Images/NYC.jpg'
 import madrid from '../assets/Images/madrid.jpg'
-import tlv from '../assets/Images/TLV.jpg'
-import paris from '../assets/Images/paris.jpg'
+import Portugal from '../assets/Images/portugal.jpg'
+import brazil from '../assets/Images/brazil.jpg'
 
 import { Leads } from '../cmps/home-page/leads'
 
@@ -37,12 +37,12 @@ export function HomePage() {
                                 <h4>Spain</h4>
                             </div>
                             <div className="city-card">
-                                <img src={tlv} className="square-ratio" alt="Israel" onClick={() => goTo('/explore/?location=Israel')} />
-                                <h4>Israel</h4>
+                                <img src={Portugal} className="square-ratio" alt="Portugal" onClick={() => goTo('/explore/?location=Portugal')} />
+                                <h4>Portugal</h4>
                             </div>
                             <div className="city-card">
-                                <img src={paris} className="square-ratio" alt="France" onClick={() => goTo('/explore/?location=France')}/>
-                                <h4>France</h4>
+                                <img src={brazil} className="square-ratio" alt="Brazil" onClick={() => goTo('/explore/?location=Brazil')}/>
+                                <h4>Brazil</h4>
                             </div>
                             {/* <Leads/> */}
                         </section>
