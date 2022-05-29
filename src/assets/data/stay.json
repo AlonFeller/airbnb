@@ -235,7 +235,7 @@
 			"Carbon monoxide detector",
 			"Essentials",
 			"Iron",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3401e36c59e6164fabab",
@@ -923,7 +923,7 @@
 			"Hangers",
 			"Hair dryer",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3407e36c59e6164fbdae",
@@ -1018,7 +1018,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Host greets you"
@@ -1299,7 +1299,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private living room",
 			"Hot water",
 			"Bed linens",
@@ -1588,7 +1588,7 @@
 			"Hangers",
 			"Hair dryer",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Room-darkening shades",
 			"Hot water",
 			"Bed linens",
@@ -1881,7 +1881,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3404e36c59e6164fb54f",
@@ -4451,7 +4451,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -5488,7 +5488,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -6058,7 +6058,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Refrigerator",
@@ -6349,7 +6349,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Host greets you"
 		],
@@ -6455,7 +6455,7 @@
 			"Shampoo",
 			"Lock on bedroom door",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Host greets you"
 		],
 		"host": {
@@ -6740,7 +6740,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Building staff",
 			"Microwave",
@@ -7041,7 +7041,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Luggage dropoff allowed",
 			"Host greets you"
@@ -7239,7 +7239,7 @@
 			"24-hour check-in",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3404e36c59e6164fb58a",
@@ -7331,7 +7331,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water"
@@ -8581,7 +8581,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Other"
 		],
@@ -10694,7 +10694,7 @@
 			"Essentials",
 			"Hangers",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3407e36c59e6164fbe02",
@@ -10822,7 +10822,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -11116,7 +11116,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Babysitter recommendations",
@@ -12303,7 +12303,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private living room",
 			"Hot water",
 			"Bed linens",
@@ -13061,7 +13061,7 @@
 			"Hangers",
 			"Hair dryer",
 			"Iron",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Microwave",
 			"Coffee maker",
@@ -14460,7 +14460,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Keypad",
 			"Private entrance",
@@ -14744,7 +14744,7 @@
 			"Lock on bedroom door",
 			"Hangers",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance"
 		],
 		"host": {
@@ -15020,7 +15020,7 @@
 			"Essentials",
 			"Shampoo",
 			"Hair dryer",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Refrigerator",
 			"Dishwasher",
@@ -15494,7 +15494,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -15787,7 +15787,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Building staff",
 			"Private living room",
@@ -16459,7 +16459,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3403e36c59e6164fb142",
@@ -17218,7 +17218,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3403e36c59e6164fafa7",
@@ -17846,7 +17846,7 @@
 			"Hangers",
 			"Hair dryer",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Hot water",
 			"Luggage dropoff allowed",
@@ -18435,7 +18435,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Bathtub",
 			"Room-darkening shades",
@@ -18725,7 +18725,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Hot water",
 			"Bed linens",
@@ -19308,7 +19308,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Room-darkening shades",
@@ -19883,7 +19883,7 @@
 			"Hangers",
 			"Hair dryer",
 			"Iron",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Host greets you"
@@ -20250,7 +20250,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Children’s books and toys",
@@ -22221,7 +22221,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Microwave",
 			"Refrigerator",
@@ -23566,7 +23566,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water",
@@ -24031,7 +24031,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water",
@@ -24449,7 +24449,7 @@
 			"Fire extinguisher",
 			"Essentials",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3402e36c59e6164fac90",
@@ -25429,7 +25429,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water",
@@ -26335,7 +26335,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Smart lock",
 			"Hot water",
@@ -27284,7 +27284,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Children’s books and toys",
 			"Pack ’n Play/travel crib",
 			"Hot water",
@@ -28514,7 +28514,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private living room",
 			"Hot water",
 			"Body soap",
@@ -29314,7 +29314,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water",
@@ -30569,7 +30569,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Children’s books and toys",
 			"Room-darkening shades",
 			"Children’s dinnerware",
@@ -31133,7 +31133,7 @@
 			"Hangers",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3403e36c59e6164fb04c",
@@ -32104,7 +32104,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Hot water",
 			"Host greets you"
@@ -33736,7 +33736,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Luggage dropoff allowed",
 			"Long term stays allowed",
@@ -33841,7 +33841,7 @@
 			"Hangers",
 			"Hair dryer",
 			"Iron",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Bathtub",
 			"Game console",
@@ -34574,7 +34574,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Private entrance",
@@ -34867,7 +34867,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Microwave",
@@ -36292,7 +36292,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -36833,7 +36833,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance"
 		],
 		"host": {
@@ -38578,7 +38578,7 @@
 			"Shampoo",
 			"Hangers",
 			"Hair dryer",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Microwave",
@@ -40259,7 +40259,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Host greets you"
 		],
@@ -40787,7 +40787,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Host greets you",
 			"Paid parking on premises"
@@ -41832,7 +41832,7 @@
 			"24-hour check-in",
 			"Hangers",
 			"Hair dryer",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3401e36c59e6164fab68",
@@ -43055,7 +43055,7 @@
 			"Hangers",
 			"Hair dryer",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3406e36c59e6164fbc0d",
@@ -43333,7 +43333,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Private entrance",
@@ -44647,7 +44647,7 @@
 			"Hair dryer",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Refrigerator",
 			"Dishes and silverware",
@@ -44946,7 +44946,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Hot water",
 			"Other"
@@ -45414,7 +45414,7 @@
 			"Hangers",
 			"Hair dryer",
 			"Iron",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Host greets you"
 		],
@@ -47935,7 +47935,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Microwave",
@@ -48428,7 +48428,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Keypad"
 		],
@@ -48999,7 +48999,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3407e36c59e6164fbe42",
@@ -49280,7 +49280,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -49570,7 +49570,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water",
@@ -49963,7 +49963,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Luggage dropoff allowed",
 			"Long term stays allowed",
@@ -50048,7 +50048,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox"
 		],
@@ -50270,7 +50270,7 @@
 			"Hair dryer",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Private entrance",
@@ -50696,7 +50696,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Private entrance",
@@ -51299,7 +51299,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3402e36c59e6164fad0d",
@@ -51391,7 +51391,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Pocket wifi",
@@ -51677,7 +51677,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Window guards",
 			"Hot water",
 			"Bed linens",
@@ -53600,7 +53600,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Room-darkening shades"
 		],
 		"host": {
@@ -53843,7 +53843,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Private entrance",
@@ -54734,7 +54734,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Keypad",
 			"Hot water",
@@ -55319,7 +55319,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water",
@@ -55593,7 +55593,7 @@
 			"Heating",
 			"Essentials",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3405e36c59e6164fb921",
@@ -55691,7 +55691,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Hot water",
 			"Bed linens",
@@ -55990,7 +55990,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3407e36c59e6164fc038",
@@ -57109,7 +57109,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -59365,7 +59365,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Outlet covers",
 			"High chair",
@@ -59626,7 +59626,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Building staff",
 			"Hot water",
@@ -59723,7 +59723,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Keypad",
 			"Private entrance",
@@ -61036,7 +61036,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private entrance",
 			"Hot water",
 			"Host greets you"
@@ -61896,7 +61896,7 @@
 			"Hangers",
 			"Hair dryer",
 			"Iron",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3403e36c59e6164fb0f7",
@@ -62439,7 +62439,7 @@
 			"Smoke detector",
 			"Carbon monoxide detector",
 			"Shampoo",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3407e36c59e6164fbeb9",
@@ -62813,7 +62813,7 @@
 			"Hangers",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Smart lock",
 			"Private entrance"
@@ -63487,7 +63487,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3405e36c59e6164fb981",
@@ -63763,7 +63763,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Extra pillows and blankets",
@@ -66165,7 +66165,7 @@
 			"Hangers",
 			"Hair dryer",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Refrigerator",
 			"Cooking basics",
 			"Oven",
@@ -66447,7 +66447,7 @@
 			"Hangers",
 			"Hair dryer",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Host greets you"
@@ -66736,7 +66736,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Private entrance",
@@ -67688,7 +67688,7 @@
 			"Essentials",
 			"Shampoo",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox"
 		],
@@ -67965,7 +67965,7 @@
 			"Hair dryer",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Hot water",
@@ -68243,7 +68243,7 @@
 			"Essentials",
 			"Hangers",
 			"Iron",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Host greets you"
 		],
 		"host": {
@@ -68625,7 +68625,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private living room",
 			"Bathtub",
 			"Hot water",
@@ -73649,7 +73649,7 @@
 			"Hair dryer",
 			"Iron",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3403e36c59e6164fb02e",
@@ -74074,7 +74074,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Private living room",
 			"Private entrance",
 			"Hot water",
@@ -76371,7 +76371,7 @@
 			"Hangers",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Host greets you"
 		],
@@ -77640,7 +77640,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Host greets you"
 		],
@@ -79021,7 +79021,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3406e36c59e6164fbcd3",
@@ -79933,7 +79933,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Bathtub",
 			"Hot water",
 			"Microwave",
@@ -80374,7 +80374,7 @@
 			"Dryer",
 			"24-hour check-in",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3405e36c59e6164fb913",
@@ -80733,7 +80733,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Bed linens",
 			"Ethernet connection",
@@ -81318,7 +81318,7 @@
 			"Iron",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Hot water",
 			"Microwave",
 			"Coffee maker",
@@ -83007,7 +83007,7 @@
 			"Hair dryer",
 			"Laptop friendly workspace",
 			"translation missing: en.hosting_amenity_49",
-			"translation missing: en.hosting_amenity_50"
+			"Bluetooth"
 		],
 		"host": {
 			"_id": "622f3404e36c59e6164fb3d3",
@@ -83107,7 +83107,7 @@
 			"Hair dryer",
 			"Iron",
 			"Laptop friendly workspace",
-			"translation missing: en.hosting_amenity_50",
+			"Bluetooth",
 			"Self check-in",
 			"Lockbox",
 			"Private entrance",
