@@ -30,9 +30,6 @@ export function StayPage() {
 
     return (
         <>
-            <h3>pop header?</h3>
-
-            <h3>reserve</h3>
             {selectedStay && <section className="stay-page">
 
                 <h2 className="stay-name">{selectedStay.name}</h2>

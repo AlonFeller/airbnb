@@ -1,29 +1,30 @@
 .reviews-modal{
     // height: 300px;
     // width: 300px;
-    // border: 2px solid rgba(44, 44, 44, 0.851);
-    // border-radius: 20px;
-    // background-color: white;
-    // z-index: 10;
+    width: 700px;
+    border: 2px solid rgba(44, 44, 44, 0.851);
+    border-radius: 20px;
+    background-color: white;
+    z-index: 10;
 
+    // border: 5px solid black;
     // .modal-header{
-
-    // }
-    
-    .stay-reviews{
-        width: 700px;
+        
+        // }
+        
+        .stay-reviews{
         height: 500px;
         overflow: auto;
         border-radius: 20px;
-        border: 5px solid black;
         display: grid;
-        grid-gap: 10px;
+        grid-gap: 20px 10px;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 10% 20% 70%;
 
         .stay-reviews-header{
             grid-column: 1/2;
             grid-row: 1/2;
+
         }
 
         .review-states{
@@ -34,6 +35,7 @@
             .stay-scores{
                 display: flex;
                 flex-direction: column;
+                padding-left: 10px;
             }
         }
 
@@ -45,11 +47,20 @@
         .review-preview-container{
             width: 100%;
             
+            h5{
+                color: rgb(113, 113, 113);
+            }
+
             p{
                 padding-right: 10%;
             }
         }
     }
 
+    .modal-header span{
+        cursor: pointer;
+        margin: 10px;
+        padding: 10px;
+    }
 
 }

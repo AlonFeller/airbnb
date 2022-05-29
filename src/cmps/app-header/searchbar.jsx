@@ -7,7 +7,7 @@ import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/calander"
 
 export const Searchbar = (props) => {
-
+     console.log('for alon')
     const navigate = useNavigate()
     const filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
@@ -48,19 +48,19 @@ export const Searchbar = (props) => {
                     <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
                 </div>
                 <div className="searchber-form-label">
-                    <div className="labels-flex">
+                    {/* <div className="labels-flex"> */}
+                    {/* &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <label htmlFor="">Check Out</label> */}
+                    {/* </div> */}
                     <label htmlFor="">Check in </label>
-                    &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <label htmlFor="">Check Out</label>
-                    </div>
-                    {/* <MyDatePicker className="date" /> */}
-                    <BasicDateRangePicker/>
+                    <MyDatePicker className="date" />
+                    {/* <BasicDateRangePicker/> */}
                 </div>
-                {/* <div className="searchber-form-label">
+                <div className="searchber-form-label">
                     <label htmlFor="">Check out</label>
                     <MyDatePicker className="date" />
-                    <BasicDateRangePicker/>
-                </div> */}
+                    {/* <BasicDateRangePicker/> */}
+                </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">How many</label>
                     <input type="number" placeholder="Guests" />
