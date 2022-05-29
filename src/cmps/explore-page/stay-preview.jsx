@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Star } from "@mui/icons-material"
 // import img from '../../assets/Images/001.jpeg'
 
 
@@ -49,7 +50,7 @@ export const StayPreview = (props) => {
             </div>
             <div className="locatoing-rating">
                 <h3>{stay.address.city + ', ' + stay.address.country} </h3>
-                {stay.reviewScores.rating && <h3>{stay.reviewScores.rating / 20 + '⭐'}</h3>}
+                {stay.reviewScores.rating && <h3>{stay.reviewScores.rating / 20}< Star /></h3>}
                 {!stay.reviewScores.rating && <h3> 4.63⭐</h3>}
             </div>
             <p>{(stay.name.length > 30)? stay.name.substring(0, 30) + '...' : stay.name}</p>
