@@ -9,8 +9,8 @@ export const StayMap = ({stay}) => {
     };
 
     const center = {
-        lat: stay.address.location.lat,
-        lng: stay.address.location.lan
+        lat: stay.address.location.lan,
+        lng: stay.address.location.lat
     };
 
     const { isLoaded } = useJsApiLoader({
