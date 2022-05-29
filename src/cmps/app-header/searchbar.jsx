@@ -4,6 +4,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
 import { MyDatePicker } from "./date-picker"
 import btn from "../../assets/Images/srchbtn.png"
+import BasicDateRangePicker from "../order/calander"
 
 export const Searchbar = (props) => {
 
@@ -11,28 +12,30 @@ export const Searchbar = (props) => {
     const filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
     const params = useParams()
-    const { location } = params
+    const locationFromParams  = useLocation()
+    const urlParams = new URLSearchParams(locationFromParams.search);
+    const location = urlParams.get('location') || '';
 
 
     useEffect(() => {
-        // filterBy.location = location
-        // console.log('params', location);
-
-        dispatch(setFilter(filterBy))
-        dispatch(loadStays(filterBy))
+        if (!location) return
+        filterBy.location = location
+        alert(filterBy.location)
+        // dispatch(setFilter(filterBy))
+        // dispatch(loadStays(filterBy))
+        onHandleChange({target:{value: location}})
     }, [params])
 
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value
         dispatch(setFilter(filterBy))
         dispatch(loadStays(filterBy))
-        deployUrl(filterBy.location)
+        console.log('filter', filterBy);
+        if (location != target.value) deployUrl(filterBy.location)
     }
 
     const deployUrl = (location) => {
-        const urlSrcPrm = new URLSearchParams(location)
-        const searchStr = urlSrcPrm.toString()
-        navigate(`/explore/${searchStr}`)
+        navigate(`/explore/?location=${location}`)
     }
 
     return (
@@ -42,16 +45,22 @@ export const Searchbar = (props) => {
 
                 <div className="searchber-form-label location">
                     <label htmlFor="">Location </label>
-                    <input type="text" name="location" placeholder="Anywhere" onChange={onHandleChange} />
+                    <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
                 </div>
                 <div className="searchber-form-label">
-                    <label htmlFor="">Check in</label>
-                    <MyDatePicker className="date" />
+                    <div className="labels-flex">
+                    <label htmlFor="">Check in </label>
+                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <label htmlFor="">Check Out</label>
+                    </div>
+                    {/* <MyDatePicker className="date" /> */}
+                    <BasicDateRangePicker/>
                 </div>
-                <div className="searchber-form-label">
+                {/* <div className="searchber-form-label">
                     <label htmlFor="">Check out</label>
                     <MyDatePicker className="date" />
-                </div>
+                    <BasicDateRangePicker/>
+                </div> */}
                 <div className="searchber-form-label">
                     <label htmlFor="">How many</label>
                     <input type="number" placeholder="Guests" />

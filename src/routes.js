@@ -14,7 +14,7 @@ const routes = [
         label: 'Home 🏠',
     },
     {
-        path: 'explore',
+        path: '/explore',
         component: <ExplorePage />,
         label: 'explore'
     },

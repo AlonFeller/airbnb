@@ -33,7 +33,7 @@ export function HomePage() {
                                 <h4>New York City</h4>
                             </div>
                             <div className="city-card">
-                                <img src={madrid} className="square-ratio" alt="Madrid" onClick={() => goTo('/explore/:location=Madrid')} />
+                                <img src={madrid} className="square-ratio" alt="Madrid" onClick={() => goTo('/explore/?location=spain')} />
                                 <h4>Madrid</h4>
                             </div>
                             <div className="city-card">
