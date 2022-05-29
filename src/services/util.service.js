@@ -1,17 +1,30 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { KitchenIcon, FireplaceIcon, BeachAccessIcon, OutdoorGrillIcon, KingBed, Deck, LocalLaundryService,
-Pool, Bathtub, RoomService, Speaker, SportsEsports,  Balcony, Checkroom, CoffeeMaker, Crib, Iron } from '@mui/material';
+// import { KitchenIcon, FireplaceIcon, BeachAccessIcon, OutdoorGrillIcon, KingBed, Deck, LocalLaundryService,
+// Pool, Bathtub, RoomService, Speaker, SportsEsports,  Balcony, Checkroom, CoffeeMaker, Crib, Iron } from '@mui/material';
+// import {
+//     FaSnowflake, FaBlender, FaCar, FaHotTub, FaPaw, FaSmoking, FaSmokingBan, FaWifi,
+//     FaLock, FaThermometerHalf, FaDoorClosed, FaWineGlassAlt, FaSwimmingPool, FaAccessibleIcon
+// } from 'react-icons/fa';
+// import {}
 import {
-    FaSnowflake, FaBlender, FaCar, FaHotTub, FaPaw, FaSmoking, FaSmokingBan, FaWifi,
-    FaLock, FaThermometerHalf, FaDoorClosed, FaWineGlassAlt, FaSwimmingPool, FaAccessibleIcon
-} from 'react-icons/fa';
+    Tv, NetworkWifi, Kitchen, SmokingRooms, HotTub, Pets, SmokeFree,
+    AcUnit, HeatPump, Pool, Countertops, Fireplace, Yard, OutdoorGrill, Crib, Lock,
+    ScreenLockLandscape, BeachAccess, Checkroom, LocalBar, LocalParking,
+    AccessibleForward, Bed, Bathtub, Balcony, Iron, RoomService, CoffeeMaker
+    , LocalLaundryService, Speaker, SportsEsports, Accessible, Cable, Router, AccountBox,
+    FitnessCenter, FamilyRestroom, InsertInvitation, MedicalServices
+    , NotificationsActive, CreditScore, FireExtinguisher, HomeRepairService, Soap, WatchLater
+    , Air, UnfoldMore, CheckBox, Laptop, Man, RollerShades, Shower, KingBed, SingleBed, Luggage,
+    EventNote, Grass, AccessibilityNew, DirectionsWalk, Accessibility, DoorFront,
+    WheelchairPickup, Light, Water
+} from '@mui/icons-material';
 
 export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive,
     delay,
-    // getAmenitiesIcons
+    getAmenitiesIcons
 }
 
 function makeId(length = 6) {
@@ -49,80 +62,160 @@ function delay(ms = 1500) {
 }
 
 // function getAmenitiesIcons(amenity) {
-//     switch (amenity) {
-//         // case 'TV':
-//         //     return <TvIcon />
-//         case 'Wifi':
-//             return <FaWifi />
-//         case 'Kitchen':
-//             return <KitchenIcon />
-//         case 'Smoking allowed':
-//             return <FaSmoking />
-//         case 'Hot tub':
-//             return <FaHotTub />
-//         case 'Pets allowed':
-//             return <FaPaw />
-//         case 'No smoking':
-//             return <FaSmokingBan />
-//         case 'Cooking basics':
-//             return <FaBlender />
-//         case 'Air conditioning':
-//             return <FaSnowflake />
-//         case 'Heating':
-//             return <FaThermometerHalf />
-//         case 'Pool':
-//             return <Pool />
-//         case 'Indoor fireplace':
-//             return <FireplaceIcon />
-//         case 'Refrigerator':
-//             return < KitchenIcon />
-//         case 'Refrigerator':
-//             return <FontAwesomeIcon icon="refrigerator" />
-//         case 'Dishwasher':
-//             return <LocalLaundryService />
-//         case 'Backyard':
-//             return <Deck />
-//         case 'BBQ grill':
-//             return <OutdoorGrillIcon />
-//         case 'Crib':
-//             return <Crib />
-//         case 'Private entrance':
-//             return <FaDoorClosed />
-//         case 'Lockbox':
-//             return <FaLock />
-//         case 'Beachfront':
-//             return <BeachAccessIcon />
-//         case 'Hangers':
-//             return < Checkroom />
-//         case 'Wine glasses':
-//             return <FaWineGlassAlt />
-//         case 'Free parking':
-//             return <FaCar />
-//         case 'Accessible':
-//             return <FaAccessibleIcon />
-//         case 'King size bed':
-//             return <KingBed />
-//         case 'Bathub':
-//             return <Bathtub />
-//         case 'Balcony':
-//             return <Balcony />
-//         case 'Iron':
-//             return <Iron />
-//         case 'Room service':
-//             return <RoomService />
-//         case 'Coffee machine':
-//             return <CoffeeMaker />
-//         case 'Laundry machine':
-//             return <LocalLaundryService />
-//         case 'Speakers':
-//             return < Speaker />
-//         case 'Gaming console':
-//             return < SportsEsports />
-//         default:
-//             break;
+//         switch (amenity) {
+//             case 'TV':
+//     return <Tv />
+// }}
 
-//     }
-// }
+function getAmenitiesIcons(amenity) {
+    switch (amenity) {
+        case 'TV':
+            return <Tv />
+        case 'Wifi':
+            return <NetworkWifi />
+        case 'Kitchen':
+            return <Countertops />
+        case 'Smoking allowed':
+            return <SmokingRooms />
+        case 'Hot tub':
+            return <HotTub />
+        case 'Pets allowed':
+            return <Pets />
+        case 'No smoking':
+            return <SmokeFree />
+        case 'Air conditioning':
+            return <AcUnit />
+        case 'Heating':
+            return <HeatPump />
+        case 'Pool':
+            return <Pool />
+        case 'Indoor fireplace':
+            return <Fireplace />
+        case 'Refrigerator':
+            return < Kitchen />
+        case 'Backyard':
+            return <Yard />
+        case 'BBQ grill':
+            return <OutdoorGrill />
+        case 'Crib':
+            return <Crib />
+        case 'Private entrance':
+            return <Lock />
+        case 'Lockbox':
+            return <ScreenLockLandscape />
+        case 'Beachfront':
+            return <BeachAccess />
+        case 'Hangers':
+            return < Checkroom />
+        case 'Wine glasses':
+            return <LocalBar />
+        case 'Free parking':
+            return <LocalParking />
+        case 'Accessible':
+            return <AccessibleForward />
+        case 'King size bed':
+            return <Bed />
+        case 'Bathub':
+            return <Bathtub />
+        case 'Balcony':
+            return <Balcony />
+        case 'Iron':
+            return <Iron />
+        case 'Room service':
+            return <RoomService />
+        case 'Coffee machine':
+            return <CoffeeMaker />
+        case 'Laundry machine':
+            return <LocalLaundryService />
+        case 'Speakers':
+            return < Speaker />
+        case 'Gaming console':
+            return < SportsEsports />
+        case 'Wheelchair accessible':
+            return < Accessible />
+        case 'Cable TV':
+            return < Cable />
+        case 'Internet':
+            return < Router />
+        case 'Free parking on premises':
+            return < LocalParking />
+        case 'Doorman':
+            return < AccountBox />
+        case 'Gym':
+            return < FitnessCenter />
+        case 'Elevator':
+            return < UnfoldMore />
+        case 'Family/kid friendly':
+            return < FamilyRestroom />
+        case 'Suitable for events':
+            return < InsertInvitation />
+        case 'Washer':
+            return < LocalLaundryService />
+        case 'Dryer':
+            return < LocalLaundryService />
+        case 'Smoke detector':
+            return < NotificationsActive />
+        case 'Carbon monoxide detector':
+            return < NotificationsActive />
+        case 'First aid kit':
+            return < MedicalServices />
+        case 'Safety card':
+            return < CreditScore />
+        case 'Fire extinguisher':
+            return < FireExtinguisher />
+        case 'Essentials':
+            return < HomeRepairService />
+        case 'Shampoo':
+            return < Soap />
+        case '24-hour check-in':
+            return < WatchLater />
+        case 'Hair dryer':
+            return < Air />
+        case 'Laptop friendly workspace':
+            return < Laptop />
+        case 'Self check-in':
+            return < CheckBox />
+        case 'Building staff':
+            return < Man />
+        case 'Room-darkening shades':
+            return < RollerShades />
+        case 'Hot water':
+            return < Shower />
+        case 'Bed linens':
+            return < KingBed />
+        case 'Extra pillows and blankets':
+            return < SingleBed />
+        case 'Ethernet connection':
+            return < Cable />
+        case 'Luggage dropoff allowed':
+            return < Luggage />
+        case 'Long term stays allowed':
+            return < EventNote />
+        case 'Ground floor access':
+            return < Grass />
+        case 'Wide hallway clearance':
+            return < AccessibilityNew />
+        case 'Step-free access':
+            return < DirectionsWalk />
+        case 'Wide doorway':
+            return < Accessibility />
+        case 'Flat path to front door':
+            return < DoorFront />
+        case 'Well-lit path to entrance':
+            return < Light />
+        case 'Disabled parking spot':
+            return < WheelchairPickup />
+        case 'Wide clearance to bed':
+            return < Accessibility />
+        case 'Wide entryway':
+            return < Accessibility />
+        case 'Waterfront':
+            return < Water />
+        default:
+            break;
+
+    }
+}
 
 
 

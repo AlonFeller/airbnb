@@ -8,12 +8,12 @@ export const StayAmenities = ({ stay }) => {
         <ul className="amenities-list">
             {
                 stay.amenities.map((amenity, index) => {
+                    console.log(amenity);
+                    const amenityIcon = utilService.getAmenitiesIcons(amenity);
 
-                    // const amenityIcon = utilService.getAmenitiesIcons(amenity);
-
-                        <li className="amenity-container flex" key={amenity + index}>
-                            {/* <span className="amenity-icon">{amenityIcon}</span> */}
-                            <span className="amenity-icon">###</span>
+                       return <li className="amenity-container flex" key={amenity + index}>
+                            <span className="amenity-icon">{amenityIcon}</span>
+                            {/* <span className="amenity-icon">###</span> */}
                             <h4>{amenity}</h4>
                         </li>
                 })
