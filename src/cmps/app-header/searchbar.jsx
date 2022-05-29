@@ -17,14 +17,14 @@ export const Searchbar = (props) => {
     const location = urlParams.get('location') || '';
 
 
-    useEffect(() => {
-        if (!location) return
-        filterBy.location = location
-        alert(filterBy.location)
-        // dispatch(setFilter(filterBy))
-        // dispatch(loadStays(filterBy))
-        onHandleChange({target:{value: location}})
-    }, [params])
+    // useEffect(() => {
+    //     if (location) {
+    //         filterBy.location = location
+    //         // dispatch(setFilter(filterBy))
+    //         // dispatch(loadStays(filterBy))
+    //         onHandleChange({target:{value: location}})
+    //     }
+    // }, [params])
 
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value

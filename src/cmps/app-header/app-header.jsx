@@ -29,6 +29,7 @@ export function AppHeader() {
 function toggleLogin() {
     document.body.classList.toggle("login-page-open");
     document.body.classList.toggle("login-screen-open");
+    document.body.classList.toggle("login-slide-modal-open");
 
 }
 
