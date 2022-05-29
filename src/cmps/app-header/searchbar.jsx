@@ -7,7 +7,7 @@ import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/calander"
 
 export const Searchbar = (props) => {
-
+     console.log('for alon')
     const navigate = useNavigate()
     const filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
