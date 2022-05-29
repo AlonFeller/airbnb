@@ -48,19 +48,19 @@ export const Searchbar = (props) => {
                     <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
                 </div>
                 <div className="searchber-form-label">
-                    <div className="labels-flex">
+                    {/* <div className="labels-flex"> */}
+                    {/* &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <label htmlFor="">Check Out</label> */}
+                    {/* </div> */}
                     <label htmlFor="">Check in </label>
-                    &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <label htmlFor="">Check Out</label>
-                    </div>
-                    {/* <MyDatePicker className="date" /> */}
-                    <BasicDateRangePicker/>
+                    <MyDatePicker className="date" />
+                    {/* <BasicDateRangePicker/> */}
                 </div>
-                {/* <div className="searchber-form-label">
+                <div className="searchber-form-label">
                     <label htmlFor="">Check out</label>
                     <MyDatePicker className="date" />
-                    <BasicDateRangePicker/>
-                </div> */}
+                    {/* <BasicDateRangePicker/> */}
+                </div>
                 <div className="searchber-form-label">
                     <label htmlFor="">How many</label>
                     <input type="number" placeholder="Guests" />
