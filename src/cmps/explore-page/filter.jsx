@@ -1,26 +1,26 @@
 import { Slider } from "@mui/material"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { useLocation } from "react-router-dom"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
 
 export const ExploreFilter = (props) => {
 
     
-
+    const locationFromParams  = useLocation()
     const stays = useSelector(state => state.stayModule.stays)
     let filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
     const [val, setVal] = useState([0, 2000])
 
     useEffect(() => {
-        if (props.location) {
-            console.log('from use effect filter' ,props.location);
-            filterBy.location = props.location
-            dispatch(setFilter(filterBy))
-            dispatch(loadStays(filterBy))
-        }
+            const newFilter = {...filterBy}
+            const urlParams = new URLSearchParams(locationFromParams.search);
+            newFilter.location = urlParams.get('location') || '';
+            console.log('newfilter', newFilter);
+            dispatch(setFilter(newFilter))
+            dispatch(loadStays(newFilter))
     }, [])
-
 
     const [kitchen, setKitchen] = useState(false)
     const [wifi, setWifi] = useState(false)

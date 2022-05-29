@@ -10,17 +10,17 @@ export function ExplorePage() {
     const locationFromParams  = useLocation()
     const [location, setLocation] = useState(null)
 
-    useEffect(() => {
-        setLocation(getLocation)
-    }, [])
+    // useEffect(() => {
+    //     setLocation(getLocation)
+    // }, [])
 
 
-    const getLocation = () => {
+    // const getLocation = () => {
 
-        const urlParams = new URLSearchParams(locationFromParams.search);
-        const location = urlParams.get('location') || '';
-        return location
-    }
+    //     const urlParams = new URLSearchParams(locationFromParams.search);
+    //     const location = urlParams.get('location') || '';
+    //     return location
+    // }
 
     const goTo = (path) => {
         navigate('/')
@@ -31,7 +31,7 @@ export function ExplorePage() {
     return (
         <>
             <div className="explore-page">
-                <ExploreFilter location={location} />
+                <ExploreFilter  />
                 <StayList />
             </div>
         </>
