@@ -16,7 +16,7 @@ import {
     , NotificationsActive, CreditScore, FireExtinguisher, HomeRepairService, Soap, WatchLater
     , Air, UnfoldMore, CheckBox, Laptop, Man, RollerShades, Shower, KingBed, SingleBed, Luggage,
     EventNote, Grass, AccessibilityNew, DirectionsWalk, Accessibility, DoorFront,
-    WheelchairPickup, Light, Water
+    WheelchairPickup, Light, Water,NotificationsNone
 } from '@mui/icons-material';
 
 export const utilService = {
@@ -217,6 +217,8 @@ function getAmenitiesIcons(amenity) {
             return < Pets />
         case 'Pets live on this property':
             return < Pets />
+        case 'Buzzer/wireless intercom':
+            return < NotificationsNone />
         default:
             break;
 
