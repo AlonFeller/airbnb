@@ -8,7 +8,6 @@ export const StayAmenities = ({ stay }) => {
         <ul className="amenities-list">
             {
                 stay.amenities.map((amenity, index) => {
-                    console.log(amenity);
                     const amenityIcon = utilService.getAmenitiesIcons(amenity);
 
                        return <li className="amenity-container flex" key={amenity + index}>
