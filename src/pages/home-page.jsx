@@ -34,7 +34,7 @@ export function HomePage() {
                             </div>
                             <div className="city-card">
                                 <img src={madrid} className="square-ratio" alt="Spain" onClick={() => goTo('/explore/?location=Spain')} />
-                                <h4>Madrid</h4>
+                                <h4>Spain</h4>
                             </div>
                             <div className="city-card">
                                 <img src={tlv} className="square-ratio" alt="Israel" onClick={() => goTo('/explore/?location=Israel')} />
