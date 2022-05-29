@@ -211,6 +211,12 @@ function getAmenitiesIcons(amenity) {
             return < Accessibility />
         case 'Waterfront':
             return < Water />
+        case 'Lock on bedroom door':
+            return < Lock />
+        case 'Cat(s)':
+            return < Pets />
+        case 'Pets live on this property':
+            return < Pets />
         default:
             break;
 
