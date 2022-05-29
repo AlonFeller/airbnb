@@ -8,6 +8,7 @@ import { StayDetails } from '../cmps/stay-page/stay-detalis'
 import { StayReviews } from '../cmps/stay-page/stay-reviews'
 import { StayMap } from '../cmps/stay-page/stay-map'
 import { ReviewsModal } from '../cmps/stay-page/reviews-modal'
+import { Star } from "@mui/icons-material"
 
 export function StayPage() {
     const params = useParams()
@@ -35,13 +36,13 @@ export function StayPage() {
                 <h2 className="stay-name">{selectedStay.name}</h2>
                 <section className="stay-info-line flex space-between">
                     <div className="stay-info-container flex">
-                        <span className="icon-star">⭐</span>
+                        <span className="icon-star">< Star /></span>
                         <h4 className="info-rating">{selectedStay.reviewScores.rating / 20}</h4>
-                        <span className="info-point" >•</span>
-                        <h4 className="info-reviews">({selectedStay.numOfReviews} reviews)</h4>
-                        <span className="info-point" >•</span>
-                        {selectedStay.host.isSuperhost && <h4 className="info-super-host">Superhost </h4>}
-                        {selectedStay.host.isSuperhost && <span className="info-point" >•</span>}
+                        <span className="info-point" >·</span>
+                        <h4 className="info-reviews">{selectedStay.numOfReviews} reviews</h4>
+                        <span className="info-point" >·</span>
+                        {selectedStay.host.isSuperhost && <h4 className="info-super-host"> Superhost </h4>}
+                        {selectedStay.host.isSuperhost && <span className="info-point" >·</span>}
                         <h4 className="info-host-address">{selectedStay.address.street}</h4>
                     </div>
                     <div className="info-user-btns flex space-between">
