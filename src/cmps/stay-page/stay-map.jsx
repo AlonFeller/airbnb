@@ -34,7 +34,7 @@ export const StayMap = ({stay}) => {
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={10}
+            zoom={300}
             onLoad={onLoad}
             onUnmount={onUnmount}
         >
