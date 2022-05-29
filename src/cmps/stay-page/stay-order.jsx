@@ -6,18 +6,18 @@ import { Guests } from '../order/guests';
 
 export const OrderNow = (props) => {
 
-   let isGuestPopupOn = true
+    let isGuestPopupOn = true
 
 
 
     return (
         <section className='order-now'>
 
-            <div  className='calander'>
-        <BasicDateRangePicker/>
-        <Guests/>
+            <div className='calander'>
+                <BasicDateRangePicker />
+                <Guests />
             </div>
-    <AirBnbBtn/>
+            <AirBnbBtn />
         </section>
     )
 }
