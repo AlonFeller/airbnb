@@ -3,7 +3,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import { Dehaze } from "@mui/icons-material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {onLogout} from "../../store/user/user.actions";
 
 
@@ -13,7 +13,7 @@ import {onLogout} from "../../store/user/user.actions";
 export const NavBar = (props) =>  {
 
     const user = useSelector((state => state.userModule.user))
-
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const goTo = (path) => {
@@ -23,7 +23,7 @@ export const NavBar = (props) =>  {
 
     const onLogoutUser = () => {
         
-        onLogout()
+        dispatch(onLogout())
     }
 
 
