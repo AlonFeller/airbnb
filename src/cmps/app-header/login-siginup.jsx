@@ -30,6 +30,7 @@ export function LoginSignUp(props) {
         clearState()
         document.body.classList.toggle("login-page-open");
         document.body.classList.toggle("login-screen-open");
+        document.body.classList.toggle("login-slide-modal-open");
     }
 
     const onUploaded = (imgUrl) => {
@@ -43,6 +44,7 @@ export function LoginSignUp(props) {
         clearState()
         document.body.classList.toggle("login-page-open");
         document.body.classList.toggle("login-screen-open");
+        document.body.classList.toggle("login-slide-modal-open");
     }
 
     

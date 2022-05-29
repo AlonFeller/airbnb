@@ -52,7 +52,7 @@ export const StayPreview = (props) => {
                 {stay.reviewScores.rating && <h3>{stay.reviewScores.rating / 20 + '⭐'}</h3>}
                 {!stay.reviewScores.rating && <h3> 4.63⭐</h3>}
             </div>
-            <p>{stay.name}</p>
+            <p>{(stay.name.length > 30)? stay.name.substring(0, 30) + '...' : stay.name}</p>
             {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}
             {/* <p>{stay.summary.substring(0, 35) + '...'}</p> */}
 

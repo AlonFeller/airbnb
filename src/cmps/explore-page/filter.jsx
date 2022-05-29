@@ -1,14 +1,25 @@
 import { Slider } from "@mui/material"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
 
 export const ExploreFilter = (props) => {
 
+    
+
     const stays = useSelector(state => state.stayModule.stays)
     let filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
     const [val, setVal] = useState([0, 2000])
+
+    useEffect(() => {
+        if (props.location) {
+            console.log('from use effect filter' ,props.location);
+            filterBy.location = props.location
+            dispatch(setFilter(filterBy))
+            dispatch(loadStays(filterBy))
+        }
+    }, [])
 
 
     const [kitchen, setKitchen] = useState(false)
