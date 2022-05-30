@@ -16,7 +16,7 @@ import {
     , NotificationsActive, CreditScore, FireExtinguisher, HomeRepairService, Soap, WatchLater
     , Air, UnfoldMore, CheckBox, Laptop, Man, RollerShades, Shower, KingBed, SingleBed, Luggage,
     EventNote, Grass, AccessibilityNew, DirectionsWalk, Accessibility, DoorFront,
-    WheelchairPickup, Light, Water,NotificationsNone,Bluetooth, BrunchDining
+    WheelchairPickup, Light, Water, NotificationsNone, Bluetooth, BrunchDining
 } from '@mui/icons-material';
 
 export const utilService = {
