@@ -7,15 +7,26 @@ import { Searchbar } from './searchbar'
 import logo from '../../assets/Images/logo2.png'
 
 export function AppHeader() {
+    
     const navigate = useNavigate()
     const goTo = (path) => {
         navigate('/')
         navigate(path)
     }
+
+       useEffect(() => {
+        window.addEventListener("scroll", toggleHeader)
+        return () => {
+            window.removeEventListener("scroll", toggleHeader)
+        }
+    }, []);
+
+   
     return (
         <>
-            <div className="header flex">
-                <div className="logo-img-container"><img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
+            <div className="header flex" >
+                <div className="logo-img-container">
+                    <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
                 <Searchbar />
                 <NavBar />
                 <LoginSignUp />
@@ -26,6 +37,13 @@ export function AppHeader() {
 
     )
 }
+
+ function toggleHeader() {
+        const lastScroll = window.pageYOffset
+        if (lastScroll > 0) document.body.classList.toggle("header full-header")
+        console.log(lastScroll);
+    }
+
 
 function toggleLogin() {
     document.body.classList.toggle("login-page-open");

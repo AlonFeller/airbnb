@@ -129,6 +129,10 @@
             }
         }
     }
+    .header .full-header{
+        background-color: var(--card-background-color);
+        color: var(--font-dark-color);
+    }
 
     .user-navbar {
         cursor: pointer;

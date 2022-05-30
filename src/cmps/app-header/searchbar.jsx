@@ -7,7 +7,6 @@ import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/calander"
 
 export const Searchbar = (props, searchBarTabs, handleSearchBarTabs) => {
-    console.log('for alon')
     const navigate = useNavigate()
     const filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
@@ -25,37 +24,32 @@ export const Searchbar = (props, searchBarTabs, handleSearchBarTabs) => {
         if (location != target.value) deployUrl(filterBy.location)
     }
 
-    useEffect(() => {
-        window.addEventListener("scroll", handleSearchBarTabs)
-        return () => {
-            window.removeEventListener("scroll", handleSearchBarTabs)
-        }
-    }, []);
+ 
 
-    function updateHeaderActiveTab(elName, ev) {
-        ev?.stopPropagation();
-        ev?.preventDefault();
-        if (elName === "location" && searchBarTabs !== elName) {
-            setIsScreenOpen(true);
-            elLocationInput.current.focus();
-        } else elLocationInput.current.blur();
-        // elName === "check-in" || elName === "check-out" ? setIsScreenOpen(true) : setIsScreenOpen(false);
-        setIsScreenOpen(elName === "check-in" || elName === "check-out");
-        if (searchBarTabs === elName) {
-            setSearchBarTabsActive(null);
-            setIsScreenOpen(false);
-        } else {
-            setSearchBarTabsActive(elName);
-            setIsScreenOpen(true);
-        }
-    }
+    // function updateHeaderActiveTab(elName, ev) {
+    //     ev?.stopPropagation();
+    //     ev?.preventDefault();
+    //     if (elName === "location" && searchBarTabs !== elName) {
+    //         setIsScreenOpen(true);
+    //         elLocationInput.current.focus();
+    //     } else elLocationInput.current.blur();
+    //     // elName === "check-in" || elName === "check-out" ? setIsScreenOpen(true) : setIsScreenOpen(false);
+    //     setIsScreenOpen(elName === "check-in" || elName === "check-out");
+    //     if (searchBarTabs === elName) {
+    //         setSearchBarTabsActive(null);
+    //         setIsScreenOpen(false);
+    //     } else {
+    //         setSearchBarTabsActive(elName);
+    //         setIsScreenOpen(true);
+    //     }
+    // }
 
     const deployUrl = (location) => {
         navigate(`/explore/?location=${location}`)
     }
 
     return (
-        <section className={"searchbar-contianer"+((fullHeader)?"fullHeader":"")} onScroll={fullHeader=!fullHeader}>
+        <section className={"searchbar-contianer" + ((fullHeader) ? "fullHeader" : "")} onScroll={fullHeader = !fullHeader}>
             <section className="searchbar">
                 <form action="" className="searchbar-form">
 
