@@ -8,7 +8,7 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
-        // gap: 10px;
+        gap: 6px;
         flex-wrap: wrap;
 
         .stay-preview {
@@ -17,6 +17,7 @@
             margin-bottom: 20px;
             line-height: 18px;
             border-radius: 20px;
+            // row-gap: 10px;
 
             h3 {
                 font-size: 18px;
@@ -35,10 +36,10 @@
                 }
             }
 
-            &:hover {
-                transform: scale(1.1, 1.1);
-                transition: 0.3s;
-            }
+            // &:hover {
+            //     transform: scale(1.1, 1.1);
+            //     transition: 0.3s;
+            // }
         }
     }
 }

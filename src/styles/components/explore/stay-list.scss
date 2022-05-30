@@ -1,4 +1,15 @@
+.explore-page {
+    text-align: center;
+    grid-column: 2/-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    .explore-filter {
+        align-self: center;
+    }
+
+}
 
 .list-container {
     width: 100%;
