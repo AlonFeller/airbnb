@@ -7,9 +7,9 @@
     right: 60px;
     top:120px;
     padding: 14px;
-    border: 2px solid rgba(44, 44, 44, 0.851);
+    border: 2px solid var(--font-dark-color);
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--main-background-color);
     transform: translateX(150%);
     transition: transform .6s;
 
@@ -50,7 +50,7 @@
     z-index: -100;
     min-height: 100%;
     min-width: 100%;
-    background-color: rgba(20, 26, 33, 0.471);
+    background-color: var(--font-dark-color);
     opacity: 0;
     transition:opacity .8s;
 
