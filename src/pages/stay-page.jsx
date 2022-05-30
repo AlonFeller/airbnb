@@ -12,7 +12,7 @@ import { Star } from "@mui/icons-material"
 
 export function StayPage() {
     const params = useParams()
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const dispatch = useDispatch()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
