@@ -1,3 +1,9 @@
+@font-face { 
+    font-family: 'circular';
+    src: url('file:/src/assets/fonts/circular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 html {
     height: 100%;
     width: 100%;
@@ -37,8 +43,7 @@ body {
                 grid-column: 1/-1;
                 // background-color: rgb(250, 250, 250);
                 z-index: 20;
-                padding-left: 20px;
-                padding-right: 20px;
+                padding: 0 5%;
 
                 .header {
                     width: 100%;
@@ -100,6 +105,7 @@ body {
                             border-radius: 35px;
                             background-color: rgb(245, 245, 245, 0.9);
                             transition: 0.3s;
+                            
 
                             .react-datepicker-wrapper .react-datepicker__input-container {
                                 align-self: center;
@@ -125,9 +131,11 @@ body {
 
                     .header-navbar {
                         max-width: 400px;
-                        color: rgb(245, 245, 245);
+                        color: rgb(32, 32, 32);
+                        box-shadow: 0 0 0 12px white;
                         display: flex;
                         flex-wrap: wrap;
+                        
 
                         .nav-btn .host {
                             width: 125px;
