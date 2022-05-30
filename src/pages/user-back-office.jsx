@@ -1,8 +1,18 @@
-import React, { useEffect } from 'react'
-import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
-
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
+import { loadUser } from '../store/user/user.actions'
 
 export function UserBackOffice() {
+
+    const params = useParams()
+    const dispatch = useDispatch()
+    const { watchedUser } = useSelector(storeState => storeState.stayModule)
+
+    useEffect(() => {
+        dispatch(loadUser(params.id))
+        console.log(watchedUser)
+    }, [params.id])
 
     return (
         <>

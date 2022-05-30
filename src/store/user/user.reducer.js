@@ -3,7 +3,8 @@ import { userService } from '../../services/user.service.js'
 const initialState = {
     user: null,
     users: [],
-    checkInOut: {checkIn: null, checkOut:null}
+    checkInOut: { checkIn: null, checkOut: null },
+    watchedUser: null
 }
 
 export function userReducer(state = initialState, action) {
@@ -11,6 +12,9 @@ export function userReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_USER':
             newState = { ...state, user: action.user }
+            break;
+        case 'SET_WATCHED_USER':
+            newState = { ...state, watchedUser: action.user }
             break;
         case 'REMOVE_USER':
             newState = {
