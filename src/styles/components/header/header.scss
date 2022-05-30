@@ -19,14 +19,14 @@
         align-items: center;
         justify-content: space-between;
 
+        .searchbar-continer {}
 
         .searchbar {
-
             align-self: flex-end;
             background-color: var(--card-background-color);
             border-radius: 35px;
             max-width: 575px;
-            min-height: 50px;
+
             display: flex;
             justify-content: space-between;
             border: 1px solid var(--font-lightgray-color);
@@ -40,11 +40,18 @@
                 transition: 0.4s;
             }
 
+            .searchbar-continer {
+                height: 150px;
+                display: flex;
+                justify-content: end;
+            }
 
             .searchbar-form {
                 align-self: center;
+                display: flex;
                 max-width: 750px;
                 margin-left: 5px;
+                gap: 5px;
 
                 .srchbtn {
                     img {
@@ -60,40 +67,40 @@
                         transition: 0.3s;
                     }
                 }
-            }
 
-            .searchber-form-label {
-                display: flex;
-                height: 50px;
-                flex-direction: column;
-                justify-content: center;
-                align-self: center;
-                width: 125px;
-                text-align: center;
-                border-radius: 35px;
-                background-color: var(--card-background-color);
-                transition: 0.3s;
-
-
-                .react-datepicker-wrapper .react-datepicker__input-container {
+                .searchber-form-label {
+                    display: flex;
+                    height: 50px;
+                    flex-direction: column;
+                    justify-content: center;
                     align-self: center;
-                    width: auto;
-                }
-
-                input {
+                    width: 125px;
                     text-align: center;
-                    max-width: 100px;
-                    align-self: center;
-                    border: 0px;
-                    background-color: var(--card-background-color);
                     border-radius: 35px;
-                }
-
-                &:hover {
-                    transform: scale(1.1, 1.1);
-                    background-color: var(--font-lightgray-color);
-
+                    background-color: var(--card-background-color);
                     transition: 0.3s;
+
+
+                    .react-datepicker-wrapper .react-datepicker__input-container {
+                        align-self: center;
+                        width: auto;
+                    }
+
+                    input {
+                        text-align: center;
+                        max-width: 100px;
+                        align-self: center;
+                        border: 0px;
+                        background-color: var(--card-background-color);
+                        border-radius: 35px;
+                    }
+
+                    &:hover {
+                        transform: scale(1.1, 1.1);
+                        background-color: var(--font-lightgray-color);
+
+                        transition: 0.3s;
+                    }
                 }
             }
         }
@@ -115,6 +122,7 @@
         .logo-img-container {
             width: 260px;
             display: flex;
+
             .logo-img {
                 width: fit-content;
                 align-self: flex-start;
@@ -124,9 +132,69 @@
 
     .user-navbar {
         cursor: pointer;
+        border: 1px solid var(--font-dark-color);
+        border-radius: 20px;
+        padding: 4px 6px 4px 6px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .login-slide-modal {
+            color: var(--font-dark-color);
+
+            width: 120px;
+            background-color: var(--main-background-color);
+            height: 0;
+            border: 1px solid var(--font-lightgray-color);
+            border-radius: 20px 20px 20px 20px;
+            // padding: 4px 6px 4px 6px;
+            display: none;
+            position: fixed;
+            top: 95px;
+            right: 175px;
+            justify-content: center;
+            align-items: center;
+
+            :first-child {
+                border-radius: 20px 0 0 0;
+                padding-top: 8px;
+            }
+
+            :last-child {
+                border-radius: 0 0 20px 20px;
+            }
+
+            .login-opt-btn {
+                margin: 0;
+                gap: 5px;
+                width: 100%;
+                // border-radius: 20px 20px 20px 20px;
+                display: flex;
+                justify-content: center;
+
+                &:hover {
+                    background-color: var(--font-lightgray-color);
+                    // color: rgb(245, 245, 245);
+                }
+            }
+
+            .nav-btn {
+                cursor: pointer;
+            }
+
+            .login-slide-modal-open & {
+
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 88px;
+                transition: 0.4s;
+            }
+        }
     }
-
-
 
     img {
         max-height: 50px;
@@ -134,94 +202,7 @@
     }
 }
 
-.searchbar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.searchbar-form {
-
-    display: flex;
-    gap: 5px;
-}
-
 input,
 label {
     display: block;
-}
-
-
-.user-navbar {
-    border: 1px solid var(--font-dark-color);
-    border-radius: 20px;
-    padding: 4px 6px 4px 6px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-    .login-slide-modal {
-
-        width: 80px;
-        background-color: var(--main-background-color);
-        height: 0;
-        border: 1px solid var(--font-dark-color);
-        border-radius: 20px 0 20px 20px;
-        // padding: 4px 6px 4px 6px;
-        display: none;
-        position: fixed;
-        top: 91px;
-        right: 35px;
-        justify-content: center;
-        align-items: center;
-
-        :first-child {
-            border-radius: 20px 0 0 0;
-            padding-top: 8px;
-        }
-
-        :last-child {
-            border-radius: 0 0 20px 20px;
-        }
-
-        .login-opt-btn {
-            margin: 0;
-            gap: 5px;
-            width: 100%;
-            // border-radius: 20px 20px 20px 20px;
-            display: flex;
-            justify-content: center;
-
-            &:hover {
-                background-color: var(--font-lightgray-color);
-                // color: rgb(245, 245, 245);
-            }
-        }
-
-
-        .login-slide-modal-open & {
-
-            display: flex;
-            gap: 5px;
-            flex-direction: column;
-            justify-content: space-evenly;
-            height: 88px;
-            transition: 0.4s;
-
-        }
-    }
-
-}
-
-
-
-.nav-btn {
-    cursor: pointer;
-}
-
-.labels-flex {
-    display: flex;
-
 }

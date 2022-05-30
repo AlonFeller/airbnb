@@ -7,12 +7,12 @@ import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/calander"
 
 export const Searchbar = (props) => {
-     console.log('for alon')
+    console.log('for alon')
     const navigate = useNavigate()
     const filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
     const params = useParams()
-    const locationFromParams  = useLocation()
+    const locationFromParams = useLocation()
     const urlParams = new URLSearchParams(locationFromParams.search);
     const location = urlParams.get('location') || '';
 
@@ -39,36 +39,39 @@ export const Searchbar = (props) => {
     }
 
     return (
-        <section className='searchbar'>
+        <section className='searchbar-contianer'>
 
-            <form action="" className="searchbar-form">
+            <section className='searchbar'>
 
-                <div className="searchber-form-label location">
-                    <label htmlFor="">Location </label>
-                    <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
-                </div>
-                <div className="searchber-form-label">
-                    {/* <div className="labels-flex"> */}
-                    {/* &nbsp; &nbsp; &nbsp; &nbsp; 
+                <form action="" className="searchbar-form">
+
+                    <div className="searchber-form-label location">
+                        <label htmlFor="">Location </label>
+                        <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
+                    </div>
+                    <div className="searchber-form-label">
+                        {/* <div className="labels-flex"> */}
+                        {/* &nbsp; &nbsp; &nbsp; &nbsp; 
                     <label htmlFor="">Check Out</label> */}
-                    {/* </div> */}
-                    <label htmlFor="">Check in </label>
-                    <MyDatePicker className="date" />
-                    {/* <BasicDateRangePicker/> */}
-                </div>
-                <div className="searchber-form-label">
-                    <label htmlFor="">Check out</label>
-                    <MyDatePicker className="date" />
-                    {/* <BasicDateRangePicker/> */}
-                </div>
-                <div className="searchber-form-label">
-                    <label htmlFor="">How many</label>
-                    <input type="number" placeholder="Guests" />
-                </div>
-                <div className="srchbtn"><img src={btn} alt="btn" /></div>
+                        {/* </div> */}
+                        <label htmlFor="">Check in </label>
+                        <MyDatePicker className="date" />
+                        {/* <BasicDateRangePicker/> */}
+                    </div>
+                    <div className="searchber-form-label">
+                        <label htmlFor="">Check out</label>
+                        <MyDatePicker className="date" />
+                        {/* <BasicDateRangePicker/> */}
+                    </div>
+                    <div className="searchber-form-label">
+                        <label htmlFor="">How many</label>
+                        <input type="number" placeholder="Guests" />
+                    </div>
+                    <div className="srchbtn"><img src={btn} alt="btn" /></div>
 
 
-            </form>
+                </form>
+            </section>
         </section>
     )
 
