@@ -23,11 +23,11 @@ export function StayPage() {
     }, [params.id])
 
 
-    const goTo = (path) => {
+    // const goTo = (path) => {
 
-        navigate('/')
-        navigate(path)
-    }
+    //     navigate('/')
+    //     navigate(path)
+    // }
 
     return (
         <>
