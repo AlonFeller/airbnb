@@ -1,9 +1,3 @@
-@font-face { 
-    font-family: 'circular';
-    src: url('file:/src/assets/fonts/circular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
 html {
     height: 100%;
     width: 100%;
@@ -105,7 +99,7 @@ body {
                             border-radius: 35px;
                             background-color: rgb(245, 245, 245, 0.9);
                             transition: 0.3s;
-                            
+
 
                             .react-datepicker-wrapper .react-datepicker__input-container {
                                 align-self: center;
@@ -124,18 +118,18 @@ body {
                             &:hover {
                                 transform: scale(1.1, 1.1);
                                 background-color: rgb(200, 200, 200);
-                                transition: 0.6s;
+
+                                transition: 0.3s;
                             }
                         }
                     }
 
                     .header-navbar {
                         max-width: 400px;
-                        color: rgb(32, 32, 32);
-                        box-shadow: 0 0 0 12px white;
+                        color: rgb(200, 200, 200);
                         display: flex;
                         flex-wrap: wrap;
-                        
+
 
                         .nav-btn .host {
                             width: 125px;
@@ -160,7 +154,7 @@ body {
                 grid-column: 1/-1;
                 display: grid;
                 grid-template-columns: 5% 1fr 5%;
-                
+
                 // grid-template-areas: ". hero ."
                 //     ". destinations. ";
 
@@ -227,6 +221,7 @@ body {
                     .destinations-container {
                         position: relative;
                         top: 800px;
+                        height: 60vh;
                         grid-area: "destinations";
                         grid-column: 2;
                         grid-row: 2;
@@ -250,10 +245,11 @@ body {
                                 background-color: rgb(245, 245, 245);
 
                                 &:hover {
-                                    box-shadow: 0 0 5px rgba(255, 90, 95, 0.1);
+                                    // box-shadow: 0 0 5px rgba(255, 90, 95, 0.1);
                                     // background-color: rgb(255, 90, 95);
                                     // color: rgba(250, 250, 250, 0.9);
-                                    // transition: 0.3s;
+                                    transform: scale(1.1, 1.1);
+                                    transition: 0.3s;
                                 }
                             }
 
