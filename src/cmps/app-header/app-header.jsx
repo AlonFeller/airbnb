@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
+import { toggleDetailsLayout, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsExplore } from "../../store/header/header.action";
 import { LoginSignUp } from './login-siginup'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'

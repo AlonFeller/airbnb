@@ -6,7 +6,7 @@ import { MyDatePicker } from "./date-picker"
 import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/calander"
 
-export const Searchbar = (props) => {
+export const Searchbar = (props, searchBarTabs, handleSearchBarTabs) => {
     console.log('for alon')
     const navigate = useNavigate()
     const filterBy = useSelector(state => state.stayModule.filterBy)
@@ -15,16 +15,7 @@ export const Searchbar = (props) => {
     const locationFromParams = useLocation()
     const urlParams = new URLSearchParams(locationFromParams.search);
     const location = urlParams.get('location') || '';
-
-
-    // useEffect(() => {
-    //     if (location) {
-    //         filterBy.location = location
-    //         // dispatch(setFilter(filterBy))
-    //         // dispatch(loadStays(filterBy))
-    //         onHandleChange({target:{value: location}})
-    //     }
-    // }, [params])
+    let fullHeader = false;
 
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value
@@ -34,15 +25,38 @@ export const Searchbar = (props) => {
         if (location != target.value) deployUrl(filterBy.location)
     }
 
+    useEffect(() => {
+        window.addEventListener("scroll", handleSearchBarTabs)
+        return () => {
+            window.removeEventListener("scroll", handleSearchBarTabs)
+        }
+    }, []);
+
+    function updateHeaderActiveTab(elName, ev) {
+        ev?.stopPropagation();
+        ev?.preventDefault();
+        if (elName === "location" && searchBarTabs !== elName) {
+            setIsScreenOpen(true);
+            elLocationInput.current.focus();
+        } else elLocationInput.current.blur();
+        // elName === "check-in" || elName === "check-out" ? setIsScreenOpen(true) : setIsScreenOpen(false);
+        setIsScreenOpen(elName === "check-in" || elName === "check-out");
+        if (searchBarTabs === elName) {
+            setSearchBarTabsActive(null);
+            setIsScreenOpen(false);
+        } else {
+            setSearchBarTabsActive(elName);
+            setIsScreenOpen(true);
+        }
+    }
+
     const deployUrl = (location) => {
         navigate(`/explore/?location=${location}`)
     }
 
     return (
-        <section className='searchbar-contianer'>
-
-            <section className='searchbar'>
-
+        <section className={"searchbar-contianer"+((fullHeader)?"fullHeader":"")} onScroll={fullHeader=!fullHeader}>
+            <section className="searchbar">
                 <form action="" className="searchbar-form">
 
                     <div className="searchber-form-label location">
@@ -50,26 +64,19 @@ export const Searchbar = (props) => {
                         <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
                     </div>
                     <div className="searchber-form-label">
-                        {/* <div className="labels-flex"> */}
-                        {/* &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <label htmlFor="">Check Out</label> */}
-                        {/* </div> */}
                         <label htmlFor="">Check in </label>
                         <MyDatePicker className="date" />
-                        {/* <BasicDateRangePicker/> */}
+
                     </div>
                     <div className="searchber-form-label">
                         <label htmlFor="">Check out</label>
                         <MyDatePicker className="date" />
-                        {/* <BasicDateRangePicker/> */}
                     </div>
                     <div className="searchber-form-label">
                         <label htmlFor="">How many</label>
                         <input type="number" placeholder="Guests" />
                     </div>
                     <div className="srchbtn"><img src={btn} alt="btn" /></div>
-
-
                 </form>
             </section>
         </section>
