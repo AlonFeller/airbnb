@@ -107,12 +107,12 @@ export const ExploreFilter = (props) => {
                     <label htmlFor="">Max price</label>
                     <input type="number" name="maxPrice" placeholder="Max price" onChange={onHandleChange} />
                 </div> */}
-                <div className={(kitchen) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Kitchen')}>Kitchen</div>
-                <div className={(wifi) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Wifi')}>Wifi</div>
-                <div className={(TV) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('TV')}>TV</div>
-                <div className={(AC) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('AC')}>AC</div>
-                <div className={(pet) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Pet')}>Pets Allowed</div>
-                <div className={(smoking) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Smoking')}>Smoking</div>
+                <div className={(kitchen) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Kitchen')}><span>Kitchen</span></div>
+                <div className={(wifi) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Wifi')}><span>Wifi</span></div>
+                <div className={(TV) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('TV')}><span>TV</span></div>
+                <div className={(AC) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('AC')}><span>AC</span></div>
+                <div className={(pet) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Pet')}><span>Pets Allowed</span></div>
+                <div className={(smoking) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Smoking')}><span>Smoking</span></div>
             </section>
             <h3>{stays.length + ' stays'}</h3>
 

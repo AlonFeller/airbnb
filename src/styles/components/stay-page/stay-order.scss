@@ -2,8 +2,8 @@
 
     .order-now {
         width: 300px;
-        background-color: #fff;
-        border: 1px solid rgba(44, 44, 44, 0.552);
+        background-color: var(--main-background-color);
+        border: 1px solid var( --font-dark-color);
         border-radius: 20px;
         padding: 18px;
         position: sticky;
@@ -17,7 +17,7 @@
         }
 
         .guests-btn {
-            border: 1px solid rgba(44, 44, 44, 0.552);
+            border: 1px solid var( --font-dark-color);
             border-radius: 0 0 10px 10px !important;
             display: flex;
             flex-direction: column;
@@ -38,7 +38,7 @@
                 width: 15px;
                 height: 15px;
                 padding: 8px;
-                border: 1px solid rgba(44, 44, 44, 0.552);
+                border: 1px solid var( --font-dark-color);
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
@@ -53,7 +53,7 @@
                 width: 15px;
                 height: 15px;
                 padding: 8px;
-                border: 1px solid rgba(44, 44, 44, 0.552);
+                border: 1px solid var( --font-dark-color);
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
@@ -131,7 +131,7 @@
             height: 100%;
             border: none;
             font-size: 1.4rem;
-            color: #fff;
+            color: var( --main-background-color);
         }
 
         .content {

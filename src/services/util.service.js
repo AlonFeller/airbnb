@@ -10,11 +10,11 @@ import {
     Tv, NetworkWifi, Kitchen, SmokingRooms, HotTub, Pets, SmokeFree,
     AcUnit, HeatPump, Pool, Countertops, Fireplace, Yard, OutdoorGrill, Crib, Lock,
     ScreenLockLandscape, BeachAccess, Checkroom, LocalBar, LocalParking,
-    AccessibleForward, Bed, Bathtub, Balcony, Iron, RoomService, CoffeeMaker
-    , LocalLaundryService, Speaker, SportsEsports, Accessible, Cable, Router, AccountBox,
-    FitnessCenter, FamilyRestroom, InsertInvitation, MedicalServices
-    , NotificationsActive, CreditScore, FireExtinguisher, HomeRepairService, Soap, WatchLater
-    , Air, UnfoldMore, CheckBox, Laptop, Man, RollerShades, Shower, KingBed, SingleBed, Luggage,
+    AccessibleForward, Bed, Bathtub, Balcony, Iron, RoomService, CoffeeMaker,
+    LocalLaundryService, Speaker, SportsEsports, Accessible, Cable, Router, AccountBox,
+    FitnessCenter, FamilyRestroom, InsertInvitation, MedicalServices,
+    NotificationsActive, CreditScore, FireExtinguisher, HomeRepairService, Soap, WatchLater,
+    Air, UnfoldMore, CheckBox, Laptop, Man, RollerShades, Shower, KingBed, SingleBed, Luggage,
     EventNote, Grass, AccessibilityNew, DirectionsWalk, Accessibility, DoorFront,
     WheelchairPickup, Light, Water, NotificationsNone, Bluetooth, BrunchDining
 } from '@mui/icons-material';
@@ -60,12 +60,6 @@ function delay(ms = 1500) {
         setTimeout(resolve, ms)
     })
 }
-
-// function getAmenitiesIcons(amenity) {
-//         switch (amenity) {
-//             case 'TV':
-//     return <Tv />
-// }}
 
 function getAmenitiesIcons(amenity) {
     switch (amenity) {

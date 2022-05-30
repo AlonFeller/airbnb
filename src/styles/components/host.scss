@@ -2,6 +2,7 @@
 
 
 .become-a-host{
+    box-sizing: border-box;
     height: 100vh;
     width: 100%;
    
@@ -22,7 +23,7 @@
         right: 0;
         width: 100%;
         height: 800px;
-        background-color: rgb(17, 17, 17);
+        background-color: var(--font-dark-color);
 
     }
 
@@ -42,7 +43,7 @@
 
         .host-offer{
             
-            color: aliceblue;
+            color: var( --card-background-color);
             font-size: 64px;
 
         }
