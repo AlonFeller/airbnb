@@ -2,12 +2,15 @@
 
 
 .become-a-host{
+    box-sizing: border-box;
     height: 100vh;
     width: 100%;
+   
 
     .host-logo {
 
         position: relative;
+
         top: 200px;
         left: 60px;
         width: 60px;
