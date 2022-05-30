@@ -28,7 +28,6 @@ export function BecomeAHost() {
                 <h1 className="host-offer">Open your door <br></br>
                 &nbsp; &nbsp; to hosting</h1>
             <AirBnbBtnHost  onClick={() => goTo('/')}/>
-            <AirBnbBtn/>
 
                 </div>
                </div>

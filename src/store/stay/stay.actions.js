@@ -27,7 +27,7 @@ export function getActionUpdateStay(stay) {
 
 
 export function loadStays(filterBy = null) {
-    console.log('loadstay', filterBy);
+    // console.log('loadstay', filterBy);
     return async (dispatch) => {
         try {
             const stays = await stayService.query(filterBy)
