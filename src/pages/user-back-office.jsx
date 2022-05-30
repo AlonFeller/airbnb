@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
 import { loadUser } from '../store/user/user.actions'
+import { Hosting } from '../cmps/user-back-office/hosting'
+import { Wishlist } from '../cmps/user-back-office/wishlist'
+import { MyTrips } from '../cmps/user-back-office/my-trips'
 
 export function UserBackOffice() {
 
     const params = useParams()
     const dispatch = useDispatch()
-    const { watchedUser } = useSelector(storeState => storeState.stayModule)
+    const { watchedUser } = useSelector(storeState => storeState.userModule)
 
     useEffect(() => {
         dispatch(loadUser(params.id))
@@ -16,23 +19,18 @@ export function UserBackOffice() {
 
     return (
         <>
-            <section className="user-back-office">
+            {watchedUser && <section className="user-back-office">
                 <div>
-                    <button className="my-trips">my-trips</button>
-                    <button className="wishlist">wishlist</button>
-                    <button className="hosting">hosting</button>
+                    <button className="my-trips-btn">my-trips</button>
+                    <button className="wishlist-btn">wishlist</button>
+                    <button className="hosting-btn">hosting</button>
                 </div>
 
-                <h3>nav - my trips/stays stats</h3>
+                <Hosting key="hosting" user={watchedUser} />
+                <Wishlist key="wishlist" user={watchedUser} />
+                <MyTrips key="my-trips" user={watchedUser} />
 
-                <h3>graphs and statistics</h3>
-
-                <h3>list of past rentals</h3>
-
-                <h3>add stay</h3>
-
-                <h1></h1>
-            </section>
+            </section>}
 
         </>
     )

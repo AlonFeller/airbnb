@@ -78,7 +78,6 @@ export function loadUser(userId) {
         try {
             const user = await userService.getById(userId);
             dispatch({ type: 'SET_WATCHED_USER', user })
-            console.log(user)
         } catch (err) {
             showErrorMsg('Cannot load user')
             console.log('Cannot load user', err)
