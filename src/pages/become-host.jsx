@@ -1,6 +1,7 @@
 
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/Images/logo_white.png'
+import { AirBnbBtn } from '../cmps/order/AirBnb-Btn'
 import { AirBnbBtnHost } from '../cmps/order/AirBnb-BtnHost'
 
 
@@ -27,6 +28,8 @@ export function BecomeAHost() {
                 <h1 className="host-offer">Open your door <br></br>
                 &nbsp; &nbsp; to hosting</h1>
             <AirBnbBtnHost  onClick={() => goTo('/')}/>
+            <AirBnbBtn/>
+
                 </div>
                </div>
                 </div>
