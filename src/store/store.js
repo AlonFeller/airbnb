@@ -8,6 +8,7 @@ import { stayReducer } from './stay/stay.reducer'
 import { userReducer } from './user/user.reducer.js'
 import { headerReducer } from "./header/header.reducer";
 // import { reviewReducer } from './review.reducer'
+import { orderReducer } from './order/order.reducer.js'
 // import { systemReducer } from './system.reducer'
 
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     userModule: userReducer,
     headerModule: headerReducer,
     // systemModule: systemReducer,
+    orderModule: orderReducer,
     // reviewModule: reviewReducer,
 })
 

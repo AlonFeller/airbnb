@@ -1,8 +1,12 @@
 import { storageService } from './async-storage.service'
 import { utilService } from './util.service'
 // import { userService } from './user.service'
+import { httpService } from './http.service'
+
+import axios from 'axios'
 
 const STORAGE_KEY = 'stayDB'
+const BASE_URL = 'http://localhost:3030/api/stay'
 // const stayChannel = new BroadcastChannel('stayChannel')
 
 export const stayService = {
@@ -16,13 +20,16 @@ export const stayService = {
     // removeReview
 }
 
-async function query(filterBy) {
-    let stays
-    stays = await storageService.query(STORAGE_KEY)
-    if (!stays.length) {
-        stays = require('../assets/data/stay.json')
-        storageService.postMany(STORAGE_KEY, stays)
-    }
+async function query(filterBy= null) {
+    // stays = await storageService.query(STORAGE_KEY)
+    // labels???
+    // const url = `?location=${filterBy.location}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}`
+    // const url = `?location=${filterBy.location}`
+    const url = ``
+    const res = await axios.get(BASE_URL + url)
+    let stays = res.data
+    console.log('res', res);
+    
     if (!filterBy) return stays
     if (filterBy.location) {
         const regex = new RegExp(filterBy.location, 'i')
@@ -42,21 +49,31 @@ async function query(filterBy) {
 }
 
 async function getById(stayId) {
-    return await storageService.get(STORAGE_KEY, stayId)
+    // return await storageService.get(STORAGE_KEY, stayId)
+   const stay = await httpService.get(`stay/${stayId}`, {stayId})
+   console.log('stay from get by id', stay);
+    return stay
 }
 
 async function remove (stayId) {
-    await storageService.remove(STORAGE_KEY, stayId)
+    // await storageService.remove(STORAGE_KEY, stayId)
+    await httpService.delete(`stay/${stayId}`)
+    // stayChannel.postMessage(getActionRemoveToy(stayId))
+    return stayId
+
 }
 
 async function save (stay) {
     let savedStay
     if (stay._id) {
-        savedStay = await storageService.put(STORAGE_KEY, stay)
+        // savedStay = await storageService.put(STORAGE_KEY, stay)
+        savedStay = await httpService.put(`stay/${stay._Id}`, stay)
     } else {
+        savedStay = await httpService.put(`stay`, stay)
         // stay.host = userService.getLoggedinUser()
-        savedStay = await storageService.post(STORAGE_KEY, stay)
+        // savedStay = await storageService.post(STORAGE_KEY, stay)
     }
+    savedStay = savedStay.data
 
     return savedStay
 }
