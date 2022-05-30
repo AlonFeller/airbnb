@@ -2,10 +2,10 @@
     // height: 300px;
     // width: 300px;
     width: 100%;
-    border: 1px solid rgba(200, 200, 200, 0.851);
+    border: 1px solid var(--font-lightgray-color);
     border-radius: 20px;
     border-bottom-right-radius: 0px;
-    background-color: rgb(248, 248, 248);
+    background-color: var( --card-background-color);
     z-index: 10;
 
     // border: 5px solid black;
@@ -55,7 +55,7 @@
             width: 100%;
 
             h5 {
-                color: rgb(113, 113, 113);
+                color: var(--font-gray-color);
             }
 
             p {

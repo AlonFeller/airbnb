@@ -24,14 +24,14 @@
     }
 
     .line-loader-container{
-        background-color: rgb(221, 221, 221);
+        background-color: var(--main-background-color);
         width: 115px;
         height: 5px;
         margin-inline-end: 15px;
         border-radius: 2px;
     
         .line-loader{
-            background-color: rgb(0, 0, 0);
+            background-color: var(--font-dark-color);
             height: 5px;
             border-radius: 2px;
         }
