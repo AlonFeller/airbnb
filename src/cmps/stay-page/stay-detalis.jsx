@@ -1,6 +1,7 @@
 import React from "react"
 import { StayAmenities } from './stay-amenities'
 import { OrderNow } from "./stay-order"
+import { StayMoreFeatures } from "./stay-more-features"
 
 export const StayDetails = ({ stay }) => {
 
@@ -20,7 +21,7 @@ export const StayDetails = ({ stay }) => {
                         </h4>
                     </section>
                     <section className="stay-more-features gray-box-shadow">
-                        this is not exict in the data file
+                        <StayMoreFeatures/>
                     </section>
                     <section className="stay-details-summery gray-box-shadow">
                         <h2> Stay Description</h2>
