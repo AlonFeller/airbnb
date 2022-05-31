@@ -15,28 +15,27 @@ import { toggleIsExplore } from "../../store/header/header.action";
 export const NavBar = (props) => {
     const { isExplore, isPageScroll } = props
     const user = useSelector((state => state.userModule.user))
-    const [isDark, setIsDark] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-// const color="color: var(--font-dark-color)"
+
     const goTo = (path) => {
         navigate('/')
         navigate(path)
     }
+
     useEffect(() => {
         window.addEventListener("scroll", isRender)
         return () => {
             window.removeEventListener("scroll", isRender)
         }
     }, [window.pageYOffset]);
+
     const isRender = () => {
-        console.log("isExplore", isExplore);
-        console.log("isPageScroll", isPageScroll);
+        return
+        // console.log("isExplore", isExplore);
+        // console.log("isPageScroll", isPageScroll);
     }
 
-    const getStyle = () => {
-        return isDark ? { Color: "var(--font-dark-color)" } : { Color: '#fff' }
-    }
 
     const loginCheck = () => {
         if (!user) {
@@ -54,9 +53,7 @@ export const NavBar = (props) => {
 
     return (
         <section className="header-navbar-container">
-            {/* <div className={(isPageScroll || isExplore) ? "header-navbar dark" : "header-navbar"}> */}
-            <div className= "header-navbar" style={getStyle()}>
-
+            <div className={(isPageScroll || isExplore) ? "header-navbar dark" : "header-navbar"}>
                 <div className="nav-btn explore" onClick={() => goTo('explore')}>Explore</div>
                 <div className="nav-btn host" onClick={() => loginCheck()}>Become a Host</div>
                 <NotificationsIcon />

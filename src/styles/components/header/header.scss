@@ -116,15 +116,11 @@
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
-                gap: 15px;
+                gap: 10px;
                 cursor: pointer;
 
                 .nav-btn .host {
                     width: 100px;
-                }
-
-                .dark.dark {
-                    color: var(--font-dark-color);
                 }
             }
 
@@ -295,10 +291,6 @@
     color: var(--font-dark-color);
     transition: 0.3s;
     width: 100%;
-}
-
-.AppHeader .header .header-container .header-navbar .dark {
-    color: var(--font-dark-color);
 }
 
 input,

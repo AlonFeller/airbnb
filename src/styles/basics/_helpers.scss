@@ -21,7 +21,7 @@
     font-size: rem(30px);
 }
 .dark {
-    color: var(--font-dark-color);
+    color: var(--font-dark-color)  !important;
 }
 .date{
     width: 75px;
