@@ -5,7 +5,7 @@ import nyc from '../assets/Images/NYC.jpg'
 import madrid from '../assets/Images/madrid.jpg'
 import Portugal from '../assets/Images/portugal.jpg'
 import brazil from '../assets/Images/brazil.jpg'
-
+import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../store/header/header.action";
 import { Leads } from '../cmps/home-page/leads'
 
 export function HomePage() {
@@ -15,6 +15,12 @@ export function HomePage() {
         navigate('/')
         navigate(path)
     }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        (async () => {
+            toggleIsExplore(false);
+        })();
+    }, []);
 
     return (
         <>
@@ -29,7 +35,7 @@ export function HomePage() {
                         <h3>Popular Destinations</h3>
                         <section className="destinations-cards-container flex">
                             <div className="city-card">
-                                <img src={nyc} className="square-ratio" alt="United states" onClick={() => goTo('/explore/?location=united states')}/>
+                                <img src={nyc} className="square-ratio" alt="United states" onClick={() => goTo('/explore/?location=united states')} />
                                 <h4>United states</h4>
                             </div>
                             <div className="city-card">
@@ -41,7 +47,7 @@ export function HomePage() {
                                 <h4>Portugal</h4>
                             </div>
                             <div className="city-card">
-                                <img src={brazil} className="square-ratio" alt="Brazil" onClick={() => goTo('/explore/?location=Brazil')}/>
+                                <img src={brazil} className="square-ratio" alt="Brazil" onClick={() => goTo('/explore/?location=Brazil')} />
                                 <h4>Brazil</h4>
                             </div>
                             {/* <Leads/> */}

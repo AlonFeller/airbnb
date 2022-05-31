@@ -1,18 +1,48 @@
-.stay-details-info{
+.stay-details-info {
     padding-right: 80px;
 
-    .stay-host-info {
+    .stay-details-shortly .gray-box-shadow {
+        display: flex;
+        justify-content: center;
 
+        .asset-sum-item {
+            .sum-icon-container {
+                .sum-icon {
+                    display: flex;
+                    justify-content: center;
+
+                    svg {
+                        align-self: flex-end;
+                        margin: 0;
+                        padding: 0%;
+                    }
+                }
+
+            }
+        }
+    }
+    p {
+        color: var(--font-gray-color);
+        margin: 8px 0;
+    }
+
+    .stay-host-info {
         display: flex;
         justify-content: space-between;
 
         .stay-host-img {
-            margin-top: 20px;
-            margin-right: 20px;
-            width: 45px;
-            height: 45px;
+            align-self: center;
+            width: 5em;
+            height: 5em;
             border-radius: 50%;
         }
     }
 
+    h4 {
+        display: inline;
+    }
+}
+.stay-more-features{
+    margin: 0;
+    padding: 32px 0;
 }

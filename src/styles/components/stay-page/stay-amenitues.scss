@@ -1,8 +1,11 @@
+.amenities-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .amenity-container {
+        align-items: center;
 
-.amenity-container{
-    align-items: center;
-
-    .amenity-icon{
-        margin-right: 10px;
+        .amenity-icon {
+            margin-right: 10px;
+        }
     }
 }

@@ -42,7 +42,7 @@ export function StayPage() {
                     </div>
                 </section>
                 <StayGallery key="stay-gallery" stay={selectedStay} />
-                <StayDetails key="stay-details" stay={selectedStay} />
+                <StayDetails key="stay-details" stay={selectedStay}  />
                 <StayReviews key="stay-reviews" stay={selectedStay} reviews={selectedStay.reviews.slice(0, 6)} isLongTxt={true} />
                 {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} /> : null}
                 <button className="reviews-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {selectedStay.reviews.length} reviews</button>
