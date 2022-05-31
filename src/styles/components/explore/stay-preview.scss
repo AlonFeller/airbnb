@@ -133,6 +133,10 @@
         cursor: pointer;
 
     }
+    
+    .heart-empty {
+        color: rgba(0, 0, 0, 0);
+    }
 }
 
 .img-container:hover .next-btn {
