@@ -37,10 +37,10 @@ export function loadOrder(orderId) {
     }
 }
 
-export function addOrder(selectedStay, watchedUser) {
+export function addOrder(order) {
     return async dispatch => {
         try {
-            const addedOrder = await orderService.add(selectedStay, watchedUser)
+            const addedOrder = await orderService.save(order)
             dispatch(getActionAddOrder(addedOrder))
             console.log(addedOrder)
         } catch (err) {

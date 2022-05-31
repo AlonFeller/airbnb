@@ -23,6 +23,18 @@ export const NavBar = (props) => {
         navigate(path)
     }
 
+
+    const loginCheck = () => {
+
+        if (!user) {
+            document.body.classList.toggle("login-page-open");
+            document.body.classList.toggle("login-screen-open");
+        } else {
+            
+           goTo('host')
+        }
+    }
+
     const onLogoutUser = () => {
 
         dispatch(onLogout())
@@ -34,7 +46,7 @@ export const NavBar = (props) => {
             <div className="header-navbar">
 
                 <div className="nav-btn explore" onClick={() => goTo('explore')}>Explore</div>
-                <div className="nav-btn host" onClick={() => goTo('host')}>Become a Host</div>
+                <div className="nav-btn host" onClick={() => loginCheck()}>Become a Host</div>
                 <NotificationsIcon />
                 <div className="user-navbar" onClick={displayLoginModal}>
                     <Dehaze />

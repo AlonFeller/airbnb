@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Star } from "@mui/icons-material"
+import FavoriteIcon from '@mui/icons-material/Favorite';
 // import img from '../../assets/Images/001.jpeg'
 
 
@@ -43,6 +44,7 @@ export const StayPreview = (props) => {
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                     height='270' width='270' className="img-preview" alt="" />
                 <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
+                {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
                     <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}>⪡</div>
                     <div className="next-btn" onClick={(event) => cycleImgs(event, 1)}>⪢</div>
