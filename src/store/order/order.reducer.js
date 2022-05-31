@@ -14,8 +14,7 @@ export function orderReducer(state = initialState, action) {
       newState = { ...state, order: action.order }
       break;
     case 'ADD_ORDER':
-      newState = { ...state, orders: [...state.orders, action.addedOrder] }
-      console.log(newState)
+      newState = { ...state, orders: [...state.orders, action.order] }
       break;
     case 'REMOVE_ORDER':
       newState = { ...state, orders: state.orders.filter(order => order._id !== action.orderId) }
