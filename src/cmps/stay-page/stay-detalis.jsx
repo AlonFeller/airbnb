@@ -14,7 +14,8 @@ export const StayDetails = ({ stay }) => {
                     <section className="stay-details-shortly gray-box-shadow">
                         <div className="stay-host-info">
                             <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
-                            <img className="stay-host-img" src={stay.host.pictureUrl} alt="" />
+                            <img className="stay-host-img" src={(stay.host.newPictureUrl)? stay.host.newPictureUrl :
+                                'https://thispersondoesnotexist.com/image?cache=' + Date.now() } alt="" />
                         </div>
                         <h4>{stay.capacity} guests ·
                             {stay.bedrooms} bedrooms ·
