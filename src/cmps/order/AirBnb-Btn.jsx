@@ -10,6 +10,7 @@ export const AirBnbBtn = ({ btnAction, btnInnerTxt = '' }) => {
             document.body.classList.toggle("login-page-open");
             document.body.classList.toggle("login-screen-open");
         } else {
+            
             alert('congratz! order reserved')
             // window.myBus.showSuccessMsg('congratz! order reserved')
         }

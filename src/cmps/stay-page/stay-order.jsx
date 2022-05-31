@@ -1,13 +1,27 @@
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import * as React from 'react';
 import { AirBnbBtn } from '../order/AirBnb-Btn';
 import BasicDateRangePicker from '../order/calander';
 import { Guests } from '../order/guests';
 
-export const OrderNow = (props) => {
+import { addOrder } from '../../store/order/order.actions'
 
+export const OrderNow = (props) => {
+    // const dispatch = useDispatch()
     let isGuestPopupOn = true
 
+    // useEffect(() => {
+    //     setOrder(newOrder)
+    // }, [])
+
+    // const newOrder = 'order-test'
+
+    // const setOrder = (order) => {
+    //     dispatch(addOrder(order))
+    //     console.log(order)
+    // }
 
 
     return (
@@ -17,7 +31,7 @@ export const OrderNow = (props) => {
                 <BasicDateRangePicker />
                 <Guests />
             </div>
-            <AirBnbBtn />
+            <AirBnbBtn/>
         </section>
     )
 }
