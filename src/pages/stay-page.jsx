@@ -17,6 +17,7 @@ export function StayPage() {
     const [isOpenModal, setIsOpenModal] = useState(false)
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(loadStay(params.id))
     }, [params.id])
 
