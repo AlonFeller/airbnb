@@ -1,5 +1,7 @@
 // import { httpService } from './http.service.js'
+import { now } from 'moment'
 import { storageService } from './async-storage.service'
+import { utilService } from './util.service'
 
 export const orderService = {
     query,
@@ -7,6 +9,7 @@ export const orderService = {
     save,
     update,
     remove,
+    add
     // subscribe
 
 }
@@ -38,31 +41,33 @@ function update(order) {
     return storageService.put(STORAGE_KEY, order)
 }
 
-
-// const order = {
-//     id: sdflsgflfeg,
-//     timeOrder: mongo_id.getTimestemp,
-//     checkIn: time,
-//     checkOut: time,
-//     guestsNumber: {
-//         adults: 1,
-//         childern: 1,
-//         pets: 1,
-//         total: 3
-//     },
-//     stay: {
-//         id: ksfmgadfsmg,
-//         name: skgjasdgf
-//     },
-//     guest: {
-//         id: fgmpdfsmg,
-//         name: fdkmgfmg,
-//         img: photo
-//     },
-//     hostId: {
-//         id: fipgjqepgj,
-//         name: dflmgdflg,
-//         img: photo
-//     },
-//     totalPrice: 500
-// }
+function add(selectedStay , watchedUser) {
+    const order = {
+        id: utilService.makeId(),
+        timeOrder: Date.now(),
+        checkIn: "",
+        checkOut: "",
+        guestsNumber: {
+            adults: "",
+            childern: "",
+            pets: "",
+            total: ""
+        },
+        stay: {
+            id: selectedStay._id,
+            name: selectedStay.name
+        },
+        buyer: {
+            id: watchedUser._id,
+            name: watchedUser.fullname,
+            img: watchedUser.imgUrl
+        },
+        host: {
+            id: selectedStay.host._id,
+            name: selectedStay.host.name,
+            img: selectedStay.host.pictureUrl
+        },
+        totalPrice: "500"
+    }
+    return order
+}
