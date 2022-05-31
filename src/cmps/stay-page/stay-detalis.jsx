@@ -29,7 +29,8 @@ export const StayDetails = ({ stay }) => {
                         <h2>What this place offers</h2>
                         <StayAmenities key="stay-amenities" stay={stay} amenities={stay.amenities.slice(0, 10)} />
                         {/* {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} /> : null} */}
-                        {/* <button className="reviews-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {selectedStay.reviews.length} reviews</button> */}
+                        <button className="amenities-modal-btn" onClick="">Show all {stay.amenities.length} amenities</button>
+                        {/* () => setIsOpenModal(true) */}
                     </section>
 
                 </div>

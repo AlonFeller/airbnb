@@ -11,16 +11,21 @@
             // justify-content: flex-start;
         }
     }
-
+.sum-icon-container{
+    display: flex;
+    justify-content: center;
     .sum-icon {
-        height: 48px;
-        width: 48px;
+        align-self: center;
+        height: 38px;
+        width: 38px;
         margin-right: 10px;
     }
+}
 
     p {
         color: var(--font-gray-color);
-        margin: 8px 0;
+        padding-top: 8px;
+        margin: 0;
     }
 
     .stay-host-info {
