@@ -3,8 +3,15 @@
 
     .stay-details-shortly .gray-box-shadow {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
 
+        .stay-host-img {
+            margin-top: 20px;
+            margin-right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
         .sum-icon-container {
             .sum-icon {
                 display: flex;

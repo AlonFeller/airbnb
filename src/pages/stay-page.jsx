@@ -12,7 +12,6 @@ import { Star } from "@mui/icons-material"
 
 export function StayPage() {
     const params = useParams()
-    // const navigate = useNavigate()
     const dispatch = useDispatch()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
@@ -20,13 +19,6 @@ export function StayPage() {
     useEffect(() => {
         dispatch(loadStay(params.id))
     }, [params.id])
-
-
-    // const goTo = (path) => {
-
-    //     navigate('/')
-    //     navigate(path)
-    // }
 
     return (
         <>
