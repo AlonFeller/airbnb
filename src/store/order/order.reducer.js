@@ -5,23 +5,32 @@ const initialState = {
 }
 
 export function orderReducer(state = initialState, action) {
+  var newState = state;
   switch (action.type) {
     case 'SET_ORDERS':
-      return { ...state, orders: action.orders }
+      newState = { ...state, orders: action.orders }
+      break;
     case 'SET_ORDER':
-      return { ...state, order: action.order }
+      newState = { ...state, order: action.order }
+      break;
     case 'ADD_ORDER':
-      return { ...state, orders: [...state.orders, action.order] }
+      newState = { ...state, orders: [...state.orders, action.order] }
+      break;
     case 'REMOVE_ORDER':
-      return { ...state, orders: state.orders.filter(order => order._id !== action.orderId) }
+      newState = { ...state, orders: state.orders.filter(order => order._id !== action.orderId) }
+      break;
     case 'UPDATE_ORDER':
-      return {
-        ...state,
-        orders: state.orders.map(order =>
+      newState = {
+        ...state, orders: state.orders.map(order =>
           order._id === action.order._id ? action.order : order
         )
       }
+      break;
     default:
-      return state
+
+      // For debug:
+      window.orderState = newState;
+      console.log('State:', newState);
+      return newState
   }
 }
