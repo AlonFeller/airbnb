@@ -37,30 +37,29 @@ export function loadOrder(orderId) {
     }
 }
 
-// export function addOrder(order) {
-//     return async dispatch => {
-//         try {
-//             const addedOrder = await orderService.add(order)
-//             dispatch(getActionAddReview(addedReview))
-
-//             // Change the score in user kept in sessionStorage
-//             userService.saveLocalUser(addedReview.byUser)
-//             const { score } = addedReview.byUser
-//             // const score = await userService.changeScore(SCORE_FOR_REVIEW)
-//             dispatch({ type: 'SET_SCORE', score })
-
-//         } catch (err) {
-//             console.log('OrderActions: err in addOrder', err)
-//             throw err
-//         }
-//     }
-// }
+export function addOrder(order) {
+    return async dispatch => {
+        try {
+            const addedOrder = await orderService.add(order)
+            dispatch(getActionAddOrder(addedOrder))
+        } catch (err) {
+            console.log('OrderActions: err in addOrder', err)
+            throw err
+        }
+    }
+}
 
 // const order = {
 //     id: sdflsgflfeg,
 //     timeOrder: mongo_id.getTimestemp,
 //     checkIn: time,
 //     checkOut: time,
+//     guestsNumber: {
+//         adults: 1,
+//         childern: 1,
+//         pets: 1,
+//         total: 3
+//     },
 //     stay: {
 //         id: ksfmgadfsmg,
 //         name: skgjasdgf
