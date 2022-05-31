@@ -1,13 +1,13 @@
 import React from "react"
 import { utilService } from "../../services/util.service"
 
-export const StayAmenities = ({ stay }) => {
+export const StayAmenities = ({ stay,amenities }) => {
 
 
     return (
         <ul className="amenities-list">
             {
-                stay.amenities.map((amenity, index) => {
+                amenities.map((amenity, index) => {
                     const amenityIcon = utilService.getAmenitiesIcons(amenity);
                     if (!amenityIcon) return
                     return <li className="amenity-container flex" key={amenity + index}>
