@@ -13,17 +13,19 @@ export const StayDetails = ({ stay }) => {
                 <div className="stay-details-info">
                     <section className="stay-details-shortly gray-box-shadow">
                         <div className="stay-host-info">
-                            <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
+                            <div>
+                                <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
+                                <h4>{stay.capacity} guests ·
+                                    {stay.bedrooms} bedrooms ·
+                                    {stay.beds} beds ·
+                                    {stay.bathrooms} baths
+                                </h4>
+                            </div>
                             <img className="stay-host-img" src={stay.host.pictureUrl} alt="" />
                         </div>
-                        <h4>{stay.capacity} guests ·
-                            {stay.bedrooms} bedrooms ·
-                            {stay.beds} beds ·
-                            {stay.bathrooms} baths
-                        </h4>
                     </section>
                     <section className="stay-more-features gray-box-shadow">
-                        <StayMoreFeatures/>
+                        <StayMoreFeatures />
                     </section>
                     <section className="stay-details-summery gray-box-shadow">
                         <h2> Stay Description</h2>

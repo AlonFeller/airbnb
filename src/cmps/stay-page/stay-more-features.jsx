@@ -4,14 +4,14 @@ export const StayMoreFeatures = () => {
     return (<section className="asset-sum-container">
 
         <div className="asset-sum">
-            <div className="asset-sum-item flex">
+            <div className="asset-sum-item flex space">
                 <div className="sum-icon-container">
                     <span className="sum-icon" ><FaHome /></span>
                     <h4 className="title"> Entire Home</h4>
                     <p>You'll have the apartment to yourself.</p>
                 </div>
             </div>
-            <div className="asset-sum-item flex">
+            <div className="asset-sum-item flex space">
                 <div className="sum-txt">
                     <div className="sum-icon-container">
                         <span className="sum-icon" ><FaBroom className="sum-icon" /></span>
@@ -20,14 +20,14 @@ export const StayMoreFeatures = () => {
                     </div>
                 </div>
             </div>
-            <div className="asset-sum-item flex">
+            <div className="asset-sum-item flex space">
                 <div className="sum-icon-container">
                     <span className="sum-icon" ><FaDoorClosed className="sum-icon" /></span>
                     <h4> Self check-in</h4>
                     <p>Check yourself in with the lockbox.</p>
                 </div>
             </div>
-            <div className="asset-sum-item flex">
+            <div className="asset-sum-item flex space">
                 <div className="sum-icon-container">
                     <span className="sum-icon" ><FaKey className="sum-icon" /></span>
                     <h4> Great check-in experience</h4>
