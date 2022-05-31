@@ -17,7 +17,6 @@ export const ExploreFilter = (props) => {
             const newFilter = {...filterBy}
             const urlParams = new URLSearchParams(locationFromParams.search);
             newFilter.location = urlParams.get('location') || '';
-            console.log('newfilter', newFilter);
             dispatch(setFilter(newFilter))
             dispatch(loadStays(newFilter))
     }, [])

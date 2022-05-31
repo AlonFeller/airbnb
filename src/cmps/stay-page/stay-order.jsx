@@ -5,23 +5,28 @@ import * as React from 'react';
 import { AirBnbBtn } from '../order/AirBnb-Btn';
 import BasicDateRangePicker from '../order/calander';
 import { Guests } from '../order/guests';
+import { orderService } from '../../services/order.service'
 
 import { addOrder } from '../../store/order/order.actions'
 
-export const OrderNow = (props) => {
-    // const dispatch = useDispatch()
+export const OrderNow = () => {
+    const dispatch = useDispatch()
+    const { selectedStay } = useSelector(storeState => storeState.stayModule)
+    const { user } = useSelector(storeState => storeState.userModule)
     let isGuestPopupOn = true
 
-    // useEffect(() => {
-    //     setOrder(newOrder)
-    // }, [])
 
-    // const newOrder = 'order-test'
+    const onGetOrder = (selectedStay, user) => {
+        const newOrder = orderService.add(selectedStay, user)
+        onAddOrder(newOrder)
+    }
 
-    // const setOrder = (order) => {
-    //     dispatch(addOrder(order))
-    //     console.log(order)
-    // }
+    const onAddOrder = (order) => {
+        dispatch(addOrder(order))
+        console.log(selectedStay)
+        console.log(user)
+        console.log(order)
+    }
 
 
     return (
@@ -31,8 +36,9 @@ export const OrderNow = (props) => {
                 <BasicDateRangePicker />
                 <Guests />
             </div>
-            <AirBnbBtn/>
-        </section>
+            <AirBnbBtn />
+            <button onClick={() => onGetOrder(selectedStay, user)}>add order</button>
+        </section >
     )
 }
 

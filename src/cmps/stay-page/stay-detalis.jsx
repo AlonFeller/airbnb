@@ -14,8 +14,8 @@ export const StayDetails = ({ stay }) => {
                     <section className="stay-details-shortly gray-box-shadow">
                         <div className="stay-host-info">
                             <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
-                            <img className="stay-host-img" src={(stay.host.newPictureUrl)? stay.host.newPictureUrl :
-                                'https://thispersondoesnotexist.com/image?cache=' + Date.now() } alt="" />
+                            <img className="stay-host-img" src={(stay.host.newPictureUrl) ? stay.host.newPictureUrl :
+                                'https://thispersondoesnotexist.com/image?cache=' + Date.now()} alt="" />
                         </div>
                     </section>
                     <section className="stay-more-features gray-box-shadow">
@@ -27,7 +27,9 @@ export const StayDetails = ({ stay }) => {
                     </section>
                     <section className="stay-details-amenities">
                         <h2>What this place offers</h2>
-                        <StayAmenities key="stay-amenities" stay={stay} />
+                        <StayAmenities key="stay-amenities" stay={stay} amenities={stay.amenities.slice(0, 10)} />
+                        {/* {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} /> : null} */}
+                        {/* <button className="reviews-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {selectedStay.reviews.length} reviews</button> */}
                     </section>
 
                 </div>

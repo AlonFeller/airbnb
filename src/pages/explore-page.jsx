@@ -3,9 +3,11 @@ import { HashRouter as Router, Route, Link, Switch, useNavigate, useLocation } f
 import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../store/header/header.action";
 import { ExploreFilter } from '../cmps/explore-page/filter'
 import { StayList } from '../cmps/explore-page/stay-list'
+import { useDispatch } from 'react-redux';
 
 export function ExplorePage() {
 
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const locationFromParams = useLocation()
     const [location, setLocation] = useState(null)
@@ -17,9 +19,7 @@ export function ExplorePage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        (async () => {
-            toggleIsExplore(true);
-        })();
+        dispatch(toggleIsExplore(true))  
     }, []);
 
 

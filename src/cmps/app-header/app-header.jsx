@@ -29,7 +29,7 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
-        if (window.pageYOffset > 15 ) {
+        if (window.pageYOffset > 25 ) {
             setIsPageScroll(true)
         } else {
             setIsPageScroll(false)
