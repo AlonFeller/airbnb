@@ -6,21 +6,18 @@
         justify-content: center;
 
         .asset-sum-item {
-            .sum-icon-container {
-                .sum-icon {
-                    display: flex;
-                    justify-content: center;
-
-                    svg {
-                        align-self: flex-end;
-                        margin: 0;
-                        padding: 0%;
-                    }
-                }
-
-            }
+            display: flex;
+            flex-direction: row;
+            // justify-content: flex-start;
         }
     }
+
+    .sum-icon {
+        height: 48px;
+        width: 48px;
+        margin-right: 10px;
+    }
+
     p {
         color: var(--font-gray-color);
         margin: 8px 0;
@@ -42,7 +39,15 @@
         display: inline;
     }
 }
-.stay-more-features{
+
+.stay-details-summery {
+    padding: 32px 0;
+    h2 {
+        margin:0  0 20px 0;
+    }
+}
+
+.stay-more-features {
     margin: 0;
     padding: 32px 0;
 }

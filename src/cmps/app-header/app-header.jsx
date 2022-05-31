@@ -21,7 +21,7 @@ export function AppHeader() {
     useEffect(() => {
         window.addEventListener("scroll", toggleHeader)
         // console.log((window.pageYOffset > 15));
-        // console.log("toggleIsExplore",isExplore);
+        console.log("toggleIsExplore",isExplore);
         return () => {
             window.removeEventListener("scroll", toggleHeader)
             // setIsPageScroll(false)
@@ -29,7 +29,7 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
-        if (window.pageYOffset > 15 ) {
+        if (window.pageYOffset > 25 ) {
             setIsPageScroll(true)
         } else {
             setIsPageScroll(false)

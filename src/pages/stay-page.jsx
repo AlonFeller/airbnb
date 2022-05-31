@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
+import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../store/header/header.action";
 import { stayService } from '../services/stay.service'
 import { loadStay } from '../store/stay/stay.actions'
 import { StayGallery } from '../cmps/stay-page/stay-gallery'
@@ -18,6 +19,9 @@ export function StayPage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        (async () => {
+            toggleIsExplore(true);
+        })();
         dispatch(loadStay(params.id))
     }, [params.id])
 

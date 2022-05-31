@@ -5,6 +5,8 @@ import { Dehaze } from "@mui/icons-material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDispatch, useSelector } from "react-redux";
 import { onLogout } from "../../store/user/user.actions";
+import { useEffect } from "react";
+import { toggleIsExplore } from "../../store/header/header.action";
 
 
 
