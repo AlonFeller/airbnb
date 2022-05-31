@@ -1,10 +1,10 @@
 import React from "react"
 
-export const MyTrips = ({ user }) => {
+export const MyTrips = ({ user, order }) => {
 
     return (
         <section className="my-trips">
-           {user.password}
+            
         </section>
 
     )
