@@ -14,7 +14,8 @@ export function orderReducer(state = initialState, action) {
       newState = { ...state, order: action.order }
       break;
     case 'ADD_ORDER':
-      newState = { ...state, orders: [...state.orders, action.order] }
+      newState = { ...state, orders: [...state.orders, action.addedOrder] }
+      console.log(newState)
       break;
     case 'REMOVE_ORDER':
       newState = { ...state, orders: state.orders.filter(order => order._id !== action.orderId) }
@@ -29,8 +30,8 @@ export function orderReducer(state = initialState, action) {
     default:
 
       // For debug:
-      window.orderState = newState;
-      console.log('State:', newState);
-      return newState
-  }
+      // window.orderState = newState;
+      // console.log('State:', newState);
+    }
+    return newState
 }

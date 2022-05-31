@@ -5,6 +5,7 @@ import * as React from 'react';
 import { AirBnbBtn } from '../order/AirBnb-Btn';
 import BasicDateRangePicker from '../order/calander';
 import { Guests } from '../order/guests';
+import { orderService } from '../../services/order.service'
 
 import { addOrder } from '../../store/order/order.actions'
 
@@ -15,10 +16,16 @@ export const OrderNow = () => {
     let isGuestPopupOn = true
 
 
-    const onAddOrder = (selectedStay, user) => {
-        dispatch(addOrder(selectedStay, user))
+    const onGetOrder = (selectedStay, user) => {
+        const newOrder = orderService.add(selectedStay, user)
+        onAddOrder(newOrder)
+    }
+
+    const onAddOrder = (order) => {
+        dispatch(addOrder(order))
         console.log(selectedStay)
         console.log(user)
+        console.log(order)
     }
 
 
@@ -30,7 +37,7 @@ export const OrderNow = () => {
                 <Guests />
             </div>
             <AirBnbBtn />
-            <button onClick={() => onAddOrder(selectedStay, user)}>add order</button>
+            <button onClick={() => onGetOrder(selectedStay, user)}>add order</button>
         </section >
     )
 }
