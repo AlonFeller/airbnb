@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { StayAmenities } from './stay-amenities'
 import { OrderNow } from "./stay-order"
 import { StayMoreFeatures } from "./stay-more-features"
+import { AmenitiesModal } from "./amenities-modal"
 
 export const StayDetails = ({ stay }) => {
-
+    const [isOpenModal, setIsOpenModal] = useState(false)
 
 
     return (
@@ -28,9 +29,8 @@ export const StayDetails = ({ stay }) => {
                     <section className="stay-details-amenities">
                         <h2>What this place offers</h2>
                         <StayAmenities key="stay-amenities" stay={stay} amenities={stay.amenities.slice(0, 10)} />
-                        {/* {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} /> : null} */}
-                        <button className="amenities-modal-btn" onClick="">Show all {stay.amenities.length} amenities</button>
-                        {/* () => setIsOpenModal(true) */}
+                        {isOpenModal ? <AmenitiesModal className="amenities-modal" key="amenities-modal" stay={stay} setIsOpenModal={setIsOpenModal} /> : null}
+                        <button className="amenities-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {stay.amenities.length} amenities</button>
                     </section>
 
                 </div>

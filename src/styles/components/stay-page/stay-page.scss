@@ -33,4 +33,19 @@
         background-color: var(--main-background-color);
         cursor: pointer;
     }
+    .amenities-modal-btn{
+        z-index: 5;
+        min-width: 210px;
+        max-width: 100%;
+        height: 50px;
+        border: 1px solid var(--font-dark-color);
+        color: var(--font-dark-color);
+        font-size: 1rem;
+        line-height: 1.43rem;
+        font-weight: 600;
+        border-radius: 8px;
+        margin: 20px 0;
+        background-color: var(--main-background-color);
+        cursor: pointer;
+    }
 }

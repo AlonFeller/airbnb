@@ -1,26 +1,15 @@
 import React from "react"
-import { StayReviews } from "./stay-reviews"
+import { StayAmenities } from "./stay-amenities"
 
 export const AmenitiesModal = ({ stay, setIsOpenModal }) => {
 
 
     return (
-        <section>
-            <span onClick={() => { console.log('message'); setIsOpenModal(false) }}>X</span>
-            <ul className="amenities-list">
-                {
-                    stay.amenities.map((amenity, index) => {
-                        const amenityIcon = utilService.getAmenitiesIcons(amenity);
-                        if (!amenityIcon) return
-                        return <li className="amenity-container flex" key={amenity + index}>
-                            <span className="amenity-icon">{amenityIcon}</span>
-                            {/* <span className="amenity-icon">###</span> */}
-                            <h4>{amenity}</h4>
-                        </li>
-                    })
-
-                }
-            </ul>
+        <section className="amenities-modal">
+            <div className="modal-header">
+                <span onClick={() => { console.log('message'); setIsOpenModal(false) }}>X</span>
+            </div>
+            <StayAmenities key="stay-amenities" amenities={stay.amenities} stay={stay} />
         </section>
     )
 }
