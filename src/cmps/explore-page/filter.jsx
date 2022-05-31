@@ -44,8 +44,6 @@ export const ExploreFilter = (props) => {
 
         dispatch(setFilter(filterBy))
         dispatch(loadStays(filterBy))
-        console.log(filterBy.tags);
-
     }
 
     const addTagToFilter = (tag) => {

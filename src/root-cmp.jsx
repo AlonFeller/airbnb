@@ -12,6 +12,9 @@ import { ExplorePage } from './pages/explore-page'
 import { UserBackOffice } from './pages/user-back-office.jsx'
 
 import './styles/styles.scss';
+import { NewStayHost } from './cmps/user-back-office/new-stay'
+import { MyStays } from './cmps/user-back-office/my-stays'
+import { MyOrders } from './cmps/user-back-office/my-orders'
 
 export class RootCmp extends React.Component {
 
@@ -27,7 +30,11 @@ export class RootCmp extends React.Component {
                          false : true} element={route.component} path={route.path} />)}
                         {/* <Route path="explore/:location" element={<ExplorePage />} /> */}
                         <Route path="stay/:id" element={<StayPage />} />
-                        <Route path="user-back-office/:id" element={<UserBackOffice />} />
+                        <Route path="userbackoffice" element={<UserBackOffice />}>
+                                <Route path="userbackoffice/orders" element={<MyOrders />} />
+                                <Route path="userbackoffice/stays" element={<MyStays />} />
+                                <Route path="userbackoffice/newstay" element={<NewStayHost />} />
+                        </Route>
                     </Routes>
                 </main>
                 <div className="AppFooter">
