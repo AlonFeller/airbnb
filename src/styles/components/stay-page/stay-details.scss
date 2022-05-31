@@ -1,3 +1,25 @@
-.stay-details-info{
+.stay-details-info {
     padding-right: 80px;
+
+    .stay-details-shortly .gray-box-shadow {
+        display: flex;
+        justify-content: center;
+
+        .sum-icon-container {
+            .sum-icon {
+                display: flex;
+                justify-content: center;
+
+                svg {
+                    align-self: flex-end;
+                    margin: 0;
+                    padding: 0%;
+                }
+            }
+        }
+    }
+
+    h4 {
+        display: inline;
+    }
 }
