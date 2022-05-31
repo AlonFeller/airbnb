@@ -20,7 +20,9 @@
 .fs30 {
     font-size: rem(30px);
 }
-
+.dark {
+    color: var(--font-dark-color);
+}
 .date{
     width: 75px;
     margin-left: 10px;

@@ -5,7 +5,7 @@ import { Dehaze } from "@mui/icons-material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDispatch, useSelector } from "react-redux";
 import { onLogout } from "../../store/user/user.actions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toggleIsExplore } from "../../store/header/header.action";
 
 
@@ -13,37 +13,49 @@ import { toggleIsExplore } from "../../store/header/header.action";
 
 
 export const NavBar = (props) => {
-
+    const { isExplore, isPageScroll } = props
     const user = useSelector((state => state.userModule.user))
+    const [isDark, setIsDark] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
+// const color="color: var(--font-dark-color)"
     const goTo = (path) => {
         navigate('/')
         navigate(path)
     }
+    useEffect(() => {
+        window.addEventListener("scroll", isRender)
+        return () => {
+            window.removeEventListener("scroll", isRender)
+        }
+    }, [window.pageYOffset]);
+    const isRender = () => {
+        console.log("isExplore", isExplore);
+        console.log("isPageScroll", isPageScroll);
+    }
 
+    const getStyle = () => {
+        return isDark ? { Color: "var(--font-dark-color)" } : { Color: '#fff' }
+    }
 
     const loginCheck = () => {
-
         if (!user) {
             document.body.classList.toggle("login-page-open");
             document.body.classList.toggle("login-screen-open");
         } else {
-            
-           goTo('host')
+            goTo('host')
         }
     }
 
     const onLogoutUser = () => {
-
         dispatch(onLogout())
     }
 
 
     return (
         <section className="header-navbar-container">
-            <div className="header-navbar">
+            {/* <div className={(isPageScroll || isExplore) ? "header-navbar dark" : "header-navbar"}> */}
+            <div className= "header-navbar" style={getStyle()}>
 
                 <div className="nav-btn explore" onClick={() => goTo('explore')}>Explore</div>
                 <div className="nav-btn host" onClick={() => loginCheck()}>Become a Host</div>
@@ -51,9 +63,7 @@ export const NavBar = (props) => {
                 <div className="user-navbar" onClick={displayLoginModal}>
                     <Dehaze />
                     <AccountCircleIcon />
-
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
-
                         {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
                             : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
                         {(user) ? <div className="login-opt-btn" onClick={() => goTo(`user-back-office/${user._id}`)} >BackOffice</div> : null}
