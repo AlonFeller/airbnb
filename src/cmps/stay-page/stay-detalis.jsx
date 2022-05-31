@@ -12,8 +12,10 @@ export const StayDetails = ({ stay }) => {
             <div>
                 <div className="stay-details-info">
                     <section className="stay-details-shortly gray-box-shadow">
-                        <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
-                        {/* <img src={stay.host.pictureUrl} alt="" /> */}
+                        <div className="stay-host-info">
+                            <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
+                            <img className="stay-host-img" src={stay.host.pictureUrl} alt="" />
+                        </div>
                         <h4>{stay.capacity} guests ·
                             {stay.bedrooms} bedrooms ·
                             {stay.beds} beds ·

@@ -1,3 +1,18 @@
 .stay-details-info{
     padding-right: 80px;
+
+    .stay-host-info {
+
+        display: flex;
+        justify-content: space-between;
+
+        .stay-host-img {
+            margin-top: 20px;
+            margin-right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+    }
+
 }
