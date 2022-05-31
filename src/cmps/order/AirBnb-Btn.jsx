@@ -1,17 +1,14 @@
 import { useSelector } from "react-redux"
-import {showSuccessMsg} from '../../services/event-bus.service'
+import { showSuccessMsg } from '../../services/event-bus.service'
 
-export const AirBnbBtn = ({ btnAction, btnInnerTxt = '' }) => {
-    
-    const user = useSelector(state => state.userModule.user)
+export const AirBnbBtn = ({ onGetOrder, user, selectedStay, btnAction, btnInnerTxt = '' }) => {
 
     function btnAction() {
         if (!user) {
             document.body.classList.toggle("login-page-open");
             document.body.classList.toggle("login-screen-open");
         } else {
-            
-            alert('congratz! order reserved')
+            onGetOrder(selectedStay, user)
             // window.myBus.showSuccessMsg('congratz! order reserved')
         }
     }

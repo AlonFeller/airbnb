@@ -41,7 +41,7 @@ function update(order) {
     return storageService.put(STORAGE_KEY, order)
 }
 
-function add(selectedStay , watchedUser) {
+function add(selectedStay , user) {
     const order = {
         id: utilService.makeId(),
         timeOrder: Date.now(),
@@ -58,9 +58,9 @@ function add(selectedStay , watchedUser) {
             name: selectedStay.name
         },
         buyer: {
-            id: watchedUser._id,
-            name: watchedUser.fullname,
-            img: watchedUser.imgUrl
+            id: user._id,
+            name: user.fullname,
+            img: user.imgUrl
         },
         host: {
             id: selectedStay.host._id,

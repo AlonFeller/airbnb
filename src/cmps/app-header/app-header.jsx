@@ -9,7 +9,7 @@ import logo from '../../assets/Images/logo2.png'
 import { useSelector } from 'react-redux';
 
 export function AppHeader() {
-    const {isExplore} = useSelector(state => state.headerModule.headerMode)
+    const { isExplore } = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
     const navigate = useNavigate()
     const goTo = (path) => {
@@ -20,16 +20,13 @@ export function AppHeader() {
 
     useEffect(() => {
         window.addEventListener("scroll", toggleHeader)
-        // console.log((window.pageYOffset > 15));
-        // console.log("toggleIsExplore",isExplore);
-        return () => {
+         return () => {
             window.removeEventListener("scroll", toggleHeader)
-            // setIsPageScroll(false)
         }
     }, [window.pageYOffset]);
 
     function toggleHeader() {
-        if (window.pageYOffset > 25 ) {
+        if (window.pageYOffset > 25) {
             setIsPageScroll(true)
         } else {
             setIsPageScroll(false)
@@ -39,12 +36,14 @@ export function AppHeader() {
     return (
         <>
             <div className={"header flex " + ((isPageScroll || isExplore) ? "full-header " : "")} >
-                <div className="logo-img-container">
-                    <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
-                <Searchbar isPageScroll={isPageScroll}  isExplore={isExplore}/>
-                <NavBar isPageScroll={isPageScroll} isExplore={isExplore}/>
-                <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore}/>
-                <div className="login-screen" onClick={toggleLogin}></div>
+                <section className="header-container">
+                    <div className="logo-img-container">
+                        <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
+                    <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} />
+                    <NavBar isPageScroll={isPageScroll} isExplore={isExplore} />
+                    <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} />
+                    <div className="login-screen" onClick={toggleLogin}></div>
+                </section>
             </div>
         </>
 
@@ -53,8 +52,6 @@ export function AppHeader() {
 
 function toggleHeader() {
     const lastScroll = window.pageYOffset
-    // if (lastScroll > 0) document.body.classList.toggle("header full-header")
-    // console.log(window.pageYOffset);
 }
 
 

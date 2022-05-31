@@ -23,9 +23,6 @@ export const OrderNow = () => {
 
     const onAddOrder = (order) => {
         dispatch(addOrder(order))
-        console.log(selectedStay)
-        console.log(user)
-        console.log(order)
     }
 
 
@@ -36,8 +33,8 @@ export const OrderNow = () => {
                 <BasicDateRangePicker />
                 <Guests />
             </div>
-            <AirBnbBtn />
-            <button onClick={() => onGetOrder(selectedStay, user)}>add order</button>
+            <AirBnbBtn  onGetOrder={onGetOrder} user={user} selectedStay={selectedStay}/>
+            <div className=""></div>
         </section >
     )
 }

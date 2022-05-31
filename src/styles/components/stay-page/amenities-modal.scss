@@ -1,0 +1,73 @@
+.amenities-modal {
+    // height: 300px;
+    // width: 300px;
+    width: 100%;
+    border: 1px solid var(--font-lightgray-color);
+    border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    background-color: var( --card-background-color);
+    z-index: 50;
+
+    // border: 5px solid black;
+    // .modal-header{
+
+    // }
+
+    .stay-amenities {
+        height: 500px;
+        overflow: auto;
+        border-radius: 20px;
+        padding: 2%;
+        display: grid;
+        grid-gap: 30px 50px;
+        grid-template-columns: 1.5fr 2fr;
+        grid-template-rows: 10% 20% 70%;
+
+        .stay-reviews-header {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            position: sticky;
+            top:20px;
+
+        }
+
+        .review-states {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            position: sticky;
+            top:80px;
+
+
+            .stay-scores {
+                display: flex;
+                flex-direction: column;
+                padding-left: 10px;
+            }
+        }
+
+        .amenities-list-container {
+            display: flex;
+            flex-direction: column;
+            padding: 5%;
+        }
+
+        .review-preview-container {
+            width: 100%;
+
+            h5 {
+                color: var(--font-gray-color);
+            }
+
+            p {
+                padding-right: 10%;
+            }
+        }
+    }
+
+    .modal-header span {
+        cursor: pointer;
+        margin: 10px;
+        padding: 10px;
+    }
+
+}

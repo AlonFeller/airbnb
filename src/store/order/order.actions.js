@@ -42,7 +42,6 @@ export function addOrder(order) {
         try {
             const addedOrder = await orderService.save(order)
             dispatch(getActionAddOrder(addedOrder))
-            console.log(addedOrder)
         } catch (err) {
             console.log('OrderActions: err in addOrder', err)
             throw err
