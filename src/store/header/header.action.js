@@ -12,6 +12,7 @@ export function toggleHeaderIsTop(set) {
     return (dispatch) => {
         try {
             dispatch({ type: 'TOGGLE_HEADER_ISTOP', set });
+            
         } catch {
             console.log('could not toggle ');
         }

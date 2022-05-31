@@ -19,9 +19,7 @@ export function StayPage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        (async () => {
-            toggleIsExplore(true);
-        })();
+        dispatch(toggleIsExplore(true))        
         dispatch(loadStay(params.id))
     }, [params.id])
 

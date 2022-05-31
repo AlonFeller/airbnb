@@ -7,9 +7,11 @@ import Portugal from '../assets/Images/portugal.jpg'
 import brazil from '../assets/Images/brazil.jpg'
 import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../store/header/header.action";
 import { Leads } from '../cmps/home-page/leads'
+import { useDispatch } from 'react-redux'
 
 export function HomePage() {
 
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const goTo = (path) => {
         navigate('/')
@@ -17,9 +19,7 @@ export function HomePage() {
     }
     useEffect(() => {
         window.scrollTo(0, 0);
-        (async () => {
-            toggleIsExplore(false);
-        })();
+        dispatch(toggleIsExplore(false))  
     }, []);
 
     return (
