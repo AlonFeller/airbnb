@@ -7,7 +7,7 @@ html {
         margin: 0;
         width: 100%;
         height: 100%;
-        font-family: circular;
+        font-family: circular-light;
         box-sizing: border-box;
 
         #root {
@@ -17,13 +17,13 @@ html {
             width: 100%;
             // display: grid;
             // grid-template-columns: 1fr 6fr 1fr;
-            
-            
-            
+
+
+
             .app {
                 height: 100%;
                 // grid-column: 2/-2;
-                display: grid;             
+                display: grid;
                 grid-template-rows: 150px 1fr 150px;
                 grid-template-columns: 1fr 7fr 1fr;
                 color: var(--font-dark-color);
