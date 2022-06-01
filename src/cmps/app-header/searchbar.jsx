@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
 import { MyDatePicker } from "./date-picker"
 import btn from "../../assets/Images/srchbtn.png"
-import BasicDateRangePicker from "../order/calander"
+import BasicDateRangePicker from "../order/order-calander"
 
 export const Searchbar = (props) => {
     const {isPageScroll, isExplore} = props

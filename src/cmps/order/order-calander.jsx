@@ -5,8 +5,10 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import Box from '@mui/material/Box';
 
-export default function BasicDateRangePicker() {
+export default function BasicDateRangePicker({ onGetOrderDates }) {
   const [value, setValue] = React.useState([null, null]);
+
+  
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -16,6 +18,7 @@ export default function BasicDateRangePicker() {
         value={value}
         onChange={(newValue) => {
           setValue(newValue);
+          onGetOrderDates(newValue)
         }}
         renderInput={(startProps, endProps) => (
           <React.Fragment>

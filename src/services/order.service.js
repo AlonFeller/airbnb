@@ -41,17 +41,18 @@ function update(order) {
     return storageService.put(STORAGE_KEY, order)
 }
 
-function add(selectedStay , user) {
+function add(selectedStay, user, guests, dates, nights) {
     const order = {
         id: utilService.makeId(),
         timeOrder: Date.now(),
-        checkIn: "",
-        checkOut: "",
+        checkIn: dates[0],
+        checkOut: dates[1],
+        nightsNumber: nights,
         guestsNumber: {
-            adults: "",
-            childern: "",
-            pets: "",
-            total: ""
+            adults: guests.adults,
+            childern: guests.children,
+            pets: guests.pets,
+            total: (guests.adults + guests.children + guests.pets)
         },
         stay: {
             id: selectedStay._id,
@@ -64,10 +65,10 @@ function add(selectedStay , user) {
         },
         host: {
             id: selectedStay.host._id,
-            name: selectedStay.host.name,
+            name: selectedStay.host.fullname,
             img: selectedStay.host.pictureUrl
         },
-        totalPrice: "500"
+        totalPrice: selectedStay.price * nights
     }
     return order
 }

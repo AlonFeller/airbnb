@@ -1,7 +1,7 @@
 import React from "react"
 import { utilService } from "../../services/util.service"
 
-export const StayAmenities = ({ stay,amenities }) => {
+export const StayAmenities = ({ amenities }) => {
 
 
     return (
