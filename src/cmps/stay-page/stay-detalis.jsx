@@ -30,7 +30,7 @@ export const StayDetails = ({ stay }) => {
                         <h2>What this place offers</h2>
                         <StayAmenities key="stay-amenities" stay={stay} amenities={stay.amenities.slice(0, 10)} />
                         {isOpenModal ? <AmenitiesModal className="amenities-modal" key="amenities-modal" stay={stay} setIsOpenModal={setIsOpenModal} /> : null}
-                        <button className="amenities-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {stay.amenities.length} amenities</button>
+                        <button className="amenities-modal-btn" onClick={() => {setIsOpenModal(true); document.body.classList.toggle("login-screen-open")}}>Show all {stay.amenities.length} amenities</button>
                     </section>
 
                 </div>
