@@ -1,18 +1,11 @@
 .amenities-modal {
-    position: fixed;
-    // height: 300px;
-    // width: 300px;
     width: 100%;
     border: 1px solid var(--font-lightgray-color);
     border-radius: 20px;
     border-bottom-right-radius: 0px;
     background-color: var( --card-background-color);
-    z-index: 100;
+    z-index: 1000;
 
-    // border: 5px solid black;
-    // .modal-header{
-
-    // }
 
     .stay-amenities {
         height: 500px;

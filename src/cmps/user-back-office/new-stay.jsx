@@ -83,7 +83,6 @@ export const NewStayHost = (props) => {
             amenities.push(amenitie)
         }
         setStay({ ...stay, amenities: amenities })
-        console.log(amenities);
     }
 
     const onDropmenueChange = (field, val) => {
