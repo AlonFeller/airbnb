@@ -68,7 +68,7 @@ function add(selectedStay, user, guests, dates, nights) {
             name: selectedStay.host.fullname,
             img: selectedStay.host.pictureUrl
         },
-        totalPrice: selectedStay.price * nights
+        totalPrice: selectedStay.price * nights * 1.025
     }
     return order
 }
