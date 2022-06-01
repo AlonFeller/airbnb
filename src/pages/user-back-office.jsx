@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams, Outlet } from 'react-router-dom'
+import {toggleIsExplore} from "../store/header/header.action"
 import { loadUser } from '../store/user/user.actions'
 
 export function UserBackOffice() {
@@ -10,7 +11,9 @@ export function UserBackOffice() {
     const { user } = useSelector(storeState => storeState.userModule)
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(loadUser(params.id))
+        dispatch(toggleIsExplore(true)) 
         console.log(user)
     }, [params.id])
 

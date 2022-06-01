@@ -1,17 +1,10 @@
 .reviews-modal {
-    // height: 300px;
-    // width: 300px;
     width: 100%;
     border: 1px solid var(--font-lightgray-color);
     border-radius: 20px;
     border-bottom-right-radius: 0px;
     background-color: var( --card-background-color);
-    z-index: 50;
-
-    // border: 5px solid black;
-    // .modal-header{
-
-    // }
+    z-index: 1000;
 
     .stay-reviews {
         height: 500px;

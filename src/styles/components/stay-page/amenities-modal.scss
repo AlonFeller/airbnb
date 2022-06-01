@@ -1,4 +1,5 @@
 .amenities-modal {
+    position: fixed;
     // height: 300px;
     // width: 300px;
     width: 100%;
@@ -6,7 +7,7 @@
     border-radius: 20px;
     border-bottom-right-radius: 0px;
     background-color: var( --card-background-color);
-    z-index: 50;
+    z-index: 100;
 
     // border: 5px solid black;
     // .modal-header{

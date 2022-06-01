@@ -11,16 +11,18 @@
             // justify-content: flex-start;
         }
     }
-.sum-icon-container{
-    display: flex;
-    justify-content: center;
-    .sum-icon {
-        align-self: center;
-        height: 38px;
-        width: 38px;
-        margin-right: 10px;
+
+    .sum-icon-container {
+        display: flex;
+        justify-content: center;
+
+        .sum-icon {
+            align-self: center;
+            height: 38px;
+            width: 38px;
+            margin-right: 10px;
+        }
     }
-}
 
     p {
         color: var(--font-gray-color);
@@ -47,12 +49,41 @@
 
 .stay-details-summery {
     padding: 32px 0;
+
     h2 {
-        margin:0  0 20px 0;
+        margin: 0 0 20px 0;
     }
 }
 
 .stay-more-features {
     margin: 0;
     padding: 32px 0;
+}
+
+.modal-screen {
+    position: fixed;
+    transform: translateX(100%);
+    transition: transform .0s;
+    top: 0;
+    right: 0;
+    z-index: -100;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: var(--font-gray-see-throw-color);
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+.modal-screen-open  {
+    position: fixed;
+    transform: translateX(100%);
+    transition: transform .0s;
+    top: 0;
+    right: 0;
+    z-index: -100;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: var(--font-gray-see-throw-color);
+    opacity: 100;
+    transition: opacity .8s;
 }
