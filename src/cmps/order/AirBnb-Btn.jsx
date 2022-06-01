@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { showSuccessMsg } from '../../services/event-bus.service'
 
-export const AirBnbBtn = ({ btnInnerTxt = '' }) => {
+export const AirBnbBtn = ({ btnInnerTxt = '', onGetOrder, user, selectedStay }) => {
 
 
     const getBtnDivs = () => {
@@ -13,7 +13,7 @@ export const AirBnbBtn = ({ btnInnerTxt = '' }) => {
     }
    
     return (
-        <div className="btn-container" >
+        <div className="btn-container" onClick={() => onGetOrder(selectedStay, user)} >
             {getBtnDivs()}
             <div className="content">
                 <button className="btn"><span>{btnInnerTxt}</span></button>
