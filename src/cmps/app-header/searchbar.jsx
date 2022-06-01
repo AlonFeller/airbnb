@@ -5,10 +5,10 @@ import { loadStays, setFilter } from "../../store/stay/stay.actions"
 import { MyDatePicker } from "./date-picker"
 import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/order-calander"
+import { toggleIsStay } from "../../store/header/header.action"
 
 export const Searchbar = (props) => {
     const { isPageScroll, isExplore } = props
-    // console.log("isPageScroll",isPageScroll);
     const navigate = useNavigate()
     const filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
@@ -16,8 +16,11 @@ export const Searchbar = (props) => {
     const locationFromParams = useLocation()
     const urlParams = new URLSearchParams(locationFromParams.search);
     const location = urlParams.get('location') || '';
-    const [isStay, setIsStay] = useState(false)
-  
+    const { isStay } = useSelector(state => state.headerModule.headerMode)
+
+    const toggleIsState = () => {
+        dispatch(toggleIsStay(!isStay))
+    }
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value
         dispatch(setFilter(filterBy))
@@ -25,15 +28,16 @@ export const Searchbar = (props) => {
         console.log('filter', filterBy);
         if (location != target.value) deployUrl(filterBy.location)
     }
+
     const deployUrl = (location) => {
         navigate(`/explore/?location=${location}`)
     }
     console.log(isStay);
-    //  + (isStay) ? "short-searchbar" : ""
+
     return (
-        <section className={(isStay) ? "searchbar-container short-searchbar" : "searchbar-container "}>
-            {(isStay) ? <section className={(isPageScroll) ? "searchbar-fullHeaderOn" : "searchbar"}>
-                <div className="short-searchbar"  >
+        <section className={(isStay||isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "}>
+            {(isStay ||  isPageScroll) ? <section className={(isPageScroll) ? "searchbar-fullHeaderOn" : "searchbar"}>
+                <div className="short-searchbar" onClick={toggleIsState} >
                     <h1>Start your search</h1>
                     <div className="srchbtn"><img src={btn} alt="btn" /></div>
                 </div>
