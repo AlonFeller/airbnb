@@ -19,7 +19,7 @@ export function HomePage() {
     }
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(toggleIsExplore(false))  
+        dispatch(toggleIsExplore(false))
     }, []);
 
     return (
@@ -35,19 +35,19 @@ export function HomePage() {
                         <h3>Popular Destinations</h3>
                         <section className="destinations-cards-container flex">
                             <div className="city-card">
-                                <img src={nyc} className="square-ratio" alt="United states" onClick={() => goTo('/explore/?location=united states')} />
+                                <div className="img-container"><img src={nyc} className="square-ratio" alt="United states" onClick={() => goTo('/explore/?location=united states')} /></div>
                                 <h4>United states</h4>
                             </div>
                             <div className="city-card">
-                                <img src={madrid} className="square-ratio" alt="Spain" onClick={() => goTo('/explore/?location=Spain')} />
+                                <div className="img-container"><img src={madrid} className="square-ratio" alt="Spain" onClick={() => goTo('/explore/?location=Spain')} /></div>
                                 <h4>Spain</h4>
                             </div>
                             <div className="city-card">
-                                <img src={Portugal} className="square-ratio" alt="Portugal" onClick={() => goTo('/explore/?location=Portugal')} />
+                                <div className="img-container"><img src={Portugal} className="square-ratio" alt="Portugal" onClick={() => goTo('/explore/?location=Portugal')} /></div>
                                 <h4>Portugal</h4>
                             </div>
                             <div className="city-card">
-                                <img src={brazil} className="square-ratio" alt="Brazil" onClick={() => goTo('/explore/?location=Brazil')} />
+                                <div className="img-container"><img src={brazil} className="square-ratio" alt="Brazil" onClick={() => goTo('/explore/?location=Brazil')} /></div>
                                 <h4>Brazil</h4>
                             </div>
                             {/* <Leads/> */}

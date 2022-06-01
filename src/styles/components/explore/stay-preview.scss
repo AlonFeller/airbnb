@@ -8,14 +8,13 @@
         display: grid;
         width: 100%;
         grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
         grid-auto-rows: minmax(100px, auto);
-        gap: 10px;
+        gap: 15px;
         justify-content: space-between;
 
         .stay-preview {
-            height: 370px;
-            width: 270px;
+            // height: 370px;
+            width: 100%;
             margin-bottom: 20px;
             line-height: 18px;
             border-radius: 20px;
@@ -110,6 +109,8 @@
 }
 
 .img-preview {
+    width: 100%;
+    aspect-ratio: 1/1;
     margin-top: 0;
     border-radius: 20px;
 }
@@ -118,20 +119,20 @@
     padding: 0;
     margin: 0;
     height: 270px;
+    
 
     .heart-btn {
-        z-index: 10;
-        border-radius: 50%;
+        // z-index: 10;
         width: 30px;
         height: 30px;
+        display: inline-block;
         position: relative;
-        top: -270px;
-        left: 235px;
-        display: flex;
-        color: var(--logo-color);
-        font-size: 25px;
-        justify-content: center;
+        top: -260px;
+        right:-40%;
         align-items: center;
+        font-size: 25px;
+        border-radius: 50%;
+        color: var(--logo-color);
         cursor: pointer;
 
     }

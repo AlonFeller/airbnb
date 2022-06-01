@@ -6,19 +6,19 @@ import { loadStays, setFilter } from "../../store/stay/stay.actions"
 
 export const ExploreFilter = (props) => {
 
-    
-    const locationFromParams  = useLocation()
+
+    const locationFromParams = useLocation()
     const stays = useSelector(state => state.stayModule.stays)
     let filterBy = useSelector(state => state.stayModule.filterBy)
     const dispatch = useDispatch()
     const [val, setVal] = useState([0, 2000])
 
     useEffect(() => {
-            const newFilter = {...filterBy}
-            const urlParams = new URLSearchParams(locationFromParams.search);
-            newFilter.location = urlParams.get('location') || '';
-            dispatch(setFilter(newFilter))
-            dispatch(loadStays(newFilter))
+        const newFilter = { ...filterBy }
+        const urlParams = new URLSearchParams(locationFromParams.search);
+        newFilter.location = urlParams.get('location') || '';
+        dispatch(setFilter(newFilter))
+        dispatch(loadStays(newFilter))
     }, [])
 
     const [kitchen, setKitchen] = useState(false)
@@ -27,6 +27,7 @@ export const ExploreFilter = (props) => {
     const [AC, setAC] = useState(false)
     const [pet, setPet] = useState(false)
     const [smoking, setSmoking] = useState(false)
+    const [isPriceOn, setIsPriceOn] = useState(false);
 
     const handleRangeChange = (ev, data) => {
         setVal(data)
@@ -74,6 +75,9 @@ export const ExploreFilter = (props) => {
                 setSmoking(!smoking)
                 setTag('Smoking allowed', smoking)
                 break
+            case 'isPriceOn':
+                setIsPriceOn(!isPriceOn)
+                break
             default:
         }
     }
@@ -83,20 +87,9 @@ export const ExploreFilter = (props) => {
 
     return (
         <section className='explore-filter'>
-
-            <div className="slider-container">
-                <label htmlFor="">Price range</label>
-                <Slider
-                    getAriaLabel={() => 'Temperature range'}
-                    min={0}
-                    max={2000}
-                    valueLabelDisplay="auto"
-                    value={val}
-                    onChange={handleRangeChange}
-                />
-            </div>
-            <section className="filter-btns">
-                {/* <div className="filter-form-label1">
+            <section className="filters-container">
+                <section className="filter-btns">
+                    {/* <div className="filter-form-label1">
                     <label htmlFor="">Min price </label>
                     <input type="number" name="minPrice" placeholder="Min price" onChange={onHandleChange} />
                     </div>
@@ -104,14 +97,27 @@ export const ExploreFilter = (props) => {
                     <label htmlFor="">Max price</label>
                     <input type="number" name="maxPrice" placeholder="Max price" onChange={onHandleChange} />
                 </div> */}
-                <div className={(kitchen) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Kitchen')}><span>Kitchen</span></div>
-                <div className={(wifi) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Wifi')}><span>Wifi</span></div>
-                <div className={(TV) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('TV')}><span>TV</span></div>
-                <div className={(AC) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('AC')}><span>AC</span></div>
-                <div className={(pet) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Pet')}><span>Pets Allowed</span></div>
-                <div className={(smoking) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Smoking')}><span>Smoking</span></div>
+                    <div className={(isPriceOn) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('isPriceOn')}><span>price</span></div>
+                    {(isPriceOn) ? <div className="slider-container">
+                        <label htmlFor="">Price range</label>
+                        <Slider
+                            getAriaLabel={() => 'Temperature range'}
+                            min={0}
+                            max={2000}
+                            valueLabelDisplay="auto"
+                            value={val}
+                            onChange={handleRangeChange}
+                        />
+                    </div> : null}
+                    <div className={(kitchen) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Kitchen')}><span>Kitchen</span></div>
+                    <div className={(wifi) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Wifi')}><span>Wifi</span></div>
+                    <div className={(TV) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('TV')}><span>TV</span></div>
+                    <div className={(AC) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('AC')}><span>AC</span></div>
+                    <div className={(pet) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Pet')}><span>Pets Allowed</span></div>
+                    <div className={(smoking) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Smoking')}><span>Smoking</span></div>
+                </section>
             </section>
-            <h3>{stays.length + ' stays'}</h3>
+            <h3>{stays.length + ' Results'}</h3>
 
 
         </section>
