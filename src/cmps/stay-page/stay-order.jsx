@@ -7,7 +7,7 @@ import { Guests } from '../order/order-guests'
 import { orderService } from '../../services/order.service'
 import { addOrder } from '../../store/order/order.actions'
 import { Star } from "@mui/icons-material"
-import { priceDetails } from '../order/price-details'
+import { PriceDetails } from '../order/price-details'
 
 export const OrderNow = () => {
     const dispatch = useDispatch()
@@ -16,12 +16,19 @@ export const OrderNow = () => {
     const [dates, setDates] = useState()
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
+    const [isReadyOrder, setIsReadyOrder] = useState(false)
     let isGuestPopupOn = true
 
     const onGetOrderDates = (currDates) => {
+        if (currDates.length !== 2 || !currDates[1]){
+            setIsReadyOrder(!isReadyOrder)
+            return
+        } 
         setDates(currDates)
         const nightsOrder = getTotalNights(currDates[0], currDates[1])
         setNight(nightsOrder)
+        setIsReadyOrder(!isReadyOrder)
+        console.log(isReadyOrder)
     }
 
     const onGetGuestsNumber = (currGuests) => {
@@ -29,8 +36,8 @@ export const OrderNow = () => {
     }
 
     const onGetOrder = (selectedStay, user) => {
+        if (!isReadyOrder) return
         const newOrder = orderService.add(selectedStay, user, guests, dates, nights)
-        console.log(newOrder)
         onAddOrder(newOrder)
     }
 
@@ -55,11 +62,11 @@ export const OrderNow = () => {
                 </p>
             </div>
             <div className="order-calander">
-                <BasicDateRangePicker onGetOrderDates={onGetOrderDates} />
+                <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder}/>
                 <Guests onGetGuestsNumber={onGetGuestsNumber} />
             </div>
-            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
-            <div className=""></div>
+            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay}  btnInnerTxt='Order Now'/>
+            {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights}/>}
         </section >
     )
 }

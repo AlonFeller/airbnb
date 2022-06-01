@@ -10,7 +10,7 @@ export default function BasicDateRangePicker({ onGetOrderDates }) {
   const [value, setValue] = React.useState([null, null]);
 
   useEffect(() => {
-    if (value.length !== 2 || !value[1]) return
+    // if (value.length !== 2 || !value[1]) return
     onGetOrderDates(value)
   }, [value]);
 

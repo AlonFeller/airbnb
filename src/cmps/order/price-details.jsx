@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const priceDetails = ({ selectedStay, nights }) => {
+export const PriceDetails = ({ selectedStay, nights }) => {
 
     return (
         <section className="price-details">
@@ -13,12 +13,12 @@ export const priceDetails = ({ selectedStay, nights }) => {
                 </div>
                 <div className="price-details flex">
                     <div>Service fee</div>
-                    <div>${nights * selectedStay.price * 0.025}</div>
+                    <div>${(nights * selectedStay.price * 0.025).toFixed()}</div>
                 </div>
             </div>
             <div className="total-price flex">
                 <h3> Total price:</h3>
-                <h3>${nights * selectedStay.price * 1.025}</h3>
+                <h3>${(nights * selectedStay.price * 1.025).toFixed()}</h3>
             </div>
         </section>
     )
