@@ -1,6 +1,6 @@
 
 
-export const AirBnbBtnHost = ({ btnAction, btnInnerTxt = '' }) => {
+export const AirBnbBtnHost = ({  btnInnerTxt = '' , user , loginCheck}) => {
     
 
 
@@ -12,14 +12,12 @@ export const AirBnbBtnHost = ({ btnAction, btnInnerTxt = '' }) => {
         }
         return divStr
     }
-    const onBtnAction = () => {
-        btnAction()
-    }
+   
     return (
-        <div className="btn-container" onClick={() => { onBtnAction() }}>
+        <div className="btn-container"  onClick={()=> loginCheck(user)} >
             {getBtnDivs()}
             <div className="content">
-                <button className="btn"><span>{btnInnerTxt}</span>Try Hosting</button>
+                <button className="btn" ><span>{btnInnerTxt}</span></button>
             </div>
 
         </div>

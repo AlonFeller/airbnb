@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { addStay } from "../../store/stay/stay.actions"
 import Checkbox from '@mui/material/Checkbox';
 import Switch from '@mui/material/Switch';
+import { AirBnbBtn } from "../order/AirBnb-Btn";
+import { useNavigate } from "react-router-dom";
+import { ImgUploader } from "../app-header/img-uploader";
 
 
 export const NewStayHost = (props) => {
@@ -14,8 +17,8 @@ export const NewStayHost = (props) => {
     const dispatch = useDispatch()
 
     const amenitiesForMap = ['TV', 'Wifi', 'Kitchen', 'Smoking allowed', 'Pets allowed', 'AC', 'Heating', 'Pool',
-     'Indoor fireplace', 'Dishwasher', 'Backyard', 'Free parking', 'Lockbox', 'Accessible', 'King size bed', 'Bathub',
-      'Jaccozie', 'Sauna', 'Outdoor bonefire', 'Balcony', 'Iron', 'Roon service', 'Coffe machine', 'Speakers' ]
+        'Indoor fireplace', 'Dishwasher', 'Backyard', 'Free parking', 'Lockbox', 'Accessible', 'King size bed', 'Bathub',
+        'Jaccozie', 'Sauna', 'Outdoor bonefire', 'Balcony', 'Iron', 'Roon service', 'Coffe machine', 'Speakers']
 
     const roomOptions = ['An entire place', 'Private room', 'Shared room'];
     const propertyOptions = ['Apartment', 'Villa', 'Duplex', 'Loft', 'Cabin', 'Husha', 'Home', 'Farm'];
@@ -23,6 +26,13 @@ export const NewStayHost = (props) => {
     const [inputRoom, setInputRoom] = useState('');
     const [propertyValue, setPropertyValue] = useState(propertyOptions[0]);
     const [inputProperty, setInputProperty] = useState('');
+    const navigate = useNavigate()
+
+
+    const goTo = (path) => {
+        navigate('/')
+        navigate(path)
+    }
 
 
 
@@ -49,11 +59,14 @@ export const NewStayHost = (props) => {
         }
     })
 
-    useEffect(() => {
+    const imgUrls = stay.imgUrls
+    
 
-        console.log(stay);
+    // useEffect(() => {
 
-    }, [stay])
+    //     console.log(stay);
+
+    // }, [stay])
 
     const handleChange = ({ target }) => {
         const field = target.name;
@@ -85,9 +98,23 @@ export const NewStayHost = (props) => {
         setStay({ ...stay, address: address })
     }
 
-    const onUploadImg = () => {
+    const onUploadImg = (ev) => {
 
-        alert('upload img')
+        const CLOUD_NAME = 'Get name here'
+        const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+        const file = ev.target.files[0]
+        const formData = new FormData()
+        formData.append("file", file)
+        formData.append("upload_preset", "ewa9mksh")
+        return fetch(UPLOAD_URL, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(res => {
+                addImg(res.url) 
+            })
+            .catch(err => console.error(err))
     }
 
     const addImg = (url) => {
@@ -110,19 +137,19 @@ export const NewStayHost = (props) => {
     //     })
     //         .then(res => res.json())
     //         .then(res => {
-    //             const state = this.state
+    //             const state = state
     //             const ImgUrl = res.url
     //             state.newStay.imgUrls.push(ImgUrl)
-    //             this.setState((state))
+    //             setState((state))
     //         })
     //         .catch(err => console.error(err))
     // }
 
     const onAddStay = (ev) => {
-
-        ev.preventDefault()
+        // ev.preventDefault()
 
         dispatch(addStay(stay))
+        goTo('/userbackoffice')
 
 
     }
@@ -133,7 +160,7 @@ export const NewStayHost = (props) => {
             <div >
 
 
-                <form action="" className="new-stay-form" onSubmit={onAddStay}>
+                <form action="" className="new-stay-form" onSubmit={() => onAddStay()}>
 
                     <div className="new-stay-form-inputs">
                         <TextField type="text" name="name" placeholder="Name your asset:" onChange={handleChange} />
@@ -147,19 +174,44 @@ export const NewStayHost = (props) => {
                     <div className="img-upload-grid">
 
                         <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[0]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
+                            {(stay.imgUrls[0]) ? <img src={stay.imgUrls[0]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
+                                    <label>Upload image</label>
+                                </div>
+                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
+                            </div>}
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[1]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
+                            {(stay.imgUrls[1]) ? <img src={stay.imgUrls[1]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
+                                    <label>Upload image</label>
+                                </div>
+                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
+                            </div>}
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[2]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
+                            {(stay.imgUrls[2]) ? <img src={stay.imgUrls[2]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
+                                    <label>Upload image</label>
+                                </div>
+                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
+                            </div>}
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[3]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
+                            {(stay.imgUrls[3]) ? <img src={stay.imgUrls[3]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
+                                    <label>Upload image</label>
+                                </div>
+                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
+                            </div>}
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[4]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
+                            {(stay.imgUrls[4]) ? <img src={stay.imgUrls[4]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
+                                    <label>Upload image</label>
+                                </div>
+                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
+                            </div>}
                         </div>
 
                     </div>
@@ -219,30 +271,23 @@ export const NewStayHost = (props) => {
                         <h3>Amenities</h3>
                         <section className="new-stay-input-sliders" >
 
-                            {/* <div className="checkbox-card">
-                                <label className="switch-marg" >Wifi</label>
-                                <Switch onChange={() => handleAmenityChange('wifi')}  />
-                            </div> */}
-    
                             {
-                               amenitiesForMap.map((amenitie) => {
-                                   return <div className="checkbox-card" key={amenitie}>
-                                <label className="switch-marg" >{amenitie}</label>
-                                <Switch onChange={() => handleAmenityChange(amenitie)}  />
-                             
-                            </div>
-                               }) 
+                                amenitiesForMap.map((amenitie) => {
+                                    return <div className="checkbox-card" key={amenitie}>
+                                        <Switch onChange={() => handleAmenityChange(amenitie)} />
+                                        <label className="switch-marg" >{amenitie}</label>
+
+                                    </div>
+                                })
                             }
-
-                            
-
-
 
                         </section>
                     </div>
 
+                    <div className="host-now-btn" onClick={() => onAddStay()}>
 
-
+                        <AirBnbBtn btnInnerTxt='Host now' />
+                    </div>
                 </form>
 
 

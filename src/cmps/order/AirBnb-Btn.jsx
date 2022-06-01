@@ -1,17 +1,8 @@
 import { useSelector } from "react-redux"
 import { showSuccessMsg } from '../../services/event-bus.service'
 
-export const AirBnbBtn = ({ onGetOrder, user, selectedStay, btnAction, btnInnerTxt = '' }) => {
+export const AirBnbBtn = ({ btnInnerTxt = '' }) => {
 
-    function btnAction() {
-        if (!user) {
-            document.body.classList.toggle("login-page-open");
-            document.body.classList.toggle("login-screen-open");
-        } else {
-            onGetOrder(selectedStay, user)
-            // window.myBus.showSuccessMsg('congratz! order reserved')
-        }
-    }
 
     const getBtnDivs = () => {
         let divStr = []
@@ -20,14 +11,12 @@ export const AirBnbBtn = ({ onGetOrder, user, selectedStay, btnAction, btnInnerT
         }
         return divStr
     }
-    const onBtnAction = () => {
-        btnAction()
-    }
+   
     return (
-        <div className="btn-container" onClick={() => { onBtnAction() }}>
+        <div className="btn-container" >
             {getBtnDivs()}
             <div className="content">
-                <button className="btn"><span>{btnInnerTxt}</span>Order Now</button>
+                <button className="btn"><span>{btnInnerTxt}</span></button>
             </div>
 
         </div>

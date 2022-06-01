@@ -20,15 +20,10 @@ export const OrderNow = () => {
     let isGuestPopupOn = true
 
     const onGetOrderDates = (currDates) => {
-        if (currDates.length !== 2 || !currDates[1]){
-            setIsReadyOrder(!isReadyOrder)
-            return
-        } 
         setDates(currDates)
         const nightsOrder = getTotalNights(currDates[0], currDates[1])
         setNight(nightsOrder)
-        setIsReadyOrder(!isReadyOrder)
-        console.log(isReadyOrder)
+
     }
 
     const onGetGuestsNumber = (currGuests) => {
@@ -50,22 +45,22 @@ export const OrderNow = () => {
     }
 
     return (
-        <section className="order-now">
-            <div className='order-form-header'>
+        <section className="stay-order flex">
+            <div className="order-form-header flex space-between aling-items">
                 <p>
-                    <span className='cost'>${selectedStay.price}</span> / night
+                    <span className="cost">${selectedStay.price}</span> / night
                 </p>
                 <p>
                     <span>< Star /></span>
-                    <span className='avg-checkout'> {selectedStay.reviewScores.rating / 20} · </span>
-                    <span className='reviews'>{selectedStay.numOfReviews} reviews</span>
+                    <span className="avg-checkout"> {selectedStay.reviewScores.rating / 20} · </span>
+                    <span className="reviews">{selectedStay.numOfReviews} reviews</span>
                 </p>
             </div>
             <div className="order-calander">
-                <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder}/>
+                <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
                 <Guests onGetGuestsNumber={onGetGuestsNumber} />
             </div>
-            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} />
+            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now'/>
             {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights}/>}
         </section >
     )
