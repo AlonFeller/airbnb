@@ -30,10 +30,10 @@ export class RootCmp extends React.Component {
                          false : true} element={route.component} path={route.path} />)}
                         {/* <Route path="explore/:location" element={<ExplorePage />} /> */}
                         <Route path="stay/:id" element={<StayPage />} />
-                        <Route path="userbackoffice" element={<UserBackOffice />}>
-                                <Route path="userbackoffice/orders" element={<MyOrders />} />
-                                <Route path="userbackoffice/stays" element={<MyStays />} />
-                                <Route path="userbackoffice/newstay" element={<NewStayHost />} />
+                        <Route path="userbackoffice/" element={<UserBackOffice />}>
+                                <Route path="orders" element={<MyOrders />} />
+                                <Route path="stays" element={<MyStays />} />
+                                <Route path="newstay" element={<NewStayHost />} />
                         </Route>
                     </Routes>
                 </main>

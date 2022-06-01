@@ -7,7 +7,7 @@
     top: 0;
     grid-row: 1/2;
     grid-column: 1/-1;
-    z-index: 20;
+    z-index: 200;
 
     .header {
         display: grid;
@@ -214,6 +214,8 @@
         }
 
         .user-navbar {
+            background-color: #fff;
+            color:var(--font-dark-color);
             cursor: pointer;
             border: 1px solid var(--font-dark-color);
             border-radius: 20px;

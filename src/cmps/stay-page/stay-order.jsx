@@ -60,8 +60,8 @@ export const OrderNow = () => {
                 <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
                 <Guests onGetGuestsNumber={onGetGuestsNumber} />
             </div>
-            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} />
-            {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
+            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now'/>
+            {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights}/>}
         </section >
     )
 }
