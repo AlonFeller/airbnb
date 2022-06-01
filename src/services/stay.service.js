@@ -69,7 +69,8 @@ async function save (stay) {
         // savedStay = await storageService.put(STORAGE_KEY, stay)
         savedStay = await httpService.put(`stay/${stay._Id}`, stay)
     } else {
-        savedStay = await httpService.put(`stay`, stay)
+        savedStay = await httpService.post(`stay`, stay)
+
         // stay.host = userService.getLoggedinUser()
         // savedStay = await storageService.post(STORAGE_KEY, stay)
     }

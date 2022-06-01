@@ -24,9 +24,9 @@ export function UserBackOffice() {
                     <h1>back office</h1>
                     <div className='backoffice-nav'>
 
-                        <Link to='userbackoffice/orders'>Orders</Link>
-                        <Link to='userbackoffice/stays'>My Stays</Link>
-                        <Link to='userbackoffice/newstay'>Host your Place</Link>
+                        <Link to='orders'>Orders</Link>
+                        <Link to='stays'>My Stays</Link>
+                        <Link to='newstay'>Host your Place</Link>
                     </div>
                 </div>
 

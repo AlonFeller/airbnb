@@ -2,13 +2,14 @@
     
 }
 
-.new-stay {
+.new-stay { 
+
+    min-height: 100%;
 
     .new-stay-form {
 
 
         .new-stay-form-inputs {
-
 
             display: flex;
 
@@ -20,11 +21,9 @@
             display: flex;
             justify-content: space-between;
 
-            gap: 2%;
-
+            gap: 2%
         }
-
-        
+   
     }
 }
 
@@ -83,11 +82,12 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    
 
     .checkbox-card {
         width: 200px;
         display: flex;
-        justify-content: space-between;
+
 
         .switch-marg {
             margin-top: 10px;
@@ -95,4 +95,11 @@
         }
     }
 
+}
+
+.host-now-btn {
+    height: 200px;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
 }

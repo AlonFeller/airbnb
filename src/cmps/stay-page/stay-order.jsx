@@ -46,7 +46,7 @@ export const OrderNow = () => {
                 <BasicDateRangePicker onGetOrderDates={onGetOrderDates} />
                 <Guests onGetGuestsNumber={onGetGuestsNumber} />
             </div>
-            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} />
+            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
             <div className=""></div>
         </section >
     )
