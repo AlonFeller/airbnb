@@ -1,8 +1,8 @@
 
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/Images/logo_white.png'
-import { AirBnbBtn } from '../cmps/order/AirBnb-Btn'
-import { AirBnbBtnHost } from '../cmps/order/AirBnb-BtnHost'
+import { AirBnbBtn } from '../cmps/stay-order/AirBnb-Btn'
+import { AirBnbBtnHost } from '../cmps/stay-order/AirBnb-BtnHost'
 
 
 export function BecomeAHost() {
