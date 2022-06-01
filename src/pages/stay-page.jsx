@@ -53,6 +53,7 @@ export function StayPage() {
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>
                 <div className={(setIsOpenModal)?"modal-screen-open":"modal-screen"} onClick={() => {setIsOpenModal(!setIsOpenModal); }}></div>
+                <section className="stay-modal"></section>
             </section>}
         </>
     )
