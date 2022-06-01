@@ -9,7 +9,7 @@ export const StayDetails = ({ stay }) => {
 
 
     return (
-        <section className="stay-details flex gray-box-shadow" >
+        <section className="stay-details flex gray-box-shadow">
             <div>
                 <div className="stay-details-info">
                     <section className="stay-details-shortly gray-box-shadow">
@@ -30,7 +30,7 @@ export const StayDetails = ({ stay }) => {
                         <h2>What this place offers</h2>
                         <StayAmenities key="stay-amenities" stay={stay} amenities={stay.amenities.slice(0, 10)} />
                         {isOpenModal ? <AmenitiesModal className="amenities-modal" key="amenities-modal" stay={stay} setIsOpenModal={setIsOpenModal} /> : null}
-                        <button className="amenities-modal-btn" onClick={() => setIsOpenModal(true)}>Show all {stay.amenities.length} amenities</button>
+                        <button className="amenities-modal-btn" onClick={() => {setIsOpenModal(true);}}>Show all {stay.amenities.length} amenities</button>
                     </section>
 
                 </div>
@@ -38,6 +38,7 @@ export const StayDetails = ({ stay }) => {
             <div className="stay-details-order">
                 <OrderNow />
             </div>
+            
         </section>
     )
 }
