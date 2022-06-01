@@ -56,8 +56,8 @@ function toggleHeader() {
 
 
 function toggleLogin() {
-    document.body.classList.toggle("login-page-open");
-    document.body.classList.toggle("login-screen-open");
+    document.body.classList.remove("login-page-open");
+    document.body.classList.remove("login-screen-open");
     document.body.classList.remove("login-slide-modal-open");
 
 }
