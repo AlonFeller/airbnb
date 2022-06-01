@@ -3,7 +3,8 @@ const initialState = {
         headerLayoutSmall: false,
         isTop: true,
         isActive: true,
-        isExplore: false
+        isExplore: false,
+        isStay: false
     }
 };
 
@@ -22,6 +23,9 @@ export function headerReducer(state = initialState, action) {
         case 'SET_EXPLORE_MODE':
             newState = { headerMode: { ...state.headerMode, isExplore: action.set } }
             break;
+        case 'SET_STAY_MODE':
+            newState = { headerMode: { ...state.headerMode, isStay: action.set } }
+            break
         default:
     }
     return newState;

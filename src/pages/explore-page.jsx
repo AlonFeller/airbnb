@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useLocation } from 'react-router-dom'
-import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../store/header/header.action";
+import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsStay } from "../store/header/header.action";
 import { ExploreFilter } from '../cmps/explore-page/filter'
 import { StayList } from '../cmps/explore-page/stay-list'
 import { useDispatch } from 'react-redux';
@@ -20,6 +20,8 @@ export function ExplorePage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(toggleIsExplore(true))  
+        dispatch(toggleIsStay(false))
+        // return dispatch(toggleIsExplore(false))  
     }, []);
 
 

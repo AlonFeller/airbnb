@@ -5,7 +5,7 @@ import nyc from '../assets/Images/NYC.jpg'
 import madrid from '../assets/Images/madrid.jpg'
 import Portugal from '../assets/Images/portugal.jpg'
 import brazil from '../assets/Images/brazil.jpg'
-import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../store/header/header.action";
+import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsStay } from "../store/header/header.action";
 import { Leads } from '../cmps/home-page/leads'
 import { useDispatch } from 'react-redux'
 
@@ -20,6 +20,7 @@ export function HomePage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(toggleIsExplore(false))
+        dispatch(toggleIsStay(false))
     }, []);
 
     return (

@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
@@ -7,7 +7,7 @@ import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/order-calander"
 
 export const Searchbar = (props) => {
-    const {isPageScroll, isExplore} = props
+    const { isPageScroll, isExplore } = props
     // console.log("isPageScroll",isPageScroll);
     const navigate = useNavigate()
     const filterBy = useSelector(state => state.stayModule.filterBy)
@@ -16,8 +16,8 @@ export const Searchbar = (props) => {
     const locationFromParams = useLocation()
     const urlParams = new URLSearchParams(locationFromParams.search);
     const location = urlParams.get('location') || '';
-    let fullHeader = false;
-
+    const [isStay, setIsStay] = useState(false)
+  
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value
         dispatch(setFilter(filterBy))
@@ -25,14 +25,19 @@ export const Searchbar = (props) => {
         console.log('filter', filterBy);
         if (location != target.value) deployUrl(filterBy.location)
     }
-
     const deployUrl = (location) => {
         navigate(`/explore/?location=${location}`)
     }
-
+    console.log(isStay);
+    //  + (isStay) ? "short-searchbar" : ""
     return (
-        <section className={"searchbar-container " }>
-            <section className={(isPageScroll||isExplore) ? "searchbar-fullHeaderOn" : "searchbar"}>
+        <section className={(isStay) ? "searchbar-container short-searchbar" : "searchbar-container "}>
+            {(isStay) ? <section className={(isPageScroll) ? "searchbar-fullHeaderOn" : "searchbar"}>
+                <div className="short-searchbar"  >
+                    <h1>Start your search</h1>
+                    <div className="srchbtn"><img src={btn} alt="btn" /></div>
+                </div>
+            </section> : <section className={(isPageScroll || isExplore) ? "searchbar-fullHeaderOn" : "searchbar"}>
                 <form action="" className="searchbar-form">
 
                     <div className="searchber-form-label location">
@@ -42,7 +47,6 @@ export const Searchbar = (props) => {
                     <div className="searchber-form-label">
                         <label htmlFor="">Check in </label>
                         <MyDatePicker className="date" />
-
                     </div>
                     <div className="searchber-form-label">
                         <label htmlFor="">Check out</label>
@@ -54,7 +58,7 @@ export const Searchbar = (props) => {
                     </div>
                     <div className="srchbtn"><img src={btn} alt="btn" /></div>
                 </form>
-            </section>
+            </section>}
         </section>
     )
 

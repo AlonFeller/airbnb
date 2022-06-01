@@ -51,7 +51,7 @@ async function query(filterBy= null) {
 async function getById(stayId) {
     // return await storageService.get(STORAGE_KEY, stayId)
    const stay = await httpService.get(`stay/${stayId}`, {stayId})
-   console.log('stay from get by id', stay);
+//    console.log('stay from get by id', stay);
     return stay
 }
 

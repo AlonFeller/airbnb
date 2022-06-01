@@ -47,9 +47,9 @@ export const OrderNow = () => {
     return (
         <section className="stay-order flex">
             <div className="order-form-header flex space-between aling-items">
-                <p>
-                    <span className="cost">${selectedStay.price}</span> / night
-                </p>
+                <span>
+                    <h4 className="cost">${selectedStay.price}</h4> / night
+                </span>
                 <p>
                     <span>< Star /></span>
                     <span className="avg-checkout"> {selectedStay.reviewScores.rating / 20} · </span>

@@ -56,7 +56,7 @@ export function loadStay(stayId) {
     return async (dispatch) => {
         try {
             const stay = await stayService.getById(stayId)
-            console.log('Stay from DB:', stay)
+            // console.log('Stay from DB:', stay)
             dispatch({
                 type: 'SET_STAY',
                 stay

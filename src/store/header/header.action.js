@@ -40,3 +40,14 @@ export function toggleIsExplore(set) {
     };
 }
 
+export function toggleIsStay(set) {
+    return (dispatch) => {
+        try {
+            dispatch({ type: 'SET_STAY_MODE', set });
+        } catch {
+            console.log('could not toggle ');
+        }
+    };
+}
+
+

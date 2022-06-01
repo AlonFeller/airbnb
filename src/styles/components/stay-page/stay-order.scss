@@ -1,25 +1,36 @@
 .stay-details-order {
-
-
     .stay-order {
         flex-direction: column;
         justify-content: center;
         width: 300px;
         background-color: var(--main-background-color);
-        border: 1px solid var( --font-dark-color);
+        border: 1px solid var(--font-dark-color);
         border-radius: 20px;
         padding: 18px;
         position: sticky;
         top: 200px;
 
-        .order-form-header{
+        .order-form-header {
             align-items: center;
 
-            p{
+            >* {
+                margin: 0;
+                padding: 0;
+            }
+
+            h4 {
+                display: inline-block;
+            }
+
+            p {
                 align-items: center;
                 text-align: center;
+                display: flex;
+                >*{
+                    align-self: center;
+                }
             }
-        }  
+        }
 
         .calander {
             margin: 10px;
@@ -28,7 +39,7 @@
         }
 
         .guests-btn {
-            border: 1px solid var( --font-dark-color);
+            border: 1px solid var(--font-dark-color);
             border-radius: 0 0 10px 10px !important;
             display: flex;
             flex-direction: column;
@@ -48,7 +59,7 @@
                 width: 15px;
                 height: 15px;
                 padding: 8px;
-                border: 1px solid var( --font-dark-color);
+                border: 1px solid var(--font-dark-color);
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
@@ -63,7 +74,7 @@
                 width: 15px;
                 height: 15px;
                 padding: 8px;
-                border: 1px solid var( --font-dark-color);
+                border: 1px solid var(--font-dark-color);
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
@@ -83,7 +94,7 @@
 
     .guests-modal {
         display: none;
-        
+
         .guests-modal-open & {
             display: block;
             z-index: 10;
@@ -94,7 +105,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width:90%;
+            width: 90%;
             padding: 0 5%;
 
             .set-guests {
@@ -107,7 +118,7 @@
         }
     }
 
-    
+
 
 }
 
@@ -117,6 +128,7 @@
     height: 60px;
     padding: 0 0;
     margin: 0 0;
+    margin-top: 10px;
     cursor: pointer;
     border: none;
     display: grid;
@@ -145,7 +157,7 @@
         height: 100%;
         border: none;
         font-size: 1.4rem;
-        color: var( --main-background-color);
+        color: var(--main-background-color);
     }
 
     .content {

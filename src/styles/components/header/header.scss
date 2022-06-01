@@ -102,7 +102,6 @@
                         &:hover {
                             transform: scale(1.1, 1.1);
                             background-color: var(--font-lightgray-color);
-
                             transition: 0.3s;
                         }
                     }
@@ -132,6 +131,36 @@
                     width: fit-content;
                     align-self: flex-start;
                 }
+            }
+
+            .short-searchbar {
+                display: flex;
+                justify-content: space-between;
+                width: 300px;
+                padding-right: 2px;
+                padding-left: 15px;
+                margin: 0;
+                padding-bottom: 0;
+
+                >* {
+                    align-self: center;
+                    margin: 0;
+                    padding-bottom: 0;
+                }
+
+                .srchbtn {
+                    display: flex;
+                    justify-content: center;
+
+                    >* {
+                        align-self: center;
+                    }
+                }
+
+                // &:hover {
+                //     border-radius: 20px;
+                //     background-color: var(--font-lightgray-color);
+                // }
             }
 
             .searchbar-fullHeaderOn {
@@ -215,7 +244,7 @@
 
         .user-navbar {
             background-color: #fff;
-            color:var(--font-dark-color);
+            color: var(--font-dark-color);
             cursor: pointer;
             border: 1px solid var(--font-dark-color);
             border-radius: 20px;
