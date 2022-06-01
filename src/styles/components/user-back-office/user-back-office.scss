@@ -73,3 +73,26 @@
         }
     }
 }
+
+.new-stay-input-txt-area {
+    margin-top: 25px;
+}
+
+.new-stay-input-sliders {
+    margin-top: 25px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    .checkbox-card {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+
+        .switch-marg {
+            margin-top: 10px;
+            
+        }
+    }
+
+}

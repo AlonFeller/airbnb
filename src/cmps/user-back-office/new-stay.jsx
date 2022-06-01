@@ -4,15 +4,8 @@ import Autocomplete from '@mui/material/Autocomplete';
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addStay } from "../../store/stay/stay.actions"
-
-
-
-
-
-
-
-
-
+import Checkbox from '@mui/material/Checkbox';
+import Switch from '@mui/material/Switch';
 
 
 export const NewStayHost = (props) => {
@@ -20,6 +13,9 @@ export const NewStayHost = (props) => {
     const user = useSelector((state => state.userModule.user))
     const dispatch = useDispatch()
 
+    const amenitiesForMap = ['TV', 'Wifi', 'Kitchen', 'Smoking allowed', 'Pets allowed', 'AC', 'Heating', 'Pool',
+     'Indoor fireplace', 'Dishwasher', 'Backyard', 'Free parking', 'Lockbox', 'Accessible', 'King size bed', 'Bathub',
+      'Jaccozie', 'Sauna', 'Outdoor bonefire', 'Balcony', 'Iron', 'Roon service', 'Coffe machine', 'Speakers' ]
 
     const roomOptions = ['An entire place', 'Private room', 'Shared room'];
     const propertyOptions = ['Apartment', 'Villa', 'Duplex', 'Loft', 'Cabin', 'Husha', 'Home', 'Farm'];
@@ -27,6 +23,7 @@ export const NewStayHost = (props) => {
     const [inputRoom, setInputRoom] = useState('');
     const [propertyValue, setPropertyValue] = useState(propertyOptions[0]);
     const [inputProperty, setInputProperty] = useState('');
+
 
 
 
@@ -54,10 +51,9 @@ export const NewStayHost = (props) => {
 
     useEffect(() => {
 
-        console.log(inputRoom);
-        console.log(inputProperty);
+        console.log(stay);
 
-    }, [inputRoom, inputProperty])
+    }, [stay])
 
     const handleChange = ({ target }) => {
         const field = target.name;
@@ -205,6 +201,44 @@ export const NewStayHost = (props) => {
                             sx={{ width: 240 }}
                             renderInput={(params) => <TextField {...params} label="Property type" />}
                         />
+                    </div>
+
+                    <div className="new-stay-input-txt-area">
+                        <TextField
+                            id="outlined-multiline-static"
+                            label="A few words about your place"
+                            multiline
+                            rows={5}
+                            style={{ width: '100%' }}
+                            name="summary"
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div>
+                        <h3>Amenities</h3>
+                        <section className="new-stay-input-sliders" >
+
+                            {/* <div className="checkbox-card">
+                                <label className="switch-marg" >Wifi</label>
+                                <Switch onChange={() => handleAmenityChange('wifi')}  />
+                            </div> */}
+    
+                            {
+                               amenitiesForMap.map((amenitie) => {
+                                   return <div className="checkbox-card" key={amenitie}>
+                                <label className="switch-marg" >{amenitie}</label>
+                                <Switch onChange={() => handleAmenityChange(amenitie)}  />
+                             
+                            </div>
+                               }) 
+                            }
+
+                            
+
+
+
+                        </section>
                     </div>
 
 
