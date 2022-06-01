@@ -4,15 +4,20 @@ import { Star } from "@mui/icons-material"
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useDispatch } from "react-redux";
+import { removeStay } from "../../store/stay/stay.actions";
 // import img from '../../assets/Images/001.jpeg'
 
 
 
 
-export const StayPreview = (props) => {
+
+export const MyStayPreview = (props) => {
     const [stay, setStay] = useState(props.stay)
     const [imgNum, setImgNum] = useState(0)
     const [likeHeart, setLikeHeart] = useState(false)
+
+    const dispatch = useDispatch()
 
     const cycleImgs = (ev, diff) => {
         ev.stopPropagation()
@@ -34,10 +39,10 @@ export const StayPreview = (props) => {
         navigate('/stay/' + path)
     }
 
-    const ToggleHeart = (ev) => {
-        ev.stopPropagation()
-        setLikeHeart(!likeHeart)
-    }
+   const onRemoveStay = () => {
+
+            dispatch(removeStay(stay._id))
+   }
 
 
     return (
@@ -45,10 +50,8 @@ export const StayPreview = (props) => {
             <div className="img-container">
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                     height='270' width='270' className="img-preview" alt="" />
-                <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
-                {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
-                <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon /></div>
+                    <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon /></div>
                     <div className="next-btn" onClick={(event) => cycleImgs(event, 1)}><ArrowRightIcon/></div>
                 </div>
             </div>
@@ -58,11 +61,9 @@ export const StayPreview = (props) => {
                 {!stay.reviewScores.rating && <h3><span>4.63</span> < Star /></h3>}
             </div>
             <p>{(stay.name.length > 30)? stay.name.substring(0, 30) + '...' : stay.name}</p>
-            {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}
-            {/* <p>{stay.summary.substring(0, 35) + '...'}</p> */}
 
-            {/* <h3>{'$' + stay.price}</h3><p>/night</p> */}
-            <p><strong>{'$' + stay.price}</strong>/night</p>
+            <button onClick={()=> onRemoveStay}>Remove Stay</button>
+           
             
         </section>
     )
