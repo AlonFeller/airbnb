@@ -174,64 +174,45 @@ export const NewStayHost = (props) => {
                     <div className="img-upload-grid">
 
                         <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[0]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
-                        </div>
-                        <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[1]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
-                        </div>
-                        <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[2]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
-                        </div>
-                        <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[3]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
-                        </div>
-                        <div className="img-blank" onClick={onUploadImg}>
-                            {(stay.imgUrls[4]) && <img src="stay.imgUrls[0]" alt="" className="img-upload-dispay" />}
-                        </div>
-
-                        {/* {stay.imgUrls[0] ? <img src={stay.imgUrls[0]} alt="" /> : <div>
-                            <div className="upload-img-txt flex align-center">
-                                <label>Upload image</label>
-                            </div>
-                            <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
-                        </div>}
-
-                    </div>
-                    <div className="add-small-imgs-container flex column space-between">
-                        <div className="new-stay-img square-ratio">
-                            {stay.imgUrls[1] ? <img src={stay.imgUrls[1]} alt="" /> : <div>
-                                <div className="upload-img-txt flex align-center">
+                            {(stay.imgUrls[0]) ? <img src={stay.imgUrls[0]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
                             </div>}
                         </div>
-                        <div className="new-stay-img square-ratio">
-                            {stay.imgUrls[2] ? <img src={stay.imgUrls[2]} alt="" /> : <div>
-                                <div className="upload-img-txt flex align-center">
-                                    <label >Upload image</label>
-                                </div>
-                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
-                            </div>}
-                        </div>
-                    </div>
-                    <div className="add-small-imgs-container flex column space-between">
-                        <div className="new-stay-img square-ratio">
-                            {stay.imgUrls[3] ? <img src={stay.imgUrls[3]} alt="" /> : <div>
-                                <div className="upload-img-txt flex align-center">
+                        <div className="img-blank" onClick={onUploadImg}>
+                            {(stay.imgUrls[1]) ? <img src={stay.imgUrls[1]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
                             </div>}
                         </div>
-                        <div className="new-stay-img square-ratio">
-                            {stay.imgUrls[4] ? <img src={stay.imgUrls[4]} alt="" /> : <div>
-                                <div className="upload-img-txt flex align-center">
+                        <div className="img-blank" onClick={onUploadImg}>
+                            {(stay.imgUrls[2]) ? <img src={stay.imgUrls[2]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
                             </div>}
-                        </div> */}
+                        </div>
+                        <div className="img-blank" onClick={onUploadImg}>
+                            {(stay.imgUrls[3]) ? <img src={stay.imgUrls[3]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
+                                    <label>Upload image</label>
+                                </div>
+                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
+                            </div>}
+                        </div>
+                        <div className="img-blank" onClick={onUploadImg}>
+                            {(stay.imgUrls[4]) ? <img src={stay.imgUrls[4]} alt="" className="img-upload-dispay"/> : <div>
+                                <div className="img-upload-dispay upload-img-txt">
+                                    <label>Upload image</label>
+                                </div>
+                                <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
+                            </div>}
+                        </div>
 
                     </div>
 
