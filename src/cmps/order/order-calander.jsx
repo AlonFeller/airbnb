@@ -1,16 +1,19 @@
 import * as React from 'react'
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import TextField from '@mui/material/TextField'
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import Box from '@mui/material/Box'
 
-export default function BasicDateRangePicker({ onGetOrderDates }) {
+export default function BasicDateRangePicker({ onGetOrderDates, setIsReadyOrder }) {
   const [value, setValue] = React.useState([null, null]);
 
   useEffect(() => {
-    // if (value.length !== 2 || !value[1]) return
+    if (!value[0] || !value[1]) {
+      return setIsReadyOrder(false)
+    }
+    setIsReadyOrder(true)
     onGetOrderDates(value)
   }, [value]);
 
