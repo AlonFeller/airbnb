@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams, Outlet } from 'react-router-dom'
 import { toggleIsExplore } from "../store/header/header.action"
 import { loadUser } from '../store/user/user.actions'
+import { loadStays } from "../store/stay/stay.actions"
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -14,6 +15,10 @@ export function UserBackOffice() {
     const { user } = useSelector(storeState => storeState.userModule)
     const [tab, setTab] = useState('stays');
     const navigate = useNavigate()
+
+    useEffect(() => {
+        dispatch(loadStays())
+    }, [])
 
     useEffect(() => {
         window.scrollTo(0, 0);
