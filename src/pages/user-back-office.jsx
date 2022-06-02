@@ -40,7 +40,7 @@ export function UserBackOffice() {
         <>
             <section className="user-back-office">
                 <div>
-                    <h1>back office</h1>
+                    <h1>My Area</h1>
                     <div className='backoffice-nav'>
 
                         {/* <Link to='orders'>Orders</Link>
