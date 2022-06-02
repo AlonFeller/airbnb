@@ -18,7 +18,7 @@ const STORAGE_KEY = 'orderDB'
 
 async function query() {
     // return orders = await httpService.get(`order`)
-    return storageService.query('order')
+    return storageService.query(STORAGE_KEY)
 }
 
 async function getById(orderId) {
