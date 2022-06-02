@@ -12,7 +12,7 @@ import { removeStay } from "../../store/stay/stay.actions";
 
 
 
-export const MyStayPreview = (props) => {
+export const TripPreview = (props) => {
     const [stay, setStay] = useState(props.stay)
     const [imgNum, setImgNum] = useState(0)
     const [likeHeart, setLikeHeart] = useState(false)
@@ -62,7 +62,8 @@ export const MyStayPreview = (props) => {
             </div>
             <p>{(stay.name.length > 30)? stay.name.substring(0, 30) + '...' : stay.name}</p>
 
-            <button className="backoffice-preview-btn" onClick={()=> onRemoveStay}>Remove Stay</button>
+            <button className="backoffice-preview-btn" >Add review</button>
+            <button className="backoffice-preview-btn" >Book again</button>
            
             
         </section>

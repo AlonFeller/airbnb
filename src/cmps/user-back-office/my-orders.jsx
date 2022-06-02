@@ -58,7 +58,7 @@ export const MyOrders = (props) => {
                                         {row.name}
                                     </TableCell>
                                     <TableCell align="left">{row.stay}</TableCell>
-                                    <TableCell align="center">{row.guests}</TableCell>
+                                    <TableCell align="Left">{row.guests}</TableCell>
                                     <TableCell align="left">{row.from.substring(0, 10)}</TableCell>
                                     <TableCell align="left">{row.till.substring(0, 10)}</TableCell>
                                     <TableCell align="left">${row.total}</TableCell>

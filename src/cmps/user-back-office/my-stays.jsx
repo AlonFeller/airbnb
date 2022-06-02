@@ -38,10 +38,10 @@ export const MyStays = (props) => {
         <section className="my-stays">
             <h1>my stays</h1>
 
-            <div className='list-container-back'>
+            <div className='backoffice-list-container'>
                 
 
-            <div className="stay-list">
+            <div className="backoffice-stay-list">
 
                 {myCurrStays.map(stay => {
                     return <MyStayPreview key={stay._id} stay={stay} />

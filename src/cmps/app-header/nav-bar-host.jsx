@@ -56,8 +56,11 @@ export const NavBar = (props) => {
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
                         {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
                             : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
-                        {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice`)} >BackOffice</div> : null}
-                        <div className="login-opt-btn" >Host</div>
+
+                        {(user) ? <div className="login-opt-btn"  >Notifications</div> : null}
+                        {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/orders`)} >BackOffice</div> : null}
+                        {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
+                        <div className="login-opt-btn" onClick={() => goTo('host')} >Host</div>
                         <div className="login-opt-btn" >About</div>
                     </div>
                 </div>
