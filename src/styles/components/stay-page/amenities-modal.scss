@@ -2,7 +2,7 @@
     position: absolute;
     width: 100vh;
     max-height: 85vh;
-    top: 50%;
+    top: 75%;
     right: 50%;
     transform: translate(50%, 50%);
     
@@ -41,12 +41,20 @@
                 padding-left: 10px;
             }
         }
-
-        .amenities-list-container {
+        
+        .amenities-modal-container {
             display: flex;
             flex-direction: column;
+            height: 90%;
+            width: 95%;
             padding: 5%;
             padding-top: 0;
+            overflow: auto;
+
+            // .amenities-list {
+            //     padding-left: 15px;
+            //     padding-right: 15px;
+            // }
         }
 
         .review-preview-container {
@@ -75,8 +83,9 @@
         .amenities-list-container {
             height: 90%;
             width: 95%;
-            overflow: auto;
+            // overflow: auto;
             .amenities-list {
+                overflow: auto;
                 padding-left: 15px;
                 padding-right: 15px;
             }
