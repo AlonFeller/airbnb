@@ -49,34 +49,6 @@ export function addOrder(order) {
     }
 }
 
-// const order = {
-//     id: sdflsgflfeg,
-//     timeOrder: mongo_id.getTimestemp,
-//     checkIn: time,
-//     checkOut: time,
-//     guestsNumber: {
-//         adults: 1,
-//         childern: 1,
-//         pets: 1,
-//         total: 3
-//     },
-//     stay: {
-//         id: ksfmgadfsmg,
-//         name: skgjasdgf
-//     },
-//     guest: {
-//         id: fgmpdfsmg,
-//         name: fdkmgfmg,
-//         img: photo
-//     },
-//     hostId: {
-//         id: fipgjqepgj,
-//         name: dflmgdflg,
-//         img: photo
-//     },
-//     totalPrice: 500
-// }
-
 export function removeOrder(orderId) {
     return async dispatch => {
         try {

@@ -16,7 +16,6 @@ export function StayPage() {
     const dispatch = useDispatch()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
-    // const [isStay, setIsStay] = useState(true)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -47,17 +46,18 @@ export function StayPage() {
                     </div>
                 </section>
                 <StayGallery key="stay-gallery" stay={selectedStay} />
-                <StayDetails key="stay-details" stay={selectedStay} />
+                <StayDetails key="stay-details" stay={selectedStay} setIsOpenModal={setIsOpenModal}  isOpenModal={isOpenModal}/>
                 <StayReviews key="stay-reviews" stay={selectedStay} reviews={selectedStay.reviews.slice(0, 6)} isLongTxt={true} />
-                {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} /> : null}
+                 <div className={isOpenModal ?"screen screen-open":"screen "} onClick={() => { setIsOpenModal(!isOpenModal);}}></div> 
+                {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal}  isOpenModal={isOpenModal}/> : null}
                 <button className="reviews-modal-btn" onClick={() => { setIsOpenModal(true); }}>Show all {selectedStay.reviews.length} reviews</button>
                 <section className="stay-map">
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>
-                <div className={(setIsOpenModal) ? "modal-screen-open" : "modal-screen"} onClick={() => { setIsOpenModal(!setIsOpenModal); }}></div>
                 <section className="stay-modal">
                 </section>
             </section>}
         </>
     )
 }
+

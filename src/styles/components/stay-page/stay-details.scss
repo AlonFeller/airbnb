@@ -76,14 +76,11 @@
 
 .modal-screen-open  {
     position: fixed;
-    transform: translateX(100%);
-    transition: transform .0s;
     top: 0;
     right: 0;
-    z-index: -100;
+    z-index: 5;
     min-height: 100%;
     min-width: 100%;
     background-color: var(--font-gray-see-throw-color);
-    opacity: 100;
-    transition: opacity .8s;
+    transition:  0.8s;
 }

@@ -4,9 +4,8 @@ import { OrderNow } from "./stay-order"
 import { StayMoreFeatures } from "./stay-more-features"
 import { AmenitiesModal } from "./amenities-modal"
 
-export const StayDetails = ({ stay }) => {
-    const [isOpenModal, setIsOpenModal] = useState(false)
-
+export const StayDetails = ({ stay,setIsOpenModal,isOpenModal }) => {
+    const [isOpenAmenitiesModal, setIsOpenAmenitiesModal] = useState(false)   
 
     return (
         <section className="stay-details flex gray-box-shadow">
@@ -28,9 +27,10 @@ export const StayDetails = ({ stay }) => {
                     </section>
                     <section className="stay-details-amenities">
                         <h2>What this place offers</h2>
-                        <StayAmenities key="stay-amenities" stay={stay} amenities={stay.amenities.slice(0, 10)} />
-                        {isOpenModal ? <AmenitiesModal className="amenities-modal" key="amenities-modal" stay={stay} setIsOpenModal={setIsOpenModal} /> : null}
-                        <button className="amenities-modal-btn" onClick={() => { setIsOpenModal(true); }}>Show all {stay.amenities.length} amenities</button>
+                        <StayAmenities key="stay-amenities" stay={stay} isOpenAmenitiesModal={isOpenAmenitiesModal} setIsOpenAmenitiesModal={setIsOpenAmenitiesModal} amenities={stay.amenities.slice(0, 10)} />
+                        <div className={isOpenAmenitiesModal ?"amenities-screen screen-open":"amenities-screen "} onClick={() => { setIsOpenAmenitiesModal(!isOpenAmenitiesModal);}}></div> 
+                        { isOpenAmenitiesModal ? <AmenitiesModal className="amenities-modal" key="reviews-modal" stay={stay} setIsOpenAmenitiesModal={setIsOpenAmenitiesModal}  isOpenAmenitiesModal={isOpenAmenitiesModal}/> : null}
+                        <button className="amenities-modal-btn" onClick={() => { setIsOpenAmenitiesModal(true); }}>Show all {stay.amenities.length} amenities</button>
                     </section>
 
                 </div>
