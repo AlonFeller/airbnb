@@ -62,7 +62,7 @@ export const MyStayPreview = (props) => {
             </div>
             <p>{(stay.name.length > 30)? stay.name.substring(0, 30) + '...' : stay.name}</p>
 
-            <button onClick={()=> onRemoveStay}>Remove Stay</button>
+            <button className="backoffice-preview-btn" onClick={()=> onRemoveStay}>Remove Stay</button>
            
             
         </section>

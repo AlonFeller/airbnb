@@ -1,16 +1,15 @@
 .amenities-modal {
     position: absolute;
     width: 100vh;
-    max-height: 700px;
-    top: 80%;
+    max-height: 85vh;
+    top: 50%;
     right: 50%;
     transform: translate(50%, 50%);
-    overflow: auto;
+    
     border: 1px solid var(--font-lightgray-color);
     border-radius: 20px;
     background-color: var(--card-background-color);
     z-index: 1000;
-
 
 
     .stay-amenities {
@@ -73,6 +72,15 @@
             cursor: pointer;
         }
 
+        .amenities-list-container {
+            height: 90%;
+            width: 95%;
+            overflow: auto;
+            .amenities-list {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
     }
 }
 

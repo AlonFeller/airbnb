@@ -20,7 +20,7 @@ export const MyOrders = (props) => {
     const user = useSelector((state => state.userModule.user))
     const hostOrders = orders.filter(order => order.host.id === user._id)
 
-    // console.log('host orders', hostOrders);
+    console.log('host orders', orders);
 
     function createData(name, stay, guests, from, till, total) {
         return { name, stay, guests, from, till, total };

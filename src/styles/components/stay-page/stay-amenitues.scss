@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     .amenity-container {
+        height: 60px;
+        width: inherit;
         align-items: center;
 
         .amenity-icon {
