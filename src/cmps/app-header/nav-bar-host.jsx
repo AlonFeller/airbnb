@@ -49,7 +49,7 @@ export const NavBar = (props) => {
             <div className={(isPageScroll || isExplore) ? "header-navbar dark" : "header-navbar"}>
                 <div className="nav-btn explore" onClick={() => goTo('explore')}>Explore</div>
                 <div className="nav-btn host" onClick={() => goTo('host')}>Become a Host</div>
-                <NotificationsIcon />
+                {/* <NotificationsIcon /> */}
                 <div className="user-navbar" onClick={displayLoginModal}>
                     <Dehaze />
                     <AccountCircleIcon />

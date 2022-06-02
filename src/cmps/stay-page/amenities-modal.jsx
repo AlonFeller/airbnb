@@ -12,7 +12,7 @@ export const AmenitiesModal = ({ stay, isOpenAmenitiesModal,setIsOpenAmenitiesMo
     return (
         <section className="amenities-modal">
             <div className="modal-header">
-                <span onClick={() => { setIsOpenAmenitiesModal(false) }}>X</span>
+                <span onClick={() => { setIsOpenAmenitiesModal(false) }}>⨯</span>
             </div>
             <section className="amenities-modal-container">
             <StayAmenities key="stay-amenities" amenities={stay.amenities} isOpenAmenitiesModal={isOpenAmenitiesModal} stay={stay} />

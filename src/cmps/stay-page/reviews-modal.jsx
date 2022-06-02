@@ -12,7 +12,7 @@ export const ReviewsModal = ({ stay, setIsOpenModal,isOpenModal }) => {
     return (
         <section className="reviews-modal">
             <div className="modal-header">
-                <span onClick={() => { setIsOpenModal(false) }}>X</span>
+                <span onClick={() => { setIsOpenModal(false) }}>⨯</span>
             </div>
             <StayReviews key="stay-reviews" reviews={stay.reviews} stay={stay} />
         </section>

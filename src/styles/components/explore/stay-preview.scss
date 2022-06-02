@@ -94,6 +94,7 @@
         color: var(--font-dark-color);
         right: 20px;
         cursor: pointer;
+        transition: 0.5s;
     }
 
     .back-btn {
@@ -111,6 +112,7 @@
         justify-content: center;
         color: var(--font-dark-color);
         cursor: pointer;
+        transition: 0.5s;
     }
 }
 
