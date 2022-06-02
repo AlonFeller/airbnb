@@ -18,9 +18,11 @@ export const MyTrips = (props) => {
     const stays = useSelector(state => state.stayModule.stays)
     const trips = orders.filter(order => order.buyer.id === user._id)
 
-    const myTripsStays = trips.map( trip => {
-       return  stays.filter( stay => stay._id === trip.stay.id)
-    } )
+    console.log('my trips', trips);
+
+    // const myTripsStays = trips.map( trip => {
+    //    return  stays.filter( stay => stay._id === trip.stay.id)
+    // } )
 
     return (
         <section className="wishlist">
@@ -28,11 +30,11 @@ export const MyTrips = (props) => {
 
             <div className="backoffice-stay-list">
 
-                {
+                {/* {
                     myTripsStays.map(stay => {
                         return <TripPreview stay={stay} /> 
                     })
-                }
+                } */}
 
 
             </div>
