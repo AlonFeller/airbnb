@@ -61,9 +61,11 @@ export const TripPreview = (props) => {
                 {!stay.reviewScores.rating && <h3><span>4.63</span> < Star /></h3>}
             </div>
             <p>{(stay.name.length > 30)? stay.name.substring(0, 30) + '...' : stay.name}</p>
+            <div className="backoffice-btn-flex">
 
             <button className="backoffice-preview-btn" >Add review</button>
             <button className="backoffice-preview-btn" >Book again</button>
+            </div>
            
             
         </section>

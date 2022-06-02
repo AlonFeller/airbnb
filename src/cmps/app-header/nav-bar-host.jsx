@@ -58,7 +58,7 @@ export const NavBar = (props) => {
                             : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
 
                         {(user) ? <div className="login-opt-btn"  >Notifications</div> : null}
-                        {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/orders`)} >My Area</div> : null}
+                        {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/stays`)} >My Area</div> : null}
                         {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
                         <div className="login-opt-btn" onClick={() => goTo('host')} >Host</div>
                         <div className="login-opt-btn" >About</div>
