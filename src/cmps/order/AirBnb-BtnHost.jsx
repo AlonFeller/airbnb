@@ -3,8 +3,6 @@
 export const AirBnbBtnHost = ({  btnInnerTxt = '' , user , loginCheck}) => {
     
 
-
-
     const getBtnDivs = () => {
         let divStr = []
         for (let i = 0; i < 100; i++) {
