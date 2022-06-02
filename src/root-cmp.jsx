@@ -15,6 +15,7 @@ import './styles/styles.scss';
 import { NewStayHost } from './cmps/user-back-office/new-stay'
 import { MyStays } from './cmps/user-back-office/my-stays'
 import { MyOrders } from './cmps/user-back-office/my-orders'
+import { MyTrips } from './cmps/user-back-office/my-trips'
 
 export class RootCmp extends React.Component {
 
@@ -34,6 +35,7 @@ export class RootCmp extends React.Component {
                                 <Route path="orders" element={<MyOrders />} />
                                 <Route path="stays" element={<MyStays />} />
                                 <Route path="newstay" element={<NewStayHost />} />
+                                <Route path="myTrips" element={<MyTrips />} />
                         </Route>
                     </Routes>
                 </main>
