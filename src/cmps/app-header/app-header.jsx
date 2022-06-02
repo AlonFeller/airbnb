@@ -36,7 +36,7 @@ export function AppHeader() {
     return (
         <>
             <div className={"header flex " + ((isPageScroll || isExplore) ? "full-header " : "")} >
-                <section className="header-container">
+                <section className={"header-container "+(isStay?"isStay":"")}>
                     <div className="logo-img-container">
                         <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
                     <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} />
