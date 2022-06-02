@@ -42,6 +42,21 @@ export function onLogin(credentials) {
     }
 }
 
+export function updateUser(newUser) {
+    return async (dispatch) => {
+        try {
+            const user = await userService.update(newUser)
+            dispatch({
+                type: 'UPDATE_USER',
+                user
+            })
+        } catch (err) {
+            showErrorMsg('Cannot update')
+            console.log('Cannot update', err)
+        }
+
+    }
+}
 export function onSignup(credentials) {
     return async (dispatch) => {
         try {

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { loadOrders } from "../../store/order/order.actions"
 import { loadStays, loadStay } from "../../store/stay/stay.actions"
 import { TripPreview } from "./my-trip-preview"
+import { WishPreview } from "./wish-preview"
 
 export const MyTrips = (props) => {
 
@@ -23,7 +24,8 @@ export const MyTrips = (props) => {
     const myTripsStays = trips.map(trip => {
         return stays.filter(stay => stay._id === trip.stay.id)
     })
-    console.log('my trips stays', myTripsStays);
+    
+
 
     return (
         <section className="backoffice-list-container">
@@ -31,17 +33,21 @@ export const MyTrips = (props) => {
 
             <div className="backoffice-stay-list">
 
-                {/* {
-                    myTripsStays.map(stay => {
-                        return <h1 key={stay._id}>{stay[0]._id}1</h1> 
-                    })
-                } */}
                 {
                     myTripsStays.map(stay => {
                         return <TripPreview key={stay[0]._id} stay={stay[0]} /> 
                     })
                 }
+                
+            </div>
 
+            <div className="backoffice-stay-list">
+
+                {
+                    user.favorites.map(stay => {
+                        return <WishPreview key={stay._id} stay={stay} /> 
+                    })
+                }
 
             </div>
         </section>

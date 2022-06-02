@@ -5,27 +5,21 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch, useSelector } from "react-redux";
+import { removeStay } from "../../store/stay/stay.actions";
 import { updateUser } from "../../store/user/user.actions";
 // import img from '../../assets/Images/001.jpeg'
 
 
 
 
-export const StayPreview = (props) => {
+
+export const WishPreview = (props) => {
     const [stay, setStay] = useState(props.stay)
     const [imgNum, setImgNum] = useState(0)
-    const user = useSelector((state => state.userModule.user))
     const [likeHeart, setLikeHeart] = useState(false)
-    
-    const dispatch = useDispatch()
+    const user = useSelector((state => state.userModule.user))
 
-    useEffect(() => {
-        if (user) {
-            if (user.favorites.map(fav => fav._id).includes(stay._id)) {
-                setLikeHeart(true)
-            }
-        }
-    }, [user])
+    const dispatch = useDispatch()
 
     const cycleImgs = (ev, diff) => {
         ev.stopPropagation()
@@ -47,24 +41,15 @@ export const StayPreview = (props) => {
         navigate('/stay/' + path)
     }
 
-    const ToggleHeart = (ev) => {
+    const onRemoveStay = () => {
+
+        dispatch(removeStay(stay._id))
+    }
+
+    const removeFavorite = (ev) => {
         ev.stopPropagation()
-        if (!user) {
-            document.body.classList.toggle("login-page-open");
-            document.body.classList.toggle("login-screen-open");
-        } else {
-            setLikeHeart(!likeHeart)
-            if (!user.favorites) {
-                user.favorites = []
-            }
-            if (user.favorites.map(fav => fav._id).includes(stay._id)) {
-                user.favorites = user.favorites.filter(fav => fav._id !== stay._id)
-            } else {
-                user.favorites.push(stay)  
-            }
-            
-            dispatch(updateUser(user))
-        }
+        user.favorites = user.favorites.filter(fav => fav._id !== stay._id)
+        dispatch(updateUser(user))
 
     }
 
@@ -74,8 +59,6 @@ export const StayPreview = (props) => {
             <div className="img-container">
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                     height='270' width='270' className="img-preview" alt="" />
-                <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
-                {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
                     <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon /></div>
                     <div className="next-btn" onClick={(event) => cycleImgs(event, 1)}><ArrowRightIcon /></div>
@@ -87,11 +70,12 @@ export const StayPreview = (props) => {
                 {!stay.reviewScores.rating && <h3><span>4.63</span> < Star /></h3>}
             </div>
             <p>{(stay.name.length > 30) ? stay.name.substring(0, 30) + '...' : stay.name}</p>
-            {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}
-            {/* <p>{stay.summary.substring(0, 35) + '...'}</p> */}
+            <div className="backoffice-btn-flex">
 
-            {/* <h3>{'$' + stay.price}</h3><p>/night</p> */}
-            <p><strong>{'$' + stay.price}</strong>/night</p>
+                <button className="backoffice-preview-btn" onClick={(ev) => removeFavorite(ev)} >Remove</button>
+
+            </div>
+
 
         </section>
     )
