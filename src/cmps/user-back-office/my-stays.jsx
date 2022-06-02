@@ -38,7 +38,7 @@ export const MyStays = (props) => {
         <section className="my-stays">
             <h1>my stays</h1>
 
-            <div className='list-container'>
+            <div className='list-container-back'>
                 
 
             <div className="stay-list">

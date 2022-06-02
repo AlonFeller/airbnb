@@ -32,7 +32,7 @@ export const Searchbar = (props) => {
     const deployUrl = (location) => {
         navigate(`/explore/?location=${location}`)
     }
-    console.log(isStay);
+    // console.log(isStay);
 
     return (
         <section className={(isStay||isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "}>
