@@ -7,7 +7,7 @@
         align-items: center;
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(auto-fit, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-auto-rows: minmax(100px, auto);
         padding: auto;
         gap: 15px;
