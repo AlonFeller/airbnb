@@ -20,7 +20,7 @@ export const StayPreview = (props) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (user) {
+        if (user && user.favorites) {
             if (user.favorites.map(fav => fav._id).includes(stay._id)) {
                 setLikeHeart(true)
             }
