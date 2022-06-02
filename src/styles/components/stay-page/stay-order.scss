@@ -52,9 +52,6 @@
         .set-guests {
             display: flex;
             justify-content: space-evenly;
-
-
-
             .incDec-btn {
                 width: 15px;
                 height: 15px;
@@ -65,9 +62,6 @@
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-
-
-
             }
 
             .incDec-btn-off {
@@ -89,6 +83,33 @@
             justify-content: space-between
         }
 
+        .price-details{
+                      
+            .total-price{
+                margin: 0;
+                padding:0;
+                
+                height: 40px;
+                h3{
+                    margin-right: 10px;
+                    padding: 0;
+                    align-self: center;
+                }
+            }
+            .service-price{
+                padding-top: 5px;
+                padding-right: 10px;
+            }
+            .service{
+                padding-top: 5px;
+                padding-right: 10px;
+            }
+            
+            >*{
+                padding-top: 5px;
+                padding-right: 10px;
+            }
+        }
 
     }
 

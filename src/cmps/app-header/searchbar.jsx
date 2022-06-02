@@ -36,7 +36,7 @@ export const Searchbar = (props) => {
 
     return (
         <section className={(isStay||isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "}>
-            {(isStay ||  isPageScroll) ? <section className={(isPageScroll) ? "searchbar-fullHeaderOn" : "searchbar"}>
+            {(isStay||isPageScroll) ? <section className={(isPageScroll) ? "searchbar-fullHeaderOn " : "searchbar "}>
                 <div className="short-searchbar" onClick={toggleIsState} >
                     <h1>Start your search</h1>
                     <div className="srchbtn"><img src={btn} alt="btn" /></div>

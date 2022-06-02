@@ -23,7 +23,12 @@
 .dark {
     color: var(--font-dark-color)  !important;
 }
-
+.static{
+    position: static ;
+}
+.isStay {
+    padding: 0 10%;
+}
 // h1,
 // h2,
 // h3,
