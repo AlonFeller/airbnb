@@ -38,13 +38,13 @@ export const StayPreview = (props) => {
         ev.stopPropagation()
         setLikeHeart(!likeHeart)
     }
-
+    // height='270' width='270'
 
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
-            <div className="img-container">
+            <div className="explore-img-container">
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
-                    height='270' width='270' className="img-preview" alt="" />
+                     className="img-preview" alt="" />
                 <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
                 {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
@@ -54,8 +54,8 @@ export const StayPreview = (props) => {
             </div>
             <div className="locatoing-rating">
                 <h3>{stay.address.city + ', ' + stay.address.country} </h3>
-                {stay.reviewScores.rating && <h3><span>{stay.reviewScores.rating / 20}</span>< Star /></h3>}
-                {!stay.reviewScores.rating && <h3><span>4.63</span> < Star /></h3>}
+                {stay.reviewScores.rating && <span className="preview-rating-star"><span>{stay.reviewScores.rating / 20}</span>< Star /></span>}
+                {!stay.reviewScores.rating && <span className="preview-rating-star"><span>4.63</span> < Star /></span>}
             </div>
             <p>{(stay.name.length > 30)? stay.name.substring(0, 30) + '...' : stay.name}</p>
             {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}

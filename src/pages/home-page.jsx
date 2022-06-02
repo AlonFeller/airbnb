@@ -30,7 +30,7 @@ export function HomePage() {
                     <section className="hero-container">
                         <img className="hero-img full" src={hero} alt="logo"></img>
                         <h1 className="title centered fs30">Not sure where to go ? Perfect.</h1>
-                        <div className="button" onClick={() => goTo('/explore')}>I'm flexible</div>
+                        <div className="button" onClick={() => goTo('/explore')}><span>I'm flexible</span></div>
                     </section>
                     <section className="destinations-container">
                         <h3>Popular Destinations</h3>

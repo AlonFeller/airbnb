@@ -32,6 +32,7 @@
                 font-size: 14px;
                 text-align: left;
                 margin: 0px;
+                margin-bottom: 4px;
 
                 strong {
                     color: var(--font-dark-color);
@@ -47,14 +48,14 @@
 }
 
 .locatoing-rating {
-    height: 35px;
-    width: 270px;
+    width: 100%;
+    height: 30px;
     padding-top: 5px;
     display: flex;
     justify-content: space-between;
     color: var(--font-dark-color);
 
-    h3 {
+    .preview-rating-star {
         display: flex;
         align-self: center;
 
@@ -64,6 +65,10 @@
 
         svg {
             align-self: center;
+            height: 15px;
+            width: 15px;
+
+            path {}
         }
     }
 }
@@ -72,49 +77,49 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: 162px;
+    top: -65%;
 
+    .next-btn {
+        z-index: 25;
+        background-color: var(--btn-background-color);
+        border-radius: 50%;
+        opacity: 0;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        // top: -330px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--font-dark-color);
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .back-btn {
+        z-index: 25;
+        background-color: var(--card-background-color);
+        border-radius: 50%;
+        opacity: 0;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        // top: -330px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--font-dark-color);
+        cursor: pointer;
+    }
 }
 
-.next-btn {
-    z-index: 10;
-    background-color: var(--btn-background-color);
-    border-radius: 50%;
-    opacity: 0;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    top: -330px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--font-dark-color);
-    margin-right: 10px;
-    cursor: pointer;
-}
 
-.back-btn {
-    z-index: 10;
-    background-color: var(--card-background-color);
-    border-radius: 50%;
-    opacity: 0;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    top: -330px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--font-dark-color);
-    cursor: pointer;
-}
-
-.img-container {
+.explore-img-container {
     padding: 0;
     margin: 0;
-    height: 270px;
-    width: 270px;
+    max-width: 300px;
+    height: 300px;
     aspect-ratio: 1/1;
 
     .img-preview {
@@ -130,18 +135,19 @@
         height: 30px;
         display: inline-block;
         position: relative;
-        top: -260px;
+        top: -96%;
         right: -40%;
         align-items: center;
         font-size: 25px;
         border-radius: 50%;
         color: var(--logo-color);
+        // opacity: 0.7;
         cursor: pointer;
 
     }
 
     .heart-empty {
-        color: rgba(0, 0, 0, 0);
+        color: var(--hart-background-color);
     }
 }
 
