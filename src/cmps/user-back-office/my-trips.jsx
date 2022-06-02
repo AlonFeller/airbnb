@@ -32,7 +32,7 @@ export const MyTrips = (props) => {
 
                 {/* {
                     myTripsStays.map(stay => {
-                        return <TripPreview stay={stay} /> 
+                        return <TripPreview key={stay._id} stay={stay} /> 
                     })
                 } */}
 
