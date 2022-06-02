@@ -5,7 +5,7 @@
     top: 75%;
     right: 50%;
     transform: translate(50%, 50%);
-    
+
     border: 1px solid var(--font-lightgray-color);
     border-radius: 20px;
     background-color: var(--card-background-color);
@@ -91,7 +91,41 @@
             }
         }
     }
+
+    .review-preview-container {
+        width: 100%;
+
+        h5 {
+            color: var(--font-gray-color);
+        }
+
+        p {
+            padding-right: 10%;
+        }
+    }
 }
+
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    padding-right: 15px;
+
+    span {
+        cursor: pointer;
+    }
+
+    // .amenities-list-container {
+    //     height: 90%;
+    //     width: 95%;
+
+    //     .amenities-list {
+    //         overflow: auto;
+    //         padding-left: 15px;
+    //         padding-right: 15px;
+    //     }
+}
+
 
 .amenities-screen {
     pointer-events: none;

@@ -97,7 +97,7 @@ export const ExploreFilter = (props) => {
                     <label htmlFor="">Max price</label>
                     <input type="number" name="maxPrice" placeholder="Max price" onChange={onHandleChange} />
                 </div> */}
-                    <div className={(isPriceOn) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('isPriceOn')}><span>price</span></div>
+                    <div className={(isPriceOn) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('isPriceOn')}><span>Price</span></div>
                     {(isPriceOn) ? <div className="slider-container">
                         <label htmlFor="">Price range</label>
                         <Slider

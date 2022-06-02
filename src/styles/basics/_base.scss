@@ -23,8 +23,8 @@ html {
             .app {
                 height: fit-content;
                 display: grid;
-                grid-template-rows: 150px 1fr 150px;
-                grid-template-columns: 1fr 7fr 1fr;
+                grid-template-rows: 75px 1fr 75px;
+                grid-template-columns: 1fr 8fr 1fr;
                 color: var(--font-dark-color);
 
                 >* .full {
