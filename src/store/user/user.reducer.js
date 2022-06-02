@@ -13,6 +13,9 @@ export function userReducer(state = initialState, action) {
         case 'SET_USER':
             newState = { ...state, user: action.user }
             break;
+        case 'UPDATE_USER':
+            newState = { ...state, user: action.user }
+            break;
         case 'SET_WATCHED_USER':
             newState = { ...state, watchedUser: action.user }
             break;

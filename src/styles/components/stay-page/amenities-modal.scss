@@ -2,7 +2,7 @@
     position: absolute;
     width: 100vh;
     max-height: 85vh;
-    top: 50%;
+    top: 75%;
     right: 50%;
     transform: translate(50%, 50%);
 
@@ -41,17 +41,51 @@
                 padding-left: 10px;
             }
         }
-
-        .amenities-list-container {
+        
+        .amenities-modal-container {
             display: flex;
             flex-direction: column;
-            padding: 5%;
-            padding-top: 0;
             height: 90%;
             width: 95%;
+            padding: 5%;
+            padding-top: 0;
             overflow: auto;
 
+            // .amenities-list {
+            //     padding-left: 15px;
+            //     padding-right: 15px;
+            // }
+        }
+
+        .review-preview-container {
+            width: 100%;
+
+            h5 {
+                color: var(--font-gray-color);
+            }
+
+            p {
+                padding-right: 10%;
+            }
+        }
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 15px;
+        padding-right: 15px;
+
+        span {
+            cursor: pointer;
+        }
+
+        .amenities-list-container {
+            height: 90%;
+            width: 95%;
+            // overflow: auto;
             .amenities-list {
+                overflow: auto;
                 padding-left: 15px;
                 padding-right: 15px;
             }
