@@ -1,8 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { utilService } from "../../services/util.service"
 
-export const StayAmenities = ({ amenities }) => {
-
+export const StayAmenities = ({ amenities, isOpenAmenitiesModal }) => {
+    useEffect(() => {
+        if (isOpenAmenitiesModal) document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     return (
         <ul className="amenities-list">
