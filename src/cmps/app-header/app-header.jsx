@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 
 export function AppHeader() {
     const { isExplore } = useSelector(state => state.headerModule.headerMode)
+    const { isStay } = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
     const navigate = useNavigate()
     const goTo = (path) => {
@@ -17,10 +18,9 @@ export function AppHeader() {
         navigate(path)
     }
 
-
     useEffect(() => {
         window.addEventListener("scroll", toggleHeader)
-         return () => {
+        return () => {
             window.removeEventListener("scroll", toggleHeader)
         }
     }, [window.pageYOffset]);

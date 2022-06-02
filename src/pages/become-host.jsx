@@ -7,7 +7,7 @@ import { AirBnbBtnHost } from '../cmps/order/AirBnb-BtnHost'
 
 
 export function BecomeAHost() {
-    
+
     const navigate = useNavigate()
     const user = useSelector((state => state.userModule.user))
 
@@ -30,19 +30,19 @@ export function BecomeAHost() {
     return (
         <section className="become-a-host">
             <div className="host-black-top">
-                   <img src={logo} className="host-logo" alt="logo" onClick={() => goTo('/')} />
+                {/* <img src={logo} className="host-logo" alt="logo" onClick={() => goTo('/')} /> */}
 
                 <div className="host-content">
-               <div className='host-content-flex'>
+                    <div className='host-content-flex'>
 
 
-                <h1 className="host-offer">Open your door <br></br>
-                &nbsp; &nbsp; to hosting</h1>
-            <AirBnbBtnHost btnInnerTxt ='Try hosting'  user={user} loginCheck={loginCheck}/>
+                        <h1 className="host-offer">Open your door <br></br>
+                            &nbsp; &nbsp; to hosting</h1>
+                        <AirBnbBtnHost btnInnerTxt='Try hosting' user={user} loginCheck={loginCheck} />
 
+                    </div>
                 </div>
-               </div>
-                </div>
+            </div>
         </section>
     )
 }
