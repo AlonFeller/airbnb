@@ -98,7 +98,7 @@ export const NewStayHost = (props) => {
     }
 
     const onUploadImg = (ev) => {
-
+        console.log('onuploadimg');
         const CLOUD_NAME = 'Get name here'
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
         const file = ev.target.files[0]
