@@ -32,27 +32,13 @@
 .bold{
     font-family:  circular-medium;
 }
-// h1,
-// h2,
-// h3,
-// h4,
-// h6{
-//     font-family: circular-light;
-// }
-// div{
-//     font-family:circular;
-// }
-// p,
-// span{
-//     font-family:circular;
-// }
+
 .date{
     width: 75px;
     margin-left: 10px;
     margin-right: 10px;
 }
 // flex helpers
-
 .flex {
     display: flex;
 
@@ -78,7 +64,12 @@
         align-items: flex-end;
     }
 }
-
+.end{
+    align-self: flex-end;
+}
+.center{
+    align-self: center;
+}
 .items-center{
 justify-items: center;
 }
