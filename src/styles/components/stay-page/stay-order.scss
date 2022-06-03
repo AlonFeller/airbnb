@@ -19,6 +19,7 @@
             }
             .order-header-line-ratings{
                 font-size: 14px;
+                gap: 3px;
                 span{
                     display: flex;
                     justify-content: center;
@@ -28,6 +29,7 @@
                         padding-bottom: 1px;
                     }
                 }
+
             }
 
             >* {

@@ -12,7 +12,7 @@ import { PriceDetails } from '../order/price-details'
 import { OrderMsgModal } from '../order/order-msg-modal'
 import { socketService } from '../../services/socket.service';
 
-export const OrderNow = () => {
+export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
@@ -95,8 +95,9 @@ export const OrderNow = () => {
                     </span>
                     <p className="order-header-line-ratings">
                         <span>< Star /></span>
-                        <span className="avg-checkout"> {selectedStay.reviewScores.rating / 20} · </span>
-                        <span className="reviews bold">{selectedStay.numOfReviews} reviews</span>
+                        <span className="avg-checkout"> <b>{(selectedStay.reviewScores.rating / 20).toFixed(1)}</b></span>
+                        <span>·</span>
+                        <span className="reviews bold pointer" onClick={() => { setIsOpenModal(!isOpenModal)}}><u>{selectedStay.numOfReviews} reviews</u></span>
                     </p>
                 </div>
                 <div className="order-calander">
