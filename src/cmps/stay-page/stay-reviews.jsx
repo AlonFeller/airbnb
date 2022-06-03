@@ -1,9 +1,18 @@
-import React from "react"
+import React, { useEffect,useState } from "react"
+import { useSelector } from 'react-redux'
 import { StayScores } from './stay-scores'
 import { ReviewsList } from './reviews-list'
 import { Star } from "@mui/icons-material"
 
 export const StayReviews = ({ stay, reviews, isLongTxt = false }) => {
+    // const [renderReviews, setRenderReviews] = useState(false)
+    // const { addedReveiw } = useSelector(storeState => storeState.stayModule)
+
+    // useEffect(() => {
+    //    if (!addedReveiw) return 
+    //    setRenderReviews(true)
+    // }, [renderReviews])
+
 
     return (
         <section className="stay-reviews">
