@@ -3,15 +3,27 @@
         flex-direction: column;
         justify-content: center;
         width: 300px;
-        background-color: var(--main-background-color);
-        border: 1px solid var(--font-dark-color);
-        border-radius: 20px;
+        // background-color: var(--main-background-color);
+        // border: 1px solid var(--font-dark-color);
+        border-radius: 12px;
         padding: 18px;
         position: sticky;
         top: 200px;
+        box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+        border: 1px solid rgb(221, 221, 221);
 
         .order-form-header {
             align-items: center;
+            .order-header-line{
+                font-size: 16px;
+            }
+            .order-header-line-ratings{
+                font-size: 14px;
+                .css-i4bv87-MuiSvgIcon-root{
+                    height: 16px;
+                    width: 16px;
+                }
+            }
 
             >* {
                 margin: 0;
@@ -40,7 +52,7 @@
 
             .css-17vdz66 {
                 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
-                    border-radius: 60px 10px 0 0 ;
+                    border-radius: 60px 10px 0 0;
                 }
             }
         }
@@ -91,37 +103,35 @@
             justify-content: space-between
         }
 
-        .price-details {
-
-            .total-price {
-                margin: 0;
-                padding: 0;
-
-                height: 40px;
-
-                h3 {
-                    margin-right: 10px;
-                    padding: 0;
-                    align-self: center;
-                }
-            }
-
-            .service-price {
-                padding-top: 5px;
-                padding-right: 10px;
-            }
-
-            .service {
-                padding-top: 5px;
-                padding-right: 10px;
-            }
-
-            >* {
-                padding-top: 5px;
-                padding-right: 10px;
-            }
+        .price-details-container {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
+
+        .price-details {
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .service-fees {
+            justify-content: space-between;
+        }
+
+        .total-price {
+            margin-top: 15px;
+            padding: 0;
+            height: 40px;
+            justify-content: space-between;
+
+            h3 {
+                // margin-right: 10px;
+                padding: 0;
+                align-self: center;
+            }
+        }
     }
 
     .guests-modal {
