@@ -24,11 +24,14 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
     const amenitiesModalClass = isOpenAmenitiesModal ? "amenities-screen screen-open" : "amenities-screen "
 
     const hostStayImgSrc = stay.host.newPictureUrl ?? 'https://thispersondoesnotexist.com/image?cache=' + Date.now()
-    
+
 
     const StayDetails = ({ stay }) => <section className="stay-details-shortly gray-box-shadow">
         <div className="stay-host-info">
-            <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
+            <div className="asset-sum-item">
+                <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
+                <p>{stay.capacity} guests · {stay.bedrooms} bedrooms · {stay.beds} beds · {stay.bathrooms} baths</p>
+            </div>
             <img className="stay-host-img" src={hostStayImgSrc} alt="" />
         </div>
     </section>

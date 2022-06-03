@@ -21,7 +21,7 @@ export function StayPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(toggleIsStay(true))
-        // dispatch(loadStay(params.id))
+        dispatch(loadStay(params.id))
         return dispatch(toggleIsStay(false))
     }, [params.id])
 
