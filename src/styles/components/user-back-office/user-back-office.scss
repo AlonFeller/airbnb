@@ -164,6 +164,7 @@
         grid-auto-rows: minmax(100px, auto);
         gap: 15px;
         justify-content: space-between;
+        margin-bottom: 80px;
     }
 }
 
@@ -184,4 +185,18 @@
     padding: 10px;
     margin: 5px;
     margin-left: 0;
+}
+
+.orders-statistics {
+
+    display: flex;
+
+    // justify-content: space-evenly;
+    gap: 10%;
+
+    margin-bottom: 80px;
+
+    h4 {
+        margin-left: 20px;
+    }
 }

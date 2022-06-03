@@ -8,6 +8,7 @@ import { orderService } from '../../services/order.service'
 import { addOrder } from '../../store/order/order.actions'
 import { Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
+import { OrderMsgModal } from '../order/order-msg-modal'
 
 export const OrderNow = () => {
     const dispatch = useDispatch()
@@ -17,7 +18,8 @@ export const OrderNow = () => {
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
-    let isGuestPopupOn = true
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
 
     const onGetOrderDates = (currDates) => {
         setDates(currDates)
@@ -42,27 +44,44 @@ export const OrderNow = () => {
 
     const onAddOrder = (order) => {
         dispatch(addOrder(order))
+        openModal()
+    }
+
+    const openModal = () => {
+        setIsModalOpen(true)
+        setTimeout(() => {
+            // closeModal()
+        }, 3000)
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
     }
 
     return (
-        <section className="stay-order flex">
-            <div className="order-form-header flex space-between aling-items">
-                <span className="order-header-line">
-                    <h4 className="cost bold">${selectedStay.price}</h4> / night
-                </span>
-                <p className="order-header-line-ratings">
-                    <span>< Star /></span>
-                    <span className="avg-checkout"> {selectedStay.reviewScores.rating / 20} · </span>
-                    <span className="reviews bold">{selectedStay.numOfReviews} reviews</span>
-                </p>
-            </div>
-            <div className="order-calander">
-                <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
-                <Guests onGetGuestsNumber={onGetGuestsNumber} />
-            </div>
-            <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now'/>
-            {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights}/>}
-        </section >
+        <>
+            <section className="stay-order flex">
+                <div className="order-form-header flex space-between aling-items">
+                    <span className="order-header-line">
+                        <h4 className="cost bold">${selectedStay.price}</h4> / night
+                    </span>
+                    <p className="order-header-line-ratings">
+                        <span>< Star /></span>
+                        <span className="avg-checkout"> {selectedStay.reviewScores.rating / 20} · </span>
+                        <span className="reviews bold">{selectedStay.numOfReviews} reviews</span>
+                    </p>
+                </div>
+                <div className="order-calander">
+                    <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
+                    <Guests onGetGuestsNumber={onGetGuestsNumber} />
+                </div>
+                <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
+                {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
+            </section >
+            <section>
+                {isModalOpen && <OrderMsgModal />}
+            </section>
+        </>
     )
 }
 
