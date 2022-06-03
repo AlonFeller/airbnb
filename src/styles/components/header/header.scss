@@ -39,7 +39,7 @@
                 transition: 0.6s;
             }
 
-            .searchbar {
+            .long-searchbar {
                 align-self: flex-end;
                 background-color: var(--card-background-color);
                 border-radius: 35px;
@@ -179,17 +179,17 @@
             }
 
             .searchbar-fullHeaderOn {
-                align-self: center;
-                background-color: var(--card-background-color);
+                // align-self: center;
+                // background-color: var(--card-background-color);
                 border-radius: 35px;
-                width: 575px;
+                // width: 575px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 border: 1px solid var(--font-lightgray-color);
                 box-shadow: 0px 2px 5px var(--font-gray-color);
-                position: sticky;
-                top: 50px;
+                // position: sticky;
+                // top: 50px;
                 transition: 0.9s;
 
                 &:hover {

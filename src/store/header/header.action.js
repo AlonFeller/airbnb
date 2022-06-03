@@ -19,10 +19,10 @@ export function toggleHeaderIsTop(set) {
     };
 }
 
-export function toggleHeaderIsActive(set) {
+export function headerIsLong(set) {
     return (dispatch) => {
         try {
-            dispatch({ type: 'TOGGLE_HEADER_ISACTIVE', set });
+            dispatch({ type: 'HEADER_ISLONG', set });
         } catch {
             console.log('could not toggle ');
         }
