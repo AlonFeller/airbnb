@@ -69,6 +69,7 @@ export const NavBar = (props) => {
                     {(user) ? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
                     {isNewNoti && <div className="red-dot"></div>}
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
+                        <div className="menu-btn-container">
                         {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
                             : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
 

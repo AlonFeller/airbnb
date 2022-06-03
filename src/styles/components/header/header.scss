@@ -1,6 +1,6 @@
 .AppHeader {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     top: 0;
     grid-row: 1/2;
@@ -17,6 +17,7 @@
         transition: 0.3s;
 
         .header-container {
+            height: 100%;
             grid-column: 2/-2;
             display: flex;
             align-self: center;
@@ -25,12 +26,20 @@
             justify-content: space-between;
 
             .searchbar-container {
+                align-self: flex-end;
                 display: flex;
                 justify-content: end;
                 transition: 0.6s;
             }
+            .header-navbar-container{
+                align-self: flex-start;
+                display: flex;
+                justify-content: end;
+                margin-top: 18px;
+                transition: 0.6s;
+            }
 
-            .searchbar {
+            .long-searchbar {
                 align-self: flex-end;
                 background-color: var(--card-background-color);
                 border-radius: 35px;
@@ -123,6 +132,11 @@
             }
 
             .logo-img-container {
+                align-self: flex-start;
+                display: flex;
+                justify-content: end;
+                margin-top: 18px;
+                transition: 0.6s;
                 width: 260px;
                 display: flex;
 
@@ -133,6 +147,7 @@
             }
 
             .short-searchbar {
+                align-self: center !important;
                 display: flex;
                 justify-content: space-between;
                 width: 300px;
@@ -164,17 +179,17 @@
             }
 
             .searchbar-fullHeaderOn {
-                align-self: center;
-                background-color: var(--card-background-color);
+                // align-self: center;
+                // background-color: var(--card-background-color);
                 border-radius: 35px;
-                width: 575px;
+                // width: 575px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 border: 1px solid var(--font-lightgray-color);
                 box-shadow: 0px 2px 5px var(--font-gray-color);
-                position: sticky;
-                top: 50px;
+                // position: sticky;
+                // top: 50px;
                 transition: 0.9s;
 
                 &:hover {
@@ -253,7 +268,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            svg{
+            
+
+            svg {
                 aspect-ratio: 0.7/1;
             }
 
@@ -278,7 +295,8 @@
                 color: var(--font-dark-color);
                 width: 160px;
                 background-color: var(--main-background-color);
-                border: 1px solid var(--font-lightgray-color);
+                box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+                border: 1px solid rgb(221, 221, 221);
                 border-radius: 10px;
                 display: none;
                 position: absolute;
@@ -286,6 +304,7 @@
                 right: 184px;
                 justify-content: center;
                 align-items: center;
+                padding: 10px 0;
 
                 :first-child {
                     // border-radius: 20px 0 0 0;
@@ -322,6 +341,9 @@
                     &:hover {
                         background-color: var(--btn-background-color);
 
+                        &:hover {
+                            background-color: var(--btn-background-color);
+                        }
                     }
                 }
 
@@ -371,6 +393,8 @@
 }
 
 .full-header {
+    height: 75px !important;
+    // top:0 !important;
     background-color: var(--card-background-color);
     color: var(--font-dark-color);
     transition: 0.3s;

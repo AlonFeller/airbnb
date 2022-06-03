@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
 // import { toggleDetailsLayout, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsExplore } from "../../store/header/header.action";
-import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../../store/header/header.action";
+import { headerIsLong } from "../../store/header/header.action";
 import { LoginSignUp } from './login-siginup'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
 import logo from '../../assets/Images/logo2.png'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export function AppHeader() {
+    const dispatch = useDispatch()
     const { isExplore } = useSelector(state => state.headerModule.headerMode)
     const { isStay } = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
@@ -27,17 +28,20 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
+        // console.log(window.pageYOffset);
         if (window.pageYOffset > 25) {
             setIsPageScroll(true)
+            dispatch(headerIsLong(false))
         } else {
             setIsPageScroll(false)
+            dispatch(headerIsLong(true))
         }
     }
 
     return (
         <>
-            <div className={"header flex " + ((isPageScroll || isExplore) ? "full-header " : "")} >
-                <section className={"header-container "+(isStay?"isStay":"")}>
+            <div className={"header flex " + ((isPageScroll || isExplore || isStay) ? "full-header " : "")} >
+                <section className={"header-container " + (isStay ? "isStay" : "")}>
                     <div className="logo-img-container">
                         <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
                     <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} />

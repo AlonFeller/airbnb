@@ -21,7 +21,7 @@ export function StayPage() {
         window.scrollTo(0, 0);
         dispatch(toggleIsStay(true))
         dispatch(loadStay(params.id))
-        // return dispatch(toggleIsStay(false))
+        return dispatch(toggleIsStay(false))
     }, [params.id])
 
     return (
