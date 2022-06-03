@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { onLogout } from "../../store/user/user.actions";
 import { useEffect, useState } from "react";
 import { toggleIsExplore } from "../../store/header/header.action";
+import { socketService } from "../../services/socket.service";
 
 
 
@@ -24,6 +25,17 @@ export const NavBar = (props) => {
     }
 
     useEffect(() => {
+        if (user) {
+            socketService.setup();
+            socketService.emit('set-user-socket', user._id);   
+            // socketService.off('new order');
+            socketService.on(user._id,  orderArrived);   
+        } 
+        return () => {
+            socketService.off(user._id) }
+    },[])
+
+    useEffect(() => {
         window.addEventListener("scroll", isRender)
                 return () => {
             window.removeEventListener("scroll", isRender)
@@ -38,7 +50,7 @@ export const NavBar = (props) => {
 
     const orderNotifications = [{ by: 'Sarah' },
     { by: 'Mosses' }]
-    const [isNewNoti, setIsNewNoti] = useState(true)
+    const [isNewNoti, setIsNewNoti] = useState(false)
     const [presentNoti, setPresentNoti] = useState(false)
     
 
@@ -54,8 +66,15 @@ export const NavBar = (props) => {
     }
 
     const displayLoginModal = () => {
-        console.log('1');
+
         document.body.classList.toggle("login-slide-modal-open");
+    }
+
+    const orderArrived = (order) => {
+        console.log('order arrived');
+        alert('order from ', order.buyer.name)
+        setIsNewNoti(true)
+        orderNotifications.unshift({by: order.buyer.name})
     }
 
 
