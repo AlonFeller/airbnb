@@ -1,6 +1,6 @@
 .AppHeader {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     top: 0;
     grid-row: 1/2;
@@ -17,6 +17,7 @@
         transition: 0.3s;
 
         .header-container {
+            height: 100%;
             grid-column: 2/-2;
             display: flex;
             align-self: center;
@@ -25,8 +26,16 @@
             justify-content: space-between;
 
             .searchbar-container {
+                align-self: flex-end;
                 display: flex;
                 justify-content: end;
+                transition: 0.6s;
+            }
+            .header-navbar-container{
+                align-self: flex-start;
+                display: flex;
+                justify-content: end;
+                margin-top: 18px;
                 transition: 0.6s;
             }
 
@@ -123,6 +132,11 @@
             }
 
             .logo-img-container {
+                align-self: flex-start;
+                display: flex;
+                justify-content: end;
+                margin-top: 18px;
+                transition: 0.6s;
                 width: 260px;
                 display: flex;
 
@@ -133,6 +147,7 @@
             }
 
             .short-searchbar {
+                align-self: center !important;
                 display: flex;
                 justify-content: space-between;
                 width: 300px;
@@ -253,6 +268,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
 
             svg {
                 aspect-ratio: 0.7/1;
@@ -286,7 +302,6 @@
                 }
 
                 .menu-btn-container {
-
                     .login-opt-btn {
                         // margin-top: 5px;
                         // gap: 15px;
@@ -327,6 +342,8 @@
 }
 
 .full-header {
+    height: 75px !important;
+    // top:0 !important;
     background-color: var(--card-background-color);
     color: var(--font-dark-color);
     transition: 0.3s;

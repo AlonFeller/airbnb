@@ -20,7 +20,8 @@ export function ExplorePage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(toggleIsExplore(true))  
-        dispatch(toggleIsStay(false))
+        
+        return dispatch(toggleIsExplore(false))  
         // return dispatch(toggleIsExplore(false))  
     }, []);
 
