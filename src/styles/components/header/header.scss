@@ -1,6 +1,6 @@
 .AppHeader {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     top: 0;
     grid-row: 1/2;
@@ -17,6 +17,7 @@
         transition: 0.3s;
 
         .header-container {
+            height: 100%;
             grid-column: 2/-2;
             display: flex;
             align-self: center;
@@ -25,8 +26,16 @@
             justify-content: space-between;
 
             .searchbar-container {
+                align-self: flex-end;
                 display: flex;
                 justify-content: end;
+                transition: 0.6s;
+            }
+            .header-navbar-container{
+                align-self: flex-start;
+                display: flex;
+                justify-content: end;
+                margin-top: 18px;
                 transition: 0.6s;
             }
 
@@ -123,6 +132,11 @@
             }
 
             .logo-img-container {
+                align-self: flex-start;
+                display: flex;
+                justify-content: end;
+                margin-top: 18px;
+                transition: 0.6s;
                 width: 260px;
                 display: flex;
 
@@ -133,6 +147,7 @@
             }
 
             .short-searchbar {
+                align-self: center !important;
                 display: flex;
                 justify-content: space-between;
                 width: 300px;
@@ -253,20 +268,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
+
+            svg {
+                aspect-ratio: 0.7/1;
+            }
 
 
             .login-slide-modal {
                 color: var(--font-dark-color);
+                height: fit-content;
                 width: 120px;
                 background-color: var(--main-background-color);
-                border: 1px solid var(--font-lightgray-color);
+                box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+                border: 1px solid rgb(221, 221, 221);
                 border-radius: 10px;
                 display: none;
                 position: fixed;
                 top: 95px;
                 right: 200px;
-                justify-content: center;
+                justify-content: start;
                 align-items: center;
+                padding: 10px 0;
 
                 :first-child {
                     // border-radius: 20px 0 0 0;
@@ -278,17 +301,19 @@
                     // border-radius: 0 0 20px 20px;
                 }
 
-                .login-opt-btn {
-                    margin: 0;
-                    gap: 5px;
-                    width: 100%;
-                    // border-radius: 20px 20px 20px 20px;
-                    display: flex;
-                    justify-content: center;
+                .menu-btn-container {
+                    .login-opt-btn {
+                        // margin-top: 5px;
+                        // gap: 15px;
+                        width: 100%;
+                        // margin-left:14px;
+                        // border-radius: 20px 20px 20px 20px;
+                        display: flex;
+                        justify-content: flex-start;
 
-                    &:hover {
-                        background-color: var(--btn-background-color);
-
+                        &:hover {
+                            background-color: var(--btn-background-color);
+                        }
                     }
                 }
 
@@ -317,6 +342,8 @@
 }
 
 .full-header {
+    height: 75px !important;
+    // top:0 !important;
     background-color: var(--card-background-color);
     color: var(--font-dark-color);
     transition: 0.3s;
@@ -326,4 +353,10 @@
 input,
 label {
     display: block;
+}
+
+.user-img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
 }

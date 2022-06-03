@@ -5,7 +5,7 @@ import { loadStays, setFilter } from "../../store/stay/stay.actions"
 import { MyDatePicker } from "./date-picker"
 import btn from "../../assets/Images/srchbtn.png"
 import BasicDateRangePicker from "../order/order-calander"
-import { toggleIsStay } from "../../store/header/header.action"
+import { toggleHeaderIsActive, toggleIsStay } from "../../store/header/header.action"
 
 export const Searchbar = (props) => {
     const { isPageScroll, isExplore } = props
@@ -16,11 +16,11 @@ export const Searchbar = (props) => {
     const locationFromParams = useLocation()
     const urlParams = new URLSearchParams(locationFromParams.search);
     const location = urlParams.get('location') || '';
-    const { isStay } = useSelector(state => state.headerModule.headerMode)
+    const { isStay, isActive } = useSelector(state => state.headerModule.headerMode)
 
-    const toggleIsState = () => {
-        dispatch(toggleIsStay(!isStay))
-    }
+    // const toggleIsState = () => {
+    //     dispatch(toggleIsStay(!isStay))
+    // }
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value
         dispatch(setFilter(filterBy))
@@ -28,42 +28,78 @@ export const Searchbar = (props) => {
         console.log('filter', filterBy);
         if (location != target.value) deployUrl(filterBy.location)
     }
-
+    const isSearchBarActive = () => {
+        let activeBar = true
+        if((isStay) activeBar = false
+    }
     const deployUrl = (location) => {
         navigate(`/explore/?location=${location}`)
     }
-    // console.log(isStay);
+
 
     return (
-        <section className={(isStay||isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "}>
-            {(isStay||isPageScroll) ? <section className={(isPageScroll) ? "searchbar-fullHeaderOn " : "searchbar "}>
-                <div className="short-searchbar" onClick={toggleIsState} >
-                    <h1>Start your search</h1>
-                    <div className="srchbtn"><img src={btn} alt="btn" /></div>
-                </div>
-            </section> : <section className={(isPageScroll || isExplore) ? "searchbar-fullHeaderOn" : "searchbar"}>
-                <form action="" className="searchbar-form">
+        <section className={(isStay || isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "}>
+            {(isStay || isPageScroll) ?
+                <section className={(isPageScroll) ? "searchbar-fullHeaderOn " : "searchbar "}>
+                    <div className="short-searchbar" onClick={toggleHeaderIsActive} >
+                        <h1>Start your search</h1>
+                        <div className="srchbtn"><img src={btn} alt="btn" /></div>
+                    </div>
+                </section>
+                : <section className={(isPageScroll || isExplore) ? "searchbar-fullHeaderOn" : "searchbar"}>
+                    <form action="" className="searchbar-form">
 
-                    <div className="searchber-form-label location">
-                        <label htmlFor="">Location </label>
-                        <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
-                    </div>
-                    <div className="searchber-form-label">
-                        <label htmlFor="">Check in </label>
-                        <MyDatePicker className="date" />
-                    </div>
-                    <div className="searchber-form-label">
-                        <label htmlFor="">Check out</label>
-                        <MyDatePicker className="date" />
-                    </div>
-                    <div className="searchber-form-label">
-                        <label htmlFor="">How many</label>
-                        <input type="number" placeholder="Guests" />
-                    </div>
-                    <div className="srchbtn"><img src={btn} alt="btn" /></div>
-                </form>
-            </section>}
+                        <div className="searchber-form-label location bold">
+                            <label htmlFor="">Location </label>
+                            <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
+                        </div>
+                        <div className="searchber-form-label bold">
+                            <label htmlFor="">Check in </label>
+                            <MyDatePicker className="date" />
+                        </div>
+                        <div className="searchber-form-label bold">
+                            <label htmlFor="">Check out</label>
+                            <MyDatePicker className="date" />
+                        </div>
+                        <div className="searchber-form-label bold">
+                            <label htmlFor="">How many</label>
+                            <input type="number" placeholder="Guests" />
+                        </div>
+                        <div className="srchbtn"><img src={btn} alt="btn" /></div>
+                    </form>
+                </section>}
         </section>
     )
-
 }
+
+// <section className={(isStay||isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "}>
+//     {(isStay||isPageScroll) ?
+//     <section className={(isPageScroll) ? "searchbar-fullHeaderOn " : "searchbar "}>
+//         <div className="short-searchbar" onClick={toggleIsState} >
+//             <h1>Start your search</h1>
+//             <div className="srchbtn"><img src={btn} alt="btn" /></div>
+//         </div>
+//     </section>
+//     : <section className={(isPageScroll || isExplore) ? "searchbar-fullHeaderOn" : "searchbar"}>
+//         <form action="" className="searchbar-form">
+
+//             <div className="searchber-form-label location">
+//                 <label htmlFor="">Location </label>
+//                 <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
+//             </div>
+//             <div className="searchber-form-label">
+//                 <label htmlFor="">Check in </label>
+//                 <MyDatePicker className="date" />
+//             </div>
+//             <div className="searchber-form-label">
+//                 <label htmlFor="">Check out</label>
+//                 <MyDatePicker className="date" />
+//             </div>
+//             <div className="searchber-form-label">
+//                 <label htmlFor="">How many</label>
+//                 <input type="number" placeholder="Guests" />
+//             </div>
+//             <div className="srchbtn"><img src={btn} alt="btn" /></div>
+//         </form>
+//     </section>}
+// </section>

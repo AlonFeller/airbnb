@@ -91,7 +91,7 @@ export const StayPreview = (props) => {
             {/* <p>{stay.summary.substring(0, 35) + '...'}</p> */}
 
             {/* <h3>{'$' + stay.price}</h3><p>/night</p> */}
-            <p><strong>{'$' + stay.price}</strong>/night</p>
+            <p><strong className="bold">{'$' + stay.price}</strong>/night</p>
 
         </section>
     )

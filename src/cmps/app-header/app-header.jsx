@@ -27,6 +27,7 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
+        // console.log(window.pageYOffset);
         if (window.pageYOffset > 25) {
             setIsPageScroll(true)
         } else {
@@ -36,11 +37,11 @@ export function AppHeader() {
 
     return (
         <>
-            <div className={"header flex " + ((isPageScroll || isExplore) ? "full-header " : "")} >
+            <div className={"header flex " + ((isPageScroll || isExplore||isStay) ? "full-header " : "")} >
                 <section className={"header-container "+(isStay?"isStay":"")}>
                     <div className="logo-img-container">
                         <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
-                    <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} />
+                    <Searchbar  isPageScroll={isPageScroll} isExplore={isExplore} />
                     <NavBar isPageScroll={isPageScroll} isExplore={isExplore} />
                     <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} />
                     <div className="login-screen" onClick={toggleLogin}></div>
