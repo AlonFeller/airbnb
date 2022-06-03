@@ -15,14 +15,9 @@ export const MyStays = (props) => {
     }, [])
     
     const getMyStays = () => {
-
-
+        
         const id = user._id
         const hostStays = stays.filter(stay => stay.host._id === id)
-        console.log('my stays', hostStays);
-        console.log('stays', stays.length);
-    
-
         return hostStays
     }
 

@@ -26,7 +26,8 @@
                 align-items: center;
                 text-align: center;
                 display: flex;
-                >*{
+
+                >* {
                     align-self: center;
                 }
             }
@@ -34,12 +35,18 @@
 
         .calander {
             margin: 10px;
-            border-radius: 10px 10px 0 0;
+            // border-radius: 10px 10px 0 0;
             cursor: pointer;
+
+            .css-17vdz66 {
+                .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+                    border-radius: 60px 10px 0 0 ;
+                }
+            }
         }
 
         .guests-btn {
-            border: 1px solid var(--font-dark-color);
+            border: 1px solid var(--font-lightgray-color);
             border-radius: 0 0 10px 10px !important;
             display: flex;
             flex-direction: column;
@@ -52,6 +59,7 @@
         .set-guests {
             display: flex;
             justify-content: space-evenly;
+
             .incDec-btn {
                 width: 15px;
                 height: 15px;
@@ -83,29 +91,32 @@
             justify-content: space-between
         }
 
-        .price-details{
-                      
-            .total-price{
+        .price-details {
+
+            .total-price {
                 margin: 0;
-                padding:0;
-                
+                padding: 0;
+
                 height: 40px;
-                h3{
+
+                h3 {
                     margin-right: 10px;
                     padding: 0;
                     align-self: center;
                 }
             }
-            .service-price{
+
+            .service-price {
                 padding-top: 5px;
                 padding-right: 10px;
             }
-            .service{
+
+            .service {
                 padding-top: 5px;
                 padding-right: 10px;
             }
-            
-            >*{
+
+            >* {
                 padding-top: 5px;
                 padding-right: 10px;
             }

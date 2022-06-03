@@ -73,6 +73,7 @@ export const WishPreview = (props) => {
             <div className="backoffice-btn-flex">
 
                 <button className="backoffice-preview-btn" onClick={(ev) => removeFavorite(ev)} >Remove</button>
+                <button className="backoffice-preview-btn"  >Book now</button>
 
             </div>
 
