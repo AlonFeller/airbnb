@@ -36,11 +36,25 @@ export const NavBar = (props) => {
         // console.log("isPageScroll", isPageScroll);
     }
 
+    const orderNotifications = [{ by: 'Sarah' },
+    { by: 'Mosses' }]
+    const [isNewNoti, setIsNewNoti] = useState(true)
+    const [presentNoti, setPresentNoti] = useState(false)
+    
 
-   
+    const openNotiTab = (ev) => {
+        ev.stopPropagation()
+        setIsNewNoti(false)
+        setPresentNoti(!presentNoti)
+    }
+
 
     const onLogoutUser = () => {
         dispatch(onLogout())
+    }
+
+    const displayLoginModal = () => {
+        document.body.classList.toggle("login-slide-modal-open");
     }
 
 
@@ -51,17 +65,23 @@ export const NavBar = (props) => {
                 <div className="nav-btn host" onClick={() => goTo('host')}>Become a Host</div>
                 {/* <NotificationsIcon /> */}
                 <div className="user-navbar" onClick={displayLoginModal}>
-                    <Dehaze />
-                   {(user)? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
+                    <Dehaze fontSize="small" className="dehaze" />
+                    {(user) ? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
+                    {isNewNoti && <div className="red-dot"></div>}
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
                         {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
                             : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
 
-                        {(user) ? <div className="login-opt-btn"  >Notifications</div> : null}
+                        {(user) ? <div className="login-opt-btn" onClick={(ev) => openNotiTab(ev)}  >Notifications  {isNewNoti && <NotificationsIcon className="noti-icon" />} </div> : null}
                         {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/stays`)} >My Area</div> : null}
                         {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
                         <div className="login-opt-btn" onClick={() => goTo('host')} >Host</div>
                         <div className="login-opt-btn" >About</div>
+                        {presentNoti && <div className="noti-tab" onMouseOut={() => setIsNewNoti(false)}>
+                            { orderNotifications.map(order => {
+                                return <div key={order.by} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order.by}</div>
+                            })}
+                        </div>}
                     </div>
                 </div>
 
@@ -78,10 +98,7 @@ function toggleLogin() {
 
 }
 
-function displayLoginModal() {
-    document.body.classList.toggle("login-slide-modal-open");
 
-}
 
 
 
