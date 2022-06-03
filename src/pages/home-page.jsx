@@ -20,6 +20,7 @@ export function HomePage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(headerIsLong(true))
+        console.log(new Date(1654264978351).toDateString())
         return () => {
             dispatch(headerIsLong(false))
         }

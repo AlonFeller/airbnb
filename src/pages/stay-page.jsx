@@ -3,24 +3,25 @@ import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
 import { toggleIsStay } from "../store/header/header.action";
 import { stayService } from '../services/stay.service'
-import { loadStay } from '../store/stay/stay.actions'
+import { loadStay,loadReviews } from '../store/stay/stay.actions'
 import { StayGallery } from '../cmps/stay-page/stay-gallery'
 import { StayDetails } from '../cmps/stay-page/stay-detalis'
 import { StayReviews } from '../cmps/stay-page/stay-reviews'
 import { StayMap } from '../cmps/stay-page/stay-map'
 import { ReviewsModal } from '../cmps/stay-page/reviews-modal'
+import { AddReview } from '../cmps/stay-page/add-review'
 import { Star } from "@mui/icons-material"
 
 export function StayPage() {
     const params = useParams()
     const dispatch = useDispatch()
-    const { selectedStay } = useSelector(storeState => storeState.stayModule)
+    const { selectedStay, addedReveiw } = useSelector(storeState => storeState.stayModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(toggleIsStay(true))
-        dispatch(loadStay(params.id))
+        // dispatch(loadStay(params.id))
         return dispatch(toggleIsStay(false))
     }, [params.id])
 
@@ -51,6 +52,7 @@ export function StayPage() {
                  <div className={isOpenModal ?"screen screen-open":"screen "} onClick={() => { setIsOpenModal(!isOpenModal);}}></div> 
                 {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal}  isOpenModal={isOpenModal}/> : null}
                 <button className="reviews-modal-btn" onClick={() => { setIsOpenModal(true); }}>Show all {selectedStay.reviews.length} reviews</button>
+                <AddReview key="add-review" stay={selectedStay}/>
                 <section className="stay-map">
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>

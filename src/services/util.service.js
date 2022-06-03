@@ -16,7 +16,7 @@ import {
     NotificationsActive, CreditScore, FireExtinguisher, HomeRepairService, Soap, WatchLater,
     Air, UnfoldMore, CheckBox, Laptop, Man, RollerShades, Shower, KingBed, SingleBed, Luggage,
     EventNote, Grass, AccessibilityNew, DirectionsWalk, Accessibility, DoorFront,
-    WheelchairPickup, Light, Water, NotificationsNone, Bluetooth, BrunchDining
+    WheelchairPickup, Light, Water, NotificationsNone, Bluetooth, BrunchDining, Subject
 } from '@mui/icons-material';
 
 export const utilService = {
@@ -24,7 +24,8 @@ export const utilService = {
     makeLorem,
     getRandomIntInclusive,
     delay,
-    getAmenitiesIcons
+    getAmenitiesIcons,
+    getNewAvg
 }
 
 function makeId(length = 6) {
@@ -59,6 +60,14 @@ function delay(ms = 1500) {
     return new Promise(resolve => {
         setTimeout(resolve, ms)
     })
+}
+
+function getNewAvg(gradesAvg, numOfGrades, newGrade) {
+    let sumOldScore = numOfGrades * gradesAvg
+    let sumNewScore = sumOldScore + newGrade
+    let newNumOfGrades = numOfGrades + 1 
+    let newGradesAvg = sumNewScore / newNumOfGrades
+    return newGradesAvg
 }
 
 function getAmenitiesIcons(amenity) {

@@ -130,3 +130,13 @@ export function setCheckinOut(filterBy) {
         })
     }
 }
+
+export function loadReviews(addedReveiw) {
+    return (dispatch) => {
+        try {
+            dispatch({ type: 'LOAD_REVIREWS', addedReveiw });
+        } catch {
+            console.log('could not load reviews ');
+        }
+    };
+}
