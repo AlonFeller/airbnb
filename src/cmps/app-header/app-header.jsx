@@ -20,7 +20,7 @@ export function AppHeader() {
     }
 
     useEffect(() => {
-        console.log(window.pageYOffset);
+        // console.log(window.pageYOffset);
         window.addEventListener("scroll", toggleHeader)
         return () => {
             window.removeEventListener("scroll", toggleHeader)

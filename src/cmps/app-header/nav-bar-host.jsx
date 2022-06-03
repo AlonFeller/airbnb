@@ -25,7 +25,7 @@ export const NavBar = (props) => {
 
     useEffect(() => {
         window.addEventListener("scroll", isRender)
-        return () => {
+                return () => {
             window.removeEventListener("scroll", isRender)
         }
     }, [window.pageYOffset]);

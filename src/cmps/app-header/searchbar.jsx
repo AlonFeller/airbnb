@@ -47,9 +47,6 @@ export const Searchbar = (props) => {
         </div>
     </section >
 
-
-
-
     const LongSearchBar = () => <section className="long-searchbar">
         <form action="" className="searchbar-form">
             <div className="searchber-form-label location bold">
@@ -72,7 +69,7 @@ export const Searchbar = (props) => {
         </form>
     </section>
 
-    const searchbarContainerClass = "searchbar-container"
+    const searchbarContainerClass = (isExplore || !isPageScroll)?"searchbar-container end":"searchbar-container "
     // const searchbarContainerClass = (isStay || isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "
 
 
@@ -84,34 +81,3 @@ export const Searchbar = (props) => {
     )
 }
 
-// <section className={(isStay||isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "}>
-//     {(isStay||isPageScroll) ?
-//     <section className={(isPageScroll) ? "searchbar-fullHeaderOn " : "searchbar "}>
-//         <div className="short-searchbar" onClick={toggleIsState} >
-//             <h1>Start your search</h1>
-//             <div className="srchbtn"><img src={btn} alt="btn" /></div>
-//         </div>
-//     </section>
-//     : <section className={(isPageScroll || isExplore) ? "searchbar-fullHeaderOn" : "searchbar"}>
-//         <form action="" className="searchbar-form">
-
-//             <div className="searchber-form-label location">
-//                 <label htmlFor="">Location </label>
-//                 <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
-//             </div>
-//             <div className="searchber-form-label">
-//                 <label htmlFor="">Check in </label>
-//                 <MyDatePicker className="date" />
-//             </div>
-//             <div className="searchber-form-label">
-//                 <label htmlFor="">Check out</label>
-//                 <MyDatePicker className="date" />
-//             </div>
-//             <div className="searchber-form-label">
-//                 <label htmlFor="">How many</label>
-//                 <input type="number" placeholder="Guests" />
-//             </div>
-//             <div className="srchbtn"><img src={btn} alt="btn" /></div>
-//         </form>
-//     </section>}
-// </section>
