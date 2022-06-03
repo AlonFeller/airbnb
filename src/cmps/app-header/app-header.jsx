@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
 // import { toggleDetailsLayout, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsExplore } from "../../store/header/header.action";
-import { headerIsLong } from "../../store/header/header.action";
+import { headerIsLong, toggleDetailsLayout, toggleModalPosition } from "../../store/header/header.action";
 import { LoginSignUp } from './login-siginup'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
@@ -28,13 +28,16 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
-        // console.log(window.pageYOffset);
+        console.log(window.pageYOffset);
         if (window.pageYOffset > 25) {
+            const modalTopPosition= window.pageYOffset - 350
             setIsPageScroll(true)
             dispatch(headerIsLong(false))
+            dispatch(toggleModalPosition(modalTopPosition))
         } else {
             setIsPageScroll(false)
             dispatch(headerIsLong(true))
+            dispatch(toggleModalPosition(0))
         }
     }
 
