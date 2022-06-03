@@ -8,7 +8,7 @@ import { orderService } from '../../services/order.service'
 import { addOrder } from '../../store/order/order.actions'
 import { Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
-import { OrderModal } from '../order/order-msg-modal'
+import { OrderMsgModal } from '../order/order-msg-modal'
 
 export const OrderNow = () => {
     const dispatch = useDispatch()
@@ -47,7 +47,7 @@ export const OrderNow = () => {
         openModal()
     }
 
-    const OrderMsgModal = () => {
+    const openModal = () => {
         setIsModalOpen(true)
         setTimeout(() => {
             // closeModal()
