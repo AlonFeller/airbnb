@@ -1,26 +1,24 @@
 .AppFooter {
     grid-column: 1/-1;
-    position:fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    left: 0px;
+    position: fixed;
     bottom: 0px;
     width: 100%;
     height: 75px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
     background-color: var(--main-background-color);
->*{
-    align-self: center;
-}
-    h4{
-        
+
+    >* {
+        align-self: center;
+    }
+    .footer-container{
+        grid-column: 2/-2;
+        font-size: 14px;
+        font-family: circular-medium;
+    }
+    span {
+
         margin: 0;
         padding: 0;
     }
-
-    p{
-        margin-top: 5px;
-        padding: 0;
-    }
-
 }

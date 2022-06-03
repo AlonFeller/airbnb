@@ -6,8 +6,11 @@ export function AppFooter() {
 
     return (
         <>
-            <h4>cofferights</h4>
-            <p>Alon Feller, Eldar Nir, Omer Levi</p>
+        <section className="footer-container flex space-between">
+            <span>© 2022 Airbnb, Inc. · Privacy · Terms · Sitemap</span>
+            <span>English  (US)   $ USD   Support & resources</span>
+            </section>
         </>
     )
 }
+ 
