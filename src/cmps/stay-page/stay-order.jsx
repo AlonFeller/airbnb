@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import * as React from 'react';
+import * as React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AirBnbBtn } from '../order/AirBnb-Btn'
 import BasicDateRangePicker from '../order/order-calander'
 import { Guests } from '../order/order-guests'
@@ -12,6 +13,7 @@ import { OrderMsgModal } from '../order/order-msg-modal'
 
 export const OrderNow = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const { user } = useSelector(storeState => storeState.userModule)
     const [dates, setDates] = useState()
@@ -53,7 +55,12 @@ export const OrderNow = () => {
         setIsModalOpen(true)
         setTimeout(() => {
             // closeModal()
+            goTo()
         }, 3000)
+    }
+
+    const goTo = () => {
+        navigate('/explore')
     }
 
     const closeModal = () => {
@@ -81,7 +88,7 @@ export const OrderNow = () => {
                 {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
             </section >
             <section>
-                {isModalOpen && <OrderMsgModal currOrder={currOrder}/>}
+                {isModalOpen && <OrderMsgModal currOrder={currOrder} />}
             </section>
         </>
     )
