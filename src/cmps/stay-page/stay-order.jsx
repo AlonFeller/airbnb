@@ -6,6 +6,7 @@ import { AirBnbBtn } from '../order/AirBnb-Btn'
 import BasicDateRangePicker from '../order/order-calander'
 import { Guests } from '../order/order-guests'
 import { orderService } from '../../services/order.service'
+import { utilService } from '../../services/util.service'
 import { addOrder } from '../../store/order/order.actions'
 import { Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
@@ -91,7 +92,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
             <section className="stay-order flex">
                 <div className="order-form-header flex space-between aling-items">
                     <span className="order-header-line">
-                        <h4 className="cost bold">${selectedStay.price}</h4> / night
+                        <h4 className="cost bold">${utilService.numberWithCommas(selectedStay.price)}</h4> / night
                     </span>
                     <p className="order-header-line-ratings">
                         <span>< Star /></span>

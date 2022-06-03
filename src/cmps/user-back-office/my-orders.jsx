@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { loadOrders } from "../../store/order/order.actions";
 import { userReducer } from "../../store/user/user.reducer";
+import { utilService } from "../../services/util.service";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -32,7 +33,7 @@ export const MyOrders = (props) => {
     }
 
     const orderRows = hostOrders.map(order => createData(order.buyer.name,
-        order.stay.name, order.guestsNumber.total, order.checkIn, order.checkOut, order.totalPrice))
+        order.stay.name, order.guestsNumber.total, order.checkIn, order.checkOut, utilService.numberWithCommas(order.totalPrice)))
 
 
     let rating = hostStays.reduce((acc, stay) => { return acc + stay.reviewScores.rating }, 0) / hostStays.length
@@ -56,7 +57,7 @@ export const MyOrders = (props) => {
 
                 <div className="statistics-box">
                     <h3>Total income </h3>
-                    <h4>${totalEarnings}</h4>
+                    <h4>${utilService.numberWithCommas(totalEarnings)}</h4>
 
                 </div>
             </div>

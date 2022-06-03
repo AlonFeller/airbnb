@@ -25,7 +25,8 @@ export const utilService = {
     getRandomIntInclusive,
     delay,
     getAmenitiesIcons,
-    getNewAvg
+    getNewAvg,
+    numberWithCommas
 }
 
 function makeId(length = 6) {
@@ -37,6 +38,10 @@ function makeId(length = 6) {
     }
 
     return txt;
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
 

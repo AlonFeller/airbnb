@@ -1,4 +1,5 @@
 import React from 'react'
+import {utilService} from '../../services/util.service'
 
 export const PriceDetails = ({ selectedStay, nights }) => {
 
@@ -8,9 +9,9 @@ export const PriceDetails = ({ selectedStay, nights }) => {
             <div className="gray-box-shadow">
                 <div className="price-details  flex">
                     <div>
-                        <u> ${selectedStay.price} X {nights} nights:</u>
+                        <u> ${utilService.numberWithCommas(selectedStay.price)} X {nights} nights:</u>
                     </div>
-                    <div className="nights-price">${(nights * selectedStay.price).toFixed()}</div>
+                    <div className="nights-price">${utilService.numberWithCommas((nights * selectedStay.price).toFixed())}</div>
                 </div>
                 <div className="service-fees  flex">
                     <div className="service"><u>Service fee:</u></div>
@@ -19,7 +20,7 @@ export const PriceDetails = ({ selectedStay, nights }) => {
             </div>
             <div className="total-price  flex">
                 <h3> Total</h3>
-                <h3>${(nights * selectedStay.price * 1.025).toFixed()}</h3>
+                <h3>${utilService.numberWithCommas((nights * selectedStay.price * 1.025).toFixed())}</h3>
             </div>
         </section>
     )
