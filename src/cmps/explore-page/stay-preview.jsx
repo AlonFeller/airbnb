@@ -71,7 +71,7 @@ export const StayPreview = (props) => {
 
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
-            <div className="explore-img-container">
+            <div className="explore-img-container" >
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                      className="img-preview" alt="" />
                 <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
