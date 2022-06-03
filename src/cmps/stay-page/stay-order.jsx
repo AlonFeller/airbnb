@@ -19,6 +19,7 @@ export const OrderNow = () => {
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [currOrder, setCurrOrder] = useState()
 
 
     const onGetOrderDates = (currDates) => {
@@ -35,6 +36,7 @@ export const OrderNow = () => {
     const onGetOrder = (selectedStay, user) => {
         if (!isReadyOrder) return
         const newOrder = orderService.add(selectedStay, user, guests, dates, nights)
+        setCurrOrder(newOrder)
         onAddOrder(newOrder)
     }
 
@@ -79,7 +81,7 @@ export const OrderNow = () => {
                 {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
             </section >
             <section>
-                {isModalOpen && <OrderMsgModal />}
+                {isModalOpen && <OrderMsgModal currOrder={currOrder}/>}
             </section>
         </>
     )
