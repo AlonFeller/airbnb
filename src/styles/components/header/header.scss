@@ -31,7 +31,7 @@
             //     // justify-content: end;
             //     // transition: 0.6s;
             // }
-            .header-navbar-container{
+            .header-navbar-container {
                 align-self: flex-start;
                 display: flex;
                 justify-content: end;
@@ -261,33 +261,48 @@
             background-color: #fff;
             color: var(--font-dark-color);
             cursor: pointer;
-            border: 1px solid var(--font-dark-color);
+            border: 1px solid var(--font-lightgray-color);
             border-radius: 20px;
             padding: 4px 6px 4px 6px;
             gap: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            
+
 
             svg {
                 aspect-ratio: 0.7/1;
             }
 
+            .dehaze {
+                margin-left: 5px;
+            }
+
+            .red-dot {
+                height: 11px;
+                width: 11px;
+                border-radius: 50%;
+                background-color: var(--logo-color);
+                position: absolute;
+                top: 23%;
+                right: 11.1%;
+                border: 2px solid white;
+
+            }
+
 
             .login-slide-modal {
                 color: var(--font-dark-color);
-                height: fit-content;
-                width: 120px;
+                width: 160px;
                 background-color: var(--main-background-color);
                 box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
                 border: 1px solid rgb(221, 221, 221);
                 border-radius: 10px;
                 display: none;
-                position: fixed;
-                top: 95px;
-                right: 200px;
-                justify-content: start;
+                position: absolute;
+                top: 65px;
+                right: 184px;
+                justify-content: center;
                 align-items: center;
                 padding: 10px 0;
 
@@ -306,6 +321,7 @@
                     gap: 5px;
                     flex-direction: column;
                     justify-content: space-evenly;
+
                     .login-opt-btn {
                         // margin-top: 5px;
                         // gap: 15px;
@@ -315,53 +331,96 @@
                         display: flex;
                         justify-content: flex-start;
 
-                        &:hover {
-                            background-color: var(--btn-background-color);
+                        .login-opt-btn {
+                            margin: 0;
+                            gap: 5px;
+                            width: 80%;
+                            // border-radius: 20px 20px 20px 20px;
+                            display: flex;
+                            flex-direction: row;
+                            height: 1.1em;
+                            justify-content: flex-start;
+                            margin-left: 20px;
+                            // overflow: hidden;
+                            // box-sizing: border-box;
+
+                            .noti-icon {
+
+                                position: absolute;
+                                top: 12px;
+                                right: 10px;
+                                color: var(--logo-color)
+                            }
+
+
+                            &:hover {
+                                background-color: var(--btn-background-color);
+
+                            }
                         }
+
+                        .nav-btn {
+                            cursor: pointer;
+                        }
+
+                        .login-slide-modal-open & {
+
+                            display: flex;
+                            gap: 5px;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            height: 160px;
+                            transition: 0.4s;
+                            <<<<<<< HEAD=======padding: 2px;
+                            >>>>>>>73ddd1db35c320eff9f412fe2fc132482024ffb1
+                        }
+                    }
+
+                    .noti-tab {
+
+                        color: var(--font-dark-color);
+                        width: 200px;
+                        background-color: var(--main-background-color);
+                        border: 1px solid var(--font-lightgray-color);
+                        border-radius: 10px 0 10px 10px;
+                        position: absolute;
+                        top: 36px;
+                        right: 164px;
+                        padding: 6px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .noti-btn {
+                            margin: 5px;
+                        }
+
                     }
                 }
 
-                .nav-btn {
+                img {
+                    max-height: 50px;
                     cursor: pointer;
                 }
-
-                .login-slide-modal-open & {
-
-                    display: flex;
-                    gap: 5px;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    height: 160px;
-                    transition: 0.4s;
-                    
-                }
             }
+
         }
 
-        img {
-            max-height: 50px;
-            cursor: pointer;
+        .full-header {
+            height: 75px !important;
+            // top:0 !important;
+            background-color: var(--card-background-color);
+            color: var(--font-dark-color);
+            transition: 0.3s;
+            width: 100%;
         }
-    }
 
-}
+        input,
+        label {
+            display: block;
+        }
 
-.full-header {
-    height: 75px !important;
-    // top:0 !important;
-    background-color: var(--card-background-color);
-    color: var(--font-dark-color);
-    transition: 0.3s;
-    width: 100%;
-}
-
-input,
-label {
-    display: block;
-}
-
-.user-img {
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-}
+        .user-img {
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+        }
