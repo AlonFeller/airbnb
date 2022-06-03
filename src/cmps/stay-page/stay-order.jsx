@@ -9,6 +9,7 @@ import { addOrder } from '../../store/order/order.actions'
 import { Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
 import { OrderMsgModal } from '../order/order-msg-modal'
+import { socketService } from '../../services/socket.service';
 
 export const OrderNow = () => {
     const dispatch = useDispatch()
@@ -38,6 +39,7 @@ export const OrderNow = () => {
         const newOrder = orderService.add(selectedStay, user, guests, dates, nights)
         setCurrOrder(newOrder)
         onAddOrder(newOrder)
+        notifyHost(newOrder)
     }
 
     function getTotalNights(checkIn, checkOut) {
@@ -58,6 +60,23 @@ export const OrderNow = () => {
 
     const closeModal = () => {
         setIsModalOpen(false)
+    }
+
+    useEffect(() => {
+        socketService.emit('chat topic', topic);
+        socketService.off(SOCKET_EMIT_SEND_MSG);
+        socketService.on(SOCKET_EMIT_SEND_MSG, addMsg);
+        
+        return () => {
+            socketService.off(SOCKET_EMIT_SEND_MSG, addMsg)
+            // socketService.terminate()
+            clearTimeout(timeout)
+        }
+    }, [isBotMode])
+
+    const notifyHost = (order) => {
+        const hostId = order.host.id
+        socketService.emit(hostId, order)
     }
 
     return (
