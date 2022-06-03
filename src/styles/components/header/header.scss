@@ -253,6 +253,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            svg{
+                aspect-ratio: 0.7/1;
+            }
 
 
             .login-slide-modal {
