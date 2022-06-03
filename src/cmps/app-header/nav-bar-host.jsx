@@ -84,6 +84,7 @@ export const NavBar = (props) => {
                             })}
                         </div>}
                     </div>
+                    </div>
                 </div>
 
             </div>
