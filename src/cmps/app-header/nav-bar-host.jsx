@@ -54,6 +54,7 @@ export const NavBar = (props) => {
     }
 
     const displayLoginModal = () => {
+        console.log('1');
         document.body.classList.toggle("login-slide-modal-open");
     }
 

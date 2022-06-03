@@ -69,17 +69,17 @@ export const OrderNow = () => {
         setIsModalOpen(false)
     }
 
-    useEffect(() => {
-        socketService.emit('chat topic', topic);
-        socketService.off(SOCKET_EMIT_SEND_MSG);
-        socketService.on(SOCKET_EMIT_SEND_MSG, addMsg);
+    // useEffect(() => {
+    //     socketService.emit('chat topic', topic);
+    //     socketService.off(SOCKET_EMIT_SEND_MSG);
+    //     socketService.on(SOCKET_EMIT_SEND_MSG, addMsg);
         
-        return () => {
-            socketService.off(SOCKET_EMIT_SEND_MSG, addMsg)
-            // socketService.terminate()
-            clearTimeout(timeout)
-        }
-    }, [isBotMode])
+    //     return () => {
+    //         socketService.off(SOCKET_EMIT_SEND_MSG, addMsg)
+    //         // socketService.terminate()
+    //         clearTimeout(timeout)
+    //     }
+    // }, [isBotMode])
 
     const notifyHost = (order) => {
         const hostId = order.host.id

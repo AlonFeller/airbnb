@@ -371,37 +371,37 @@
                             cursor: pointer;
                         }
 
-                        .login-slide-modal-open & {
-
-                            display: flex;
-                            gap: 5px;
-                            flex-direction: column;
-                            justify-content: space-evenly;
-                            height: 160px;
-                            transition: 0.4s;
-                            padding: 2px;
-                        }
                     }
+                }
+                .login-slide-modal-open & {
 
+                    display: flex;
+                    gap: 5px;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    height: 160px;
+                    transition: 0.4s;
+                    padding: 2px;
+                    
                     .noti-tab {
 
-                        color: var(--font-dark-color);
-                        width: 200px;
-                        background-color: var(--main-background-color);
-                        border: 1px solid var(--font-lightgray-color);
-                        border-radius: 10px 0 10px 10px;
-                        position: absolute;
-                        top: 36px;
-                        right: 164px;
-                        padding: 6px;
-                        justify-content: center;
-                        align-items: center;
-
-                        .noti-btn {
-                            margin: 5px;
-                        }
-
+                    color: var(--font-dark-color);
+                    width: 200px;
+                    background-color: var(--main-background-color);
+                    border: 1px solid var(--font-lightgray-color);
+                    border-radius: 10px 0 10px 10px;
+                    position: absolute;
+                    top: 36px;
+                    right: 164px;
+                    padding: 6px;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .noti-btn {
+                        margin: 5px;
                     }
+                }
+
                 }
 
                 img {
