@@ -54,6 +54,7 @@ export const NavBar = (props) => {
                     <Dehaze />
                     <AccountCircleIcon />
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
+                        <div className="menu-btn-container">
                         {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
                             : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
 
@@ -62,6 +63,7 @@ export const NavBar = (props) => {
                         {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
                         <div className="login-opt-btn" onClick={() => goTo('host')} >Host</div>
                         <div className="login-opt-btn" >About</div>
+                        </div>
                     </div>
                 </div>
 

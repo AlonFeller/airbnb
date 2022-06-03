@@ -19,9 +19,14 @@
             }
             .order-header-line-ratings{
                 font-size: 14px;
-                .css-i4bv87-MuiSvgIcon-root{
-                    height: 16px;
-                    width: 16px;
+                span{
+                    display: flex;
+                    justify-content: center;
+                    .css-i4bv87-MuiSvgIcon-root{
+                        height: 16px;
+                        width: 16px;
+                        padding-bottom: 1px;
+                    }
                 }
             }
 
