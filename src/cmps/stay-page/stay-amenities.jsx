@@ -18,7 +18,6 @@ export const StayAmenities = ({ amenities, isOpenAmenitiesModal }) => {
                         if (!amenityIcon) return
                         return <li className="amenity-container flex" key={amenity + index}>
                             <span className="amenity-icon">{amenityIcon}</span>
-                            {/* <span className="amenity-icon">###</span> */}
                             <h4>{amenity}</h4>
                         </li>
                     })

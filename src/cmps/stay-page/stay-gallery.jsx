@@ -1,7 +1,6 @@
 import React from "react"
 
 export const StayGallery = ({ stay }) => {
-
     return (
         <section className="stay-gallery">
             {
@@ -10,7 +9,6 @@ export const StayGallery = ({ stay }) => {
                         <img src={require("../../assets/Images/" + imgUrl)} alt="" />
                     </div >
                 )
-
             }
         </section>
     )
