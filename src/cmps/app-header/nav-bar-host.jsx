@@ -52,7 +52,7 @@ export const NavBar = (props) => {
                 {/* <NotificationsIcon /> */}
                 <div className="user-navbar" onClick={displayLoginModal}>
                     <Dehaze />
-                    <AccountCircleIcon />
+                   {(user)? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
                         <div className="menu-btn-container">
                         {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
