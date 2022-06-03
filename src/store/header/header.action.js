@@ -1,7 +1,7 @@
-export function toggleDetailsLayout(set) {
+export function toggleModalPosition(set) {
     return (dispatch) => {
         try {
-            dispatch({ type: 'TOGGLE_HEADER_LAYOUT', set });
+            dispatch({ type: 'TOGGLE_MODAL_POSITION', set });
         } catch {
             console.log('could not toggle ');
         }

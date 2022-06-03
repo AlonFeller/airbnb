@@ -1,6 +1,6 @@
 const initialState = {
     headerMode: {
-        headerLayoutSmall: false,
+        modalPosition: 0,
         isTop: true,
         isLong: true,
         isExplore: false,
@@ -11,8 +11,8 @@ const initialState = {
 export function headerReducer(state = initialState, action) {
     let newState = state;
     switch (action.type) {
-        case 'TOGGLE_HEADER_LAYOUT':
-            newState = { headerMode: { ...state.headerMode, headerLayoutSmall: action.set } }
+        case 'TOGGLE_MODAL_POSITION':
+            newState = { headerMode: { ...state.headerMode, modalPosition: action.set } }
             break;
         case 'TOGGLE_HEADER_ISTOP':
             newState = { headerMode: { ...state.headerMode, isTop: action.set } }
