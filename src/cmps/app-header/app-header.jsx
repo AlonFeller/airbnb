@@ -28,9 +28,9 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
-        console.log(window.pageYOffset);
+        // console.log(window.pageYOffset);
         const modalTopPosition = window.pageYOffset +50
-        console.log("modalTopPosition", modalTopPosition);
+        // console.log("modalTopPosition", modalTopPosition);
         dispatch(toggleModalPosition(modalTopPosition))
         if (window.pageYOffset > 25) {
             setIsPageScroll(true)
