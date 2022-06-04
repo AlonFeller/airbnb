@@ -50,18 +50,11 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    // let users = await storageService.query('user')
 
-    // if (!users.length) {
-
-    //     users = require('../assets/data/user.json')
-    //     storageService.postMany('user', users)
-    // }
-
-    // const user = users.find(user => user.username === userCred.username)
     const user = await httpService.post('auth/login', userCred)
     if (user) {
         socketService.login(user._id)
+        socketService.emit('set-user', user._id)
         return saveLocalUser(user)
     }
 }
@@ -75,7 +68,7 @@ async function signup(userCred) {
 
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-    // socketService.logout()
+    socketService.logout()
     return await httpService.post('auth/logout')
 }
 

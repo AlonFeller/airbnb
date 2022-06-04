@@ -83,8 +83,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     // }, [isBotMode])
 
     const notifyHost = (order) => {
-        const hostId = order.host.id
-        socketService.emit(hostId, order)
+        socketService.emit('new order', order)
     }
 
     return (
@@ -106,6 +105,8 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
                     <Guests onGetGuestsNumber={onGetGuestsNumber} />
                 </div>
                 <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
+                <br />
+                <button onClick={() => notifyHost({host:{id: '6294d815d4a26c96b0b03a77', name: 'Leo' }})}>send test order</button>
                 {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
             </section >
             <section>
