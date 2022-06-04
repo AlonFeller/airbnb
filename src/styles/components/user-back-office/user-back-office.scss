@@ -47,6 +47,8 @@
         &:hover {
             background-color: var(--font-gray-color);
         }
+
+        
         
         img {
             width: 100%;
@@ -64,6 +66,19 @@
         &:hover {
             background-color: var(--font-gray-color);
         }
+
+        display: flex;
+        justify-content: center;
+
+
+        input {
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
 
         img {
             width: 100%;
@@ -104,13 +119,14 @@
     justify-content: center;
 }
 
-.upload-img-txt {
+.img-upload-dispay {
     width: 100%;
     height: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
     label {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-family: circular-book;
         text-align: center;
     }
@@ -200,3 +216,4 @@
         margin-left: 20px;
     }
 }
+

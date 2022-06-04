@@ -99,12 +99,12 @@ export const NewStayHost = (props) => {
 
     const onUploadImg = (ev) => {
         console.log('onuploadimg');
-        const CLOUD_NAME = 'Get name here'
+        const CLOUD_NAME = 'dmsp3i7eo'
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
         const file = ev.target.files[0]
         const formData = new FormData()
         formData.append("file", file)
-        formData.append("upload_preset", "ewa9mksh")
+        formData.append("upload_preset", "deecrvfu")
         return fetch(UPLOAD_URL, {
             method: 'POST',
             body: formData
@@ -118,31 +118,10 @@ export const NewStayHost = (props) => {
 
     const addImg = (url) => {
         const imgs = stay.imgUrls
+        if (!url) return 
         imgs.push(url)
         setStay({ ...stay, imgUrls: imgs })
     }
-
-    //upload to cloudenery<---- add later!
-    // onUploadImg = (ev) => {
-    //     const CLOUD_NAME = 'dkbfdybze'
-    //     const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
-    //     const file = ev.target.files[0]
-    //     const formData = new FormData()
-    //     formData.append("file", file)
-    //     formData.append("upload_preset", "ewa9mksh")
-    //     return fetch(UPLOAD_URL, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //         .then(res => res.json())
-    //         .then(res => {
-    //             const state = state
-    //             const ImgUrl = res.url
-    //             state.newStay.imgUrls.push(ImgUrl)
-    //             setState((state))
-    //         })
-    //         .catch(err => console.error(err))
-    // }
 
     const onAddStay = (ev) => {
         // ev.preventDefault()
@@ -174,7 +153,7 @@ export const NewStayHost = (props) => {
 
                         <div className="img-blank" onClick={onUploadImg}>
                             {(stay.imgUrls[0]) ? <img src={stay.imgUrls[0]} alt="" className="img-upload-dispay"/> : <div>
-                                <div className="img-upload-dispay upload-img-txt">
+                                <div className="img-upload-dispay">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
@@ -182,7 +161,7 @@ export const NewStayHost = (props) => {
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
                             {(stay.imgUrls[1]) ? <img src={stay.imgUrls[1]} alt="" className="img-upload-dispay"/> : <div>
-                                <div className="img-upload-dispay upload-img-txt">
+                                <div className="img-upload-dispay">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
@@ -190,7 +169,7 @@ export const NewStayHost = (props) => {
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
                             {(stay.imgUrls[2]) ? <img src={stay.imgUrls[2]} alt="" className="img-upload-dispay"/> : <div>
-                                <div className="img-upload-dispay upload-img-txt">
+                                <div className="img-upload-dispay">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
@@ -198,7 +177,7 @@ export const NewStayHost = (props) => {
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
                             {(stay.imgUrls[3]) ? <img src={stay.imgUrls[3]} alt="" className="img-upload-dispay"/> : <div>
-                                <div className="img-upload-dispay upload-img-txt">
+                                <div className="img-upload-dispay">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
@@ -206,7 +185,7 @@ export const NewStayHost = (props) => {
                         </div>
                         <div className="img-blank" onClick={onUploadImg}>
                             {(stay.imgUrls[4]) ? <img src={stay.imgUrls[4]} alt="" className="img-upload-dispay"/> : <div>
-                                <div className="img-upload-dispay upload-img-txt">
+                                <div className="img-upload-dispay">
                                     <label>Upload image</label>
                                 </div>
                                 <input type="file" placeholder="Upload Image" name="imgUrls" onChange={onUploadImg} />
