@@ -8,6 +8,7 @@ import { onLogout } from "../../store/user/user.actions";
 import { useEffect, useState } from "react";
 import { toggleIsExplore } from "../../store/header/header.action";
 import { socketService } from "../../services/socket.service";
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 
 
@@ -91,7 +92,7 @@ export const NavBar = (props) => {
                 <div className="nav-btn host" onClick={() => goTo('host')}>Become a Host</div>
                 {/* <NotificationsIcon /> */}
                 <div className="user-navbar" onClick={displayLoginModal}>
-                    <Dehaze fontSize="small" className="dehaze" />
+                    <MenuRoundedIcon fontSize="small" className="dehaze" />
                     {(user) ? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
                     {isNewNoti && <div className="red-dot"></div>}
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
