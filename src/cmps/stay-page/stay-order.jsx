@@ -42,7 +42,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
         const newOrder = orderService.add(selectedStay, user, guests, dates, nights)
         setCurrOrder(newOrder)
         onAddOrder(newOrder)
-        notifyHost(newOrder)
+        // notifyHost(newOrder)
     }
 
     function getTotalNights(checkIn, checkOut) {

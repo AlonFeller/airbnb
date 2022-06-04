@@ -51,21 +51,21 @@
                 display: flex;
                 justify-content: space-between;
                 color: var(--font-dark-color);
-            
+
                 .preview-rating-star {
                     display: flex;
                     align-self: center;
-            
+
                     span {
                         align-self: center;
                     }
-            
+
                     svg {
                         align-self: center;
                         height: 15px;
                         width: 15px;
-            
-                        
+
+
                     }
                 }
             }
@@ -120,7 +120,8 @@
         cursor: pointer;
         transition: 0.5s;
     }
-    :hover{
+
+    :hover {
         opacity: 1;
     }
 }
@@ -130,7 +131,7 @@
     padding: 0;
     margin: 0;
     max-width: 350px;
-    max-height:350px;
+    max-height: 350px;
     aspect-ratio: 1/1 !important;
     overflow: hidden;
 
@@ -156,10 +157,20 @@
         // opacity: 0.7;
         cursor: pointer;
 
-    }
+        // &.full-hart-btn {
+        //     span {
+        //         color: var(--logo-color);
+        //         opacity: 1;
+        //     }
+        // }
 
-    .heart-empty {
-        color: var(--hart-background-color);
+        // &.empty-hart-btn {
+        //     span {
+        //         color: var(--font-gray-color);
+        //         opacity: 0.1;
+
+        //     }
+        // }
     }
 }
 

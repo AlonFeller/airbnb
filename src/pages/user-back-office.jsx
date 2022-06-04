@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams, Outlet } from 'react-router-dom'
-import { toggleIsExplore } from "../store/header/header.action"
+import { headerIsLong, toggleIsExplore, toggleIsHome } from "../store/header/header.action"
 import { loadUser } from '../store/user/user.actions'
 import { loadStays } from "../store/stay/stay.actions"
 import Tabs from '@mui/material/Tabs';
@@ -24,6 +24,8 @@ export function UserBackOffice() {
         window.scrollTo(0, 0);
         dispatch(loadUser(params.id))
         dispatch(toggleIsExplore(true))
+        dispatch(headerIsLong(false))
+        dispatch(toggleIsHome(false))
         console.log(user)
     }, [params.id, tab])
 
