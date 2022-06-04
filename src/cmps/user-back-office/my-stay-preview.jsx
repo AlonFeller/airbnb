@@ -47,7 +47,7 @@ export const MyStayPreview = (props) => {
 
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
-            <div className="img-container">
+            <div className="explore-img-container">
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                     height='270' width='270' className="img-preview" alt="" />
                 <div className="cycle-btn-container">
