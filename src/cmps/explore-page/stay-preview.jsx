@@ -16,7 +16,7 @@ export const StayPreview = (props) => {
     const [imgNum, setImgNum] = useState(0)
     const user = useSelector((state => state.userModule.user))
     const [likeHeart, setLikeHeart] = useState(false)
-    
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -60,9 +60,9 @@ export const StayPreview = (props) => {
             if (user.favorites.map(fav => fav._id).includes(stay._id)) {
                 user.favorites = user.favorites.filter(fav => fav._id !== stay._id)
             } else {
-                user.favorites.push(stay)  
+                user.favorites.push(stay)
             }
-            
+
             dispatch(updateUser(user))
         }
 
@@ -73,7 +73,7 @@ export const StayPreview = (props) => {
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
             <div className="explore-img-container" >
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
-                     className="img-preview" alt="" />
+                    className="img-preview" alt="" />
                 <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
                 {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
