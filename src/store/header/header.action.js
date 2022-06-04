@@ -50,4 +50,13 @@ export function toggleIsStay(set) {
     };
 }
 
+export function toggleIsHome(set) {
+    return (dispatch) => {
+        try {
+            dispatch({ type: 'SET_HOME_MODE', set });
+        } catch {
+            console.log('could not toggle ');
+        }
+    };
+}
 

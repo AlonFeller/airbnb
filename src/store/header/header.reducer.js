@@ -4,7 +4,8 @@ const initialState = {
         isTop: true,
         isLong: true,
         isExplore: false,
-        isStay: false
+        isStay: false,
+        isHome: true
     }
 };
 
@@ -25,6 +26,9 @@ export function headerReducer(state = initialState, action) {
             break;
         case 'SET_STAY_MODE':
             newState = { headerMode: { ...state.headerMode, isStay: action.set } }
+            break
+        case 'SET_HOME_MODE':
+            newState = { headerMode: { ...state.headerMode, isHome: action.set } }
             break
         default:
     }
