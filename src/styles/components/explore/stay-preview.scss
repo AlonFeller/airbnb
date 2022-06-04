@@ -20,6 +20,7 @@
             line-height: 18px;
             border-radius: 20px;
             // row-gap: 10px;
+            cursor: pointer;
 
             h3 {
                 font-size: 18px;
@@ -76,8 +77,11 @@
 .cycle-btn-container {
     display: flex;
     justify-content: space-between;
+    height: 100%;
     position: relative;
-    top: -65%;
+    padding: 0 15px;
+    z-index: 25;
+    top: -113%;
 
     .next-btn {
         z-index: 25;
@@ -86,13 +90,14 @@
         opacity: 0;
         width: 30px;
         height: 30px;
-        position: relative;
+        align-self: center;
+        // position: relative;
         // top: -330px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: var(--font-dark-color);
-        right: 20px;
+        // right: 20px;
         cursor: pointer;
         transition: 0.5s;
     }
@@ -104,15 +109,19 @@
         opacity: 0;
         width: 30px;
         height: 30px;
-        position: relative;
+        align-self: center;
+        // position: relative;
         // top: -330px;
-        left: 20px;
+        // left: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: var(--font-dark-color);
         cursor: pointer;
         transition: 0.5s;
+    }
+    :hover{
+        opacity: 1;
     }
 }
 
@@ -121,8 +130,9 @@
     padding: 0;
     margin: 0;
     max-width: 350px;
-    height: min-content;
+    max-height:350px;
     aspect-ratio: 1/1 !important;
+    overflow: hidden;
 
     .img-preview {
         width: 100%;
@@ -132,7 +142,7 @@
     }
 
     .heart-btn {
-        // z-index: 10;
+        z-index: 26;
         width: 30px;
         height: 30px;
         display: inline-block;

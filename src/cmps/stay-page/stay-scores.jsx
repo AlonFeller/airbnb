@@ -14,7 +14,7 @@ export const StayScores = ({ stay }) => {
                                     <div className="line-loader-container">
                                         <div className="line-loader" style={{ width: `${stay.reviewScores[key] * 10}%` }}></div>
                                     </div>
-                                    <div className="score-category-num">{stay.reviewScores[key] / 2}</div>
+                                    <div className="score-category-num">{(stay.reviewScores[key] / 2).toFixed(1)}</div>
                                 </div>
                             </div>
                         )

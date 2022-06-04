@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
 // import { toggleDetailsLayout, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsExplore } from "../../store/header/header.action";
-import { headerIsLong } from "../../store/header/header.action";
+import { headerIsLong, toggleDetailsLayout, toggleIsHome, toggleModalPosition } from "../../store/header/header.action";
 import { LoginSignUp } from './login-siginup'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
 import logo from '../../assets/Images/logo2.png'
+import whiteLogo from '../../assets/Images/white-logo.png'
 import { useDispatch, useSelector } from 'react-redux';
 
 export function AppHeader() {
     const dispatch = useDispatch()
-    const { isExplore } = useSelector(state => state.headerModule.headerMode)
-    const { isStay } = useSelector(state => state.headerModule.headerMode)
+    const { isExplore, isStay, isHome } = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
     const navigate = useNavigate()
     const goTo = (path) => {
@@ -29,12 +29,16 @@ export function AppHeader() {
 
     function toggleHeader() {
         // console.log(window.pageYOffset);
+        console.log("isPageScroll", isPageScroll, "isHome", isHome);
         if (window.pageYOffset > 25) {
+            const modalTopPosition = window.pageYOffset - 350
             setIsPageScroll(true)
             dispatch(headerIsLong(false))
+            dispatch(toggleModalPosition(modalTopPosition))
         } else {
             setIsPageScroll(false)
             dispatch(headerIsLong(true))
+            dispatch(toggleModalPosition(0))
         }
     }
 
@@ -43,10 +47,10 @@ export function AppHeader() {
             <div className={"header flex " + ((isPageScroll || isExplore || isStay) ? "full-header " : "")} >
                 <section className={"header-container " + (isStay ? "isStay" : "")}>
                     <div className="logo-img-container">
-                        <img src={logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
-                    <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} />
-                    <NavBar isPageScroll={isPageScroll} isExplore={isExplore} />
-                    <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} />
+                        <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
+                    <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome}/>
+                    <NavBar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
+                    <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <div className="login-screen" onClick={toggleLogin}></div>
                 </section>
             </div>

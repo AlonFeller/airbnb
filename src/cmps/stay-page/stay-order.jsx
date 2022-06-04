@@ -6,13 +6,14 @@ import { AirBnbBtn } from '../order/AirBnb-Btn'
 import BasicDateRangePicker from '../order/order-calander'
 import { Guests } from '../order/order-guests'
 import { orderService } from '../../services/order.service'
+import { utilService } from '../../services/util.service'
 import { addOrder } from '../../store/order/order.actions'
 import { Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
 import { OrderMsgModal } from '../order/order-msg-modal'
 import { socketService } from '../../services/socket.service';
 
-export const OrderNow = () => {
+export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
@@ -90,12 +91,13 @@ export const OrderNow = () => {
             <section className="stay-order flex">
                 <div className="order-form-header flex space-between aling-items">
                     <span className="order-header-line">
-                        <h4 className="cost bold">${selectedStay.price}</h4> / night
+                        <h4 className="cost bold">${utilService.numberWithCommas(selectedStay.price)}</h4> / night
                     </span>
                     <p className="order-header-line-ratings">
                         <span>< Star /></span>
-                        <span className="avg-checkout"> {selectedStay.reviewScores.rating / 20} · </span>
-                        <span className="reviews bold">{selectedStay.numOfReviews} reviews</span>
+                        <span className="avg-checkout"> <b>{(selectedStay.reviewScores.rating / 20).toFixed(1)}</b></span>
+                        <span>·</span>
+                        <span className="reviews bold pointer" onClick={() => { setIsOpenModal(!isOpenModal)}}><u>{selectedStay.numOfReviews} reviews</u></span>
                     </p>
                 </div>
                 <div className="order-calander">

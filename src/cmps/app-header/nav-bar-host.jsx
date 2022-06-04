@@ -14,7 +14,7 @@ import { socketService } from "../../services/socket.service";
 
 
 export const NavBar = (props) => {
-    const { isExplore, isPageScroll } = props
+    const { isExplore, isPageScroll, isStay, isHome } = props
     const user = useSelector((state => state.userModule.user))
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -39,7 +39,7 @@ export const NavBar = (props) => {
 
     useEffect(() => {
         window.addEventListener("scroll", isRender)
-                return () => {
+        return () => {
             window.removeEventListener("scroll", isRender)
         }
     }, [window.pageYOffset]);
@@ -54,7 +54,7 @@ export const NavBar = (props) => {
     { by: 'Mosses' }]
     const [isNewNoti, setIsNewNoti] = useState(false)
     const [presentNoti, setPresentNoti] = useState(false)
-    
+
 
     const openNotiTab = (ev) => {
         ev.stopPropagation()
@@ -81,7 +81,7 @@ export const NavBar = (props) => {
 
     return (
         <section className="header-navbar-container">
-            <div className={(isPageScroll || isExplore) ? "header-navbar dark" : "header-navbar"}>
+            <div className={(!isPageScroll && isHome) ? "header-navbar" : "header-navbar dark"}>
                 <div className="nav-btn explore" onClick={() => goTo('explore')}>Explore</div>
                 <div className="nav-btn host" onClick={() => goTo('host')}>Become a Host</div>
                 {/* <NotificationsIcon /> */}
@@ -91,20 +91,20 @@ export const NavBar = (props) => {
                     {isNewNoti && <div className="red-dot"></div>}
                     <div className="login-slide-modal" onMouseOut={displayLoginModal} >
                         <div className="menu-btn-container">
-                        {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
-                            : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
+                            {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
+                                : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
 
-                        {(user) ? <div className="login-opt-btn" onClick={(ev) => openNotiTab(ev)}  >Notifications  {isNewNoti && <NotificationsIcon className="noti-icon" />} </div> : null}
-                        {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/stays`)} >My Area</div> : null}
-                        {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
-                        <div className="login-opt-btn" onClick={() => goTo('host')} >Host</div>
-                        <div className="login-opt-btn" >About</div>
-                        {presentNoti && <div className="noti-tab" onMouseOut={() => setIsNewNoti(false)}>
-                            { orderNotifications.map(order => {
-                                return <div key={order.by} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order.by}</div>
-                            })}
-                        </div>}
-                    </div>
+                            {(user) ? <div className="login-opt-btn" onClick={(ev) => openNotiTab(ev)}  >Notifications  {isNewNoti && <NotificationsIcon className="noti-icon" />} </div> : null}
+                            {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/stays`)} >My Area</div> : null}
+                            {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
+                            <div className="login-opt-btn" onClick={() => goTo('host')} >Host</div>
+                            <div className="login-opt-btn" >About</div>
+                            {presentNoti && <div className="noti-tab" onMouseOut={() => setIsNewNoti(false)}>
+                                {orderNotifications.map(order => {
+                                    return <div key={order.by} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order.by}</div>
+                                })}
+                            </div>}
+                        </div>
                     </div>
                 </div>
 

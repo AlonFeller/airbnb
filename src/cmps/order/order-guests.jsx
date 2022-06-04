@@ -14,7 +14,7 @@ export const Guests = ({ onGetGuestsNumber }) => {
         onGetGuestsNumber(guests)
     }, [guests]);
 
-
+    
     const openGuestsModal = () => {
         document.body.classList.toggle("guests-modal-open")
     }

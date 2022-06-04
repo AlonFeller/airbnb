@@ -14,20 +14,26 @@
 
         .order-form-header {
             align-items: center;
-            .order-header-line{
+
+            .order-header-line {
                 font-size: 16px;
             }
-            .order-header-line-ratings{
+
+            .order-header-line-ratings {
                 font-size: 14px;
-                span{
+                gap: 3px;
+
+                span {
                     display: flex;
                     justify-content: center;
-                    .css-i4bv87-MuiSvgIcon-root{
+
+                    .css-i4bv87-MuiSvgIcon-root {
                         height: 16px;
                         width: 16px;
                         padding-bottom: 1px;
                     }
                 }
+
             }
 
             >* {
@@ -113,12 +119,19 @@
             width: 100%;
             display: flex;
             flex-direction: column;
+
+            h5 {
+                align-self: center;
+                margin-bottom: auto;
+                margin-top: 0;
+            }
         }
 
 
         .price-details {
             justify-content: space-between;
             margin-bottom: 10px;
+            color: var(--font-dark-color-order);
         }
 
         .service-fees {
