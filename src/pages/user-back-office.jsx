@@ -70,7 +70,7 @@ export function UserBackOffice() {
 
 
                 <Outlet />
-
+                
 
             </section>
 
