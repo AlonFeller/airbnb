@@ -130,3 +130,12 @@ export function setCheckinOut(filterBy) {
         })
     }
 }
+
+// export function setIsLikeStay(set) {
+//     return (dispatch) => {
+//         return dispatch({
+//             type: 'SET_LIKESTAY',
+//             set,
+//         })
+//     }
+// }

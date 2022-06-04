@@ -70,6 +70,7 @@ export const NavBar = (props) => {
     const displayLoginModal = () => {
 
         document.body.classList.toggle("login-slide-modal-open");
+        
     }
 
     const orderArrived = (order) => {
