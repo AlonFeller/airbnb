@@ -49,8 +49,10 @@
                 border: 1px solid var(--font-lightgray-color);
                 box-shadow: 0px 2px 5px var(--font-gray-color);
                 transition: 0.4s;
-                position: sticky;
-                top: 50px;
+                position: absolute;
+                top: 75px;
+                left: 50%;
+                transform: translateX(-50%);
                 transition: 0.6s;
 
                 &:hover {
