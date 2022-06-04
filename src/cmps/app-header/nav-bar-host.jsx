@@ -76,6 +76,7 @@ export const NavBar = (props) => {
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
+ 
 
 
 
@@ -101,7 +102,7 @@ export const NavBar = (props) => {
                             <div className="login-opt-btn" >About</div>
                             {presentNoti && <div className="noti-tab" onMouseOut={() => setIsNewNoti(false)}>
                                 {orderNotifications.map(order => {
-                                    return <div key={order.by} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order.buyer.name}</div>
+                                    return <div key={order} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order}</div>
                                 })}
                             </div>}
                         </div>
