@@ -21,8 +21,6 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
-    // const [isOrderModalOpen, setIsOrderModalOpen] = useState(false)
-    // const [currOrder, setCurrOrder] = useState()
 
 
     useEffect(() => {
@@ -76,18 +74,6 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
         setIsOrderModalOpen(false)
     }
 
-    // useEffect(() => {
-    //     socketService.emit('chat topic', topic);
-    //     socketService.off(SOCKET_EMIT_SEND_MSG);
-    //     socketService.on(SOCKET_EMIT_SEND_MSG, addMsg);
-
-    //     return () => {
-    //         socketService.off(SOCKET_EMIT_SEND_MSG, addMsg)
-    //         // socketService.terminate()
-    //         clearTimeout(timeout)
-    //     }
-    // }, [isBotMode])
-
     const notifyHost = (order) => {
         console.log('sending order');
         socketService.emit('new order', order)
@@ -113,7 +99,6 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
                 </div>
                 <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
                 <br />
-                {/* <button onClick={() => notifyHost({host:{id: '6294d815d4a26c96b0b03a77', name: 'Leo' }})}>send test order</button> */}
                 {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
             </section >
 

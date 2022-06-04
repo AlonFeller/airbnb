@@ -1,10 +1,13 @@
 import React from "react"
 import moment from 'moment'
+import { useSelector } from "react-redux"
 import { utilService } from '../../services/util.service'
+
 export const OrderMsgModal = ({ currOrder }) => {
+    const { modalPosition } = useSelector(state => state.headerModule.headerMode)
 
     return (
-        <section className="order-modal">
+        <section className="order-modal" style={{ top: (modalPosition + 140) + "px" }}>
             <p className="time-order"><b>{new Date().toDateString()}</b></p>
             <h4>Your order complete successfully</h4>
             <p className="order-stay-name"><b>{currOrder.stay.name}</b></p>
