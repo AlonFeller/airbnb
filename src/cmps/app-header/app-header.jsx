@@ -40,7 +40,7 @@ export function AppHeader() {
             if (isHome) dispatch(headerIsLong(true))
 
         }
-        // console.log("isPageScroll", isPageScroll, "isHome", isHome,"isLong",isLong);
+        console.log("isPageScroll", isPageScroll, "isHome", isHome,"isLong",isLong);
     }
 
     return (
