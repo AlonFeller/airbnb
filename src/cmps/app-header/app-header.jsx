@@ -29,16 +29,16 @@ export function AppHeader() {
 
     function toggleHeader() {
         console.log(window.pageYOffset);
+        const modalTopPosition = window.pageYOffset +50
+        console.log("modalTopPosition", modalTopPosition);
+        dispatch(toggleModalPosition(modalTopPosition))
         if (window.pageYOffset > 25) {
-            const modalTopPosition = window.pageYOffset -450
-            console.log(modalTopPosition);
             setIsPageScroll(true)
             dispatch(headerIsLong(false))
-            dispatch(toggleModalPosition(modalTopPosition))
         } else {
             setIsPageScroll(false)
-            if(isHome)dispatch(headerIsLong(true))
-            dispatch(toggleModalPosition(0))
+            if (isHome) dispatch(headerIsLong(true))
+
         }
         // console.log("isPageScroll", isPageScroll, "isHome", isHome,"isLong",isLong);
     }
@@ -49,7 +49,7 @@ export function AppHeader() {
                 <section className={"header-container " + (isStay ? "isStay" : "")}>
                     <div className="logo-img-container">
                         <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
-                    <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome}/>
+                    <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <NavBar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <div className="login-screen" onClick={toggleLogin}></div>

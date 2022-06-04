@@ -28,7 +28,6 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
 
     useEffect(() => {
         if (user) {
-  
             socketService.emit('set-user',  selectedStay.host._id);   
         } 
     },[])
@@ -91,6 +90,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     // }, [isBotMode])
 
     const notifyHost = (order) => {
+        console.log('sending order');
         socketService.emit('new order', order)
     }
 
