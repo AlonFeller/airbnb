@@ -47,7 +47,7 @@ export const Searchbar = (props) => {
         </div>
     </section >
 
-    const LongSearchBar = () => <section className="long-searchbar">
+    const LongSearchBar = () => <section className="long-searchbar ">
         <form action="" className="searchbar-form">
             <div className="searchber-form-label location bold">
                 <label htmlFor="">Location </label>
@@ -69,7 +69,7 @@ export const Searchbar = (props) => {
         </form>
     </section>
 
-    const searchbarContainerClass = (isExplore || !isPageScroll)?"searchbar-container end":"searchbar-container "
+    const searchbarContainerClass = (isExplore || !isPageScroll)?"searchbar-container ":"searchbar-container "
     // const searchbarContainerClass = (isStay || isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "
 
 
