@@ -15,7 +15,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 export function AddReview({ stay }) {
     const dispatch = useDispatch();
     const { user } = useSelector(storeState => storeState.userModule)
-    const { addedReveiw } = useSelector(storeState => storeState.stayModule)
     const [value, setValue] = React.useState("");
     const [rating, setRating] = React.useState([5, 5, 5, 5, 5, 5]);
     const types = ["Cleanliness:", "Communication:", "Check-in:", "Accuracy:", "Location:", "Value:"];
@@ -75,6 +74,7 @@ export function AddReview({ stay }) {
         // dispatch(openMsg({ txt: "Review added", type: "bnb" }));
         console.log(updatedStay);
         dispatch(updateStay(updatedStay))
+        dispatch(loadStay(updatedStay._id))
     }
 
     const theme = createTheme({
@@ -147,7 +147,7 @@ function RatingBar(type, idx, value, setValue) {
                 onChangeActive={(event, newHover) => {
                     setHover(newHover);
                 }}
-                style={{color:"#333333"}}
+                style={{color:"#3d3d3d"}}
                 emptyIcon={<Star style={{ opacity: 0.55}} fontSize='inherit' />}
             />
         </div>
