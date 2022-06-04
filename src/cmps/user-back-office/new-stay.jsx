@@ -6,9 +6,10 @@ import { useDispatch, useSelector } from "react-redux"
 import { addStay } from "../../store/stay/stay.actions"
 import Checkbox from '@mui/material/Checkbox';
 import Switch from '@mui/material/Switch';
-import { AirBnbBtn } from "../order/AirBnb-Btn";
+
 import { useNavigate } from "react-router-dom";
 import { ImgUploader } from "../app-header/img-uploader";
+import { AirBnbBtnBo } from "./AirBnb-Btn-bo";
 
 
 export const NewStayHost = (props) => {
@@ -264,7 +265,7 @@ export const NewStayHost = (props) => {
 
                     <div className="host-now-btn" onClick={() => onAddStay()}>
 
-                        <AirBnbBtn btnInnerTxt='Host now' />
+                        <AirBnbBtnBo btnInnerTxt='Host now' />
                     </div>
                 </form>
 
