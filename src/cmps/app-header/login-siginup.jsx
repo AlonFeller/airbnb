@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { socketService } from '../../services/socket.service'
 import { userService } from '../../services/user.service'
 import { onLogin, onSignup } from '../../store/user/user.actions'
 import { ImgUploader } from './img-uploader'
@@ -24,8 +25,11 @@ export function LoginSignUp(props) {
     }
 
     const onLoginUser = (ev = null) => {
+        
         if (ev) ev.preventDefault();
         dispatch(onLogin(credentials));
+
+        
 
         clearState()
         document.body.classList.toggle("login-page-open");

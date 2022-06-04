@@ -26,13 +26,15 @@ export const NavBar = (props) => {
 
     useEffect(() => {
         if (user) {
-            socketService.setup();
-            socketService.emit('set-user-socket', user._id);   
-            // socketService.off('new order');
-            socketService.on(user._id,  orderArrived);   
+
+            
+            // socketService.setup();
+            // socketService.emit('order recieved', user._id);
+            // console.log('user id', user._id);
+            socketService.on('order recieved',  orderArrived);   
         } 
-        return () => {
-            socketService.off(user._id) }
+        // return () => {
+        //     socketService.off(user._id) }
     },[])
 
     useEffect(() => {
@@ -71,8 +73,7 @@ export const NavBar = (props) => {
     }
 
     const orderArrived = (order) => {
-        console.log('order arrived');
-        alert('order from ', order.buyer.name)
+        console.log('order arrived', order);
         setIsNewNoti(true)
         orderNotifications.unshift({by: order.buyer.name})
     }
