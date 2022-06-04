@@ -1,13 +1,15 @@
 
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/Images/logo_white.png'
 import { AirBnbBtn } from '../cmps/order/AirBnb-Btn'
 import { AirBnbBtnHost } from '../cmps/order/AirBnb-BtnHost'
+import { headerIsLong, toggleIsExplore, toggleIsHome } from '../store/header/header.action'
 
 
 export function BecomeAHost() {
-
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const user = useSelector((state => state.userModule.user))
 
@@ -15,6 +17,15 @@ export function BecomeAHost() {
         navigate('/')
         navigate(path)
     }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        dispatch(toggleIsExplore(false))
+        dispatch(headerIsLong(false))
+        dispatch(toggleIsHome(true))
+        return () => {
+            dispatch(toggleIsHome(false))
+        }
+    }, [])
 
     const loginCheck = () => {
         console.log('g');

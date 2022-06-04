@@ -6,7 +6,6 @@ import madrid from '../assets/Images/madrid.jpg'
 import Portugal from '../assets/Images/portugal.jpg'
 import brazil from '../assets/Images/brazil.jpg'
 import { headerIsLong, toggleIsHome } from "../store/header/header.action";
-import { Leads } from '../cmps/home-page/leads'
 import { useDispatch } from 'react-redux'
 
 export function HomePage() {
