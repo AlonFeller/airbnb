@@ -18,7 +18,7 @@ export const OrderMsgModal = ({ currOrder }) => {
             </p>
             <p className="order-total-price">Total price:{currOrder.totalPrice}</p>
             <p className="order-added-msg">The order is added to your area</p>
-            <p>Time order:{Date.now().toDateString()}</p>
+            {/* <p>Time order:{Date.now().toDateString()}</p> */}
         </section>
     )
 }
