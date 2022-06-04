@@ -21,14 +21,7 @@
         grid-template-columns: 1.5fr 2fr;
         grid-template-rows: 10% 20% 70%;
 
-        .stay-reviews-header {
-            position: relative;
-            top: 10px;
-            display: flex;
-            gap: 5px;
-            align-items: center;
 
-        }
 
         .review-states {
             grid-column: 1/2;
@@ -106,7 +99,16 @@
     }
 }
 
-.icon-star{
+.icon-star {
     display: flex;
     align-items: center;
+}
+
+.stay-reviews-header {
+    position: relative;
+    top: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
 }

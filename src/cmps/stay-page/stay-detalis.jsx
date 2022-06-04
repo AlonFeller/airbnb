@@ -26,7 +26,7 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
     const hostStayImgSrc = stay.host.newPictureUrl ?? 'https://thispersondoesnotexist.com/image?cache=' + Date.now()
 
 
-    const StayDetails = ({ stay }) => <section className="stay-details-shortly gray-box-shadow">
+    const StayDetails = ({ stay }) => <section className="stay-details-shortly stay-gray-box-shadow">
         <div className="stay-host-info">
             <div className="asset-sum-item">
                 <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
@@ -37,7 +37,7 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
     </section>
 
     return (
-        <section className="stay-details flex gray-box-shadow">
+        <section className="stay-details flex stay-gray-box-shadow">
             <div>
                 <div className="stay-details-info">
                     <StayDetails stay={stay} />

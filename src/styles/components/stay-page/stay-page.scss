@@ -19,8 +19,8 @@
 
     .stay-info-line {
         font-size: 14px;
-        
-        h4{
+
+        h4 {
             margin: 0;
             padding: 0;
         }
@@ -31,8 +31,10 @@
             min-width: 400px;
             justify-content: flex-start;
             gap: 5px;
+            display: flex;
 
             .icon-star {
+                display: inline-block;
                 display: flex;
                 justify-content: center;
 
