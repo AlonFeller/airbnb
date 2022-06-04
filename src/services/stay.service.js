@@ -67,7 +67,7 @@ async function save (stay) {
     let savedStay
     if (stay._id) {
         // savedStay = await storageService.put(STORAGE_KEY, stay)
-        savedStay = await httpService.put(`stay/${stay._Id}`, stay)
+        savedStay = await httpService.put(`stay/${stay._id}`, stay)
     } else {
         savedStay = await httpService.post(`stay`, stay)
 

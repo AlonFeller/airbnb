@@ -27,6 +27,7 @@ export function AddReview({ stay }) {
 
     async function CreateReview() {
         if (!user) return
+        let updatedStay = {...stay}
         let avg = (rating[0] + rating[1] + rating[2] + rating[3] + rating[4] + rating[5]) / 6;
         const newReview = {
             at: Date.now(),
@@ -38,7 +39,7 @@ export function AddReview({ stay }) {
             },
             txt: value
         }
-        stay.reviews.unshift(newReview);
+        updatedStay.reviews.unshift(newReview);
 
         const newReviewRate = {
             accuracy: rating[3],
@@ -51,28 +52,29 @@ export function AddReview({ stay }) {
         }
 
         const oldReviewRate = {
-            accuracy: stay.reviewScores.accuracy,
-            cleanliness: stay.reviewScores.cleanliness,
-            checkin: stay.reviewScores.checkin,
-            communication: stay.reviewScores.communication,
-            location: stay.reviewScores.accuracy,
-            value: stay.reviewScores.value,
-            rating: stay.reviewScores.rating
+            accuracy: updatedStay.reviewScores.accuracy,
+            cleanliness: updatedStay.reviewScores.cleanliness,
+            checkin: updatedStay.reviewScores.checkin,
+            communication: updatedStay.reviewScores.communication,
+            location: updatedStay.reviewScores.accuracy,
+            value: updatedStay.reviewScores.value,
+            rating: updatedStay.reviewScores.rating
         }
 
-        stay.reviewScores = {
-            accuracy: utilService.getNewAvg(oldReviewRate.accuracy, stay.numOfReviews, newReviewRate.accuracy).toFixed(0),
-            cleanliness: utilService.getNewAvg(oldReviewRate.cleanliness, stay.numOfReviews, newReviewRate.cleanliness).toFixed(0),
-            checkin: utilService.getNewAvg(oldReviewRate.checkin, stay.numOfReviews, newReviewRate.checkin).toFixed(0),
-            communication: utilService.getNewAvg(oldReviewRate.communication, stay.numOfReviews, newReviewRate.communication).toFixed(0),
-            location: utilService.getNewAvg(oldReviewRate.location, stay.numOfReviews, newReviewRate.location).toFixed(0),
-            value: utilService.getNewAvg(oldReviewRate.value, stay.numOfReviews, newReviewRate.value).toFixed(0),
-            rating: utilService.getNewAvg(oldReviewRate.rating, stay.numOfReviews, newReviewRate.rating * 20).toFixed(0)
+        updatedStay.reviewScores = {
+            accuracy: utilService.getNewAvg(oldReviewRate.accuracy, updatedStay.numOfReviews, newReviewRate.accuracy).toFixed(0),
+            cleanliness: utilService.getNewAvg(oldReviewRate.cleanliness, updatedStay.numOfReviews, newReviewRate.cleanliness).toFixed(0),
+            checkin: utilService.getNewAvg(oldReviewRate.checkin, updatedStay.numOfReviews, newReviewRate.checkin).toFixed(0),
+            communication: utilService.getNewAvg(oldReviewRate.communication, updatedStay.numOfReviews, newReviewRate.communication).toFixed(0),
+            location: utilService.getNewAvg(oldReviewRate.location, updatedStay.numOfReviews, newReviewRate.location).toFixed(0),
+            value: utilService.getNewAvg(oldReviewRate.value, updatedStay.numOfReviews, newReviewRate.value).toFixed(0),
+            rating: utilService.getNewAvg(oldReviewRate.rating, updatedStay.numOfReviews, newReviewRate.rating * 20).toFixed(0)
         }
 
-        stay.numOfReviews++
+        updatedStay.numOfReviews++
         // dispatch(openMsg({ txt: "Review added", type: "bnb" }));
-        console.log(stay);
+        console.log(updatedStay);
+        dispatch(updateStay(updatedStay))
     }
 
     const theme = createTheme({
@@ -98,13 +100,8 @@ export function AddReview({ stay }) {
 
     const onAddReview = () => {
         CreateReview()
-        // dispatch(updateStay(stay))
         setValue("")
         setRating([5, 5, 5, 5, 5, 5])
-        // dispatch(loadReviews(true))
-        // console.log(addedReveiw)
-        // dispatch(loadReviews(false))
-        // console.log(addedReveiw)
     }
     return (
         <div className="gray-box-shadow">
