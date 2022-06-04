@@ -25,12 +25,12 @@ export const NavBar = (props) => {
     }
 
     useEffect(() => {
-        if (user) {
+     
+    },[])
 
-            
-            // socketService.setup();
-            // socketService.emit('order recieved', user._id);
-            // console.log('user id', user._id);
+    useEffect(() => {
+        if (user) {
+  
             socketService.on('order recieved',  orderArrived);   
         } 
         // return () => {
@@ -50,8 +50,7 @@ export const NavBar = (props) => {
         // console.log("isPageScroll", isPageScroll);
     }
 
-    const orderNotifications = [{ by: 'Sarah' },
-    { by: 'Mosses' }]
+    const [orderNotifications, setOrderNotifications] = useState([])
     const [isNewNoti, setIsNewNoti] = useState(false)
     const [presentNoti, setPresentNoti] = useState(false)
 
@@ -73,10 +72,11 @@ export const NavBar = (props) => {
     }
 
     const orderArrived = (order) => {
-        console.log('order arrived', order);
+        console.log('order arrived from', order.buyer.name);
         setIsNewNoti(true)
-        orderNotifications.unshift({by: order.buyer.name})
+        setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
+
 
 
     return (
@@ -101,7 +101,7 @@ export const NavBar = (props) => {
                             <div className="login-opt-btn" >About</div>
                             {presentNoti && <div className="noti-tab" onMouseOut={() => setIsNewNoti(false)}>
                                 {orderNotifications.map(order => {
-                                    return <div key={order.by} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order.by}</div>
+                                    return <div key={order.by} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order.buyer.name}</div>
                                 })}
                             </div>}
                         </div>

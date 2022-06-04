@@ -26,6 +26,14 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     const [currOrder, setCurrOrder] = useState()
 
 
+    useEffect(() => {
+        if (user) {
+  
+            socketService.emit('set-user',  selectedStay.host._id);   
+        } 
+    },[])
+
+
     const onGetOrderDates = (currDates) => {
         setDates(currDates)
         const nightsOrder = getTotalNights(currDates[0], currDates[1])
@@ -42,7 +50,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
         const newOrder = orderService.add(selectedStay, user, guests, dates, nights)
         setCurrOrder(newOrder)
         onAddOrder(newOrder)
-        // notifyHost(newOrder)
+        notifyHost(newOrder)
     }
 
     function getTotalNights(checkIn, checkOut) {
@@ -106,7 +114,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
                 </div>
                 <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
                 <br />
-                <button onClick={() => notifyHost({host:{id: '6294d815d4a26c96b0b03a77', name: 'Leo' }})}>send test order</button>
+                {/* <button onClick={() => notifyHost({host:{id: '6294d815d4a26c96b0b03a77', name: 'Leo' }})}>send test order</button> */}
                 {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
             </section >
             <section>
