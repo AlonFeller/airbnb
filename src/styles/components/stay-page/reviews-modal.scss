@@ -1,10 +1,10 @@
 .reviews-modal {
     position: absolute;
-    width: 100vh;
+    width: 64%;
     height: 85vh;
     // top: 160%;
     right: 50%;
-    transform: translate(50%, 50%);
+    transform: translatex(50%);
 
     border: 2px solid var(--font-lightgray-color);
     border-radius: 20px;
