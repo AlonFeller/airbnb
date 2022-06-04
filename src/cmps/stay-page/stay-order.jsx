@@ -66,7 +66,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
         setIsModalOpen(true)
         setTimeout(() => {
             // closeModal()
-            goTo()
+            // goTo()
         }, 3000)
     }
 

@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export function AppHeader() {
     const dispatch = useDispatch()
-    const { isExplore, isStay, isHome } = useSelector(state => state.headerModule.headerMode)
+    const { isExplore, isStay, isHome, isLong } = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
     const navigate = useNavigate()
     const goTo = (path) => {
@@ -29,18 +29,18 @@ export function AppHeader() {
 
     function toggleHeader() {
         console.log(window.pageYOffset);
-        // console.log("isPageScroll", isPageScroll, "isHome", isHome);
         if (window.pageYOffset > 25) {
-            const modalTopPosition = window.pageYOffset -350
+            const modalTopPosition = window.pageYOffset -450
             console.log(modalTopPosition);
             setIsPageScroll(true)
             dispatch(headerIsLong(false))
             dispatch(toggleModalPosition(modalTopPosition))
         } else {
             setIsPageScroll(false)
-            dispatch(headerIsLong(true))
+            if(isHome)dispatch(headerIsLong(true))
             dispatch(toggleModalPosition(0))
         }
+        // console.log("isPageScroll", isPageScroll, "isHome", isHome,"isLong",isLong);
     }
 
     return (

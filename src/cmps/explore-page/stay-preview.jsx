@@ -74,7 +74,8 @@ export const StayPreview = (props) => {
             <div className="explore-img-container" >
                 <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
                     className="img-preview" alt="" />
-                <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>
+                <div className={(likeHeart)?"heart-btn full":"heart-btn empty"} onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '❤'}</div>
+                {/* <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>+ */}
                 {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
                     <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon /></div>

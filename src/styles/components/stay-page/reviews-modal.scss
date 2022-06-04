@@ -22,10 +22,11 @@
         grid-template-rows: 10% 20% 70%;
 
         .stay-reviews-header {
-            grid-column: 1/2;
-            grid-row: 1/2;
             position: relative;
-            top: 20px;
+            top: 10px;
+            display: flex;
+            gap: 5px;
+            align-items: center;
 
         }
 
@@ -103,4 +104,9 @@
         pointer-events: all;
         z-index: 50;
     }
+}
+
+.icon-star{
+    display: flex;
+    align-items: center;
 }

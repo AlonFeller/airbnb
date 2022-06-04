@@ -49,14 +49,11 @@
                 border: 1px solid var(--font-lightgray-color);
                 box-shadow: 0px 2px 5px var(--font-gray-color);
                 transition: 0.4s;
-                position: sticky;
-                top: 50px;
+                position: absolute;
+                top: 35px;
+                left: 50%;
+                transform: translateX(-50%);
                 transition: 0.6s;
-
-                &:hover {
-                    box-shadow: 0px 4px 12px var(--font-lightgray-color);
-                    transition: 0.4s;
-                }
 
                 .searchbar-form {
                     align-self: center;
@@ -181,10 +178,10 @@
                     }
                 }
 
-                &:hover {
-                    border-radius: 20px;
-                    background-color: var(--font-lightgray-color);
-                }
+                // &:hover {
+                //     border-radius: 20px;
+                //     background-color: var(--font-lightgray-color);
+                // }
             }
 
             .searchbar-fullHeaderOn {

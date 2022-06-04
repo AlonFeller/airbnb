@@ -11,7 +11,6 @@
     background-color: var(--card-background-color);
     z-index: 1000;
 
-
     .stay-amenities {
         border-radius: 20px;
         padding: 2%;
@@ -20,28 +19,6 @@
         grid-template-columns: 1.5fr 2fr;
         grid-template-rows: 10% 20% 70%;
 
-        .stay-reviews-header {
-            grid-column: 1/2;
-            grid-row: 1/2;
-            position: sticky;
-            top: 20px;
-
-        }
-
-        .review-states {
-            grid-column: 1/2;
-            grid-row: 2/3;
-            position: sticky;
-            top: 80px;
-
-
-            .stay-scores {
-                display: flex;
-                flex-direction: column;
-                padding-left: 10px;
-            }
-        }
-        
         .amenities-modal-container {
             display: flex;
             flex-direction: column;
@@ -51,22 +28,6 @@
             padding-top: 0;
             overflow: auto;
 
-            // .amenities-list {
-            //     padding-left: 15px;
-            //     padding-right: 15px;
-            // }
-        }
-
-        .review-preview-container {
-            width: 100%;
-
-            h5 {
-                color: var(--font-gray-color);
-            }
-
-            p {
-                padding-right: 10%;
-            }
         }
     }
 
@@ -83,6 +44,7 @@
         .amenities-list-container {
             height: 90%;
             width: 95%;
+
             // overflow: auto;
             .amenities-list {
                 overflow: auto;
@@ -92,17 +54,7 @@
         }
     }
 
-    .review-preview-container {
-        width: 100%;
 
-        h5 {
-            color: var(--font-gray-color);
-        }
-
-        p {
-            padding-right: 10%;
-        }
-    }
 }
 
 .modal-header {
@@ -115,15 +67,6 @@
         cursor: pointer;
     }
 
-    // .amenities-list-container {
-    //     height: 90%;
-    //     width: 95%;
-
-    //     .amenities-list {
-    //         overflow: auto;
-    //         padding-left: 15px;
-    //         padding-right: 15px;
-    //     }
 }
 
 
