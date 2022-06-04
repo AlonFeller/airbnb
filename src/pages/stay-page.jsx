@@ -54,6 +54,7 @@ export function StayPage() {
                 <button className="reviews-modal-btn" onClick={() => { setIsOpenModal(true); }}>Show all {selectedStay.reviews.length} reviews</button>
                 <AddReview key="add-review" stay={selectedStay} />
                 <section className="stay-map">
+                    <h2>Where you'll be</h2>
                     <StayMap key="stay-map" stay={selectedStay} />
                 </section>
                 <section className="stay-modal">

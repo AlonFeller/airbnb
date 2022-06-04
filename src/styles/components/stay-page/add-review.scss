@@ -1,0 +1,89 @@
+
+.add-review-header {
+	text-align: start;
+	font-size: rem(30px);
+	font-weight: 600;
+}
+
+.rating-bars-container {
+	display: grid;
+    gap: 0px 120px;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	margin-bottom: 20px;
+
+	.bar-container {
+		display: flex;
+		align-items: center;
+        justify-content: space-between;
+	}
+
+	.rating-bar-header {
+		font-size: rem(22px);
+		line-height: 2;
+	}
+
+	.MuiRating-sizeMedium {
+		height: 100%;
+	}
+}
+
+.add-review-btn {
+	margin: 10px auto;
+	text-align: center;
+}
+
+.review-stats {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	column-gap: 80px;
+	margin-bottom: 30px;
+
+	.rating-container {
+		line-height: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		margin-inline-end: 20px;
+
+		.stat-container {
+			display: flex;
+
+			justify-content: center;
+			align-items: center;
+			.stat-bar-container {
+				width: 120px;
+				position: relative;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				height: 0.25rem;
+				// background-color: black;
+				.stat-value {
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+					border-bottom-left-radius: 10px;
+					border-bottom-right-radius: 10px;
+					position: absolute;
+					height: 100%;
+					// background-color: black;
+				}
+			}
+			span {
+				width: 40px;
+				font-size: rem(12px);
+				font-weight: 600;
+				margin-inline-start: 10px;
+			}
+            
+            .css-iljtu2-MuiRating-root{
+                color: var(--font-dark-color) !important;
+            }
+		}
+	}
+}

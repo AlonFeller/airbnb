@@ -107,16 +107,17 @@ export function AddReview({ stay }) {
         // console.log(addedReveiw)
     }
     return (
-        <div>
-            <div className='rating-bars-container'>{types.map((type, idx) => RatingBar(type, idx, rating, setRating))}</div>
-            <div className='type-area'>
+        <div className="gray-box-shadow">
+            <h2 className="add-review-header">Add a review </h2>
+            <div className="rating-bars-container">{types.map((type, idx) => RatingBar(type, idx, rating, setRating))}</div>
+            <div className="type-area">
                 <ThemeProvider theme={theme}>
-                    <TextField fullWidth label='Share your exprience with this stay' color='secondary' multiline rows={3} value={value} onChange={handleChange} />
+                    <TextField fullWidth label="Share your exprience with this stay" color="secondary" multiline rows={3} value={value} onChange={handleChange} />
                 </ThemeProvider>
             </div>
-            <div className='add-review-btn'>
+            <div className="add-review-btn">
                 <ThemeProvider theme={btnTheme}>
-                    <Button onClick={onAddReview} variant='outlined' endIcon={<Send />}>
+                    <Button onClick={onAddReview} variant="outlined" endIcon={<Send />}>
                         Add Review
                     </Button>
                 </ThemeProvider>
