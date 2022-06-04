@@ -28,21 +28,20 @@ export const MyOrders = (props) => {
 
     console.log('host orders', orders);
 
-    function createData(name, stay, guests, from, till, total) {
-        return { name, stay, guests, from, till, total };
+    function createData(name, id, stay, time, guests, from, till, total) {
+        return { name, id, stay, time, guests, from, till, total };
     }
 
-    const orderRows = hostOrders.map(order => createData(order.buyer.name,
-        order.stay.name, order.guestsNumber.total, order.checkIn, order.checkOut, utilService.numberWithCommas(order.totalPrice)))
+    const orderRows = hostOrders.map(order => createData(order.buyer.name, order.buyer.id,
+        order.stay.name, order.timeOrder, order.guestsNumber.total, order.checkIn, order.checkOut, utilService.numberWithCommas(order.totalPrice)))
 
 
     let rating = hostStays.reduce((acc, stay) => { return acc + stay.reviewScores.rating }, 0) / hostStays.length
     rating = rating / 20
     const totalEarnings = hostOrders.reduce((acc, order) => { return acc + parseInt(order.totalPrice) }, 0)
-
     return (
         <section className="my-orders">
-            <h1>My Stays orders</h1>
+            <h1>Orders for your properties</h1>
 
 
             <div className="orders-statistics">
@@ -75,10 +74,12 @@ export const MyOrders = (props) => {
                         <TableHead>
                             <TableRow>
                                 <TableCell>Order by</TableCell>
+                                <TableCell align="left">Id</TableCell>
                                 <TableCell align="left">Property</TableCell>
+                                <TableCell align="left">Ordered at</TableCell>
                                 <TableCell align="left">Guests</TableCell>
-                                <TableCell align="left">From</TableCell>
-                                <TableCell align="left">Till</TableCell>
+                                <TableCell align="left">Checkin</TableCell>
+                                <TableCell align="left">Checkout</TableCell>
                                 <TableCell align="left">Total</TableCell>
                             </TableRow>
                         </TableHead>
@@ -91,11 +92,13 @@ export const MyOrders = (props) => {
                                     <TableCell component="th" scope="row">
                                         {row.name}
                                     </TableCell>
+                                    <TableCell align="left">{row.id.substring(0, 6)}</TableCell>
                                     <TableCell align="left">{row.stay}</TableCell>
+                                    <TableCell align="left">{new Date(row.time).getDate() + '/' + (+new Date(row.time).getMonth() + 1)  + '/' + new Date(row.time).getFullYear()}</TableCell>
                                     <TableCell align="Left">{row.guests}</TableCell>
                                     <TableCell align="left">{row.from.substring(0, 10)}</TableCell>
                                     <TableCell align="left">{row.till.substring(0, 10)}</TableCell>
-                                    <TableCell align="left">${row.total}</TableCell>
+                                    <TableCell align="left">${row.total}</TableCell> 
                                 </TableRow>
                             ))}
                         </TableBody>
