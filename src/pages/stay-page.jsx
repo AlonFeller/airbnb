@@ -22,7 +22,9 @@ export function StayPage() {
         window.scrollTo(0, 0);
         dispatch(toggleIsStay(true))
         dispatch(loadStay(params.id))
-        return dispatch(toggleIsStay(false))
+        return () => {
+            dispatch(toggleIsStay(false))
+        }
     }, [params.id])
 
     return (
@@ -35,7 +37,7 @@ export function StayPage() {
                         <span className="icon-star">< Star /></span>
                         <h4 className="info-rating"> {(selectedStay.reviewScores.rating / 20).toFixed(1)} </h4>
                         <span className="info-point" > · </span>
-                        <h4 className="info-reviews pointer" onClick={() => { setIsOpenModal(!isOpenModal)}}><u>{selectedStay.numOfReviews} reviews</u></h4>
+                        <h4 className="info-reviews pointer" onClick={() => { setIsOpenModal(!isOpenModal) }}><u>{selectedStay.numOfReviews} reviews</u></h4>
                         <span className="info-point" > . </span>
                         {selectedStay.host.isSuperhost && <h4 className="info-super-host"> Superhost </h4>}
                         {selectedStay.host.isSuperhost && <span className="info-point" > . </span>}
@@ -49,7 +51,7 @@ export function StayPage() {
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details" stay={selectedStay} setIsOpenModal={setIsOpenModal} isOpenModal={isOpenModal} />
                 <StayReviews key="stay-reviews" stay={selectedStay} reviews={selectedStay.reviews.slice(0, 6)} isLongTxt={true} />
-                <div className={isOpenModal ? "screen screen-open" : "screen "} onClick={() => { setIsOpenModal(!isOpenModal)}}></div>
+                <div className={isOpenModal ? "screen screen-open" : "screen "} onClick={() => { setIsOpenModal(!isOpenModal) }}></div>
                 {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} isOpenModal={isOpenModal} /> : null}
                 <button className="reviews-modal-btn" onClick={() => { setIsOpenModal(true); }}>Show all {selectedStay.reviews.length} reviews</button>
                 <AddReview key="add-review" stay={selectedStay} />

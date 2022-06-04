@@ -5,7 +5,7 @@ import nyc from '../assets/Images/NYC.jpg'
 import madrid from '../assets/Images/madrid.jpg'
 import Portugal from '../assets/Images/portugal.jpg'
 import brazil from '../assets/Images/brazil.jpg'
-import { headerIsLong } from "../store/header/header.action";
+import { headerIsLong, toggleIsHome } from "../store/header/header.action";
 import { Leads } from '../cmps/home-page/leads'
 import { useDispatch } from 'react-redux'
 
@@ -20,9 +20,11 @@ export function HomePage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(headerIsLong(true))
+        dispatch(toggleIsHome(true))
         console.log(new Date(1654264978351).toDateString())
         return () => {
             dispatch(headerIsLong(false))
+            dispatch(toggleIsHome(false))
         }
     }, []);
 

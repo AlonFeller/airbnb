@@ -11,14 +11,27 @@
     >* {
         align-self: center;
     }
-    .footer-container{
+
+    .footer-container {
         grid-column: 2/-2;
         font-size: 14px;
         font-family: circular-medium;
     }
-    span {
 
+
+    .left-side-footer span {
         margin: 0;
         padding: 0;
+        padding-right: 10px;
+        .footer-dot {
+            padding-left: 10px;
+        }
     }
+
+    .right-side-footer span {
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+    }
+
 }
