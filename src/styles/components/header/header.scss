@@ -274,10 +274,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            &:hover{
+                box-shadow: 0 2px 4px rgba(0,0,0,0.18);;
+            }
 
 
             svg {
-                aspect-ratio: 0.7/1;
+                overflow: hidden;
+                path{
+                    height: 10px;
+                    width: 10px;
+                }
             }
 
             .dehaze {
