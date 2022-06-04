@@ -10,10 +10,9 @@ import { utilService } from '../../services/util.service'
 import { addOrder } from '../../store/order/order.actions'
 import { Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
-import { OrderMsgModal } from '../order/order-msg-modal'
 import { socketService } from '../../services/socket.service';
 
-export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
+export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, setCurrOrder }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
@@ -22,15 +21,15 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    const [currOrder, setCurrOrder] = useState()
+    // const [isOrderModalOpen, setIsOrderModalOpen] = useState(false)
+    // const [currOrder, setCurrOrder] = useState()
 
 
     useEffect(() => {
         if (user) {
-            socketService.emit('set-user',  selectedStay.host._id);   
-        } 
-    },[])
+            socketService.emit('set-user', selectedStay.host._id);
+        }
+    }, [])
 
 
     const onGetOrderDates = (currDates) => {
@@ -62,7 +61,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     }
 
     const openModal = () => {
-        setIsModalOpen(true)
+        setIsOrderModalOpen(true)
         setTimeout(() => {
             // closeModal()
             // goTo()
@@ -74,14 +73,14 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
     }
 
     const closeModal = () => {
-        setIsModalOpen(false)
+        setIsOrderModalOpen(false)
     }
 
     // useEffect(() => {
     //     socketService.emit('chat topic', topic);
     //     socketService.off(SOCKET_EMIT_SEND_MSG);
     //     socketService.on(SOCKET_EMIT_SEND_MSG, addMsg);
-        
+
     //     return () => {
     //         socketService.off(SOCKET_EMIT_SEND_MSG, addMsg)
     //         // socketService.terminate()
@@ -105,7 +104,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
                         <span>< Star /></span>
                         <span className="avg-checkout"> <b>{(selectedStay.reviewScores.rating / 20).toFixed(1)}</b></span>
                         <span>·</span>
-                        <span className="reviews bold pointer" onClick={() => { setIsOpenModal(!isOpenModal)}}><u>{selectedStay.numOfReviews} reviews</u></span>
+                        <span className="reviews bold pointer" onClick={() => { setIsOpenModal(!isOpenModal) }}><u>{selectedStay.numOfReviews} reviews</u></span>
                     </p>
                 </div>
                 <div className="order-calander">
@@ -117,9 +116,7 @@ export const OrderNow = ({setIsOpenModal, isOpenModal}) => {
                 {/* <button onClick={() => notifyHost({host:{id: '6294d815d4a26c96b0b03a77', name: 'Leo' }})}>send test order</button> */}
                 {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
             </section >
-            <section>
-                {isModalOpen && <OrderMsgModal currOrder={currOrder} />}
-            </section>
+
         </>
     )
 }

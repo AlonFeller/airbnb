@@ -3,10 +3,14 @@ import { StayAmenities } from './stay-amenities'
 import { OrderNow } from "./stay-order"
 import { StayMoreFeatures } from "./stay-more-features"
 import { AmenitiesModal } from "./amenities-modal"
+import { OrderMsgModal } from '../order/order-msg-modal'
+
 
 export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
     const [isOpenAmenitiesModal, setIsOpenAmenitiesModal] = useState(false)
     const [modalPosition, setModalPosition] = useState(0)
+    const [isOrderModalOpen, setIsOrderModalOpen] = useState(false)
+    const [currOrder, setCurrOrder] = useState()
 
 
     useEffect(() => {
@@ -81,11 +85,17 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
                 </div>
             </div>
             <div className="stay-details-order">
-                <OrderNow isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
+                <OrderNow isOpenModal={isOpenModal}
+                    setIsOpenModal={setIsOpenModal}
+                    setIsOrderModalOpen={setIsOrderModalOpen}
+                    setCurrOrder={setCurrOrder}
+                />
             </div>
-
-
+            <section>
+                {isOrderModalOpen && <OrderMsgModal currOrder={currOrder} />}
+            </section>
         </section>
+
     )
 }
 
