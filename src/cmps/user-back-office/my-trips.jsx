@@ -34,8 +34,8 @@ export const MyTrips = (props) => {
                 {user.favorites && <div className="backoffice-stay-list">
     
                     {
-                        user.favorites.map(stay => {
-                            return <WishPreview key={stay._id} stay={stay} /> 
+                        user.favorites.map((stay , idx) => {
+                            return <WishPreview key={stay._id + idx} stay={stay} /> 
                         })
                     }
     
@@ -45,8 +45,8 @@ export const MyTrips = (props) => {
             <div className="backoffice-stay-list">
 
                 {
-                    myTripsStays.map(stay => {
-                        return <TripPreview key={stay[0]._id} stay={stay[0]} /> 
+                    myTripsStays.map((stay, idx) => {
+                        return <TripPreview key={stay[0]._id + idx} stay={stay[0]} /> 
                     })
                 }
                 

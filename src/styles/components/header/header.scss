@@ -293,8 +293,8 @@
                 border-radius: 50%;
                 background-color: var(--logo-color);
                 position: absolute;
-                top: 23%;
-                right: 11.1%;
+                top: 12%;
+                right: 9.8%;
                 border: 2px solid white;
 
             }
@@ -331,14 +331,14 @@
                     flex-direction: column;
                     justify-content: space-evenly;
 
-                    .login-opt-btn {
-                        // margin-top: 5px;
-                        // gap: 15px;
-                        width: 100%;
-                        // margin-left:14px;
-                        // border-radius: 20px 20px 20px 20px;
-                        display: flex;
-                        justify-content: flex-start;
+                    
+                    .noti-icon {
+
+                        position: absolute;
+                        top: 12px;
+                        right: 10px;
+                        color: var(--logo-color)
+                    }
 
                         .login-opt-btn {
                             margin: 0;
@@ -353,14 +353,6 @@
                             // overflow: hidden;
                             // box-sizing: border-box;
 
-                            .noti-icon {
-
-                                position: absolute;
-                                top: 12px;
-                                right: 10px;
-                                color: var(--logo-color)
-                            }
-
 
                             &:hover {
                                 background-color: var(--btn-background-color);
@@ -372,7 +364,7 @@
                             cursor: pointer;
                         }
 
-                    }
+                    
                 }
                 .login-slide-modal-open & {
 
@@ -383,6 +375,8 @@
                     height: 160px;
                     transition: 0.4s;
                     padding: 2px;
+
+
                     
                     .noti-tab {
 
