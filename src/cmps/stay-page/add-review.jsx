@@ -81,7 +81,7 @@ export function AddReview({ stay }) {
                 main: "#FF385C",
             },
             secondary: {
-                main: "#FF385C",
+                main: "#717171",
             },
         },
     });
@@ -150,7 +150,8 @@ function RatingBar(type, idx, value, setValue) {
                 onChangeActive={(event, newHover) => {
                     setHover(newHover);
                 }}
-                emptyIcon={<Star style={{ opacity: 0.55 }} fontSize='inherit' />}
+                style={{color:"#333333"}}
+                emptyIcon={<Star style={{ opacity: 0.55}} fontSize='inherit' />}
             />
         </div>
     );
