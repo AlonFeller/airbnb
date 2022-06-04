@@ -3,6 +3,7 @@ import { stayService } from "../../services/stay.service";
 const initialState = {
     stays: [],
     selectedStay: null,
+    // isLikeStay: false,
     filterBy: {
         location: '',
         minPrice: 0,
@@ -35,6 +36,9 @@ export function stayReducer(state = initialState, action) {
             break
         case 'SET_FILTERBY':
             newState ={ ...state, filterBy: action.filterBy }
+            break
+        case 'SET_LIKESTAY':
+            newState ={ ...state, isLikeStay: action.set }
             break
         default:
     }
