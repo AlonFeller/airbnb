@@ -28,10 +28,11 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
-        // console.log(window.pageYOffset);
-        console.log("isPageScroll", isPageScroll, "isHome", isHome);
+        console.log(window.pageYOffset);
+        // console.log("isPageScroll", isPageScroll, "isHome", isHome);
         if (window.pageYOffset > 25) {
-            const modalTopPosition = window.pageYOffset - 350
+            const modalTopPosition = window.pageYOffset -350
+            console.log(modalTopPosition);
             setIsPageScroll(true)
             dispatch(headerIsLong(false))
             dispatch(toggleModalPosition(modalTopPosition))
