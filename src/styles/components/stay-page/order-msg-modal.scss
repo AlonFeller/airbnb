@@ -1,6 +1,74 @@
-.order-modal{
-    height: 300px;
-    width: 300px;
-    border: 2px solid black;
-    z-index: 300;
+.order-modal {
+    background-color: var(--scores-background-color);
+    height: 400px;
+    // width: 500px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    z-index: 1000;
+    padding-left: 10px;
+    position: absolute;
+    width: 30%;
+    // max-height: 80%;
+    right: 45%;
+    transform: translate(50%);
+
+    .order-stay-name {
+        font-size: 22px;
+    }
+
+    .check-in-out {
+        display: flex;
+        gap: 10px;
+        font-size: 18px;
+        margin: 3px;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+
+    .dates-order {
+        display: flex;
+        gap: 30px;
+    }
+
+    .order-guests {
+        flex-direction: column;
+
+        .order-guests-total {
+            display: flex;
+            gap: 10px;
+            margin: 5px;
+            font-size: 18px;
+        }
+
+        p {
+            display: flex;
+            gap: 5px;
+            margin: 3px;
+            font-size: 16px;
+        }
+    }
+
+    .order-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .order-total-price b {
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .order-added-msg {
+        font-size: 16px;
+    }
+
 }
