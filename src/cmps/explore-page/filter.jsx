@@ -108,6 +108,7 @@ export const ExploreFilter = (props) => {
                             value={val}
                             onChange={handleRangeChange}
                         />
+                        {/* <div className="login-btn">Save</div> */}
                     </div> : null}
                     <div className={(kitchen) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Kitchen')}><span>Kitchen</span></div>
                     <div className={(wifi) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Wifi')}><span>Wifi</span></div>
