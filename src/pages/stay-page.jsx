@@ -108,7 +108,7 @@ export function StayPage() {
                             <p className="details-save" >{!likeHeart ? <FavoriteBorder /> : <Favorite />}</p>
                             <p>Save</p>
                         </div>
-                        {isopenMsg && <UserMsg />}
+                        {isopenMsg && <UserMsg setTxtMsg={setTxtMsg} closeMsg={closeMsg}/>}
                     </div>
                 </section>
                 <StayGallery key="stay-gallery" stay={selectedStay} />
