@@ -61,6 +61,7 @@
 
         .share-btn-container{
             align-items: center;
+            cursor: pointer;
 
             p{
                 font-size: .875rem;
@@ -74,7 +75,8 @@
 
         .save-btn-container{
             align-items: center;
-
+            cursor: pointer;
+            
             p{
                 font-size: .875rem;
                 font-family: circular-bold;

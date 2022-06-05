@@ -3,14 +3,17 @@ import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-ro
 // import { toggleDetailsLayout, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsExplore } from "../../store/header/header.action";
 import { headerIsLong, toggleDetailsLayout, toggleIsHome, toggleModalPosition } from "../../store/header/header.action";
 import { LoginSignUp } from './login-siginup'
+import { useSelector, useDispatch } from 'react-redux'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
-import { useDispatch, useSelector } from 'react-redux';
+import logo from '../../assets/Images/logo2.png'
+import whiteLogo from '../../assets/Images/white-logo.png'
 
 export function AppHeader() {
     const dispatch = useDispatch()
     const { isExplore, isStay, isHome, isLong } = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
+    const { user } = useSelector(storeState => storeState.userModule)
     const navigate = useNavigate()
     const goTo = (path) => {
         navigate('/')
@@ -30,7 +33,7 @@ export function AppHeader() {
 
     function toggleHeader() {
         // console.log(window.pageYOffset);
-        const modalTopPosition = window.pageYOffset +50
+        const modalTopPosition = window.pageYOffset + 50
         // console.log("modalTopPosition", modalTopPosition);
         dispatch(toggleModalPosition(modalTopPosition))
         if (window.pageYOffset > 25) {

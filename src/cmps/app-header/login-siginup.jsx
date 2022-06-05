@@ -5,7 +5,7 @@ import { userService } from '../../services/user.service'
 import { onLogin, onSignup } from '../../store/user/user.actions'
 import { ImgUploader } from './img-uploader'
 
-export function LoginSignUp(props) {
+export function LoginSignUp({openMsg}) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isLogin, setIsLogin] = useState(true)
     const dispatch = useDispatch()
