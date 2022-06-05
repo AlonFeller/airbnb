@@ -31,6 +31,10 @@ export function StayPage() {
         }
     }, [params.id])
 
+    function onCopyUrlToClipboard() {
+		navigator.clipboard.writeText(window.location.href);
+	}
+
     const ToggleHeart = (ev) => {
         ev.stopPropagation()
         if (!user) {
@@ -46,7 +50,6 @@ export function StayPage() {
             } else {
                 user.favorites.push(selectedStay)
             }
-
             dispatch(updateUser(user))
         }
 
@@ -69,13 +72,12 @@ export function StayPage() {
                         <h4 className="info-host-address"><u> {selectedStay.address.street}</u> </h4>
                     </div>
                     <div className="info-user-btns flex">
-                        <div className="share-btn-container flex align-center">
+                        <div className="share-btn-container flex align-center" onClick={onCopyUrlToClipboard}>
                             <p className="details-share"  ><IosShare /></p>
                             <p>Share</p>
                         </div>
-                        <div className="save-btn-container flex align-center" >
-                            {/* <p className="details-like" >{!isLiked ? <FavoriteBorder /> : <Favorite className="liked" />}</p> */}
-                            <p className="details-save" onClick={(event) => ToggleHeart(event, likeHeart)} >{!likeHeart ? <FavoriteBorder /> : <Favorite />}</p>
+                        <div className="save-btn-container flex align-center" onClick={(event) => ToggleHeart(event, likeHeart)}>
+                            <p className="details-save" >{!likeHeart ? <FavoriteBorder /> : <Favorite />}</p>
                             <p>Save</p>
                         </div>
                     </div>
