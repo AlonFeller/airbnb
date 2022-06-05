@@ -21,6 +21,14 @@ export function UserBackOffice() {
     }, [])
 
     useEffect(() => {
+        if (!user) {
+            goTo('home')
+        }
+    }, [user])
+
+
+
+    useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(loadUser(params.id))
         dispatch(toggleIsExplore(true))

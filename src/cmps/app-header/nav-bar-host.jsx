@@ -32,7 +32,7 @@ export const NavBar = (props) => {
     useEffect(() => {
         if (user) {
 
-            socketService.on('order recieved', orderArrivedTest);
+          
             socketService.on('order recieved', orderArrived);
         }
         // return () => {
@@ -65,6 +65,7 @@ export const NavBar = (props) => {
 
 
     const onLogoutUser = () => {
+        goTo('/')
         dispatch(onLogout())
     }
 
@@ -83,10 +84,7 @@ export const NavBar = (props) => {
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
-    const orderArrivedTest = (order) => {
-  
-        console.log('order arrived');
-    }
+
 
 
 
