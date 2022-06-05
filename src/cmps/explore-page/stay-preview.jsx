@@ -78,8 +78,8 @@ export const StayPreview = (props) => {
                 {/* <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>+ */}
                 {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
-                    <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon /></div>
-                    <div className="next-btn" onClick={(event) => cycleImgs(event, 1)}><ArrowRightIcon /></div>
+                    <div className="back-btn-container"><div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon className="ArrowLeftIcon" /></div></div>
+                    <div className="next-btn-container"><div className="next-btn" onClick={(event) => cycleImgs(event, 1)}><ArrowRightIcon  className="ArrowRightIcon"/></div></div>
                 </div>
             </div>
             <div className="locatoing-rating">

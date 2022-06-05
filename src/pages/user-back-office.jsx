@@ -25,12 +25,9 @@ export function UserBackOffice() {
         dispatch(loadUser(params.id))
         dispatch(toggleIsExplore(true))
         dispatch(headerIsLong(false))
-        dispatch(toggleIsHome(true))
+        dispatch(toggleIsHome(false))
         console.log(user)
-        return ()=>{
-            dispatch(toggleIsHome(false))
-        }
-    }, [params.id, tab])
+        }, [params.id, tab])
 
     const goTo = (path) => {
         navigate(path)

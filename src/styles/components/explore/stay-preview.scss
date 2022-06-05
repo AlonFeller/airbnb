@@ -79,46 +79,70 @@
     z-index: 25;
     top: -113%;
 
-    .next-btn {
+    .next-btn-container {
         z-index: 25;
-        background-color: var(--btn-background-color);
-        border-radius: 50%;
-        opacity: 0;
-        width: 30px;
-        height: 30px;
-        align-self: center;
-        // position: relative;
-        // top: -330px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--font-dark-color);
-        // right: 20px;
-        cursor: pointer;
         transition: 0.5s;
+        align-self: center;
+        opacity: 0;
+        height: 100%;
+        .next-btn {
+            z-index: 25;
+            background-color: var(--card-background-color);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            align-self: center;
+            // position: relative;
+            // top: -330px;
+            // left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--font-dark-color);
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
     }
 
-    .back-btn {
+    .back-btn-container {
         z-index: 25;
-        background-color: var(--card-background-color);
-        border-radius: 50%;
-        opacity: 0;
-        width: 30px;
-        height: 30px;
-        align-self: center;
-        // position: relative;
-        // top: -330px;
-        // left: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--font-dark-color);
-        cursor: pointer;
         transition: 0.5s;
-    }
+        align-self: center;
+        opacity: 0;
+        height: 100%;
 
-    :hover {
-        opacity: 1;
+
+        .back-btn {
+            z-index: 25;
+            background-color: var(--card-background-color);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            align-self: center;
+            // position: relative;
+            // top: -330px;
+            // left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--font-dark-color);
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 
