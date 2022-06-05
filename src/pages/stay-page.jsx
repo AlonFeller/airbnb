@@ -10,6 +10,7 @@ import { StayReviews } from '../cmps/stay-page/stay-reviews'
 import { StayMap } from '../cmps/stay-page/stay-map'
 import { ReviewsModal } from '../cmps/stay-page/reviews-modal'
 import { AddReview } from '../cmps/stay-page/add-review'
+import { UserMsg } from '../cmps/general/user-msg'
 import { Star, IosShare, FavoriteBorder, Favorite } from "@mui/icons-material"
 
 export function StayPage() {
@@ -19,6 +20,8 @@ export function StayPage() {
     const { user } = useSelector(storeState => storeState.userModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [likeHeart, setLikeHeart] = useState(false)
+    const [savedLink, setSavedLink] = useState(false)
+    const [isopenMsg, setIsopenMsg] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -32,8 +35,9 @@ export function StayPage() {
     }, [params.id])
 
     function onCopyUrlToClipboard() {
-		navigator.clipboard.writeText(window.location.href);
-	}
+        navigator.clipboard.writeText(window.location.href);
+        setSavedLink(true)
+    }
 
     const ToggleHeart = (ev) => {
         ev.stopPropagation()
@@ -53,6 +57,27 @@ export function StayPage() {
             dispatch(updateUser(user))
         }
 
+    }
+
+    const setTxtMsg = () => {
+        let txtMsg = ''
+        if (savedLink) txtMsg = 'Link Copied to clipboard'
+        else if (likeHeart) txtMsg = 'Stay liked'
+        else txtMsg = 'Stay unliked'
+        return txtMsg
+    }
+
+    const openMsg = (name) => {
+        setTxtMsg()
+        setIsopenMsg(true)
+        setTimeout(() => {
+            closeMsg()
+        }, 3000);
+    }
+
+    const closeMsg = () => {
+        setIsopenMsg(false)
+        setSavedLink(false)
     }
 
     return (
@@ -80,6 +105,7 @@ export function StayPage() {
                             <p className="details-save" >{!likeHeart ? <FavoriteBorder /> : <Favorite />}</p>
                             <p>Save</p>
                         </div>
+                        {isopenMsg && <UserMsg />}
                     </div>
                 </section>
                 <StayGallery key="stay-gallery" stay={selectedStay} />
