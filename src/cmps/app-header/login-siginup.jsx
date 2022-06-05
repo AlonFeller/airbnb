@@ -82,11 +82,10 @@ export function LoginSignUp({ openMsg }) {
                     <h2>Welcome to AirZula</h2>
                 </div>
                 <form className="login-form" onSubmit={onSignupUser}>
-                    <TextField type="text" label="Full name" variant="filled" id="filled-basic" name="name" placeholder="Full name" value={credentials.fullname} required autoFocus onChange={handleChange} />
-                    <TextField type="text" label="Username" variant="filled" id="filled-basic" name="username" placeholder="Username" value={credentials.username} required autoFocus onChange={handleChange} />
-                    <TextField type="text" label="Password" variant="filled" id="filled-basic" name="password" placeholder="password" value={credentials.password} required autoFocus onChange={handleChange} />
-                    <TextField type="text" label="Username" variant="filled" id="filled-basic" name="username" placeholder="Username" value={credentials.username} required autoFocus onChange={handleChange} />
-                    <TextField type="email" label="Email" variant="filled" id="filled-basic" name="email" placeholder="Email" value={credentials.email} required autoFocus onChange={handleChange} />
+                    <TextField type="text" label="Full name" variant="filled" id="filled-basic" name="fullname" placeholder="Full name" autoFocus onChange={handleChange} />
+                    <TextField type="text" label="Username" variant="filled" id="filled-basic" name="username" placeholder="Username" required autoFocus onChange={handleChange} />
+                    <TextField type="text" label="Password" variant="filled" id="filled-basic" name="password" placeholder="password"  required autoFocus onChange={handleChange} />
+                    <TextField type="email" label="Email" variant="filled" id="filled-basic" name="email" placeholder="Email"  autoFocus onChange={handleChange} />
                     {/* <input
                         type="text"
                         name="fullname"
@@ -117,8 +116,8 @@ export function LoginSignUp({ openMsg }) {
                         value={credentials.email}
                         placeholder="Email"
                         onChange={handleChange}
-                    /> */}
-                    <br />
+                    />
+                    <br /> */}
                     <ImgUploader onUploaded={onUploaded} />
                     <div onClick={onSignupUser} >
                         <AirBnbBtnBo btnInnerTxt='Sign up' />
