@@ -1,13 +1,11 @@
 import React from "react";
 
-export function UserMsg({ setTxtMsg, closeMsg }) {
-
-    console.log(setTxtMsg())
+export function UserMsg({ textMsg, closeMsg }) {
 
     return (
-        <div className={"user-msg"}>
-            <p>{setTxtMsg()}</p>
-            <button onClick={closeMsg()}>⨯</button>
-        </div>
+        <section className="user-msg flex">
+            <p>{textMsg}</p>
+            <button onClick={() => closeMsg()}>⨯</button>
+        </section>
     );
 }

@@ -33,12 +33,39 @@
                 }
 
                 .long-searchbar {
-                    display: none;
+                    width: 350px;
+                    height: 150px;
+                    top: 75px;
+
+                    .searchbar-form {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+
+                        .searchber-form-label.location {
+                            order: 1;
+                        }
+
+                        .searchber-form-label.Guests {
+                            order: 2;
+                        }
+
+                        .searchber-form-label.CheckIn {
+                            order: 3;
+                        }
+
+                        .searchber-form-label.CheckOut {
+                            order: 4;
+                        }
+
+                        .srchbtn {
+                            order: 5;
+                        }
+
+                    }
                 }
 
-                // .short-searchbar {
-                //     width: 35%;
-                // }
+
 
                 .header-navbar-container {
                     .header-navbar {
@@ -60,11 +87,12 @@
 
             .centered {
                 font-size: 6vw;
+                top: 250px;
             }
 
             .button {
                 font-size: 6vw;
-                top: 50%;
+                top: 60%;
                 height: 8%;
                 width: 55%;
             }
@@ -111,8 +139,8 @@
         top: 120px;
 
         .explore-filter {
-            .explore-filter h3 {
-                display: none;
+            h3 {
+                display: none !important;
             }
 
             .filter-btns {
@@ -143,6 +171,78 @@
 
     .stay-page {
         padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        >* {
+            word-wrap: break-word;
+        }
+
+        .stay-info-line {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stay-gallery {
+            margin-top: 24px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+            .gallery-img-container {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-self: center;
+                margin: 0;
+                padding: 0;
+                margin-top: 10px;
+                gap: 10px;
+
+                img {
+                    align-items: center;
+                    max-width: 350px !important;
+                    border-radius: 15px !important;
+
+                }
+            }
+        }
+
+        .stay-details {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .stay-details-order {
+                order: -1;
+                align-self: center;
+
+            }
+
+            .stay-details-info {
+                padding: 0;
+                margin: 0;
+
+                p {
+                    word-wrap: break-word;
+                }
+            }
+        }
+
+        .stay-scores {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .reviews-list-container {
+            display: flex !important;
+            flex-direction: column;
+            grid-gap: 0;
+        }
+
     }
 
 
