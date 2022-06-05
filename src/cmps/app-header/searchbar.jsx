@@ -26,9 +26,14 @@ export const Searchbar = (props) => {
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value
         dispatch(setFilter(filterBy))
-        dispatch(loadStays(filterBy))
-        console.log('filter', filterBy);
+        // dispatch(loadStays(filterBy))
         if (location != target.value) deployUrl(filterBy.location)
+    }
+
+    const getFilteredStays = (ev) => {
+        ev.preventDefault()
+        console.log('searching...');
+        dispatch(loadStays(filterBy))
     }
 
     // const isSearchBarLong = () => {
@@ -48,10 +53,10 @@ export const Searchbar = (props) => {
     </section >
 
     const LongSearchBar = () => <section className="long-searchbar ">
-        <form action="" className="searchbar-form">
+        <form action="" className="searchbar-form" onSubmit={(event) => getFilteredStays(event)}>
             <div className="searchber-form-label location bold">
                 <label htmlFor="">Location </label>
-                <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
+                <input type="text" autoFocus name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
             </div>
             <div className="searchber-form-label bold">
                 <label htmlFor="">Check in </label>
@@ -65,7 +70,7 @@ export const Searchbar = (props) => {
                 <label htmlFor="">How many</label>
                 <input type="number" placeholder="Guests" />
             </div>
-            <div className="srchbtn"><img src={btn} alt="btn" /></div>
+            <div className="srchbtn" onClick={(event) => getFilteredStays(event)}><img src={btn} alt="btn" /></div>
         </form>
     </section>
 

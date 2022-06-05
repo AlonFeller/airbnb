@@ -28,7 +28,6 @@ async function query(filterBy= null) {
     const url = ``
     const res = await axios.get(BASE_URL + url)
     let stays = res.data
-    console.log('res', res);
     
     if (!filterBy) return stays
     if (filterBy.location) {
