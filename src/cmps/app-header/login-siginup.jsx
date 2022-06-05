@@ -39,7 +39,6 @@ export function LoginSignUp({openMsg}) {
 
     const onUploaded = (imgUrl) => {
         setCredentials({ ...credentials, imgUrl });
-        openMsg(credentials.username)
     }
 
     const onSignupUser = (ev = null) => {

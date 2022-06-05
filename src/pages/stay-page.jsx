@@ -37,6 +37,7 @@ export function StayPage() {
     function onCopyUrlToClipboard() {
         navigator.clipboard.writeText(window.location.href);
         setSavedLink(true)
+        openMsg()
     }
 
     const ToggleHeart = (ev) => {
@@ -45,16 +46,18 @@ export function StayPage() {
             document.body.classList.toggle("login-page-open");
             document.body.classList.toggle("login-screen-open");
         } else {
+            let updatedUser = {...user}
             setLikeHeart(!likeHeart)
-            if (!user.favorites) {
-                user.favorites = []
+            openMsg()
+            if (!updatedUser.favorites) {
+                updatedUser.favorites = []
             }
-            if (user.favorites.map(fav => fav._id).includes(selectedStay._id)) {
-                user.favorites = user.favorites.filter(fav => fav._id !== selectedStay._id)
+            if (updatedUser.favorites.map(fav => fav._id).includes(selectedStay._id)) {
+                updatedUser.favorites = updatedUser.favorites.filter(fav => fav._id !== selectedStay._id)
             } else {
-                user.favorites.push(selectedStay)
+                updatedUser.favorites.push(selectedStay)
             }
-            dispatch(updateUser(user))
+            dispatch(updateUser(updatedUser))
         }
 
     }
@@ -67,7 +70,7 @@ export function StayPage() {
         return txtMsg
     }
 
-    const openMsg = (name) => {
+    const openMsg = () => {
         setTxtMsg()
         setIsopenMsg(true)
         setTimeout(() => {

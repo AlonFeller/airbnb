@@ -8,15 +8,12 @@ import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
 import logo from '../../assets/Images/logo2.png'
 import whiteLogo from '../../assets/Images/white-logo.png'
-import { UserMsg } from "../general/user-msg"
 
 export function AppHeader() {
     const dispatch = useDispatch()
     const { isExplore, isStay, isHome, isLong } = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
     const { user } = useSelector(storeState => storeState.userModule)
-    const [isOpenedMsg, setIsOpenedMsg] = useState(false)
-    const [txtMsg, setTxtMsg] = useState(null)
     const navigate = useNavigate()
     const goTo = (path) => {
         navigate('/')
@@ -50,18 +47,6 @@ export function AppHeader() {
         // console.log("isPageScroll", isPageScroll, "isHome", isHome,"isLong",isLong);
     }
 
-    const openMsg = (name) => {
-        setTxtMsg('Hello' + name + ', welcome to Airzula')
-        setIsOpenedMsg(true)
-        setTimeout(() => {
-            closeMsg()
-        }, 3000);
-    }
-
-    const closeMsg = () => {
-        setIsOpenedMsg(false)
-    }
-
     return (
         <>
             <div className={"header flex " + ((isPageScroll || isExplore || isStay) ? "full-header " : "")} >
@@ -70,10 +55,9 @@ export function AppHeader() {
                         <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
                     <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <NavBar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
-                    <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} openMsg={openMsg} />
+                    <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <div className="login-screen" onClick={toggleLogin}></div>
                 </section>
-                {isOpenedMsg && <UserMsg msg={txtMsg} closeMsg={closeMsg} />}
             </div>
         </>
 
