@@ -8,7 +8,6 @@
     overflow: hidden;
 
     .gallery-img-container:first-child {
-
         grid-column: 1/2;
         grid-row: 1/-1;
         max-height: 410px;
@@ -17,15 +16,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-
         }
-
     }
 
     .gallery-img-container {
-
         max-height: 200px;
-
         img {
             width: 100%;
             height: 100%;
