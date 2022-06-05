@@ -100,12 +100,12 @@ export const NewStayHost = (props) => {
 
     const onUploadImg = (ev) => {
         console.log('onuploadimg');
-        const CLOUD_NAME = 'dmsp3i7eo'
+        const CLOUD_NAME = 'airzula'
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
         const file = ev.target.files[0]
         const formData = new FormData()
         formData.append("file", file)
-        formData.append("upload_preset", "deecrvfu")
+        formData.append("upload_preset", "ml_default")
         return fetch(UPLOAD_URL, {
             method: 'POST',
             body: formData

@@ -1,0 +1,152 @@
+@media screen and(max-width:720px) {
+    .app {
+        grid-template-columns: 1fr 14fr 1fr !important;
+    }
+
+    .AppHeader {
+        box-shadow: 0 2px 2px rgba(180, 180, 180, .3);
+
+        .header {
+            display: block;
+
+            .header-container {
+                margin: 0 20px;
+
+                .logo-img-container {
+                    width: 72px !important;
+
+                    .logo-img {
+                        height: 30px;
+                    }
+                }
+
+                .searchbar-fullHeaderOn {
+                    width: 120px;
+                    justify-content: space-between;
+
+                    .srchbtn img {
+                        margin: 0;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px !important;
+                    }
+                }
+
+                .long-searchbar {
+                    display: none;
+                }
+
+                // .short-searchbar {
+                //     width: 35%;
+                // }
+
+                .header-navbar-container {
+                    .header-navbar {
+                        .nav-btn {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .home-page {
+        .hero-container {
+            .hero-img {
+                height: 65vh;
+                object-fit: cover;
+            }
+
+            .centered {
+                font-size: 6vw;
+            }
+
+            .button {
+                font-size: 6vw;
+                top: 50%;
+                height: 8%;
+                width: 55%;
+            }
+        }
+
+        .destinations-container {
+            margin-top: 500px;
+        }
+
+        .home-become-host {
+            align-items: center;
+
+            .host-hero-img {
+                height: 45vh;
+                object-fit: cover;
+            }
+
+            .text-btn-container {
+                position: relative;
+                align-items: center;
+                height: fit-content;
+                left: auto;
+
+                .centered {
+                    display: block;
+                    font-size: 10vw;
+                    padding-bottom: 30px;
+                }
+
+                .button {
+                    display: block;
+                    font-size: 4vw;
+                    top: 50%;
+                    height: 25px;
+                    width: 15vh;
+                    margin-top: 70px;
+                }
+            }
+        }
+    }
+
+    .explore-page {
+        position: relative;
+        top: 120px;
+
+        .explore-filter {
+            .explore-filter h3 {
+                display: none;
+            }
+
+            .filter-btns {
+
+                flex-wrap: wrap;
+            }
+
+            .slider-container {
+                position: absolute;
+                top: 90px;
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        .list-container {
+            .stay-list {
+                position: relative;
+                gap: 0px !important;
+
+                .stay-preview {
+                    margin: auto;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .stay-page {
+        padding: 0;
+    }
+
+
+    .AppFooter {
+        display: none;
+    }
+}
