@@ -236,7 +236,6 @@
             }
         }
 
-
         .stay-details {
             flex-wrap: wrap;
             justify-content: center;
@@ -296,18 +295,32 @@
         .reviews-modal {
             width: 350px;
             overflow: auto;
-        }
 
+            .modal-header {
+                height: 20px;
+                span {
+                    height: fit-content;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+        }
+.review-preview-container{
+    margin-bottom: 25px;
+}
         .reviews-modal .stay-reviews {
             display: flex !important;
             flex-direction: column;
             height: auto;
+            gap: 15px;
+            padding-bottom: 10px;
         }
     }
 
 
 
-.AppFooter {
-    display: none;
-}
+    .AppFooter {
+        display: none;
+    }
 }
