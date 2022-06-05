@@ -18,7 +18,7 @@ export const StayReviews = ({ stay, reviews, isLongTxt = false }) => {
         <section className="stay-reviews">
             <h2 className="stay-reviews-header">
                 <span className="icon-star">< Star /></span>
-                <span className="info-rating">{stay.reviewScores.rating / 20}</span>
+                <span className="info-rating">{(stay.reviewScores.rating / 20).toFixed(1)}</span>
                 <span className="info-point" > • </span>
                 <span>{stay.numOfReviews} reviews</span>
             </h2>

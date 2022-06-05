@@ -86,8 +86,8 @@
     }
 
     .slider-container {
-        height: 80px;
-        width: 240px;
+        height: 120px;
+        width: 300px;
         justify-content: center;
         align-items: center;
         position: absolute;
@@ -103,6 +103,10 @@
         flex-direction: column;
         font-family: circular-bold;
 
+        label{
+            padding-top: 10px;
+        }
+
         .css-187mznn-MuiSlider-root {
 
             display: flex;
@@ -110,6 +114,17 @@
             justify-content: center;
             width: 200px;
             color: var(--font-lightgray-color);
+        }
+
+        .price-range{
+            width: 100%;
+            justify-content: space-between;
+            font-family: circular-medium;
+
+            .minmax-price{
+                padding: 10px;
+            }
+            
         }
     }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
 import { headerIsLong, toggleIsHome, toggleIsStay } from "../store/header/header.action";
-import { stayService } from '../services/stay.service'
+import { updateUser } from '../store/user/user.actions'
 import { loadStay } from '../store/stay/stay.actions'
 import { StayGallery } from '../cmps/stay-page/stay-gallery'
 import { StayDetails } from '../cmps/stay-page/stay-detalis'
@@ -16,7 +16,9 @@ export function StayPage() {
     const params = useParams()
     const dispatch = useDispatch()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
+    const { user } = useSelector(storeState => storeState.userModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
+    const [likeHeart, setLikeHeart] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -28,6 +30,27 @@ export function StayPage() {
             dispatch(toggleIsStay(false))
         }
     }, [params.id])
+
+    const ToggleHeart = (ev) => {
+        ev.stopPropagation()
+        if (!user) {
+            document.body.classList.toggle("login-page-open");
+            document.body.classList.toggle("login-screen-open");
+        } else {
+            setLikeHeart(!likeHeart)
+            if (!user.favorites) {
+                user.favorites = []
+            }
+            if (user.favorites.map(fav => fav._id).includes(selectedStay._id)) {
+                user.favorites = user.favorites.filter(fav => fav._id !== selectedStay._id)
+            } else {
+                user.favorites.push(selectedStay)
+            }
+
+            dispatch(updateUser(user))
+        }
+
+    }
 
     return (
         <>
@@ -45,13 +68,14 @@ export function StayPage() {
                         {selectedStay.host.isSuperhost && <span className="info-point" > . </span>}
                         <h4 className="info-host-address"><u> {selectedStay.address.street}</u> </h4>
                     </div>
-                    <div className="info-user-btns flex space-between">
+                    <div className="info-user-btns flex">
                         <div className="share-btn-container flex align-center">
                             <p className="details-share"  ><IosShare /></p>
                             <p>Share</p>
                         </div>
                         <div className="save-btn-container flex align-center" >
                             {/* <p className="details-like" >{!isLiked ? <FavoriteBorder /> : <Favorite className="liked" />}</p> */}
+                            <p className="details-save" onClick={(event) => ToggleHeart(event, likeHeart)} >{!likeHeart ? <FavoriteBorder /> : <Favorite />}</p>
                             <p>Save</p>
                         </div>
                     </div>
