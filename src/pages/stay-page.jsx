@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch, useNavigate, useParams } from 'react-router-dom'
 import { headerIsLong, toggleIsHome, toggleIsStay } from "../store/header/header.action";
@@ -11,7 +11,7 @@ import { StayMap } from '../cmps/stay-page/stay-map'
 import { ReviewsModal } from '../cmps/stay-page/reviews-modal'
 import { AddReview } from '../cmps/stay-page/add-review'
 import { UserMsg } from '../cmps/general/user-msg'
-import { Star, IosShare, FavoriteBorder, Favorite } from "@mui/icons-material"
+import { Star, IosShare, FavoriteBorder, Favorite } from '@mui/icons-material'
 
 export function StayPage() {
     const params = useParams()
@@ -19,9 +19,10 @@ export function StayPage() {
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const { user } = useSelector(storeState => storeState.userModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
-    const [likeHeart, setLikeHeart] = useState(false)
-    const [savedLink, setSavedLink] = useState(false)
-    const [isopenMsg, setIsopenMsg] = useState(false)
+    const [likeHeart, setLikeHeart] = useState(null)
+    const [savedLink, setSavedLink] = useState(null)
+    // const [isOpenMsg, setIsOpenMsg] = useState(false)
+    const [textMsg, setTextMsg] = useState('')
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -34,21 +35,35 @@ export function StayPage() {
         }
     }, [params.id])
 
-    function onCopyUrlToClipboard() {
+
+    useEffect(() => {
+        if (savedLink && savedLink != null) {
+            openMsg()
+        }
+    }, [savedLink])
+
+    useEffect(() => {
+        if (likeHeart != null) {
+            openMsg()
+        }
+    }, [likeHeart])
+
+
+    function onCopyUrlToClipboard(ev) {
+        ev.preventDefault()
         navigator.clipboard.writeText(window.location.href);
         setSavedLink(true)
-        openMsg()
     }
 
     const ToggleHeart = (ev) => {
         ev.stopPropagation()
+        ev.preventDefault()
         if (!user) {
             document.body.classList.toggle("login-page-open");
             document.body.classList.toggle("login-screen-open");
         } else {
-            let updatedUser = {...user}
+            let updatedUser = { ...user }
             setLikeHeart(!likeHeart)
-            openMsg()
             if (!updatedUser.favorites) {
                 updatedUser.favorites = []
             }
@@ -62,31 +77,34 @@ export function StayPage() {
 
     }
 
-    const setTxtMsg = () => {
+    const chooseTxtMsg = () => {
         let txtMsg = ''
+        console.log(savedLink)
         if (savedLink) txtMsg = 'Link Copied to clipboard'
         else if (likeHeart) txtMsg = 'Stay liked'
         else txtMsg = 'Stay unliked'
-        return txtMsg
+        setTextMsg(txtMsg)
     }
 
     const openMsg = () => {
-        setTxtMsg()
-        setIsopenMsg(true)
+        chooseTxtMsg()
+        // setIsOpenMsg(true)
         setTimeout(() => {
             closeMsg()
         }, 3000);
+        // console.log('openMsg', !isOpenMsg)
     }
 
     const closeMsg = () => {
-        setIsopenMsg(false)
+        // setIsOpenMsg(false)
         setSavedLink(false)
+        setTextMsg('')
     }
 
     return (
         <>
             {selectedStay && <section className="stay-page">
-
+                {textMsg && <UserMsg textMsg={textMsg} closeMsg={closeMsg} />}
                 <h2 className="stay-name">{selectedStay.name}</h2>
                 <section className="stay-info-line flex space-between">
                     <div className="stay-info-container flex">
@@ -100,7 +118,7 @@ export function StayPage() {
                         <h4 className="info-host-address"><u> {selectedStay.address.street}</u> </h4>
                     </div>
                     <div className="info-user-btns flex">
-                        <div className="share-btn-container flex align-center" onClick={onCopyUrlToClipboard}>
+                        <div className="share-btn-container flex align-center" onClick={(event) => onCopyUrlToClipboard((event))}>
                             <p className="details-share"  ><IosShare /></p>
                             <p>Share</p>
                         </div>
@@ -108,7 +126,6 @@ export function StayPage() {
                             <p className="details-save" >{!likeHeart ? <FavoriteBorder /> : <Favorite />}</p>
                             <p>Save</p>
                         </div>
-                        {isopenMsg && <UserMsg setTxtMsg={setTxtMsg} closeMsg={closeMsg}/>}
                     </div>
                 </section>
                 <StayGallery key="stay-gallery" stay={selectedStay} />
