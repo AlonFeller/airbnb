@@ -11,7 +11,7 @@ export function userReducer(state = initialState, action) {
     var newState = state;
     switch (action.type) {
         case 'SET_USER':
-            newState = { ...state, user: {...action.user, imgUrl:'https://thispersondoesnotexist.com/image?cache=1654433563532'} }
+            newState = { ...state, user: action.user }
             break;
         case 'UPDATE_USER':
             newState = { ...state, user: action.user }
