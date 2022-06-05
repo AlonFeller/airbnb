@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
+import { utilService } from "../../services/util.service"
 
 export const ExploreFilter = (props) => {
 
@@ -82,9 +83,6 @@ export const ExploreFilter = (props) => {
         }
     }
 
-
-
-
     return (
         <section className='explore-filter'>
             <section className="filters-container">
@@ -109,6 +107,16 @@ export const ExploreFilter = (props) => {
                             onChange={handleRangeChange}
                         />
                         {/* <div className="login-btn">Save</div> */}
+                        <div className="price-range flex">
+                            <div className="minmax-price">
+                                <div className="min-price">Min Price</div>
+                                <div className="min-price">${utilService.numberWithCommas(val[0])}</div>
+                            </div>
+                            <div className="minmax-price">
+                                <div className="max-price">Max Price </div>
+                                <div className="max-price">${utilService.numberWithCommas(val[1])}</div>
+                            </div>
+                        </div>
                     </div> : null}
                     <div className={(kitchen) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Kitchen')}><span>Kitchen</span></div>
                     <div className={(wifi) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('Wifi')}><span>Wifi</span></div>
