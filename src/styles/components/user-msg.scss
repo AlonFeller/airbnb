@@ -1,57 +1,22 @@
 .user-msg {
 	z-index: 1000;
-	animation: append-animate 0.2s linear;
-	color: whitesmoke;
-	display: flex;
-	justify-content: space-between;
+	color: var(--scores-background-color);
 	align-items: center;
+	justify-content: space-between;
 	padding: 0px 10px 0px 10px;
 	font-size: 1.125rem;
-	font-family: inherit;
-	position: fixed;
-	bottom: 3%;
-	right: 7.9%;
-	min-width: 150px;
+	font-family: circular-medium;
 	height: 40px;
-	background-color: #1c1919;
+	width: 300px;
+	background-color:var(--font-gray-see-throw-color);
 	border-radius: 6px;
-	p {
-		line-height: 1;
-		padding-inline-end: 10px;
-	}
+	transform: translate(200%, 240%);
 
-	button {
-		border: 0;
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
-	&.success {
-		background-color: #9df89d;
-	}
-
-	&.bnb {
-		background-color: #cd3f3f;
-	}
-}
-
-.close-user-msg {
-	height: 20px;
-	margin-top: 3px;
-}
-
-.detail-layout .user-msg {
-	right: 21.2%;
-}
-
-@keyframes append-animate {
-	from {
-		transform: scale(0);
-		opacity: 0;
-	}
-	to {
-		transform: scale(1);
-		opacity: 1;
+	button{
+		background-color: var(--scores-background-color);
+		color:var(--font-gray-see-throw-color);
+		border: 0px;
+		border-radius: 15%;
+		cursor: pointer;
 	}
 }

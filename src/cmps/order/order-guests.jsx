@@ -7,14 +7,14 @@ export const Guests = ({ onGetGuestsNumber }) => {
         adults: 1,
         children: 0,
         pets: 0
-        
+
     })
 
     useEffect(() => {
         onGetGuestsNumber(guests)
     }, [guests]);
 
-    
+
     const openGuestsModal = () => {
         document.body.classList.toggle("guests-modal-open")
     }
