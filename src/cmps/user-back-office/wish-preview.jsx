@@ -7,6 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch, useSelector } from "react-redux";
 import { removeStay } from "../../store/stay/stay.actions";
 import { updateUser } from "../../store/user/user.actions";
+import { Image } from "cloudinary-react";
 // import img from '../../assets/Images/001.jpeg'
 
 
@@ -57,8 +58,8 @@ export const WishPreview = (props) => {
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
             <div className="explore-img-container">
-                <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
-                    height='270' width='270' className="img-preview" alt="" />
+            <Image cloudName="airzula" className="img-preview" 
+                     publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + stay.imgUrls[imgNum]}/>
                 <div className="cycle-btn-container">
                     <div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon /></div>
                     <div className="next-btn" onClick={(event) => cycleImgs(event, 1)}><ArrowRightIcon /></div>

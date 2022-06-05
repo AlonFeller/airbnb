@@ -5,8 +5,6 @@ import { headerIsLong, toggleDetailsLayout, toggleIsHome, toggleModalPosition } 
 import { LoginSignUp } from './login-siginup'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
-import logo from '../../assets/Images/logo2.png'
-import whiteLogo from '../../assets/Images/white-logo.png'
 import { useDispatch, useSelector } from 'react-redux';
 
 export function AppHeader() {
@@ -18,6 +16,9 @@ export function AppHeader() {
         navigate('/')
         navigate(path)
     }
+
+    const logo ='https://res.cloudinary.com/airzula/image/upload/airzula/logo2.png'
+    const whiteLogo = 'https://res.cloudinary.com/airzula/image/upload/airzula/white-logo.png'
 
     useEffect(() => {
         // console.log(window.pageYOffset);
