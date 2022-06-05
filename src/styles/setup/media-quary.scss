@@ -1,5 +1,5 @@
 @media screen and(max-width:720px) {
-  
+
     .app {
         grid-template-columns: 1fr 14fr 1fr !important;
         overflow-x: hidden !important;
@@ -24,8 +24,19 @@
                 }
 
                 .searchbar-fullHeaderOn {
-                    width: 120px;
-                    justify-content: space-between;
+                    width: 32px;
+                    height: 32px;
+                    justify-content: center;
+
+                    .short-searchbar {
+                        padding: 0;
+                        padding-left: 1px;
+                        margin: 0;
+
+                        h1 {
+                            display: none;
+                        }
+                    }
 
                     .srchbtn img {
                         margin: 0;
@@ -187,14 +198,17 @@
         .stay-info-line {
             display: flex;
             flex-direction: column;
-            .info-super-host{
+
+            .info-super-host {
                 display: none;
             }
         }
 
         .stay-gallery {
-            margin-top: 24px;
-            height: fit-content;
+            margin: 0;
+            padding: 0;
+            margin-top: 15px;
+            height: 1000px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -207,18 +221,21 @@
                 align-self: center;
                 margin: 0;
                 padding: 0;
-                margin-top: 10px;
                 gap: 10px;
-  
-                img {
+
+                .img-preview {
                     display: block;
                     align-items: center;
-                    max-width: 350px !important;
+                    width: 350px !important;
+                    height: 180px;
+                    margin: 0;
+                    padding: 0;
                     border-radius: 15px !important;
-                    margin-top: 15px;
+                    object-fit: fill;
                 }
             }
         }
+
 
         .stay-details {
             flex-wrap: wrap;
@@ -270,10 +287,27 @@
                 flex-direction: row;
             }
         }
+
+        .amenities-modal {
+            width: 350px;
+            overflow: auto;
+        }
+
+        .reviews-modal {
+            width: 350px;
+            overflow: auto;
+        }
+
+        .reviews-modal .stay-reviews {
+            display: flex !important;
+            flex-direction: column;
+            height: auto;
+        }
     }
 
 
-    .AppFooter {
-        display: none;
-    }
+
+.AppFooter {
+    display: none;
+}
 }
