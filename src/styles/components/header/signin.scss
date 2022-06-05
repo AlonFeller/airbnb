@@ -15,7 +15,21 @@
     border-radius: 20px;
     background-color: var(--card-background-color);
 
+    .signup-hedding-flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
+    .signup-welcome-headding{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        h2 {
+            line-height: 0.6em;
+        }
+    }
 
 
     .login-form {
