@@ -86,7 +86,7 @@
     }
 
     .slider-container {
-        height: 100px;
+        height: 120px;
         width: 300px;
         justify-content: center;
         align-items: center;
@@ -119,6 +119,7 @@
         .price-range{
             width: 100%;
             justify-content: space-between;
+            font-family: circular-medium;
 
             .minmax-price{
                 padding: 10px;
