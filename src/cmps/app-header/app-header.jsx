@@ -9,6 +9,7 @@ import { Searchbar } from './searchbar'
 import logo from '../../assets/Images/logo2.png'
 import whiteLogo from '../../assets/Images/white-logo.png'
 import { UserMsg } from "../general/user-msg"
+import { useDispatch, useSelector } from 'react-redux';
 
 export function AppHeader() {
     const dispatch = useDispatch()
@@ -22,6 +23,9 @@ export function AppHeader() {
         navigate('/')
         navigate(path)
     }
+
+    const logo ='https://res.cloudinary.com/airzula/image/upload/airzula/logo2.png'
+    const whiteLogo = 'https://res.cloudinary.com/airzula/image/upload/airzula/white-logo.png'
 
     useEffect(() => {
         // console.log(window.pageYOffset);

@@ -82,6 +82,10 @@ export const NavBar = (props) => {
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
+    const orderArrivedTest = (order) => {
+  
+        console.log('order arrived');
+    }
 
 
 
@@ -96,7 +100,7 @@ export const NavBar = (props) => {
                     <MenuRoundedIcon fontSize="small" className="dehaze" />
                     {(user) ? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
                     {isNewNoti && <div className="red-dot"></div>}
-                    <div className={(isStay)?"login-slide-modal stay-menu":"login-slide-modal "} onMouseOut={displayLoginModal} >
+                    <div className={(isStay)?"login-slide-modal stay-menu":"login-slide-modal "} onMouseLeave={displayLoginModal} >
                         <div className="menu-btn-container">
                             {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
                                 : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}

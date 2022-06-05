@@ -55,6 +55,7 @@ async function login(userCred) {
     if (user) {
         socketService.login(user._id)
         socketService.emit('set-user', user._id)
+        console.log('listening on socket', user._id);
         return saveLocalUser(user)
     }
 }
