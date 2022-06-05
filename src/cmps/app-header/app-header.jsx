@@ -9,7 +9,6 @@ import { Searchbar } from './searchbar'
 import logo from '../../assets/Images/logo2.png'
 import whiteLogo from '../../assets/Images/white-logo.png'
 import { UserMsg } from "../general/user-msg"
-import { useDispatch, useSelector } from 'react-redux';
 
 export function AppHeader() {
     const dispatch = useDispatch()
