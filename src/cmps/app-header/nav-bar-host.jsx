@@ -32,6 +32,7 @@ export const NavBar = (props) => {
     useEffect(() => {
         if (user) {
 
+            socketService.on('order recieved', orderArrivedTest);
             socketService.on('order recieved', orderArrived);
         }
         // return () => {

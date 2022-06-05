@@ -57,10 +57,10 @@ export function UserBackOffice() {
                                 indicatorColor="primary"
                                 aria-label="secondary tabs example"
                             >
-                                <Tab tab="four" label="My Trips" value='mytrips' />
-                                <Tab tab="one" label="Orders" value='orders'/>
-                                <Tab tab="two" label="My stays" value='stays' />
-                                <Tab tab="three" label="Add a property" value='newstay' />
+                                <Tab tab="one" label="My Trips" value='mytrips' />
+                                <Tab tab="tow" label="Orders" value='orders'/>
+                                <Tab tab="three" label="My stays" value='stays' />
+                                <Tab tab="four" label="Add a property" value='newstay' />
                             </Tabs>
                         </Box>
 
