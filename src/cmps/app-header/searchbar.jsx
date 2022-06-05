@@ -53,15 +53,15 @@ export const Searchbar = (props) => {
                 <label htmlFor="">Location </label>
                 <input type="text" name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
             </div>
-            <div className="searchber-form-label bold">
+            <div className="searchber-form-label bold CheckIn">
                 <label htmlFor="">Check in </label>
                 <MyDatePicker className="date" />
             </div>
-            <div className="searchber-form-label bold">
+            <div className="searchber-form-label bold CheckOut">
                 <label htmlFor="">Check out</label>
                 <MyDatePicker className="date" />
             </div>
-            <div className="searchber-form-label bold">
+            <div className="searchber-form-label bold Guests">
                 <label htmlFor="">How many</label>
                 <input type="number" placeholder="Guests" />
             </div>
