@@ -1,6 +1,8 @@
 @media screen and(max-width:720px) {
+
     .app {
         grid-template-columns: 1fr 14fr 1fr !important;
+        overflow-x: hidden !important;
     }
 
     .AppHeader {
@@ -11,6 +13,7 @@
 
             .header-container {
                 margin: 0 20px;
+                padding: 0 !important;
 
                 .logo-img-container {
                     width: 72px !important;
@@ -21,8 +24,19 @@
                 }
 
                 .searchbar-fullHeaderOn {
-                    width: 120px;
-                    justify-content: space-between;
+                    width: 32px;
+                    height: 32px;
+                    justify-content: center;
+
+                    .short-searchbar {
+                        padding: 0;
+                        padding-left: 1px;
+                        margin: 0;
+
+                        h1 {
+                            display: none;
+                        }
+                    }
 
                     .srchbtn img {
                         margin: 0;
@@ -34,7 +48,7 @@
 
                 .long-searchbar {
                     width: 350px;
-                    height: 150px;
+                    height: 115px;
                     top: 75px;
 
                     .searchbar-form {
@@ -173,23 +187,31 @@
         padding: 0;
         display: flex;
         flex-direction: column;
+        font-size: 12px;
+        max-width: 350px;
 
-        >* {
-            word-wrap: break-word;
+        .stay-name {
+            font-size: 15px;
+            font-family: circular-medium;
         }
 
         .stay-info-line {
             display: flex;
             flex-direction: column;
+
+            .info-super-host {
+                display: none;
+            }
         }
 
         .stay-gallery {
-            margin-top: 24px;
-            height: fit-content;
+            margin: 0;
+            padding: 0;
+            margin-top: 15px;
+            height: 1000px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-
 
             .gallery-img-container {
                 position: relative;
@@ -199,17 +221,21 @@
                 align-self: center;
                 margin: 0;
                 padding: 0;
-                margin-top: 10px;
                 gap: 10px;
 
-                img {
+                .img-preview {
+                    display: block;
                     align-items: center;
-                    max-width: 350px !important;
+                    width: 350px !important;
+                    height: 180px;
+                    margin: 0;
+                    padding: 0;
                     border-radius: 15px !important;
-
+                    object-fit: fill;
                 }
             }
         }
+
 
         .stay-details {
             flex-wrap: wrap;
@@ -241,12 +267,47 @@
             display: flex !important;
             flex-direction: column;
             grid-gap: 0;
+
+            .review-preview-container {
+                p {
+                    max-width: 350px;
+                    overflow-wrap: break-word;
+                }
+            }
         }
 
+        .rating-bars-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 350px;
+
+            .bar-container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        .amenities-modal {
+            width: 350px;
+            overflow: auto;
+        }
+
+        .reviews-modal {
+            width: 350px;
+            overflow: auto;
+        }
+
+        .reviews-modal .stay-reviews {
+            display: flex !important;
+            flex-direction: column;
+            height: auto;
+        }
     }
 
 
-    .AppFooter {
-        display: none;
-    }
+
+.AppFooter {
+    display: none;
+}
 }
