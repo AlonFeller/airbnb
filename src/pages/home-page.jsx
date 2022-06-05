@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
 import hero from '../assets/Images/hero.png'
+import hostHero from '../assets/Images/host-hero.jpg'
 import nyc from '../assets/Images/NYC.jpg'
 import madrid from '../assets/Images/madrid.jpg'
 import Portugal from '../assets/Images/portugal.jpg'
@@ -60,7 +61,13 @@ export function HomePage() {
                             {/* <Leads/> */}
                         </section>
                     </section>
-
+                    <section className='home-become-host'>
+                        <img className="host-hero-img full" src={hostHero} alt="host-hero-img "></img>
+                        <div className="text-btn-container">
+                            <h1 className="title centered fs30">Become a host</h1>
+                            <div className="button" onClick={() => goTo('/host')}><span>Learn more</span></div>
+                        </div>
+                    </section>
                 </section>
             </section>
 

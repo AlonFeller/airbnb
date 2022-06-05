@@ -26,17 +26,17 @@ export const NavBar = (props) => {
     }
 
     useEffect(() => {
-     
-    },[])
+
+    }, [])
 
     useEffect(() => {
         if (user) {
-  
-            socketService.on('order recieved',  orderArrived);   
-        } 
+
+            socketService.on('order recieved', orderArrived);
+        }
         // return () => {
         //     socketService.off(user._id) }
-    },[])
+    }, [])
 
     useEffect(() => {
         window.addEventListener("scroll", isRender)
@@ -70,7 +70,7 @@ export const NavBar = (props) => {
     const displayLoginModal = () => {
 
         document.body.classList.toggle("login-slide-modal-open");
-        
+
     }
 
     const orderArrived = (order) => {
@@ -82,7 +82,7 @@ export const NavBar = (props) => {
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
- 
+
 
 
 
@@ -96,11 +96,10 @@ export const NavBar = (props) => {
                     <MenuRoundedIcon fontSize="small" className="dehaze" />
                     {(user) ? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
                     {isNewNoti && <div className="red-dot"></div>}
-                    <div className="login-slide-modal" onMouseOut={displayLoginModal} >
+                    <div className={(isStay)?"login-slide-modal stay-menu":"login-slide-modal "} onMouseOut={displayLoginModal} >
                         <div className="menu-btn-container">
                             {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
                                 : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
-
                             {(user) ? <div className="login-opt-btn" onClick={(ev) => openNotiTab(ev)}  >Notifications  {isNewNoti && <NotificationsIcon className="noti-icon" />} </div> : null}
                             {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/stays`)} >My Area</div> : null}
                             {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
