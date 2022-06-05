@@ -5,17 +5,17 @@ import { userService } from '../../services/user.service'
 import { onLogin, onSignup } from '../../store/user/user.actions'
 import { ImgUploader } from './img-uploader'
 
-export function LoginSignUp(props) {
+export function LoginSignUp({openMsg}) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isLogin, setIsLogin] = useState(true)
     const dispatch = useDispatch()
 
-    useEffect( () => {
-       return setIsLogin(true)
+    useEffect(() => {
+        return setIsLogin(true)
     }, [])
 
     const clearState = () => {
-        setCredentials({ username: '', password: ''})
+        setCredentials({ username: '', password: '' })
     }
 
     const handleChange = ev => {
@@ -25,11 +25,11 @@ export function LoginSignUp(props) {
     }
 
     const onLoginUser = (ev = null) => {
-        
+
         if (ev) ev.preventDefault();
         dispatch(onLogin(credentials));
 
-        
+
 
         clearState()
         document.body.classList.toggle("login-page-open");
@@ -51,15 +51,15 @@ export function LoginSignUp(props) {
         document.body.classList.toggle("login-slide-modal-open");
     }
 
-    
+
     return (
         <div className="login-page">
 
-            {isLogin &&< div>
-           <button className='move-to-signup' onClick={() => setIsLogin(false)}>Sign Up</button>
+            {isLogin && < div>
+                <h4 onClick={() => setIsLogin(false)}>New to AirZula?</h4>
 
-            <form className="login-form" onSubmit={onLoginUser}>
-                <input
+                <form className="login-form" onSubmit={onLoginUser}>
+                    <input
                         type="text"
                         name="username"
                         placeholder="Username"
@@ -67,7 +67,7 @@ export function LoginSignUp(props) {
                         value={credentials.username}
                         required
                         autoFocus
-                        />
+                    />
                     <input
                         type="password"
                         name="password"
@@ -75,12 +75,18 @@ export function LoginSignUp(props) {
                         placeholder="Password"
                         onChange={handleChange}
                         required
-                        />
-                <button className='login-btn'>Login!</button>
-            </form>         
-           </div>}
+                    />
+                    <button className='login-btn'>Login!</button>
+                </form>
+            </div>}
             {!isLogin && <div className="signup-section">
-            <button className='move-to-signup' onClick={() => setIsLogin(true)}>Login</button>
+                <div className='signup-hedding-flex'>
+                    <h3>Sign up</h3>
+                    <h4 onClick={() => setIsLogin(true)}>Already have an account?</h4>
+                </div>
+                <div className='signup-welcome-headding'>
+                    <h2>Welcome to AirZula</h2>
+                </div>
                 <form className="login-form" onSubmit={onSignupUser}>
                     <input
                         type="text"
@@ -113,10 +119,10 @@ export function LoginSignUp(props) {
                         placeholder="Email"
                         onChange={handleChange}
                     />
-                    <ImgUploader onUploaded={onUploaded}/>                    
+                    <ImgUploader onUploaded={onUploaded} />
                     <button >Signup</button>
                 </form>
-            </div> }
+            </div>}
 
         </div>
     )
