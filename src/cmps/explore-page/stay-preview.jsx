@@ -6,6 +6,7 @@ import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../../store/user/user.actions";
+import { Image } from "cloudinary-react";
 // import img from '../../assets/Images/001.jpeg'
 
 
@@ -72,8 +73,10 @@ export const StayPreview = (props) => {
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
             <div className="explore-img-container" >
-                <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
-                    className="img-preview" alt="" />
+                {/* <img src={require("../../assets/Images/" + stay.imgUrls[imgNum])}
+                    className="img-preview" alt="" /> */}
+                     <Image cloudName="dmsp3i7eo" className="img-preview" 
+                     publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + stay.imgUrls[imgNum]}/>
                 <div className={(likeHeart)?"heart-btn full":"heart-btn empty"} onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '❤'}</div>
                 {/* <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>+ */}
                 {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
