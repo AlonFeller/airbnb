@@ -5,7 +5,7 @@ import nyc from '../assets/Images/NYC.jpg'
 import madrid from '../assets/Images/madrid.jpg'
 import Portugal from '../assets/Images/portugal.jpg'
 import brazil from '../assets/Images/brazil.jpg'
-import { headerIsLong, toggleIsHome } from "../store/header/header.action";
+import { headerIsLong, toggleIsExplore, toggleIsHome, toggleIsStay } from "../store/header/header.action";
 import { useDispatch } from 'react-redux'
 
 export function HomePage() {
@@ -18,6 +18,8 @@ export function HomePage() {
     }
     useEffect(() => {
         window.scrollTo(0, 0);
+        dispatch(toggleIsStay(false))
+        dispatch(toggleIsExplore(false))
         dispatch(headerIsLong(true))
         dispatch(toggleIsHome(true))
         console.log(new Date(1654264978351).toDateString())
