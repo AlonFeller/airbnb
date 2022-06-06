@@ -23,32 +23,7 @@ const routes = [
         path: '/host',
         component: <BecomeAHost />,
         label: 'host'
-    },
-    // {
-    //     path: 'explore/:location',
-    //     component: <ExplorePage />,
-    //     label: 'explore'
-    // },
-    // {
-    //     path: 'stay',
-    //     component: <StayPage />,
-    //     label: 'stay'
-    // },
-    // {
-    //     path: '/user-back-office',
-    //     component: <UserBackOffice />,
-    //     label: 'user-back-office'
-    // },
-    // {
-    //     path: 'about',
-    //     component: <AboutUs />,
-    //     label: 'About us'
-    // },
-    // {
-    //     path: 'admin',
-    //     component: <AdminApp />,
-    //     label: 'Admin Only'
-    // }
+    }
 ]
 
 export default routes
