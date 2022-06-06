@@ -7,6 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../../store/user/user.actions";
 import { Image } from "cloudinary-react";
+import ImageCarousel from "./carousel";
 
 
 
@@ -71,17 +72,18 @@ export const StayPreview = (props) => {
 
 
     return (
-        <section className='stay-preview' onClick={() => goTo(stay._id)}>
+        <section className='stay-preview' >
             <div className="explore-img-container" >
-                     <Image cloudName="airzula" className="img-preview" 
-                     publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + stay.imgUrls[imgNum]}/>
+                     {/* <Image cloudName="airzula" className="img-preview" 
+                     publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + stay.imgUrls[imgNum]}/> */}
+                     <ImageCarousel stay={stay} />
                 <div className={(likeHeart)?"heart-btn full":"heart-btn empty"} onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '❤'}</div>
-                <div className="cycle-btn-container">
+                {/* <div className="cycle-btn-container">
                     <div className="back-btn-container"><div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon className="ArrowLeftIcon" /></div></div>
                     <div className="next-btn-container"><div className="next-btn" onClick={(event) => cycleImgs(event, 1)}><ArrowRightIcon  className="ArrowRightIcon"/></div></div>
-                </div>
+                </div> */}
             </div>
-            <div className="locatoing-rating">
+            <div className="locatoing-rating" >
                 <h3>{stay.address.city + ', ' + stay.address.country} </h3>
                 {stay.reviewScores.rating && <span className="preview-rating-star"><span>{(stay.reviewScores.rating / 20).toFixed(1)}</span>< Star /></span>}
                 {!stay.reviewScores.rating && <span className="preview-rating-star"><span>4.6</span> < Star /></span>}
