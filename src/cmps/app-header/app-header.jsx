@@ -6,8 +6,8 @@ import { LoginSignUp } from './login-siginup'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
-import logo from '../../assets/Images/logo2.png'
-import whiteLogo from '../../assets/Images/white-logo.png'
+// import logo from '../../assets/Images/logo2.png'
+// import whiteLogo from '../../assets/Images/white-logo.png'
 
 export function AppHeader() {
     const dispatch = useDispatch()
@@ -24,7 +24,6 @@ export function AppHeader() {
     const whiteLogo = 'https://res.cloudinary.com/airzula/image/upload/v1654369282/airzula/logo_white.png'
 
     useEffect(() => {
-        // console.log(window.pageYOffset);
         window.addEventListener("scroll", toggleHeader)
         return () => {
             window.removeEventListener("scroll", toggleHeader)
@@ -32,9 +31,7 @@ export function AppHeader() {
     }, [window.pageYOffset]);
 
     function toggleHeader() {
-        // console.log(window.pageYOffset);
         const modalTopPosition = window.pageYOffset + 50
-        // console.log("modalTopPosition", modalTopPosition);
         dispatch(toggleModalPosition(modalTopPosition))
         if (window.pageYOffset > 25) {
             setIsPageScroll(true)
@@ -42,9 +39,7 @@ export function AppHeader() {
         } else {
             setIsPageScroll(false)
             if (isHome) dispatch(headerIsLong(true))
-
         }
-        // console.log("isPageScroll", isPageScroll, "isHome", isHome,"isLong",isLong);
     }
 
     return (
@@ -66,9 +61,9 @@ export function AppHeader() {
     )
 }
 
-function toggleHeader() {
-    const lastScroll = window.pageYOffset
-}
+// function toggleHeader() {
+//     const lastScroll = window.pageYOffset
+// }
 
 
 function toggleLogin() {
