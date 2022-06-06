@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../../store/user/user.actions";
 import { Image } from "cloudinary-react";
-// import img from '../../assets/Images/001.jpeg'
+
 
 
 
@@ -68,7 +68,7 @@ export const StayPreview = (props) => {
         }
 
     }
-    // height='270' width='270'
+
 
     return (
         <section className='stay-preview' onClick={() => goTo(stay._id)}>
@@ -76,8 +76,6 @@ export const StayPreview = (props) => {
                      <Image cloudName="airzula" className="img-preview" 
                      publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + stay.imgUrls[imgNum]}/>
                 <div className={(likeHeart)?"heart-btn full":"heart-btn empty"} onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '❤'}</div>
-                {/* <div className="heart-btn" onClick={(event) => ToggleHeart(event, likeHeart)}>{(likeHeart) ? '❤' : '🤍'}</div>+ */}
-                {/* <div className={(likeHeart)?  "heart-btn-on" : "heart-btn" } onClick={(event) => ToggleHeart(event, likeHeart)}><FavoriteIcon/></div> */}
                 <div className="cycle-btn-container">
                     <div className="back-btn-container"><div className="back-btn" onClick={(event) => cycleImgs(event, -1)}><ArrowLeftIcon className="ArrowLeftIcon" /></div></div>
                     <div className="next-btn-container"><div className="next-btn" onClick={(event) => cycleImgs(event, 1)}><ArrowRightIcon  className="ArrowRightIcon"/></div></div>

@@ -73,10 +73,43 @@
             border-radius: 0 0 10px 10px !important;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             font-size: 20px;
+            cursor: pointer;
+            overflow: hidden;
 
+            .guests-number{
+                display: flex;
+                flex-direction: column;
+               justify-content: center;
+                align-items: left;
+                height: 50px;
+                width: 90%;
+                padding: 0 5%;
+                border-bottom: 1px solid var(--font-lightgray-color);
+                margin: 0;
+
+                .guests-title{
+                    color: var(--font-dark-color-order);
+                    font-size: 12px;
+                    line-height: 12px;
+                    font-family: circular-medium;
+                    margin-bottom: 7px;
+                    margin-top: 0;
+                }
+
+                .guests-sum{
+                    font-family: circular-light;
+                    color: var(--font-dark-color-order);
+                    font-size: 15px;
+                    line-height: 12px;
+                }
+            }
+
+        }
+
+        .incDec-line{
+            font-size: medium;
         }
 
         .set-guests {
@@ -84,8 +117,8 @@
             justify-content: space-evenly;
 
             .incDec-btn {
-                width: 15px;
-                height: 15px;
+                width: 11px;
+                height: 11px;
                 padding: 8px;
                 border: 1px solid var(--font-dark-color);
                 border-radius: 50%;
@@ -96,8 +129,8 @@
             }
 
             .incDec-btn-off {
-                width: 15px;
-                height: 15px;
+                width: 11px;
+                height: 11px;
                 padding: 8px;
                 border: 1px solid var(--font-dark-color);
                 border-radius: 50%;

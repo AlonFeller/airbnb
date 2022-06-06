@@ -4,6 +4,7 @@ import { stayService } from '../../services/stay.service'
 import { loadStays } from '../../store/stay/stay.actions'
 import { StayPreview } from './stay-preview'
 import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../../store/header/header.action";
+import Variants from './phantom'
 
 
 export const StayList = (props) => {
@@ -14,6 +15,8 @@ export const StayList = (props) => {
             toggleIsExplore(true);
         })();
     }, []);
+
+    const phantoms = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     
     const stays = useSelector(state => state.stayModule.stays)
 
@@ -22,7 +25,8 @@ export const StayList = (props) => {
 
             <section className='stay-list'>
 
-                {stays.map(stay => <StayPreview key={stay._id} stay={stay} />)}
+                { (stays.length)?  stays.map(stay => <StayPreview key={stay._id} stay={stay} />) : 
+                phantoms.map(phan => <Variants className="stay-preview"/>) }
 
             </section>
         </section>

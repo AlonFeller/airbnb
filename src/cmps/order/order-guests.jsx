@@ -26,12 +26,17 @@ export const Guests = ({ onGetGuestsNumber }) => {
         setGuests(newGuests)
     }
 
+    const guestsNum = guests.adults + guests.children + guests.pets
+    const guestsTitle = guestsNum === 1 ? 'Guest' : 'Guests'
 
     return (
         <section className="guests-btn" onClick={openGuestsModal}>
 
 
-            <p>{guests.adults + guests.children + guests.pets + ' '} Guests </p>
+            <div className="guests-number">
+                <div className="guests-title">guests</div>
+                <div className="guests-sum"> {guestsNum}  {guestsTitle}</div>
+            </div>
 
             <div className="guests-modal">
                 <div className="incDec-line">
