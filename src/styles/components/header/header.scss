@@ -44,11 +44,11 @@
                 align-self: flex-end;
                 background-color: var(--card-background-color);
                 border-radius: 35px;
-                max-width: 575px;
+                max-width: 775px;
                 display: flex;
                 justify-content: space-between;
                 border: 1px solid var(--font-lightgray-color);
-                box-shadow: 0px 2px 5px var(--font-gray-color);
+                box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
                 transition: 0.4s;
                 position: absolute;
                 top: 55px;
@@ -59,7 +59,8 @@
                 .searchbar-form {
                     align-self: center;
                     display: flex;
-                    max-width: 750px;
+                    width: 750px;
+                    justify-content: space-between;
                     // margin-left: 5px;
                     gap: 5px;
 
@@ -101,6 +102,7 @@
                             max-width: 100px;
                             align-self: center;
                             border: 0px;
+                            outline: 0;
                             background-color: var(--card-background-color);
                             border-radius: 35px;
                         }
@@ -131,10 +133,10 @@
             }
 
             .logo-img-container {
-                align-self: flex-start;
+                align-self: center;
                 display: flex;
                 justify-content: start;
-                margin-top: 18px;
+                // margin-top: 18px;
                 transition: 0.6s;
                 width: 260px;
                 display: flex;
@@ -142,278 +144,306 @@
 
                 .logo-img {
                     height: 50px;
-                    align-self: flex-start;
+                    align-self: center;
+                }
+
+                .whiteLogoTxt {
+                    height: 50px;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-top: 10px;
+                    margin: 0;
+                    align-self: flex-end;
+                    font-family: circular-extra;
+                    font-size: 42px;
+                    color: var(--main-background-color);
+                }
+
+                .logoTxt {
+                    height: 50px;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-top: 10px;
+                    margin: 0;
+                    align-self: flex-end;
+                    font-family: circular-extra;
+                    font-size: 42px;
+                    color: var(--logo-color);
                 }
             }
+        }
 
-            .short-searchbar {
-                align-self: center !important;
-                display: flex;
-                justify-content: space-between;
-                width: 300px;
-                padding-right: 2px;
-                padding-left: 15px;
+        .short-searchbar {
+            align-self: center !important;
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            padding-right: 2px;
+            padding-left: 15px;
+            margin: 0;
+            padding-bottom: 0;
+            transition: 0.6s;
+            background-color: var(--card-background-color);
+            overflow: hidden;
+            border-radius: 35px;
+            box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+
+            >* {
+                align-self: center;
                 margin: 0;
                 padding-bottom: 0;
-                transition: 0.6s;
-                background-color: var(--card-background-color);
-                overflow: hidden;
-                border-radius: 35px;
+            }
+
+            .srchbtn {
+                display: flex;
+                justify-content: center;
+
+                img {
+                    margin-right: 1px;
+                    cursor: pointer;
+                    // padding-top: 2px;
+                    align-self: center;
+                    height: 52px !important;
+                }
 
                 >* {
                     align-self: center;
-                    margin: 0;
-                    padding-bottom: 0;
                 }
+            }
+
+            // &:hover {
+            //     border-radius: 20px;
+            //     background-color: var(--font-lightgray-color);
+            // }
+        }
+
+        .searchbar-fullHeaderOn {
+            // align-self: center;
+            // background-color: var(--card-background-color);
+            border-radius: 35px;
+            // width: 575px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 1px solid var(--font-lightgray-color);
+            box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+            // box-shadow: 0px 2px 5px var(--font-gray-color);
+            // position: sticky;
+            // top: 50px;
+            transition: 0.9s;
+
+            &:hover {
+                box-shadow: 0px 4px 12px var(--font-lightgray-color);
+                transition: 0.4s;
+            }
+
+            .searchbar-form {
+                align-self: center;
+                display: flex;
+                max-width: 750px;
+                margin-left: 5px;
+                gap: 5px;
 
                 .srchbtn {
-                    display: flex;
-                    justify-content: center;
-
                     img {
-                        margin-right: 1px;
+                        margin-right: 10px;
                         cursor: pointer;
-                        // padding-top: 2px;
+                        padding-top: 2px;
                         align-self: center;
                         height: 52px !important;
                     }
 
-                    >* {
-                        align-self: center;
-                    }
-                }
-
-                // &:hover {
-                //     border-radius: 20px;
-                //     background-color: var(--font-lightgray-color);
-                // }
-            }
-
-            .searchbar-fullHeaderOn {
-                // align-self: center;
-                // background-color: var(--card-background-color);
-                border-radius: 35px;
-                // width: 575px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                border: 1px solid var(--font-lightgray-color);
-                box-shadow: 0px 2px 5px var(--font-gray-color);
-                // position: sticky;
-                // top: 50px;
-                transition: 0.9s;
-
-                &:hover {
-                    box-shadow: 0px 4px 12px var(--font-lightgray-color);
-                    transition: 0.4s;
-                }
-
-                .searchbar-form {
-                    align-self: center;
-                    display: flex;
-                    max-width: 750px;
-                    margin-left: 5px;
-                    gap: 5px;
-
-                    .srchbtn {
-                        img {
-                            margin-right: 10px;
-                            cursor: pointer;
-                            padding-top: 2px;
-                            align-self: center;
-                            height: 52px !important;
-                        }
-
-                        &:hover {
-                            transform: scale(1.1, 1.1);
-                            transition: 0.3s;
-                        }
-                    }
-
-                    .searchber-form-label {
-                        display: flex;
-                        height: 50px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-self: center;
-                        width: 125px;
-                        text-align: center;
-                        border-radius: 35px;
-                        background-color: var(--card-background-color);
+                    &:hover {
+                        transform: scale(1.1, 1.1);
                         transition: 0.3s;
-
-
-                        .react-datepicker-wrapper .react-datepicker__input-container {
-                            align-self: center;
-                            width: auto;
-                        }
-
-                        input {
-                            text-align: center;
-                            max-width: 100px;
-                            align-self: center;
-                            border: 0px;
-                            background-color: var(--card-background-color);
-                            border-radius: 35px;
-                        }
-
-                        &:hover {
-                            transform: scale(1.1, 1.1);
-                            background-color: var(--font-lightgray-color);
-
-                            transition: 0.3s;
-                        }
                     }
                 }
-            }
-        }
 
-        .user-navbar {
-            background-color: #fff;
-            color: var(--font-dark-color);
-            cursor: pointer;
-            border: 1px solid var(--font-lightgray-color);
-            border-radius: 20px;
-            padding: 4px 6px 4px 6px;
-            gap: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover {
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-            }
-
-
-            svg {
-                overflow: hidden;
-                path {
-                    height: 10px;
-                    width: 10px;
-                }
-            }
-
-            .dehaze {
-                margin-left: 5px;
-            }
-
-            .red-dot {
-                height: 11px;
-                width: 11px;
-                border-radius: 50%;
-                background-color: var(--logo-color);
-                position: absolute;
-                top: 23%;
-                right: 9.9%;
-                border: 2px solid white;
-            }
-
-
-            .login-slide-modal {
-                width: 160px;
-                color: var(--font-gray-color);
-                background-color: var(--main-background-color);
-                border: 1px solid rgb(221, 221, 221);
-                border-radius: 10px;
-                display: none;
-                position: absolute;
-                top: 65px;
-                right: 10%;
-                justify-content: center;
-                align-items: center;
-                background-color: #fff;
-                border-radius: 12px;
-                box-shadow: 0 0 3px 0 rgb(0 0 0 / 18%);
-
-                .menu-btn-container {
-                    padding: 10px 0;
+                .searchber-form-label {
                     display: flex;
-                    gap: 10px;
+                    height: 50px;
                     flex-direction: column;
-                    justify-content: space-evenly;
-                    width: 100%;
-                    
-                    .noti-icon {
+                    justify-content: center;
+                    align-self: center;
+                    width: 125px;
+                    text-align: center;
+                    border-radius: 35px;
+                    background-color: var(--card-background-color);
+                    transition: 0.3s;
 
-                        position: absolute;
-                        top: 55px;
-                        right: 10px;
-                        color: var(--logo-color)
+
+                    .react-datepicker-wrapper .react-datepicker__input-container {
+                        align-self: center;
+                        width: auto;
                     }
 
-                    .login-opt-btn {
-                        font-size: 18px;
-                        margin: 0;
-                        padding: 5px 0px;
-                        gap: 10px;
-                        // width: 100%;
-                        padding-left: 20px;
-                        // border-radius: 20px 20px 20px 20px;
-                        display: flex;
-                        flex-direction: row;
-                        height: 1.1em;
-                        justify-content: flex-start;
-                        // margin-left: 20px;
-                        // overflow: hidden;
-                        // box-sizing: border-box;
-
-
-                        &:hover {
-                            background-color: var(--btn-background-color);
-
-                        }
-
+                    input {
+                        text-align: center;
+                        max-width: 100px;
+                        align-self: center;
+                        border: 0px;
+                        background-color: var(--card-background-color);
+                        border-radius: 35px;
                     }
 
-                    .nav-btn {
-                        cursor: pointer;
+                    &:hover {
+                        transform: scale(1.1, 1.1);
+                        background-color: var(--font-lightgray-color);
+
+                        transition: 0.3s;
                     }
-
-
-                }
-
-                .login-slide-modal-open & {
-
-                    display: flex;
-                    gap: 5px;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    height: fit-content;
-                    transition: 0.4s;
-                    // padding: 2px;
-
-
-
-                    .noti-tab {
-
-                        color: var(--font-dark-color);
-                        width: 200px;
-                        background-color: var(--main-background-color);
-                        border: 1px solid var(--font-lightgray-color);
-                        border-radius: 10px 0 10px 10px;
-                        position: absolute;
-                        top: 53px;
-                        right: 100%;
-                        padding: 6px;
-                        justify-content: center;
-                        align-items: center;
-
-                        .noti-btn {
-                            margin: 5px;
-                        }
-                    }
-
-                }
-
-                img {
-                    max-height: 50px;
-                    cursor: pointer;
                 }
             }
-
         }
     }
+
+    .user-navbar {
+        background-color: #fff;
+        color: var(--font-dark-color);
+        cursor: pointer;
+        border: 1px solid var(--font-lightgray-color);
+        border-radius: 20px;
+        padding: 4px 6px 4px 6px;
+        gap: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+        }
+
+
+        svg {
+            overflow: hidden;
+
+            path {
+                height: 10px;
+                width: 10px;
+            }
+        }
+
+        .dehaze {
+            margin-left: 5px;
+        }
+
+        .red-dot {
+            height: 11px;
+            width: 11px;
+            border-radius: 50%;
+            background-color: var(--logo-color);
+            position: absolute;
+            top: 23%;
+            right: 9.9%;
+            border: 2px solid white;
+        }
+
+
+        .login-slide-modal {
+            width: 160px;
+            color: var(--font-gray-color);
+            background-color: var(--main-background-color);
+            border: 1px solid rgb(221, 221, 221);
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+            top: 65px;
+            right: 10%;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 3px 0 rgb(0 0 0 / 18%);
+
+            .menu-btn-container {
+                padding: 10px 0;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 100%;
+
+                .noti-icon {
+
+                    position: absolute;
+                    top: 55px;
+                    right: 10px;
+                    color: var(--logo-color)
+                }
+
+                .login-opt-btn {
+                    font-size: 18px;
+                    margin: 0;
+                    padding: 5px 0px;
+                    gap: 10px;
+                    // width: 100%;
+                    padding-left: 20px;
+                    // border-radius: 20px 20px 20px 20px;
+                    display: flex;
+                    flex-direction: row;
+                    height: 1.1em;
+                    justify-content: flex-start;
+                    // margin-left: 20px;
+                    // overflow: hidden;
+                    // box-sizing: border-box;
+
+
+                    &:hover {
+                        background-color: var(--btn-background-color);
+
+                    }
+
+                }
+
+                .nav-btn {
+                    cursor: pointer;
+                }
+
+
+            }
+
+            .login-slide-modal-open & {
+
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: fit-content;
+                transition: 0.4s;
+                // padding: 2px;
+
+
+
+                .noti-tab {
+
+                    color: var(--font-dark-color);
+                    width: 200px;
+                    background-color: var(--main-background-color);
+                    border: 1px solid var(--font-lightgray-color);
+                    border-radius: 10px 0 10px 10px;
+                    position: absolute;
+                    top: 53px;
+                    right: 100%;
+                    padding: 6px;
+                    justify-content: center;
+                    align-items: center;
+
+                    .noti-btn {
+                        margin: 5px;
+                    }
+                }
+
+            }
+
+            img {
+                max-height: 50px;
+                cursor: pointer;
+            }
+        }
+
+    }
 }
+
 
 
 
