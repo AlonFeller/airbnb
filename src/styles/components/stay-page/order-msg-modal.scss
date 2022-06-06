@@ -41,12 +41,14 @@
         padding-top: 15px;
         padding-bottom: 5%;
         box-shadow: inset 0 -0.5px 0 0 var(--font-lightgray-color);
+
         .check-in-out {
             display: flex;
             gap: 10px;
             font-size: 18px;
             margin: 3px;
-            b{
+
+            b {
                 font-size: 16px;
             }
         }
@@ -90,6 +92,23 @@
 
     .order-added-msg {
         // font-size: 16px;
+    }
+
+    .order-modal-btn {
+        z-index: 5;
+        min-width: 210px;
+        max-width: 100%;
+        height: 50px;
+        border: 1px solid var(--font-dark-color);
+        color: var(--font-dark-color);
+        font-size: 1rem;
+        line-height: 1.43rem;
+        font-weight: 600;
+        border-radius: 8px;
+        margin: 20px 0;
+        background-color: var(--main-background-color);
+        cursor: pointer;
+
     }
 
 }
