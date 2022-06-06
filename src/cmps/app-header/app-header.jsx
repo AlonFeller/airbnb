@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
-// import { toggleDetailsLayout, toggleHeaderIsTop, toggleHeaderIsActive, toggleIsExplore } from "../../store/header/header.action";
-import { headerIsLong, toggleDetailsLayout, toggleIsHome, toggleModalPosition } from "../../store/header/header.action";
+import { headerIsLong, toggleModalPosition } from "../../store/header/header.action";
 import { LoginSignUp } from './login-siginup'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavBar } from './nav-bar-host'
 import { Searchbar } from './searchbar'
-// import logo from '../../assets/Images/logo2.png'
-// import whiteLogo from '../../assets/Images/white-logo.png'
+
 
 export function AppHeader() {
     const dispatch = useDispatch()
-    const { isExplore, isStay, isHome, isLong } = useSelector(state => state.headerModule.headerMode)
+    const { isExplore, isStay, isHome} = useSelector(state => state.headerModule.headerMode)
     const [isPageScroll, setIsPageScroll] = useState(false);
-    const { user } = useSelector(storeState => storeState.userModule)
     const navigate = useNavigate()
+    const logo ='https://res.cloudinary.com/airzula/image/upload/v1654519003/airzula/logo-icon.png'
+    const whiteLogo = 'https://res.cloudinary.com/airzula/image/upload/v1654369282/airzula/logo_white.png'
+
+
     const goTo = (path) => {
         navigate('/')
         navigate(path)
     }
 
-    const logo ='https://res.cloudinary.com/airzula/image/upload/v1654519003/airzula/logo-icon.png'
-    const whiteLogo = 'https://res.cloudinary.com/airzula/image/upload/v1654369282/airzula/logo_white.png'
 
     useEffect(() => {
         window.addEventListener("scroll", toggleHeader)
@@ -60,11 +59,6 @@ export function AppHeader() {
 
     )
 }
-
-// function toggleHeader() {
-//     const lastScroll = window.pageYOffset
-// }
-
 
 function toggleLogin() {
     document.body.classList.remove("login-page-open");

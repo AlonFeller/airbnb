@@ -2,6 +2,7 @@
     .stay-order {
         flex-direction: column;
         justify-content: center;
+        height: fit-content;
         width: 335px;
         // background-color: var(--main-background-color);
         // border: 1px solid var(--font-dark-color);
@@ -55,18 +56,26 @@
                 }
             }
         }
-      
-        .calander {
-            margin: 10px;
-            // border-radius: 10px 10px 0 0;
-            cursor: pointer;
 
-            .css-17vdz66 {
-                .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
-                    border-radius: 60px 10px 0 0;
-                }
-            }
-        }
+        // .order-calander {
+        //     position: relative;
+        //     display: block;
+        //     width: 100%;
+        //     height: 100px;
+        // }
+
+
+        // .calander {
+        //     // margin: 10px;
+        //     // // border-radius: 10px 10px 0 0;
+        //     // cursor: pointer;
+
+        //     // .css-17vdz66 {
+        //     //     .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+        //     //         border-radius: 60px 10px 0 0;
+        //     //     }
+        //     }
+        // }
 
         .guests-btn {
             border: 1px solid var(--font-lightgray-color);
@@ -78,10 +87,10 @@
             cursor: pointer;
             overflow: hidden;
 
-            .guests-number{
+            .guests-number {
                 display: flex;
                 flex-direction: column;
-               justify-content: center;
+                justify-content: center;
                 align-items: left;
                 height: 50px;
                 width: 90%;
@@ -89,7 +98,7 @@
                 border-bottom: 1px solid var(--font-lightgray-color);
                 margin: 0;
 
-                .guests-title{
+                .guests-title {
                     color: var(--font-dark-color-order);
                     font-size: 12px;
                     line-height: 12px;
@@ -98,7 +107,7 @@
                     margin-top: 0;
                 }
 
-                .guests-sum{
+                .guests-sum {
                     font-family: circular-light;
                     color: var(--font-dark-color-order);
                     font-size: 15px;
@@ -108,7 +117,7 @@
 
         }
 
-        .incDec-line{
+        .incDec-line {
             font-size: medium;
         }
 

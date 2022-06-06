@@ -10,14 +10,17 @@
     }
 
     .rdrMonthAndYearWrapper {
-        
+
         .rdrNextPrevButton {
             background-color: --btn-background-color !important;
         }
     }
-    .rdrDays{
-        .rdrDayNumber{
-            padding: auto;
+
+    .rdrDays {
+        .rdrDayNumber {
+            span {
+                padding: auto;
+            }
         }
     }
 }

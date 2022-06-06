@@ -33,6 +33,7 @@ export default function BasicDateRangePicker({ onGetOrderDates, setIsReadyOrder 
       onChange={item => setState([item.selection])}
       moveRangeOnFirstSelection={false}
       ranges={state}
+      rangeColors={['#585858b3']}
     />
   );
 }

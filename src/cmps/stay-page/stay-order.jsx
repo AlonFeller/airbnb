@@ -8,7 +8,7 @@ import { Guests } from '../order/order-guests'
 import { orderService } from '../../services/order.service'
 import { utilService } from '../../services/util.service'
 import { addOrder } from '../../store/order/order.actions'
-import { Star } from "@mui/icons-material"
+import { NoEncryption, Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
 import { socketService } from '../../services/socket.service';
 
@@ -21,7 +21,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
-    const [datesModal, setDatesModal] = useState(false)
+    const [datesModal, setDatesModal] = useState(true)
 
 
     useEffect(() => {
@@ -30,6 +30,12 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
         }
     }, [])
 
+    
+    const setModalState = (datesModal) => {
+        console.log(datesModal);
+        if (datesModal)return "none"
+         return "relative"
+    }
 
     const onGetOrderDates = (currDates) => {
         setDates(currDates)
@@ -95,10 +101,9 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
                     </p>
                 </div>
                 <div className="order-calander">
-                    {/* <div className="dates" onclick={setDatesModal(!datesModal)}> */}
-                       {(datesModal)? <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />:null}
-                      <BasicDateRangePicker rangeColors={colors}  onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
-
+                    {/* <div className="calander-modal" style={{ display: setModalState(datesModal) }} onclick={setDatesModal(true)}> */}
+                        <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
+                        {/* <button className="modal-closer" onclick={setDatesModal(!datesModal)}>Done</button> */}
                     {/* </div> */}
                     <Guests onGetGuestsNumber={onGetGuestsNumber} />
                 </div>
@@ -113,4 +118,4 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
 
 
 
-const colors = ["rgb(240, 240,240)","rgb(113,113,113)","rgba(88, 88, 88, 0.7","rgb(34, 34, 34)"]
+const colors = ["rgb(240, 240,240)", "rgb(113,113,113)", "rgba(88, 88, 88, 0.7", "rgb(34, 34, 34)"]
