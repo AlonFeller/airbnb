@@ -1,40 +1,44 @@
 import * as React from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField'
-import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker'
+// import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import Box from '@mui/material/Box'
+import { DateRangePicker } from 'react-date-range'
+import { DateRange } from 'react-date-range'
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { addDays } from 'date-fns'
 
 export default function BasicDateRangePicker({ onGetOrderDates, setIsReadyOrder }) {
-  const [value, setValue] = React.useState([null, null]);
+
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: null,
+      key: 'selection'
+    }
+  ]);
+
 
   useEffect(() => {
-    if (!value[0] || !value[1]) {
+    if (!state[0] || !state[1]) {
       return setIsReadyOrder(false)
     }
     setIsReadyOrder(true)
-    onGetOrderDates(value)
-  }, [value]);
+    onGetOrderDates({ state })
+    console.log(onGetOrderDates({ state }))
+  }, [state]);
+
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DateRangePicker
-        startText="Check-in"
-        endText="Check-out"
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-          // onGetOrderDates(newValue)
-        }}
-        renderInput={(startProps, endProps) => (
-          <React.Fragment>
-            <TextField {...startProps} />
-            <Box sx={{ mx: 0 }}></Box>
-            <TextField {...endProps} />
-          </React.Fragment>
-        )}
-      />
-    </LocalizationProvider>
+    <DateRange
+      editableDateInputs={true}
+      onChange={item => setState([item.selection])}
+      moveRangeOnFirstSelection={false}
+      ranges={state}
+    />
   );
 }
+
