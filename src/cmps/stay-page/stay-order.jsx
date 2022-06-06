@@ -21,7 +21,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
-    const [datesModal, setDatesModal] = useState(true)
+    // const [datesModal, setDatesModal] = useState(true)
 
 
     useEffect(() => {
@@ -31,11 +31,11 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     }, [])
 
     
-    const setModalState = (datesModal) => {
-        console.log(datesModal);
-        if (datesModal)return "none"
-         return "relative"
-    }
+    // const setModalState = (datesModal) => {
+    //     console.log(datesModal);
+    //     if (datesModal)return "none"
+    //      return "relative"
+    // }
 
     const onGetOrderDates = (currDates) => {
         setDates(currDates)
