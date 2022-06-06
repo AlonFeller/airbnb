@@ -21,7 +21,6 @@ export function StayPage() {
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [likeHeart, setLikeHeart] = useState(null)
     const [savedLink, setSavedLink] = useState(null)
-    // const [isOpenMsg, setIsOpenMsg] = useState(false)
     const [textMsg, setTextMsg] = useState('')
 
     useEffect(() => {
@@ -88,15 +87,12 @@ export function StayPage() {
 
     const openMsg = () => {
         chooseTxtMsg()
-        // setIsOpenMsg(true)
         setTimeout(() => {
             closeMsg()
         }, 3000);
-        // console.log('openMsg', !isOpenMsg)
     }
 
     const closeMsg = () => {
-        // setIsOpenMsg(false)
         setSavedLink(false)
         setTextMsg('')
     }

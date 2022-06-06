@@ -60,10 +60,10 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
 
     const openModal = () => {
         setIsOrderModalOpen(true)
-        setTimeout(() => {
-            closeModal()
-            goTo()
-        }, 3000)
+        // setTimeout(() => {
+        //     closeModal()
+        //     goTo()
+        // }, 3000)
     }
 
     const goTo = () => {
