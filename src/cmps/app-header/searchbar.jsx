@@ -47,7 +47,8 @@ export const Searchbar = (props) => {
 
     const ShortSearchBar = () => <section className="searchbar-fullHeaderOn" onClick={setLongHeader}> 
         <div className="short-searchbar" >
-            <h1>Start your search</h1>
+            {(location.length)? <h1>{location}</h1> : <h1>Start your search</h1>}
+          
             <div className="srchbtn"><img src={btn} alt="btn" /></div>
         </div>
     </section >
