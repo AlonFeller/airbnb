@@ -26,8 +26,6 @@ export const MyOrders = (props) => {
     const stays = useSelector(state => state.stayModule.stays)
     const hostStays = stays.filter(stay => stay.host._id === user._id)
 
-    console.log('host orders', orders);
-
     function createData(name, id, stay, time, guests, from, till, total) {
         return { name, id, stay, time, guests, from, till, total };
     }
@@ -38,7 +36,10 @@ export const MyOrders = (props) => {
 
     let rating = hostStays.reduce((acc, stay) => { return acc + stay.reviewScores.rating }, 0) / hostStays.length
     rating = rating / 20
+    const ratingStr = rating + ''
     const totalEarnings = hostOrders.reduce((acc, order) => { return acc + parseInt(order.totalPrice) }, 0)
+    const totalGuests = hostOrders.reduce((acc, order) => { return acc + parseInt(order.guests) }, 0)
+
     return (
         <section className="my-orders">
             <h1>Orders for your properties</h1>
@@ -48,6 +49,8 @@ export const MyOrders = (props) => {
 
                 <div className="statistics-box">
                     <h3>Avarage ratings: </h3>
+
+                    <h3 className="order-rating-flex">{ratingStr.substring(0,3)}</h3>
                     <div>
 
                         <Rating name="read-only" value={rating} readOnly />
@@ -55,8 +58,26 @@ export const MyOrders = (props) => {
                 </div>
 
                 <div className="statistics-box">
-                    <h3>Total income </h3>
+                    <h3>Monthly income </h3>
                     <h4>${utilService.numberWithCommas(totalEarnings)}</h4>
+
+                </div>
+
+                <div className="statistics-box">
+                    <h3>Annual income </h3>
+                    <h4>${utilService.numberWithCommas(totalEarnings)}</h4>
+
+                </div>
+
+                <div className="statistics-box">
+                    <h3>Total orders </h3>
+                    <h4>{hostOrders.length}</h4>
+
+                </div>
+
+                <div className="statistics-box">
+                    <h3>Traffic(Total guests) </h3>
+                    <h4>{hostOrders.length}</h4>
 
                 </div>
             </div>
@@ -70,17 +91,17 @@ export const MyOrders = (props) => {
 
 
                 <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 800 }} size="small" aria-label="a dense table">
+                    <Table sx={{ minWidth: 800 }} size="small" aria-label="simple table">
                         <TableHead>
-                            <TableRow>
-                                <TableCell>Order by</TableCell>
-                                <TableCell align="left">Id</TableCell>
-                                <TableCell align="left">Property</TableCell>
-                                <TableCell align="left">Ordered at</TableCell>
-                                <TableCell align="left">Guests</TableCell>
-                                <TableCell align="left">Checkin</TableCell>
-                                <TableCell align="left">Checkout</TableCell>
-                                <TableCell align="left">Total</TableCell>
+                            <TableRow className="order-table-head">
+                                <TableCell ><h3>Order by</h3></TableCell>
+                                <TableCell align="left"><h3> Id</h3></TableCell>
+                                <TableCell align="left"><h3>Property</h3></TableCell>
+                                <TableCell align="left"><h3>Ordered at</h3></TableCell>
+                                <TableCell align="left"><h3>Guests</h3></TableCell>
+                                <TableCell align="left"><h3>Checkin</h3></TableCell>
+                                <TableCell align="left"><h3>Checkout</h3></TableCell>
+                                <TableCell align="left"><h3>Total</h3></TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
