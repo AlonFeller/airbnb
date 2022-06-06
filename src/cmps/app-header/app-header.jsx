@@ -46,7 +46,7 @@ export function AppHeader() {
         <>
             <div className={"header flex " + ((isPageScroll || isExplore || isStay) ? "full-header " : "")} >
                 <section className={"header-container " + (isStay ? "isStay" : "")}>
-                    <div className="logo-img-container" onClick={() => goTo('/')}>
+                    <div className="logo-img-container" onClick={() => goTo('/')} >
                         <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" />
                         <span className={(!isPageScroll && isHome) ? "whiteLogoTxt" : "logoTxt"}>Airzula</span>
                         </div>

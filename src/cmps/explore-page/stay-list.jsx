@@ -8,16 +8,13 @@ import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../../
 
 export const StayList = (props) => {
 
-    // const dispatch = useDispatch()
-    // useEffect(() => {
-    //     dispatch(loadStays())
-    // }, [])
     useEffect(() => {
         window.scrollTo(0, 0);
         (async () => {
             toggleIsExplore(true);
         })();
     }, []);
+    
     const stays = useSelector(state => state.stayModule.stays)
 
     return (
