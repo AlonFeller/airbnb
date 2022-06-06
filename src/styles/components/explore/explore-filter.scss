@@ -55,7 +55,8 @@
             border-radius: 25px;
             color: var(--font-dark-color);
             border: 1px solid var(--font-dark-color);
-            box-shadow: 0 0 2px var(--font-lightgray-color);
+            box-shadow: 0 0 2px var(--font-gray-color);
+            background-color: var(--font-lightgray-color);
             cursor: pointer;
             
             span {
