@@ -1,0 +1,23 @@
+.rdrDateRangeWrapper {
+    width: 100%;
+
+    .rdrDateDisplayWrapper {
+        background-color: var(--card-background-color);
+
+        .rdrDateDisplayItemActive {
+            border-color: var(--font-gray-see-throw-color);
+        }
+    }
+
+    .rdrMonthAndYearWrapper {
+        
+        .rdrNextPrevButton {
+            background-color: --btn-background-color !important;
+        }
+    }
+    .rdrDays{
+        .rdrDayNumber{
+            padding: auto;
+        }
+    }
+}
