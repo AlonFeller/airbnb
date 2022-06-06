@@ -92,7 +92,8 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
                 />}
             </div>
             <section>
-                {isOrderModalOpen && <OrderMsgModal currOrder={currOrder} />}
+                {isOrderModalOpen && <OrderMsgModal currOrder={currOrder}
+                    setIsOrderModalOpen={setIsOrderModalOpen} />}
             </section>
         </section>
 

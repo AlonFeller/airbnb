@@ -1,10 +1,21 @@
 import React from "react"
 import moment from 'moment'
 import { useSelector } from "react-redux"
+import { useNavigate } from 'react-router-dom'
 import { utilService } from '../../services/util.service'
 
-export const OrderMsgModal = ({ currOrder }) => {
+export const OrderMsgModal = ({ currOrder, setIsOrderModalOpen }) => {
     const { modalPosition } = useSelector(state => state.headerModule.headerMode)
+    const navigate = useNavigate()
+
+    const goTo = () => {
+        navigate('/explore')
+    }
+    
+    const onCloseModal = () => {
+        goTo()
+        setIsOrderModalOpen(false)
+    }
 
     return (
         <section className="order-modal" style={{ top: (modalPosition + 140) + "px" }}>
@@ -24,6 +35,7 @@ export const OrderMsgModal = ({ currOrder }) => {
             <div className="order-total">
                 <p className="order-total-price"><b>Total price:<span>${utilService.numberWithCommas(currOrder.totalPrice)}</span></b></p>
                 <p className="order-added-msg">*The order is added to your area</p>
+                <button className="order-modal-btn" onClick={() => { onCloseModal() }}>Return to Explore page</button>
             </div>
         </section>
     )

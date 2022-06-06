@@ -67,19 +67,8 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
 
     const openModal = () => {
         setIsOrderModalOpen(true)
-        // setTimeout(() => {
-        //     closeModal()
-        //     goTo()
-        // }, 3000)
     }
-
-    const goTo = () => {
-        navigate('/explore')
-    }
-
-    const closeModal = () => {
-        setIsOrderModalOpen(false)
-    }
+    
 
     const notifyHost = (order) => {
         console.log('sending order');
