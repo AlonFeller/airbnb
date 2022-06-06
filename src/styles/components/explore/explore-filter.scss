@@ -45,17 +45,18 @@
         }
 
         .filter-label-btn-on {
+            box-sizing: border-box;
             display: flex;
             justify-content: center;
             width: fit-content;
-            font-family: circular-medium;
+            font-family: circular-bold;
             min-width: 80px;
-            height: 42px;
+            height: 44px;
             margin: 8px;
             border-radius: 25px;
             color: var(--font-dark-color);
-            border: 1px solid var(--font-dark-color);
-            box-shadow: 0 0 2px var(--font-lightgray-color);
+            border: 1px solid var(--font-gray-see-throw-color);
+            box-shadow: 0px 4px 10px var(--font-lightgray-color);
             cursor: pointer;
             
             span {
