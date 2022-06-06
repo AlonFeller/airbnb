@@ -36,7 +36,8 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
                 <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
                 <p>{stay.capacity} guests · {stay.bedrooms} bedrooms · {stay.beds} beds · {stay.bathrooms} baths</p>
             </div>
-            <img className="stay-host-img" src={hostStayImgSrc} alt="" />
+            <img className="stay-host-img" src='https://res.cloudinary.com/airzula/image/upload/v1654494901/alon.jpg
+' alt="" />
         </div>
     </section>
 

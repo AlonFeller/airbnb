@@ -33,6 +33,7 @@ export const NavBar = (props) => {
         if (user) {
 
           
+            socketService.on('order recieved', orderArrivedTest);
             socketService.on('order recieved', orderArrived);
         }
         // return () => {
@@ -83,6 +84,10 @@ export const NavBar = (props) => {
         console.log('order arrived from', order.buyer.name);
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
+    }
+    const orderArrivedTest = (order) => {
+        console.log('order arrived');
+      
     }
 
 
