@@ -18,7 +18,6 @@ export const ReviewsList = ({ reviews, isLongTxt = false }) => {
                                         <h4>{review.by.fullname}</h4>
                                     </div>
                                     <h5>{`${new Date(review.at).toDateString()}`}</h5>
-                                    {/* <h5>{`${new Date(review.at).getUTCFullYear()} ${new Date(review.at).getUTCMonth() + 1}`}</h5> */}
                                 </div>
                                 {isLongTxt ? <LongText key="long-text" txt={review.txt} /> : review.txt}
                             </div>

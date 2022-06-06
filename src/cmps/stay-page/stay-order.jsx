@@ -17,7 +17,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     const navigate = useNavigate()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const { user } = useSelector(storeState => storeState.userModule)
-    const [dates, setDates] = useState()
+    const [dates, setDates] = useState([new Date(), new Date()])
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
