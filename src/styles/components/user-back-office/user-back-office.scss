@@ -209,14 +209,28 @@
 .orders-statistics {
 
     display: flex;
+    align-items: flex-start;
 
     // justify-content: space-evenly;
     gap: 10%;
 
     margin-bottom: 80px;
 
+    .statistics-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        
+    }
     h4 {
         margin-left: 20px;
     }
 }
+
+.order-table-head {
+    font-weight: 800;
+}
+
 

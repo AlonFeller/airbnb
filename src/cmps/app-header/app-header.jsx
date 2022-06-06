@@ -20,8 +20,8 @@ export function AppHeader() {
         navigate(path)
     }
 
-    const logo ='https://res.cloudinary.com/airzula/image/upload/airzula/logo2.png'
-    const whiteLogo = 'https://res.cloudinary.com/airzula/image/upload/airzula/white-logo.png'
+    const logo ='https://res.cloudinary.com/airzula/image/upload/v1654519003/airzula/logo-icon.png'
+    const whiteLogo = 'https://res.cloudinary.com/airzula/image/upload/v1654369282/airzula/logo_white.png'
 
     useEffect(() => {
         // console.log(window.pageYOffset);
@@ -52,7 +52,9 @@ export function AppHeader() {
             <div className={"header flex " + ((isPageScroll || isExplore || isStay) ? "full-header " : "")} >
                 <section className={"header-container " + (isStay ? "isStay" : "")}>
                     <div className="logo-img-container">
-                        <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" onClick={() => goTo('/')} /></div>
+                        <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" onClick={() => goTo('/')} />
+                        <span className={(!isPageScroll && isHome) ? "whiteLogoTxt" : "logoTxt"}>Airzula</span>
+                        </div>
                     <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <NavBar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />

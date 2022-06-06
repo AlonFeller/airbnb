@@ -85,8 +85,8 @@ export const StayPreview = (props) => {
             </div>
             <div className="locatoing-rating">
                 <h3>{stay.address.city + ', ' + stay.address.country} </h3>
-                {stay.reviewScores.rating && <span className="preview-rating-star"><span>{stay.reviewScores.rating / 20}</span>< Star /></span>}
-                {!stay.reviewScores.rating && <span className="preview-rating-star"><span>4.63</span> < Star /></span>}
+                {stay.reviewScores.rating && <span className="preview-rating-star"><span>{(stay.reviewScores.rating / 20).toFixed(1)}</span>< Star /></span>}
+                {!stay.reviewScores.rating && <span className="preview-rating-star"><span>4.6</span> < Star /></span>}
             </div>
             <p>{(stay.name.length > 30) ? stay.name.substring(0, 30) + '...' : stay.name}</p>
             {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}
