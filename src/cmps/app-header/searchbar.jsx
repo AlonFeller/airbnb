@@ -27,13 +27,15 @@ export const Searchbar = (props) => {
         filterBy.location = target.value
         dispatch(setFilter(filterBy))
         // dispatch(loadStays(filterBy))
-        if (location != target.value) deployUrl(filterBy.location)
+        // if (location != target.value) deployUrl(filterBy.location)
+        // if (location != target.value) deployUrl(filterBy.location)
     }
 
     const getFilteredStays = (ev) => {
         ev.preventDefault()
         console.log('searching...');
         dispatch(loadStays(filterBy))
+        deployUrl(filterBy.location)
     }
 
     // const isSearchBarLong = () => {
@@ -57,7 +59,10 @@ export const Searchbar = (props) => {
         <form action="" className="searchbar-form" onSubmit={(event) => getFilteredStays(event)}>
             <div className="searchber-form-label location bold">
                 <label htmlFor="">Location </label>
-                <input type="text" autoFocus name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} />
+                {(location)? 
+                    <input type="text" autoFocus name="location" placeholder="Anywhere"  value={location} onChange={onHandleChange} /> :
+                    <input type="text" autoFocus name="location" placeholder="Anywhere"  onChange={onHandleChange} />
+                }
             </div>
             <div className="searchber-form-label bold CheckIn">
                 <label htmlFor="">Check in </label>
