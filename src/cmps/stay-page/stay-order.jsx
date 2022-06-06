@@ -21,6 +21,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
     const [isReadyOrder, setIsReadyOrder] = useState(false)
+    const [datesModal, setDatesModal] = useState(false)
 
 
     useEffect(() => {
@@ -94,7 +95,11 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
                     </p>
                 </div>
                 <div className="order-calander">
-                    <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
+                    {/* <div className="dates" onclick={setDatesModal(!datesModal)}> */}
+                       {(datesModal)? <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />:null}
+                      <BasicDateRangePicker rangeColors={colors}  onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
+
+                    {/* </div> */}
                     <Guests onGetGuestsNumber={onGetGuestsNumber} />
                 </div>
                 <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
@@ -108,3 +113,4 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
 
 
 
+const colors = ["rgb(240, 240,240)","rgb(113,113,113)","rgba(88, 88, 88, 0.7","rgb(34, 34, 34)"]
