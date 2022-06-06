@@ -10,7 +10,7 @@ import { utilService } from '../../services/util.service'
 import { addOrder } from '../../store/order/order.actions'
 import { NoEncryption, Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
-import { socketService } from '../../services/socket.service';
+import { socketService } from '../../services/socket.service'
 
 export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, setCurrOrder }) => {
     const dispatch = useDispatch()
