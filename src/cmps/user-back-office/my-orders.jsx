@@ -70,7 +70,7 @@ export const MyOrders = (props) => {
 
                 <div className="statistics-box">
                     <h3>Annual income: </h3>
-                    <h4>${utilService.numberWithCommas(totalEarnings)}</h4>
+                    <h4>${utilService.numberWithCommas(totalEarnings + 8540) }</h4>
 
                 </div>
 
@@ -82,7 +82,7 @@ export const MyOrders = (props) => {
 
                 <div className="statistics-box">
                     <h3>Traffic:</h3>
-                    <h1 className={(randTraffic > 0)? 'static-pos' : 'static-neg'}>{(randTraffic > 0)? '▲' : '▼'} {randTraffic}%</h1>
+                    <h4 className={(randTraffic > 0)? 'static-pos' : 'static-neg'}>{(randTraffic > 0)? '▲' : '▼'} {randTraffic}%</h4>
 
                 </div>
             </div>
