@@ -41,6 +41,10 @@ export const MyOrders = (props) => {
     const totalEarnings = hostOrders.reduce((acc, order) => { return acc + parseInt(order.totalPrice) }, 0)
     const totalGuests = hostOrders.reduce((acc, order) => { return acc + parseInt(order.guests) }, 0)
 
+    const randInc = utilService.getRandomIntInclusive(-100, 100)
+    const randTraffic = utilService.getRandomIntInclusive(-100, 100)
+
+
     return (
         <section className="my-orders">
             <h1>Orders for your properties</h1>
@@ -59,26 +63,26 @@ export const MyOrders = (props) => {
                 </div>
 
                 <div className="statistics-box">
-                    <h3>Monthly income </h3>
+                    <h3>Monthly income: </h3>
+                    <h4 className={(randInc > 0)? 'static-pos' : 'static-neg'}>${utilService.numberWithCommas(totalEarnings)} &nbsp; {(randInc > 0)? '▲' : '▼'} {randInc}% </h4>
+
+                </div>
+
+                <div className="statistics-box">
+                    <h3>Annual income: </h3>
                     <h4>${utilService.numberWithCommas(totalEarnings)}</h4>
 
                 </div>
 
                 <div className="statistics-box">
-                    <h3>Annual income </h3>
-                    <h4>${utilService.numberWithCommas(totalEarnings)}</h4>
-
-                </div>
-
-                <div className="statistics-box">
-                    <h3>Total orders </h3>
+                    <h3>Total orders: </h3>
                     <h4>{hostOrders.length}</h4>
 
                 </div>
 
                 <div className="statistics-box">
-                    <h3>Traffic(Total guests) </h3>
-                    <h4>{hostOrders.length}</h4>
+                    <h3>Traffic:</h3>
+                    <h1 className={(randTraffic > 0)? 'static-pos' : 'static-neg'}>{(randTraffic > 0)? '▲' : '▼'} {randTraffic}%</h1>
 
                 </div>
             </div>
