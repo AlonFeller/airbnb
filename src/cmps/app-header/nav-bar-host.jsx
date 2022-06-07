@@ -26,18 +26,12 @@ export const NavBar = (props) => {
     }
 
     useEffect(() => {
-
-    }, [])
-
-    useEffect(() => {
-        if (user) {
-
-            socketService.on('order recieved', orderArrivedTest);
+       
             socketService.on('order recieved', orderArrived);
             console.log('listening to order recieved');
-        }
-        // return () => {
-        //     socketService.off(user._id) }
+        
+        return () => {
+            socketService.off('order recieved', orderArrived) }
     }, [])
 
     useEffect(() => {
@@ -77,7 +71,7 @@ export const NavBar = (props) => {
     }
 
     const orderArrived = (order) => {
-        if (order.buyer.name === user.name) return
+        // if (order.buyer.name === user.name) return
 
         // console.log('buyer', order.buyer.name);
         // console.log('host', user._id);
@@ -86,7 +80,7 @@ export const NavBar = (props) => {
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
     const orderArrivedTest = (order) => {
-        console.log('new order arrived');
+        console.log('order arrived');
       
     }
 
