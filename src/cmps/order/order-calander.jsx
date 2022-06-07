@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import ReactDOM from "react-dom";
 import RangePicker from "react-range-picker";
 
-import "../../styles/basics/dateLibStyles.css";
+// import "../../styles/basics/dateLibStyles.css";
 
 
 export const DatePicker = ({ onGetOrderDates, setIsReadyOrder }) => {
