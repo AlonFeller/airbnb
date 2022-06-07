@@ -29,7 +29,7 @@ export const Searchbar = (props) => {
 
     const getFilteredStays = (ev) => {
         ev.preventDefault()
-        console.log('searching...');
+        console.log('searching....');
         dispatch(loadStays(filterBy))
         deployUrl(filterBy.location)
     }
