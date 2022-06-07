@@ -1,23 +1,4 @@
-// import DatePicker from "react-datepicker";
-// import { useDispatch, useSelector } from "react-redux";
-// import { setCheckInOut } from "../../store/user/user.actions";
-// import "react-datepicker/dist/react-datepicker.css";
 
-
-// export const MyDatePickerOrder = ({handleCheck}) => {
-//   const [startDate, setStartDate] = useState(new Date());
-  
-//   useEffect(() => {
-//     handleCheck(startDate)
-//   },[startDate])
-//   return (
-//     <DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} />
-//     );
-//   };
-  
-  
-  
-  
   
 import * as React from 'react';
 import { useEffect, useState } from "react"
@@ -25,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { createTheme, ThemeProvider } from '@mui/material';
 
 export const MyDatePickerOrder = ({handleCheck, label} ) => {
   const [value, setValue] = React.useState(null);
@@ -33,8 +15,21 @@ export const MyDatePickerOrder = ({handleCheck, label} ) => {
     handleCheck(value)
   },[value])
 
+  
+  const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#FF385C",
+        },
+        secondary: {
+            main: "#717171",
+        },
+    },
+});
+
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <ThemeProvider theme={theme}>
       <DatePicker
         label={label}
         value={value}
@@ -42,7 +37,8 @@ export const MyDatePickerOrder = ({handleCheck, label} ) => {
           setValue(newValue);
         }}
         renderInput={(params) => <TextField {...params} />}
-      />
+        />
+        </ThemeProvider>
     </LocalizationProvider>
   );
 }
