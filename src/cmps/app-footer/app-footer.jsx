@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 
 export function AppFooter() {
-
+        const { isStay } = useSelector(state => state.headerModule.headerMode)
     return (
         <>
-            <section className="footer-container flex space-between">
+            <section className={"footer-container flex space-between " + (isStay ? "isStay" : "")}>
                 <span className="left-side-footer">
                     <span>© 2022 Airbnb, Inc.</span>
                     <span className="footer-dot">·</span>
