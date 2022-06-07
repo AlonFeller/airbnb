@@ -63,6 +63,11 @@
             align-items: center;
             cursor: pointer;
 
+            .details-share{
+                align-items: center;
+                display: flex;  
+            }
+
             p{
                 font-size: .875rem;
                 font-family: circular-bold;
@@ -76,6 +81,11 @@
         .save-btn-container{
             align-items: center;
             cursor: pointer;
+
+            .details-save{
+                align-items: center;
+                display: flex;  
+            }
             
             p{
                 font-size: .875rem;
@@ -103,6 +113,10 @@
         margin: 20px 0;
         background-color: var(--main-background-color);
         cursor: pointer;
+
+        .add-review-container{
+            margin-top: 0;
+        }
     }
 
     .amenities-modal-btn {

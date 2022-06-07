@@ -104,7 +104,7 @@ export function AddReview({ stay }) {
         setRating([5, 5, 5, 5, 5, 5])
     }
     return (
-        <div className="gray-box-shadow">
+        <div className=" add-review-container gray-box-shadow">
             <h2 className="add-review-header">Add a review </h2>
             <div className="rating-bars-container">{types.map((type, idx) => RatingBar(type, idx, rating, setRating))}</div>
             <div className="type-area">

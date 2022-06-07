@@ -1,6 +1,8 @@
 .amenities-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-left: inherit;
+    
     .amenity-container {
         height: 60px;
         width: inherit;

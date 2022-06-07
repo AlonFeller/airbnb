@@ -7,7 +7,7 @@
 
 .rating-bars-container {
 	display: grid;
-    gap: 0px 120px;
+    gap: 10px 120px;
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
@@ -31,7 +31,6 @@
 
 .add-review-btn {
 	margin: 10px auto;
-	text-align: center;
 }
 
 .review-stats {
