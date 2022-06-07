@@ -161,14 +161,15 @@
         }
 
         .price-details-container {
-            margin-top: 15px;
+            margin-top: 8px;
             width: 100%;
             display: flex;
             flex-direction: column;
-
+            
             h5 {
+                margin-bottom: 15px;
                 align-self: center;
-                margin-bottom: auto;
+                // margin-bottom: auto;
                 margin-top: 0;
             }
         }
