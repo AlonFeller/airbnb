@@ -38,6 +38,17 @@
         outline-color: var(--logo-color);
         border-radius: 0;
 }
-.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-Focused{
-    color:var(--logo-color) !important;
+// .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-Focused{
+//     color:var(--logo-color) !important;
+// }
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    border-radius: 0;
+}
+
+#root > div > main > div > section.list-container > section > section > div.explore-img-container > div.carousel-root > div > button.control-arrow.control-next{
+    background:none;
+}
+#root > div > main > div > section.list-container > section > section > div.explore-img-container > div.carousel-root > div > button.control-arrow.control-prev{
+    background:none;
 }
