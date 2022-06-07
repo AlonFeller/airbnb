@@ -115,7 +115,7 @@ export const MyOrders = (props) => {
                                     </TableCell>
                                     <TableCell align="left">{row.id.substring(0, 6)}</TableCell>
                                     <TableCell align="left">{row.stay}</TableCell>
-                                    <TableCell align="left">{new Date(row.time).getDate() + '/' + (+new Date(row.time).getMonth() + 1)  + '/' + new Date(row.time).getFullYear()}</TableCell>
+                                    <TableCell align="left">{(+new Date(row.time).getMonth() +1) + '/' + new Date(row.time).getDate()  + '/' + new Date(row.time).getFullYear()}</TableCell>
                                     <TableCell align="Left">{row.guests}</TableCell>
                                     {/* <TableCell align="left">{row.till.substring(0, 10)}</TableCell> */}
                                     <TableCell align="left">{row.till}</TableCell>

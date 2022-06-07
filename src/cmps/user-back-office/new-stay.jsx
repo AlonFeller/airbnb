@@ -10,6 +10,7 @@ import Switch from '@mui/material/Switch';
 import { useNavigate } from "react-router-dom";
 import { ImgUploader } from "../app-header/img-uploader";
 import { AirBnbBtnBo } from "./AirBnb-Btn-bo";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 
 export const NewStayHost = (props) => {
@@ -133,12 +134,23 @@ export const NewStayHost = (props) => {
 
     }
 
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: "#FF385C",
+            },
+            secondary: {
+                main: "#717171",
+            },
+        },
+    });
+
     return (
         <section className="new-stay">
             <h1>add stay</h1>
             <div >
 
-
+<ThemeProvider theme={theme}> 
                 <form action="" className="new-stay-form" onSubmit={() => onAddStay()}>
 
                     <div className="new-stay-form-inputs">
@@ -268,7 +280,7 @@ export const NewStayHost = (props) => {
                         <AirBnbBtnBo btnInnerTxt='Host now' />
                     </div>
                 </form>
-
+                </ThemeProvider>
 
 
 
