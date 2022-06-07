@@ -75,7 +75,7 @@ export const NavBar = (props) => {
 
         // console.log('buyer', order.buyer.name);
         // console.log('host', user._id);
-        console.log('order arrived from', order.buyer.name);
+        console.log('new order arrived from', order.buyer.name);
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
