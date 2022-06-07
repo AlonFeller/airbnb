@@ -33,6 +33,7 @@
     .order-msg-main {
         flex-direction: row;
         justify-content: space-between;
+        gap: 20px;
 
         .order-img-container {
 
@@ -40,6 +41,7 @@
             height: 300px;
             aspect-ratio: 1/1;
             overflow: hidden;
+            border-radius: 15px;
 
             img {
                 width: 100%;
@@ -56,7 +58,8 @@
 
         .dates-order {
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            gap: 10px;
             padding-top: 15px;
             padding-bottom: 5%;
             box-shadow: inset 0 -0.5px 0 0 var(--font-lightgray-color);
