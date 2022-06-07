@@ -41,14 +41,14 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
 
     const onGetOrderDates = (currDates) => {
         console.log('onGetOrderDates' , currDates);
-        setDates(currDates)
-        const nightsOrder = getTotalNights(currDates[0], currDates[1])
+        setDates(currDates.state)
+        const nightsOrder = getTotalNights(currDates.state[0], currDates.state[1])
         setNight(nightsOrder)
+        console.log(nightsOrder)
 
     }
 
     const onGetGuestsNumber = (currGuests) => {
-
         setGuests(currGuests)
     }
 
@@ -58,6 +58,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
         setCurrOrder(newOrder)
         onAddOrder(newOrder)
         notifyHost(newOrder)
+        console.log(newOrder)
     }
 
     function getTotalNights(checkIn, checkOut) {

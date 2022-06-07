@@ -34,7 +34,7 @@ export const OrderMsgModal = ({ currOrder, setIsOrderModalOpen }) => {
             </p>
             <div className="order-total">
                 <p className="order-total-price"><b>Total price:<span>${utilService.numberWithCommas(currOrder.totalPrice)}</span></b></p>
-                <p className="order-added-msg">*The order is added to your area</p>
+                {/* <p className="order-added-msg">*The order is added to your area</p> */}
                 <button className="order-modal-btn" onClick={() => { onCloseModal() }}>Return to Explore page</button>
             </div>
         </section>
