@@ -13,6 +13,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import moment from 'moment'
 
 export const MyOrders = (props) => {
 
@@ -118,9 +119,9 @@ export const MyOrders = (props) => {
                                     <TableCell align="left">{(+new Date(row.time).getMonth() +1) + '/' + new Date(row.time).getDate()  + '/' + new Date(row.time).getFullYear()}</TableCell>
                                     <TableCell align="Left">{row.guests}</TableCell>
                                     {/* <TableCell align="left">{row.till.substring(0, 10)}</TableCell> */}
-                                    <TableCell align="left">{row.till}</TableCell>
                                     {/* <TableCell align="left">{row.from.substring(0, 10)}</TableCell> */}
-                                    <TableCell align="left">{row.from}</TableCell>
+                                    <TableCell align="left">{moment(row.from).format('MM/DD/YYYY')}</TableCell>
+                                    <TableCell align="left">{moment(row.till).format('MM/DD/YYYY')}</TableCell>
                                     <TableCell align="left">${row.total}</TableCell> 
                                 </TableRow>
                             ))}

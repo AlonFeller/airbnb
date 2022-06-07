@@ -137,7 +137,7 @@ export const NewStayHost = (props) => {
     const theme = createTheme({
         palette: {
             primary: {
-                main: "#FF385C",
+                main: "#eba9a9",
             },
             secondary: {
                 main: "#717171",
