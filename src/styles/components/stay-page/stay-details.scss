@@ -29,6 +29,7 @@
         color: var(--font-dark-color);
         padding: 0px;
         margin: 0px;
+        margin-top: 10px;
     }
 
     .stay-host-info {
@@ -53,6 +54,10 @@
 
     h2 {
         margin: 0 0 20px 0;
+    }
+
+    p{
+        line-height: 30px;
     }
 }
 
