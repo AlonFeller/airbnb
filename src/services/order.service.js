@@ -57,7 +57,7 @@ function add(selectedStay, user, guests, dates, nights) {
         stay: {
             id: selectedStay._id,
             name: selectedStay.name,
-            img: selectedStay.imgUrls[0]
+            imgs: selectedStay.imgUrls
         },
         buyer: {
             id: user._id,

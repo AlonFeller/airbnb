@@ -41,9 +41,23 @@ export const OrderMsgModal = ({ currOrder, setIsOrderModalOpen }) => {
                         {currOrder.guestsNumber.pets ? <p>pets:<span><b>{currOrder.guestsNumber.pets}</b></span> </p> : null}
                     </p>
                 </div>
-                <div className="order-img-container" key={currOrder.stay.img}>
-                    <Image cloudName="airzula" className="img-preview"
-                        publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + currOrder.stay.img} />
+                <div className="order-imgs-container">
+                    <div className="order-img-container" key={currOrder.stay.imgs[1]}>
+                        <Image cloudName="airzula" className="img-preview"
+                            publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + currOrder.stay.imgs[1]} />
+                    </div>
+                    <div className="order-img-container" key={currOrder.stay.imgs[2]}>
+                        <Image cloudName="airzula" className="img-preview"
+                            publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + currOrder.stay.imgs[2]} />
+                    </div>
+                    <div className="order-img-container" key={currOrder.stay.imgs[3]}>
+                        <Image cloudName="airzula" className="img-preview"
+                            publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + currOrder.stay.imgs[3]} />
+                    </div>
+                    <div className="order-img-container" key={currOrder.stay.imgs[4]}>
+                        <Image cloudName="airzula" className="img-preview"
+                            publicId={'https://res.cloudinary.com/airzula/image/upload/airzula/' + currOrder.stay.imgs[4]} />
+                    </div>
                 </div>
             </div>
             <div className="order-total">
