@@ -88,7 +88,7 @@ export function StayPage() {
     const openMsg = () => {
         chooseTxtMsg()
         setTimeout(() => {
-            closeMsg()
+            // closeMsg()
         }, 3000);
     }
 
