@@ -4,7 +4,6 @@ import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
 import { MyDatePicker } from "./date-picker"
 import btn from "../../assets/Images/srchbtn.png"
-import BasicDateRangePicker from "../order/order-calander"
 import { headerIsLong, toggleIsStay } from "../../store/header/header.action"
 
 export const Searchbar = (props) => {
@@ -16,7 +15,7 @@ export const Searchbar = (props) => {
     const locationFromParams = useLocation()
     const urlParams = new URLSearchParams(locationFromParams.search);
     const location = urlParams.get('location') || '';
-    const { isStay, isLong } = useSelector(state => state.headerModule.headerMode)
+    const { isLong } = useSelector(state => state.headerModule.headerMode)
 
 
     const setLongHeader = () => {
@@ -26,9 +25,6 @@ export const Searchbar = (props) => {
     const onHandleChange = ({ target }) => {
         filterBy.location = target.value
         dispatch(setFilter(filterBy))
-        // dispatch(loadStays(filterBy))
-        // if (location != target.value) deployUrl(filterBy.location)
-        // if (location != target.value) deployUrl(filterBy.location)
     }
 
     const getFilteredStays = (ev) => {
@@ -38,19 +34,14 @@ export const Searchbar = (props) => {
         deployUrl(filterBy.location)
     }
 
-    // const isSearchBarLong = () => {
-    //     let activeBar = true
-    //     if((isStay) activeBar = false
-    // }
-
     const deployUrl = (location) => {
         navigate(`/explore/?location=${location}`)
     }
 
-    const ShortSearchBar = () => <section className="searchbar-fullHeaderOn" onClick={setLongHeader}> 
+    const ShortSearchBar = () => <section className="searchbar-fullHeaderOn" onClick={setLongHeader}>
         <div className="short-searchbar" >
-            {(location.length)? <h1>{location}</h1> : <h1>Start your search</h1>}
-          
+            {(location.length) ? <h1>{location}</h1> : <h1>Start your search</h1>}
+
             <div className="srchbtn"><img src={btn} alt="btn" /></div>
         </div>
     </section >
@@ -59,9 +50,9 @@ export const Searchbar = (props) => {
         <form action="" className="searchbar-form" onSubmit={(event) => getFilteredStays(event)}>
             <div className="searchber-form-label location bold">
                 <label htmlFor="">Location </label>
-                {(location)? 
-                    <input type="text" autoFocus name="location" placeholder="Anywhere"  value={location} onChange={onHandleChange} /> :
-                    <input type="text" autoFocus name="location" placeholder="Anywhere"  onChange={onHandleChange} />
+                {(location) ?
+                    <input type="text" autoFocus name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} /> :
+                    <input type="text" autoFocus name="location" placeholder="Anywhere" onChange={onHandleChange} />
                 }
             </div>
             <div className="searchber-form-label bold CheckIn">
@@ -80,13 +71,11 @@ export const Searchbar = (props) => {
         </form>
     </section>
 
-    const searchbarContainerClass = (isExplore || !isPageScroll)?"searchbar-container ":"searchbar-container "
-    // const searchbarContainerClass = (isStay || isPageScroll) ? "searchbar-container short-searchbar" : "searchbar-container "
-
+    const searchbarContainerClass = (isExplore || !isPageScroll) ? "searchbar-container " : "searchbar-container "
+  
 
     return (
         <section className={searchbarContainerClass}>
-            {/* {(isStay || isPageScroll) && <ShortSearchBar />} */}
             {isLong ? <LongSearchBar /> : <ShortSearchBar />}
         </section>
     )
