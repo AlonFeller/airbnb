@@ -67,6 +67,12 @@
             p {
                 padding-right: 10%;
             }
+
+            p {
+                line-height: 30px;
+            }
+
+
         }
     }
 
@@ -115,5 +121,7 @@
     display: flex;
     gap: 5px;
     align-items: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
 
 }
