@@ -86,6 +86,11 @@ export function StayPage() {
         setTextMsg(txtMsg)
     }
 
+    const onOpenReviewsModal = () =>{
+        if (openOrderModal) return
+        setIsOpenModal(!isOpenModal)
+    }
+
     const openMsg = () => {
         chooseTxtMsg()
         setTimeout(() => {
@@ -128,7 +133,7 @@ export function StayPage() {
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details" stay={selectedStay} setIsOpenModal={setIsOpenModal} isOpenModal={isOpenModal} />
                 <StayReviews key="stay-reviews" stay={selectedStay} reviews={selectedStay.reviews.slice(0, 6)} isLongTxt={true} />
-                <div className={(isOpenModal || openOrderModal) ? "screen screen-open" : "screen "} onClick={() => { setIsOpenModal(!isOpenModal) }}></div>
+                <div className={(isOpenModal || openOrderModal) ? "screen screen-open" : "screen "} onClick={() => { onOpenReviewsModal() }}></div>
                 {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} isOpenModal={isOpenModal} /> : null}
                 <button className="reviews-modal-btn" onClick={() => { setIsOpenModal(true); }}>Show all {selectedStay.reviews.length} reviews</button>
                 <AddReview key="add-review" stay={selectedStay} />
