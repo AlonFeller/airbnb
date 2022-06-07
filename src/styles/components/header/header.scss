@@ -30,6 +30,7 @@
                 align-self: flex-start;
                 display: flex;
                 justify-content: end;
+                width: 300px;
                 margin-top: 18px;
                 transition: 0.6s;
             }
@@ -155,16 +156,15 @@
                     margin: 0;
                     align-self: center;
                     font-family: circular-extra;
-                    font-size:32px;
+                    font-size: 32px;
                     color: var(--main-background-color);
                 }
 
                 .logoTxt {
-                    // height: 50px;
                     display: flex;
-                    justify-content:center;
-                    // padding-top: 10px;
+                    justify-content: center;
                     margin: 0;
+                    padding-bottom: 5px;
                     align-self: center;
                     font-family: circular-extra;
                     font-size: 32px;
@@ -194,6 +194,10 @@
                 padding-bottom: 0;
             }
 
+            h1 {
+                padding-left: 10px;
+            }
+
             .srchbtn {
                 display: flex;
                 justify-content: center;
@@ -211,25 +215,15 @@
                 }
             }
 
-            // &:hover {
-            //     border-radius: 20px;
-            //     background-color: var(--font-lightgray-color);
-            // }
         }
 
         .searchbar-fullHeaderOn {
-            // align-self: center;
-            // background-color: var(--card-background-color);
             border-radius: 35px;
-            // width: 575px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             border: 1px solid var(--font-lightgray-color);
             box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-            // box-shadow: 0px 2px 5px var(--font-gray-color);
-            // position: sticky;
-            // top: 50px;
             transition: 0.9s;
 
             &:hover {
@@ -266,11 +260,10 @@
                     justify-content: center;
                     align-self: center;
                     width: 125px;
-                    text-align: center;
+                    text-align: left;
                     border-radius: 35px;
                     background-color: var(--card-background-color);
                     transition: 0.3s;
-
 
                     .react-datepicker-wrapper .react-datepicker__input-container {
                         align-self: center;
@@ -278,18 +271,18 @@
                     }
 
                     input {
-                        text-align: center;
+                        text-align: left;
                         max-width: 100px;
                         align-self: center;
                         border: 0px;
                         background-color: var(--card-background-color);
                         border-radius: 35px;
+
                     }
 
                     &:hover {
                         transform: scale(1.1, 1.1);
                         background-color: var(--font-lightgray-color);
-
                         transition: 0.3s;
                     }
                 }
@@ -304,15 +297,15 @@
         border: 1px solid var(--font-lightgray-color);
         border-radius: 20px;
         padding: 4px 6px 4px 6px;
-        gap: 5px;
+        gap: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
+        column-gap: 6px;
 
         &:hover {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
         }
-
 
         svg {
             overflow: hidden;
@@ -467,23 +460,35 @@ label {
     width: 30px;
 }
 
-.searchber-form-label-location{
+.searchber-form-label-location {
     font-size: 12px;
     margin-bottom: 3px;
     font-family: circular-light;
 }
-.searchber-form-label-CheckIn{
+
+.searchber-form-label-CheckIn {
     font-size: 12px;
     margin-bottom: 3px;
     font-family: circular-light;
 }
-.searchber-form-label-CheckOut{
+
+.searchber-form-label-CheckOut {
     font-size: 12px;
     margin-bottom: 3px;
     font-family: circular-light;
 }
-.searchber-form-label-Guests{
+
+.searchber-form-label-Guests {
     font-size: 12px;
     margin-bottom: 3px;
     font-family: circular-light;
+}
+
+#root > div > div.AppHeader > div > section > section.searchbar-container > section > form > div.searchber-form-label.location.bold > label{
+    padding-left: 5px;
+}
+
+#root > div > div.AppHeader > div > section > section.searchbar-container > section > form > div.searchber-form-label.bold.Guests > input[type=number]{
+    // text-align: left;
+    padding-right: 25px;
 }

@@ -87,6 +87,8 @@
     }
 
     .home-become-host {
+        text-align: left;
+
         .host-hero-img {
             width: 100%;
             position: absolute;
@@ -98,9 +100,10 @@
         .text-btn-container {
             display: inline-block;
             position: relative;
-            left: -35%;
+            left: 0;
 
-            .centered {
+            .title.centered {
+                text-align: left;
                 margin-bottom: 0;
                 font-family: circular-medium;
                 font-size: 4rem;
@@ -114,24 +117,20 @@
 
 
             .button {
-                margin-top: 75px;
-                position: absolute;
+                position:relative;
                 text-align: center;
-                font-size: 36px;
-                left: 45%;
-                transform: translate(-50%, -50%);
-                background-color: var(--main-background-color);
-                border-radius: 50px;
-                width: 320px;
-                height: 70px;
                 display: flex;
-                -webkit-tap-highlight-color: transparent !important;
+                // bottom: 3%;
+                margin: 20px 0;
+                font-size: 36px;
                 width: -webkit-fit-content;
                 width: -moz-fit-content;
                 width: fit-content;
                 background: #fff;
                 border-radius: 1000px;
+                background-color: var(--main-background-color);
                 box-shadow: 0 6px 16px rgba(0, 0, 0, .12) !important;
+                -webkit-tap-highlight-color: transparent !important;
                 border: none;
 
                 span {
@@ -140,7 +139,6 @@
                     margin: 0;
                     padding: 16px 32px;
                     font-size: 28px;
-                   
                     background: -webkit-linear-gradient(90deg, #6f019c, #c6017e 135.12%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
@@ -171,27 +169,31 @@
         justify-content: space-evenly;
 
         h3 {
-            margin-bottom: 50px;
+            margin-bottom: 80px;
             font: circular-medium !important;
         }
 
         .destinations-cards-container {
             width: 100%;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            row-gap: 15px;
+            justify-content: space-between;
+            column-gap: 10px;
+            margin-bottom: 40px;
 
             .city-card {
-                justify-content: space-evenly;
+                justify-content: space-between;
                 border-radius: 20px;
                 cursor: pointer;
-                max-width: 400px;
-                // gap: 15px;
+                width: 345px;
+                gap: 15px;
                 background-color: var(--card-background-color);
                 overflow: hidden;
 
+                h4 {
+                    font-size: 18px;
+                    text-align: left;
+                    font-family: circular-bold;
 
+                }
             }
         }
 
