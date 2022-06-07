@@ -241,7 +241,7 @@
 
 .btn-container {
     position: relative;
-    width: 300px;
+    width: 335px;
     height: 60px;
     padding: 0 0;
     margin: 0 0;
@@ -297,6 +297,25 @@
                 rgb(215, 4, 102) 57.5%,
                 rgb(189, 30, 89) 75%,
                 rgb(189, 30, 89) 100%);
+    }
+}
+
+.date-ranger {
+    display: flex;
+}
+
+.react-datepicker__input-container {
+    
+}
+
+.react-datepicker-wrapper {
+
+    input {
+        max-width: 161.5px;
+        height: 30px;
+        padding-top: 15px;
+        border: 1px solid var(--font-lightgray-color);
+
     }
 }
 

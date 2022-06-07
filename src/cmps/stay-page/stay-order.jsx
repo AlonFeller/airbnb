@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AirBnbBtn } from '../order/AirBnb-Btn'
-import BasicDateRangePicker from '../order/order-calander'
+import BasicDateRangePicker, { DatePicker } from '../order/order-calander'
 import { Guests } from '../order/order-guests'
 import { orderService } from '../../services/order.service'
 import { utilService } from '../../services/util.service'
@@ -11,6 +11,8 @@ import { addOrder } from '../../store/order/order.actions'
 import { NoEncryption, Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
 import { socketService } from '../../services/socket.service';
+import RangePicker from "react-range-picker";
+import { DateRanger } from '../order/date-ranger'
 
 export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, setCurrOrder }) => {
     const dispatch = useDispatch()
@@ -38,6 +40,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     }
 
     const onGetOrderDates = (currDates) => {
+        console.log('onGetOrderDates' , currDates);
         setDates(currDates)
         const nightsOrder = getTotalNights(currDates[0], currDates[1])
         setNight(nightsOrder)
@@ -45,6 +48,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     }
 
     const onGetGuestsNumber = (currGuests) => {
+
         setGuests(currGuests)
     }
 
@@ -102,7 +106,8 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
                 </div>
                 <div className="order-calander">
                     {/* <div className="calander-modal" style={{ display: setModalState(datesModal) }} onclick={setDatesModal(true)}> */}
-                        <BasicDateRangePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} />
+                        {/* <DatePicker onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder} /> */}
+                        <DateRanger onGetOrderDates={onGetOrderDates} setIsReadyOrder={setIsReadyOrder}   />
                         {/* <button className="modal-closer" onclick={setDatesModal(!datesModal)}>Done</button> */}
                     {/* </div> */}
                     <Guests onGetGuestsNumber={onGetGuestsNumber} />
