@@ -19,7 +19,7 @@ export const MyDatePickerOrder = ({handleCheck, label} ) => {
   const theme = createTheme({
     palette: {
         primary: {
-            main: "#FF385C",
+            main: "#3d3d3d",
         },
         secondary: {
             main: "#717171",

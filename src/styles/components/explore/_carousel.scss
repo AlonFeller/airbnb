@@ -43,7 +43,7 @@
   filter: alpha(opacity=0);
   cursor: inherit;
   display: none;
-  background-color: blue;
+  // background-color: blue;
 }
 
 .carousel .control-prev.control-arrow {
@@ -57,7 +57,7 @@
   border-radius: 50%;
   background: url("../svg/arrows/left-arrow.svg");
   background-repeat: no-repeat;
-  background-color: $clr2;
+  // background-color: $clr2;
   position: relative;
   right:15px
 }
@@ -72,7 +72,7 @@
   border-radius: 50%;
   background: url("../svg/arrows/right-arrow.svg");
   background-repeat: no-repeat;
-  background-color: $clr2;
+  // background-color: $clr2;
   position: relative;
   left:15px
 }
