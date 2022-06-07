@@ -60,3 +60,13 @@ export function removeOrder(orderId) {
         }
     }
 }
+
+export function toggleOrderMsgModal(set) {
+    return (dispatch) => {
+        try {
+            dispatch({ type: 'SET_OPEN_MODAL', set });
+        } catch {
+            console.log('could not toggle ');
+        }
+    };
+}
