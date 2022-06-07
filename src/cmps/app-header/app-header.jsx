@@ -47,7 +47,7 @@ export function AppHeader() {
                 <section className={"header-container " + (isStay ? "isStay" : "")}>
                     <div className="logo-img-container" onClick={() => goTo('/')} >
                         <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" />
-                        <span className={(!isPageScroll && isHome) ? "whiteLogoTxt" : "logoTxt"}>Airzula</span>
+                        <span className={(!isPageScroll && isHome) ? "whiteLogoTxt" : "logoTxt"}>airzula</span>
                         </div>
                     <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
                     <NavBar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
