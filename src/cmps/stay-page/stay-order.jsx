@@ -7,7 +7,7 @@ import BasicDateRangePicker, { DatePicker } from '../order/order-calander'
 import { Guests } from '../order/order-guests'
 import { orderService } from '../../services/order.service'
 import { utilService } from '../../services/util.service'
-import { addOrder } from '../../store/order/order.actions'
+import { addOrder, toggleOrderMsgModal } from '../../store/order/order.actions'
 import { NoEncryption, Star } from "@mui/icons-material"
 import { PriceDetails } from '../order/price-details'
 import { socketService } from '../../services/socket.service';
@@ -19,6 +19,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
     const navigate = useNavigate()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const { user } = useSelector(storeState => storeState.userModule)
+    const { openOrderModal } = useSelector(storeState => storeState.orderModule)
     const [dates, setDates] = useState([new Date(), new Date()])
     const [guests, setGuests] = useState()
     const [nights, setNight] = useState()
@@ -69,6 +70,8 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
 
     const openModal = () => {
         setIsOrderModalOpen(true)
+        dispatch(toggleOrderMsgModal(true))
+        console.log(openOrderModal)
     }
     
 

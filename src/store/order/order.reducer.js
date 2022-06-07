@@ -1,7 +1,8 @@
 
 const initialState = {
   orders: [],
-  order: null
+  order: null,
+  openOrderModal: false
 }
 
 export function orderReducer(state = initialState, action) {
@@ -26,6 +27,9 @@ export function orderReducer(state = initialState, action) {
         )
       }
       break;
+      case 'SET_OPEN_MODAL':
+        newState = { ...state, openOrderModal: action.set }
+        break;
     default:
 
       // For debug:

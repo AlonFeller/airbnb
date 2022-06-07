@@ -18,6 +18,7 @@ export function StayPage() {
     const dispatch = useDispatch()
     const { selectedStay } = useSelector(storeState => storeState.stayModule)
     const { user } = useSelector(storeState => storeState.userModule)
+    const { openOrderModal } = useSelector(storeState => storeState.orderModule)
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [likeHeart, setLikeHeart] = useState(null)
     const [savedLink, setSavedLink] = useState(null)
@@ -127,7 +128,7 @@ export function StayPage() {
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details" stay={selectedStay} setIsOpenModal={setIsOpenModal} isOpenModal={isOpenModal} />
                 <StayReviews key="stay-reviews" stay={selectedStay} reviews={selectedStay.reviews.slice(0, 6)} isLongTxt={true} />
-                <div className={isOpenModal ? "screen screen-open" : "screen "} onClick={() => { setIsOpenModal(!isOpenModal) }}></div>
+                <div className={(isOpenModal || openOrderModal) ? "screen screen-open" : "screen "} onClick={() => { setIsOpenModal(!isOpenModal) }}></div>
                 {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal" stay={selectedStay} setIsOpenModal={setIsOpenModal} isOpenModal={isOpenModal} /> : null}
                 <button className="reviews-modal-btn" onClick={() => { setIsOpenModal(true); }}>Show all {selectedStay.reviews.length} reviews</button>
                 <AddReview key="add-review" stay={selectedStay} />
