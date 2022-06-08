@@ -3,10 +3,6 @@ import { utilService } from './util.service'
 // import { userService } from './user.service'
 import { httpService } from './http.service'
 
-import axios from 'axios'
-
-const STORAGE_KEY = 'stayDB'
-const BASE_URL = 'http://localhost:3030/api/stay'
 // const stayChannel = new BroadcastChannel('stayChannel')
 
 export const stayService = {
@@ -26,14 +22,7 @@ async function query(filterBy= null) {
     // const url = `?location=${filterBy.location}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}`
     // const url = `?location=${filterBy.location}`
     const url = ``
-    const res = await axios.get(BASE_URL + url)
-    let stays = res.data
-    
-    if (!filterBy) return stays
-    if (filterBy.location) {
-        const regex = new RegExp(filterBy.location, 'i')
-        stays = stays.filter( stay => regex.test(stay.address.city) || regex.test(stay.address.country))
-    }
+    let stays = await httpService.get('stay')
 
     if (filterBy.minPrice || filterBy.maxPrice) {
         stays = stays.filter( stay => stay.price <= filterBy.maxPrice && stay.price >= filterBy.minPrice )
