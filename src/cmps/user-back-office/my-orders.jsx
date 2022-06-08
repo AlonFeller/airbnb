@@ -59,10 +59,10 @@ export const MyOrders = (props) => {
                         <h3>Avarage ratings: </h3>
 
                         <h3 className="order-rating-flex">{ratingStr.substring(0, 3)}</h3>
-                        <div>
+                        {/* <div>
 
                             <Rating name="read-only" value={rating} readOnly />
-                        </div>
+                        </div> */}
                     </CardContent>
                 </Card>
 
@@ -113,7 +113,7 @@ export const MyOrders = (props) => {
 
 
 
-            <div >
+            <div className="order-list-container-backoffice">
 
 
                 <TableContainer component={Paper}>
