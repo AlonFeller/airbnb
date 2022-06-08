@@ -56,7 +56,7 @@ export const MyOrders = (props) => {
 
                 <Card  className="statistics-box">
                     <CardContent className="card-content">
-                        <h3>Avarage ratings: </h3>
+                        <h3>Avarage ratings</h3>
 
                         <h3 className="order-rating-flex">{ratingStr.substring(0, 3)}</h3>
                         {/* <div>
@@ -68,7 +68,7 @@ export const MyOrders = (props) => {
 
                 <Card  className="statistics-box">
                     <CardContent className="card-content">
-                        <h3>Monthly income: </h3>
+                        <h3>Monthly income</h3>
                         <h4 className={(randInc > 0) ? 'static-pos' : 'static-neg'}>${utilService.numberWithCommas(totalEarnings)} &nbsp; {(randInc > 0) ? '▲' : '▼'} {randInc}% </h4>
 
                     </CardContent>
@@ -76,7 +76,7 @@ export const MyOrders = (props) => {
 
                 <Card  className="statistics-box">
                     <CardContent className="card-content">
-                        <h3>Annual income: </h3>
+                        <h3>Annual income</h3>
                         <h4>${utilService.numberWithCommas(totalEarnings + 8540)}</h4>
 
                     </CardContent>
@@ -84,7 +84,7 @@ export const MyOrders = (props) => {
 
                 <Card  className="statistics-box">
                     <CardContent className="card-content">
-                        <h3>Total orders: </h3>
+                        <h3>Total orders</h3>
                         <h4>{hostOrders.length}</h4>
 
                     </CardContent>
@@ -92,7 +92,7 @@ export const MyOrders = (props) => {
 
                 <Card  className="statistics-box">
                     <CardContent className="card-content">
-                        <h3>Traffic:</h3>
+                        <h3>Traffic</h3>
                         <h4 className={(randTraffic > 0) ? 'static-pos' : 'static-neg'}>{(randTraffic > 0) ? '▲' : '▼'} {randTraffic}%</h4>
 
                     </CardContent>

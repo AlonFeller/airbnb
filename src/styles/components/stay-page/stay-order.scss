@@ -246,8 +246,8 @@
     width: 335px;
     height: 60px;
     padding: 0 0;
-    margin: 0 0;
-    margin-top: 10px;
+    margin-top: 33px ;
+    margin-bottom: 15px;
     cursor: pointer;
     border: none;
     display: grid;
@@ -337,3 +337,10 @@
     }
 }
 
+#root > div > main > section > section.stay-details.flex.stay-gray-box-shadow > div.stay-details-order > section > div.order-calander > section.date-ranger > div > div{
+    padding: 0;
+}
+
+#root > div > main > section > section.stay-details.flex.stay-gray-box-shadow > div.stay-details-order > section > div.order-calander > section.date-ranger > div > div > div{
+    height: 100%;
+}

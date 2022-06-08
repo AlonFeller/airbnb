@@ -216,15 +216,16 @@
     margin-top: 50px;
 
     .statistics-box {
+        text-align: left;
         width: 180px;
         height: 180px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
         border: 1px solid var(--font-lightgray-color);
         padding: 4px;
-        border-radius: 35px;
+        border-radius: 15px;
 
 
         .card-content {
@@ -232,14 +233,15 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            // align-items: center;
 
             h4 {
                 margin-left: 0;
             }
         }
-        .order-rating-flex{
-            margin: 21px 0;
+
+        .order-rating-flex {
+            margin: 10px 0;
         }
 
         h3 {
@@ -304,19 +306,35 @@
     border-radius: 15px !important;
 }
 
-.my-orders{
+.my-orders {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 25px;
-    .orders-statistics{
-        justify-content: space-between;
-        width: 100%;
-        align-self: center;
-    }
-    .order-list-container-backoffice{
-        width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    row-gap: 25px;
+    padding: 15px 0;
+
+    .orders-statistics {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 180px;
+        height: 650px;
         align-self: center;
     }
 
+    .order-list-container-backoffice {
+        width: 80%;
+        align-self: center;
+    }
+
+}
+
+#root > div > main > section > section > div.orders-statistics > div > div{
+    padding: 0 15px;
+    
+}
+
+#root > div > main > section > section > div.orders-statistics > div{
+    padding: 0;
+    margin: 0;
 }
