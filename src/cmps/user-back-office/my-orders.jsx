@@ -17,7 +17,8 @@ import moment from 'moment'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-// import { Graph } from "./graph";
+import { Graph } from "./graph.tsx";
+
 
 export const MyOrders = (props) => {
 
@@ -97,12 +98,14 @@ export const MyOrders = (props) => {
                     </CardContent>
                 </Card>
 
-                <Card sx={{ minWidth: 620 }} className="statistics-box">
-                    <CardContent className="card-content">
+                {/* <Card sx={{ minWidth: 600 }} className="card-graph" >
+                
                        
-                        {/* <Graph/> */}
-                    </CardContent>
-                </Card>
+                        <Graph />
+                  
+                </Card> */}
+
+
             </div>
 
 
