@@ -13,19 +13,19 @@
         gap: 15px;
 
         .stay-preview {
-            // height: 370px;
             align-items: center;
             width: 100%;
             margin-bottom: 20px;
             line-height: 18px;
             border-radius: 20px;
-            margin: auto ;
+            margin: auto;
             cursor: pointer;
 
             h3 {
                 font-size: 18px;
                 text-align: left;
                 margin-top: 5px;
+                margin-bottom: 10px;
             }
 
             p {
@@ -33,11 +33,15 @@
                 font-size: 14px;
                 text-align: left;
                 margin: 0px;
-                margin-bottom: 4px;
-                
+                margin: 8px 0;
+
+
                 strong {
                     color: var(--font-dark-color);
                 }
+            }
+            .second-title{
+                margin-top: 3px;
             }
 
             .skeleton-preview {
@@ -64,6 +68,7 @@
                     }
 
                     svg {
+                        margin-left: 3px;
                         align-self: center;
                         height: 15px;
                         width: 15px;

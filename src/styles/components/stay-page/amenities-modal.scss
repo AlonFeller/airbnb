@@ -28,6 +28,7 @@
             overflow: auto;
 
         }
+        
     }
 
     .modal-header {
@@ -49,6 +50,9 @@
                 overflow: auto;
                 padding-left: 15px;
                 padding-right: 15px;
+                .amenity-container{
+                    padding-left: 10px;
+                }
             }
         }
     }

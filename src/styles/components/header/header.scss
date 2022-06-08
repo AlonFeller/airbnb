@@ -1,13 +1,9 @@
 .AppHeader {
-    // display: flex;
-    // align-items: flex-start;
-    // justify-content: space-between;
     top: 0;
     grid-row: 1/2;
     grid-column: 1/-1;
     z-index: 50;
     position: sticky;
-
 
     .header {
         display: grid;
@@ -56,7 +52,6 @@
                     display: flex;
                     width: 750px;
                     justify-content: space-between;
-                    // margin-left: 5px;
                     gap: 5px;
 
                     input {
@@ -136,7 +131,6 @@
                 align-self: center;
                 display: flex;
                 justify-content: start;
-                // margin-top: 18px;
                 transition: 0.6s;
                 width: 260px;
                 display: flex;
@@ -149,10 +143,8 @@
                 }
 
                 .whiteLogoTxt {
-                    // height: 50px;
                     display: flex;
                     justify-content: center;
-                    // padding-top: 10px;
                     margin: 0;
                     align-self: center;
                     font-family: circular-extra;
@@ -277,7 +269,6 @@
                         border: 0px;
                         background-color: var(--card-background-color);
                         border-radius: 35px;
-
                     }
 
                     &:hover {
@@ -333,7 +324,7 @@
 
 
         .login-slide-modal {
-            width: 180px;
+            width: 220px;
             color: var(--font-gray-color);
             background-color: var(--main-background-color);
             border: 1px solid rgb(221, 221, 221);
@@ -351,13 +342,11 @@
             .menu-btn-container {
                 padding: 10px 0;
                 display: flex;
-                gap: 10px;
                 flex-direction: column;
                 justify-content: space-evenly;
                 width: 100%;
 
                 .noti-icon {
-
                     position: absolute;
                     top: 55px;
                     right: 10px;
@@ -367,22 +356,15 @@
                 .login-opt-btn {
                     font-size: 18px;
                     margin: 0;
-                    padding: 5px 0px;
-                    gap: 10px;
-                    // width: 100%;
+                    padding: 10px 0px;
                     padding-left: 20px;
-                    // border-radius: 20px 20px 20px 20px;
                     display: flex;
                     flex-direction: row;
                     height: 1.1em;
                     justify-content: flex-start;
-                    // margin-left: 20px;
-                    // overflow: hidden;
-                    // box-sizing: border-box;
-
 
                     &:hover {
-                        background-color: var(--btn-background-color);
+                        background-color: var( --hart-background-color);
 
                     }
 
@@ -392,23 +374,17 @@
                     cursor: pointer;
                 }
 
-
             }
 
             .login-slide-modal-open & {
-
                 display: flex;
                 gap: 5px;
                 flex-direction: column;
                 justify-content: space-evenly;
                 height: fit-content;
                 transition: 0.4s;
-                // padding: 2px;
-
-
 
                 .noti-tab {
-
                     color: var(--font-dark-color);
                     width: 200px;
                     background-color: var(--main-background-color);
@@ -442,7 +418,6 @@
 
 .full-header {
     height: 75px !important;
-    // top:0 !important;
     background-color: var(--card-background-color);
     color: var(--font-dark-color);
     transition: 0.3s;
@@ -484,11 +459,10 @@ label {
     font-family: circular-light;
 }
 
-#root > div > div.AppHeader > div > section > section.searchbar-container > section > form > div.searchber-form-label.location.bold > label{
+#root>div>div.AppHeader>div>section>section.searchbar-container>section>form>div.searchber-form-label.location.bold>label {
     padding-left: 5px;
 }
 
-#root > div > div.AppHeader > div > section > section.searchbar-container > section > form > div.searchber-form-label.bold.Guests > input[type=number]{
-    // text-align: left;
+#root>div>div.AppHeader>div>section>section.searchbar-container>section>form>div.searchber-form-label.bold.Guests>input[type=number] {
     padding-right: 25px;
 }
