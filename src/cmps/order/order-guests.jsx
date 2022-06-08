@@ -27,7 +27,7 @@ export const Guests = ({ onGetGuestsNumber }) => {
     }
 
     const guestsNum = guests.adults + guests.children + guests.pets
-    const guestsTitle = guestsNum === 1 ? 'Guest' : 'Guests'
+    const guestsTitle = guestsNum === 1 ? 'guest' : 'guests'
 
     return (
         <section className="guests-btn" onClick={openGuestsModal}>
