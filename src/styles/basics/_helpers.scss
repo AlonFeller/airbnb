@@ -67,6 +67,10 @@
         align-items: flex-end;
     }
 }
+
+.separator{
+    border-bottom: 1px solid var(--font-lightgray-color);
+}
 .stay-menu{
     right: 18% !important;
 }

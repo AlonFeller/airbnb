@@ -88,12 +88,12 @@ export const StayPreview = (props) => {
                 {stay.reviewScores.rating && <span className="preview-rating-star"><span>{(stay.reviewScores.rating / 20).toFixed(1)}</span>< Star /></span>}
                 {!stay.reviewScores.rating && <span className="preview-rating-star"><span>4.6</span> < Star /></span>}
             </div>
-            <p>{(stay.name.length > 30) ? stay.name.substring(0, 30) + '...' : stay.name}</p>
+            <p className="second-title">{(stay.name.length > 30) ? stay.name.substring(0, 50) + '...' : stay.name}</p>
             {/* <p>{stay.name.substring(0, 30) + '...'}</p> */}
             {/* <p>{stay.summary.substring(0, 35) + '...'}</p> */}
 
             {/* <h3>{'$' + stay.price}</h3><p>/night</p> */}
-            <p><strong className="bold">{'$' + stay.price}</strong>/night</p>
+            <p><strong className="bold">{'$' + stay.price}</strong> night</p>
 
         </section>
     )

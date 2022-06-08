@@ -26,12 +26,13 @@ export const NavBar = (props) => {
     }
 
     useEffect(() => {
-       
-            socketService.on('order recieved', orderArrived);
-            console.log('listening to order recieved');
-        
+
+        socketService.on('order recieved', orderArrived);
+        console.log('listening to order recieved');
+
         return () => {
-            socketService.off('order recieved', orderArrived) }
+            socketService.off('order recieved', orderArrived)
+        }
     }, [])
 
     useEffect(() => {
@@ -75,13 +76,13 @@ export const NavBar = (props) => {
 
         // console.log('buyer', order.buyer.name);
         // console.log('host', user._id);
-        console.log('new order arrived from', order.buyer.name);
+        console.log('order arrived from', order.buyer.name);
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
     const orderArrivedTest = (order) => {
         console.log('order arrived');
-      
+
     }
 
 
@@ -98,15 +99,15 @@ export const NavBar = (props) => {
                     <MenuRoundedIcon fontSize="small" className="dehaze" />
                     {(user) ? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
                     {isNewNoti && <div className="red-dot"></div>}
-                    <div className={(isStay)?"login-slide-modal stay-menu":"login-slide-modal "} onMouseLeave={displayLoginModal} >
+                    <div className={(isStay) ? "login-slide-modal stay-menu" : "login-slide-modal "} onMouseLeave={displayLoginModal} >
                         <div className="menu-btn-container">
-                            {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div>
-                                : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
-                            {(user) ? <div className="login-opt-btn" onClick={(ev) => openNotiTab(ev)}  >Notifications  {isNewNoti && <NotificationsIcon className="noti-icon" />} </div> : null}
-                            {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/stays`)} >My Area</div> : null}
-                            {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My trips</div> : null}
-                            <div className="login-opt-btn" onClick={() => goTo('host')} >Host</div>
+                            {(user) ? null : <div className="login-opt-btn" onClick={toggleLogin} >Login</div>}
+                            {(user) ? <div className="login-opt-btn separator" onClick={(ev) => openNotiTab(ev)}  >Notifications  {isNewNoti && <NotificationsIcon className="noti-icon" />} </div> : null}
+                            {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/stays`)} >Back office</div> : null}
+                            {(user) ? <div className="login-opt-btn" onClick={() => goTo(`userbackoffice/mytrips`)} >My orders</div> : null}
+                            <div className="login-opt-btn separator" onClick={() => goTo('host')} >Host</div>
                             <div className="login-opt-btn" >About</div>
+                            {(user) ? <div className="login-opt-btn" onClick={() => onLogoutUser()} >Logout</div> : null}
                             {presentNoti && <div className="noti-tab" onMouseOut={() => setIsNewNoti(false)}>
                                 {orderNotifications.map(order => {
                                     return <div key={order} className="noti-btn" onClick={() => goTo('userbackoffice/orders')}> New order from {order}</div>
