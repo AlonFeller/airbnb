@@ -26,7 +26,7 @@ export const StayList = (props) => {
             <section className='stay-list'>
 
                 { (stays.length)?  stays.map(stay => <StayPreview key={stay._id} stay={stay} />) : 
-                phantoms.map(phan => <Variants className="stay-preview"/>) }
+                phantoms.map(phan => <Variants className="skeleton-preview"/>) }
 
             </section>
         </section>
