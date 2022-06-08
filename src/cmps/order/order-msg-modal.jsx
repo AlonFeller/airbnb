@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import moment from 'moment'
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +11,13 @@ export const OrderMsgModal = ({ currOrder, setIsOrderModalOpen }) => {
     const { openOrderModal } = useSelector(state => state.orderModule)
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (openOrderModal) document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     const goTo = () => {
         navigate('/explore')
