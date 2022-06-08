@@ -34,7 +34,7 @@ export const Guests = ({ onGetGuestsNumber }) => {
 
 
             <div className="guests-number">
-                <div className="guests-title">guests</div>
+                <div className="guests-title">GUESTS</div>
                 <div className="guests-sum"> {guestsNum}  {guestsTitle}</div>
             </div>
 
