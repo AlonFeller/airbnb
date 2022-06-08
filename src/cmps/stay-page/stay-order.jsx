@@ -103,7 +103,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
                     <Guests onGetGuestsNumber={onGetGuestsNumber} />
                 </div>
                 <AirBnbBtn onGetOrder={onGetOrder} user={user} selectedStay={selectedStay} btnInnerTxt='Order Now' />
-                <br />
+                {/* <br /> */}
                 {isReadyOrder && <PriceDetails selectedStay={selectedStay} nights={nights} />}
             </section >
 
@@ -112,5 +112,3 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
 }
 
 
-
-const colors = ["rgb(240, 240,240)", "rgb(113,113,113)", "rgba(88, 88, 88, 0.7", "rgb(34, 34, 34)"]
