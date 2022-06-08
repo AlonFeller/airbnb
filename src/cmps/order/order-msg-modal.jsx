@@ -26,7 +26,7 @@ export const OrderMsgModal = ({ currOrder, setIsOrderModalOpen }) => {
     return (
         <section className="order-modal" style={{ top: (modalPosition + 140) + "px" }}>
             <p className="time-order"><b>{new Date().toDateString()}</b></p>
-            <h4>Your order complete successfully</h4>
+            <h4>Your order was completed successfully</h4>
             <div className="order-msg-main flex">
                 <div className="order-msg-details">
                     <p className="order-stay-name"><b>{currOrder.stay.name}</b></p>
