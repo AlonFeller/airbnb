@@ -85,7 +85,7 @@ export const OrderNow = ({ setIsOpenModal, isOpenModal, setIsOrderModalOpen, set
             <section className="stay-order flex">
                 <div className="order-form-header flex space-between aling-items">
                     <span className="order-header-line">
-                        <h4 className="cost bold">${utilService.numberWithCommas(selectedStay.price)}</h4>  <span className="night">night</span>   
+                        <h4 className="cost bold">${utilService.numberWithCommas(selectedStay.price)}</h4>  <span className=" night">night</span>   
                     </span>
                     <p className="order-header-line-ratings">
                         <span>< Star /></span>

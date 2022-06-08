@@ -27,14 +27,14 @@ export const Guests = ({ onGetGuestsNumber }) => {
     }
 
     const guestsNum = guests.adults + guests.children + guests.pets
-    const guestsTitle = guestsNum === 1 ? 'Guest' : 'Guests'
+    const guestsTitle = guestsNum === 1 ? 'guest' : 'guests'
 
     return (
         <section className="guests-btn" onClick={openGuestsModal}>
 
 
             <div className="guests-number">
-                <div className="guests-title">guests</div>
+                <div className="guests-title">GUESTS</div>
                 <div className="guests-sum"> {guestsNum}  {guestsTitle}</div>
             </div>
 

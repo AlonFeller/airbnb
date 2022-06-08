@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import moment from 'moment'
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +11,13 @@ export const OrderMsgModal = ({ currOrder, setIsOrderModalOpen }) => {
     const { openOrderModal } = useSelector(state => state.orderModule)
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (openOrderModal) document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     const goTo = () => {
         navigate('/explore')
@@ -26,7 +33,7 @@ export const OrderMsgModal = ({ currOrder, setIsOrderModalOpen }) => {
     return (
         <section className="order-modal" style={{ top: (modalPosition + 140) + "px" }}>
             <p className="time-order"><b>{new Date().toDateString()}</b></p>
-            <h4>Your order complete successfully</h4>
+            <h4>Your order was completed successfully</h4>
             <div className="order-msg-main flex">
                 <div className="order-msg-details">
                     <p className="order-stay-name"><b>{currOrder.stay.name}</b></p>
