@@ -51,7 +51,7 @@ export const Searchbar = (props) => {
             <div className="searchber-form-label location bold">
                 <label htmlFor="">Location </label>
                 {(location) ?
-                    <input type="text" autoFocus name="location" placeholder="Anywhere" value={location} onChange={onHandleChange} /> :
+                    <input type="text" autoFocus name="location" placeholder={location}  onChange={onHandleChange} /> :
                     <input type="text" autoFocus name="location" placeholder="Anywhere" onChange={onHandleChange} />
                 }
             </div>

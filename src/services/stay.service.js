@@ -18,15 +18,18 @@ export const stayService = {
 
 async function query(filterBy= null) {
     // stays = await storageService.query(STORAGE_KEY)
-    // labels???
-    // const url = `?location=${filterBy.location}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}`
-    // const url = `?location=${filterBy.location}`
     const url = ``
     let stays = await httpService.get('stay')
 
     if (filterBy.minPrice || filterBy.maxPrice) {
         stays = stays.filter( stay => stay.price <= filterBy.maxPrice && stay.price >= filterBy.minPrice )
     }
+
+    if (filterBy.location) {
+         const regex = new RegExp(filterBy.location, 'i')
+         stays = stays.filter(stay => regex.test(stay.address.city) || regex.test(stay.address.country))
+    }
+
 
     if (filterBy.tags.length) {
         stays = stays.filter(stay => 
