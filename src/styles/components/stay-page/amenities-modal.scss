@@ -18,17 +18,19 @@
         grid-template-columns: 1.5fr 2fr;
         grid-template-rows: 10% 20% 70%;
 
-        .amenities-modal-container {
-            display: flex;
-            flex-direction: column;
-            height: 90%;
-            width: 95%;
-            padding: 5%;
-            padding-top: 0;
-            overflow: auto;
 
-        }
         
+    }
+
+    .amenities-modal-container {
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        width: 95%;
+        padding: 5%;
+        padding-top: 0;
+        overflow: auto;
+
     }
 
     .modal-header {
