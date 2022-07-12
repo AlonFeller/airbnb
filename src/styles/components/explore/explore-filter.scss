@@ -18,9 +18,7 @@
 
     .filter-btns {
         display: flex;
-        // flex-wrap: wrap;
         justify-content: center;
-        // align-self: flex-end;
         font-size: 14px;
         cursor: pointer;
 
@@ -31,10 +29,8 @@
             min-width: 80px;
             height: 42px;
             margin: 8px;
-            // padding: 0 0.5%;
             border-radius: 25px;
             color: var(--font-dark-color);
-            // background-color: var(--btn-background-color);
             border: 1px solid var(--font-gray-color);
             box-shadow: 0 0 2px var(--font-lightgray-color);
             cursor: pointer;
@@ -58,7 +54,6 @@
             border-radius: 25px;
             color: var(--font-dark-color);
             border: 1px solid var(--font-gray-see-throw-color);
-            // box-shadow: 0px 4px 10px var(--font-lightgray-color);
             cursor: pointer;
             margin-left: 0;
 
@@ -89,7 +84,6 @@
         top: 14%;
         left: 10%;
         z-index: 150;
-        // padding-left: 15px;
         border-radius: 10px;
         color: var(--font-dark-color);
         background-color: var(--main-background-color);

@@ -222,7 +222,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // align-items: center;
         border: 1px solid var(--font-lightgray-color);
         padding: 4px;
         border-radius: 15px;
@@ -233,7 +232,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            // align-items: center;
 
             h4 {
                 margin-left: 0;
@@ -267,10 +265,6 @@
         width: 500px;
     }
 
-    // canvas {
-    //     height: 200px !important; 
-    //     // width: 560px;
-    // }
 
     .card-graph {
         display: inline-block;

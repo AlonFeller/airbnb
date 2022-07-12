@@ -6,9 +6,6 @@
     top: 120px;
     font-size: 14px;
     padding: 22px;
-    // border: 2px solid var(--font-dark-color);
-    // border-radius: 20px;
-    // background-color: var(--main-background-color);
     transform: translateX(150%);
     transition: transform .6s;
     border: 1px solid var(--font-lightgray-color);
@@ -49,48 +46,13 @@
             justify-content: center;
             width: fit-content;
             min-width: 80px;
-            // height: 42px;
-            // margin: 8px;
-            // padding: 0 0.5%;
             border-radius: 25px;
             color: var(--font-dark-color);
-            // background-color: var(--btn-background-color);
             border: 1px solid var(--font-gray-color);
             box-shadow: 0 0 2px var(--font-lightgray-color);
             cursor: pointer;
             align-self: center;
-            // cursor: pointer;
-            // border: var(--filter-button_border,1px solid var(--j-qkgmf));
-            // border-radius: var(--b-y-unon);
-            // margin: 0;
-            // padding: 7px 0;
-
         }
-
-        // input {
-        //     font-size: 18px;
-        //     background-color: var(--btn-background-color) !important;
-        //     color: var(--font-gray-color);
-        //     border: 1px solid var(--font-gray-color);
-        //     box-shadow: 0 0 2px var(--font-lightgray-color);
-        //     border-radius: 5px;
-        //     margin-bottom: 6px;
-
-        // }
-
-        // button {
-        //     display: flex;
-        //     justify-content: center;
-        //     width: fit-content;
-        //     min-width: 80px;
-        //     margin-top: 8px;
-        //     border-radius: 25px;
-        //     color: var(--font-dark-color);
-        //     border: 1px solid var(--font-gray-color);
-        //     box-shadow: 0 0 2px var(--font-lightgray-color);
-        //     cursor: pointer;
-        //     align-self: center;
-        // }
 
         .btn-container {
             width: 280px;
@@ -105,18 +67,13 @@
     }
 
     .move-to-signup {
-        // width: 80px;
-        // padding: 4px;
         display: flex;
         justify-content: center;
         width: fit-content;
         min-width: 80px;
-        // height: 42px;
         margin-top: 8px;
-        // padding: 0 0.5%;
         border-radius: 25px;
         color: var(--font-dark-color);
-        // background-color: var(--btn-background-color);
         border: 1px solid var(--font-gray-color);
         box-shadow: 0 0 2px var(--font-lightgray-color);
         cursor: pointer;

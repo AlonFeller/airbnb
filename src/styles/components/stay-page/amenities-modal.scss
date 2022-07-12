@@ -2,7 +2,6 @@
     position: absolute;
     width: 64%;
     max-height: 80%;
-    // top: 75%;
     right: 50%;
     transform: translatex(50%);
     border: 1px solid var(--font-lightgray-color);
@@ -47,7 +46,6 @@
             height: 90%;
             width: 95%;
 
-            // overflow: auto;
             .amenities-list {
                 overflow: auto;
                 padding-left: 15px;
