@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { HashRouter as Router, Route, Link, Switch, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { headerIsLong, toggleIsExplore, toggleIsHome, toggleIsStay } from "../store/header/header.action";
 import { useDispatch } from 'react-redux'
 

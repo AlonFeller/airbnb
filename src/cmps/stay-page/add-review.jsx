@@ -15,8 +15,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 export function AddReview({ stay }) {
     const dispatch = useDispatch();
     const { user } = useSelector(storeState => storeState.userModule)
-    const [value, setValue] = React.useState("");
-    const [rating, setRating] = React.useState([5, 5, 5, 5, 5, 5]);
+    const [value, setValue] = useState("");
+    const [rating, setRating] = useState([5, 5, 5, 5, 5, 5]);
     const types = ["Cleanliness:", "Communication:", "Check-in:", "Accuracy:", "Location:", "Value:"];
 
 

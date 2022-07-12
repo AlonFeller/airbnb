@@ -31,10 +31,6 @@ export function orderReducer(state = initialState, action) {
         newState = { ...state, openOrderModal: action.set }
         break;
     default:
-
-      // For debug:
-      // window.orderState = newState;
-      // console.log('State:', newState);
     }
     return newState
 }

@@ -27,11 +27,9 @@ export function getActionUpdateStay(stay) {
 
 
 export function loadStays(filterBy = null) {
-    // console.log('loadstay', filterBy);
     return async (dispatch) => {
         try {
             const stays = await stayService.query(filterBy)
-            // console.log('Stays from DB:', stays)
             dispatch({
                 type: 'SET_STAYS',
                 stays
@@ -41,13 +39,6 @@ export function loadStays(filterBy = null) {
             showErrorMsg('Cannot load stays')
             console.log('Cannot load stays', err)
         }
-
-        // if (subscriber) stayService.unsubscribe(subscriber)
-        // subscriber = (ev) => {
-        //     console.log('Got notified', ev.data)
-        //     dispatch(ev.data)
-        // }
-        // stayService.subscribe(subscriber)
     }
 }
 
@@ -56,7 +47,6 @@ export function loadStay(stayId) {
     return async (dispatch) => {
         try {
             const stay = await stayService.getById(stayId)
-            // console.log('Stay from DB:', stay)
             dispatch({
                 type: 'SET_STAY',
                 stay
@@ -130,12 +120,3 @@ export function setCheckinOut(filterBy) {
         })
     }
 }
-
-// export function setIsLikeStay(set) {
-//     return (dispatch) => {
-//         return dispatch({
-//             type: 'SET_LIKESTAY',
-//             set,
-//         })
-//     }
-// }

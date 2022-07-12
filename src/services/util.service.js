@@ -1,11 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { KitchenIcon, FireplaceIcon, BeachAccessIcon, OutdoorGrillIcon, KingBed, Deck, LocalLaundryService,
-// Pool, Bathtub, RoomService, Speaker, SportsEsports,  Balcony, Checkroom, CoffeeMaker, Crib, Iron } from '@mui/material';
-// import {
-//     FaSnowflake, FaBlender, FaCar, FaHotTub, FaPaw, FaSmoking, FaSmokingBan, FaWifi,
-//     FaLock, FaThermometerHalf, FaDoorClosed, FaWineGlassAlt, FaSwimmingPool, FaAccessibleIcon
-// } from 'react-icons/fa';
-// import {}
+
 import {
     Tv, NetworkWifi, Kitchen, SmokingRooms, HotTub, Pets, SmokeFree,
     AcUnit, HeatPump, Pool, Countertops, Fireplace, Yard, OutdoorGrill, Crib, Lock,

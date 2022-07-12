@@ -1,9 +1,4 @@
-import { storageService } from './async-storage.service'
-import { utilService } from './util.service'
-// import { userService } from './user.service'
 import { httpService } from './http.service'
-
-// const stayChannel = new BroadcastChannel('stayChannel')
 
 export const stayService = {
 
@@ -12,13 +7,9 @@ export const stayService = {
     getBy,
     save,
     remove,
-    // addReview,
-    // removeReview
 }
 
 async function query(filterBy= null) {
-    // stays = await storageService.query(STORAGE_KEY)
-    const url = ``
     let stays = await httpService.get('stay')
 
     if (filterBy.minPrice || filterBy.maxPrice) {
@@ -40,16 +31,12 @@ async function query(filterBy= null) {
 }
 
 async function getById(stayId) {
-    // return await storageService.get(STORAGE_KEY, stayId)
    const stay = await httpService.get(`stay/${stayId}`, {stayId})
-//    console.log('stay from get by id', stay);
     return stay
 }
 
 async function remove (stayId) {
-    // await storageService.remove(STORAGE_KEY, stayId)
     await httpService.delete(`stay/${stayId}`)
-    // stayChannel.postMessage(getActionRemoveToy(stayId))
     return stayId
 
 }
@@ -57,13 +44,9 @@ async function remove (stayId) {
 async function save (stay) {
     let savedStay
     if (stay._id) {
-        // savedStay = await storageService.put(STORAGE_KEY, stay)
         savedStay = await httpService.put(`stay/${stay._id}`, stay)
     } else {
         savedStay = await httpService.post(`stay`, stay)
-
-        // stay.host = userService.getLoggedinUser()
-        // savedStay = await storageService.post(STORAGE_KEY, stay)
     }
     savedStay = savedStay.data
 

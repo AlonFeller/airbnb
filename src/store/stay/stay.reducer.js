@@ -3,7 +3,6 @@ import { stayService } from "../../services/stay.service";
 const initialState = {
     stays: [],
     selectedStay: null,
-    // isLikeStay: false,
     filterBy: {
         location: '',
         minPrice: 0,

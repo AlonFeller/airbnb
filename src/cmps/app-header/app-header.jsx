@@ -46,9 +46,21 @@ export function AppHeader() {
                         <img src={(!isPageScroll && isHome) ? whiteLogo : logo} className="logo-img" alt="logo" />
                         <span className={(!isPageScroll && isHome) ? "whiteLogoTxt" : "logoTxt"}>airzula</span>
                     </div>
-                    <Searchbar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
-                    <NavBar isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
-                    <LoginSignUp isPageScroll={isPageScroll} isExplore={isExplore} isStay={isStay} isHome={isHome} />
+                    <Searchbar isPageScroll={isPageScroll}
+                        isExplore={isExplore}
+                        isStay={isStay}
+                        isHome={isHome}
+                    />
+                    <NavBar isPageScroll={isPageScroll}
+                        isExplore={isExplore}
+                        isStay={isStay}
+                        isHome={isHome}
+                    />
+                    <LoginSignUp isPageScroll={isPageScroll}
+                        isExplore={isExplore}
+                        isStay={isStay}
+                        isHome={isHome}
+                    />
                     <div className="login-screen" onClick={toggleLogin}></div>
                 </section>
             </div>

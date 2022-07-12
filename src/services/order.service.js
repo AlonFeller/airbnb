@@ -1,7 +1,4 @@
 import { httpService } from './http.service.js'
-import { now } from 'moment'
-import { storageService } from './async-storage.service'
-import { utilService } from './util.service'
 
 export const orderService = {
     query,
@@ -10,7 +7,6 @@ export const orderService = {
     update,
     remove,
     add
-    // subscribe
 
 }
 
@@ -18,32 +14,26 @@ const STORAGE_KEY = 'orderDB'
 
 async function query() {
     return await httpService.get(`order`)
-    // return storageService.query(STORAGE_KEY)
 }
 
 async function getById(orderId) {
     return await httpService.get(`order/${orderId}`)
-    // return await storageService.get(STORAGE_KEY, orderId)
 }
 
 function remove(orderId) {
     return httpService.delete(`order/${orderId}`)
-    // storageService.remove(STORAGE_KEY, orderId)
 }
 
 function save(order) {
     return httpService.post(`order`, order)
-    // return storageService.post(STORAGE_KEY, order)
 }
 
 function update(order) {
     return httpService.put(`order/${order._Id}`, order)
-    // return storageService.put(STORAGE_KEY, order)
 }
 
 function add(selectedStay, user, guests, dates, nights) {
     const order = {
-        // _id: utilService.makeId(),
         timeOrder: Date.now(),
         checkIn: dates[0],
         checkOut: dates[1],

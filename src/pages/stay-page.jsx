@@ -67,23 +67,27 @@ export function StayPage() {
                     stay={selectedStay}
                     setIsOpenModal={setIsOpenModal}
                     isOpenModal={isOpenModal}
-                    openMsg={openMsg} />
+                    openMsg={openMsg}
+                />
                 <StayGallery key="stay-gallery" stay={selectedStay} />
                 <StayDetails key="stay-details"
                     stay={selectedStay}
                     setIsOpenModal={setIsOpenModal}
-                    isOpenModal={isOpenModal} />
+                    isOpenModal={isOpenModal}
+                />
                 <StayReviews key="stay-reviews"
                     stay={selectedStay}
                     reviews={selectedStay.reviews.slice(0, 6)}
-                    isLongTxt={true} />
+                    isLongTxt={true}
+                />
                 <div className={(isOpenModal || openOrderModal) ? "screen screen-open" : "screen "}
                     onClick={() => { onOpenReviewsModal() }}>
                 </div>
                 {isOpenModal ? <ReviewsModal className="reviews-modal" key="reviews-modal"
                     stay={selectedStay}
                     setIsOpenModal={setIsOpenModal}
-                    isOpenModal={isOpenModal} /> : null}
+                    isOpenModal={isOpenModal}
+                /> : null}
                 <button className="reviews-modal-btn" onClick={() => { setIsOpenModal(true); }}>
                     Show all {selectedStay.reviews.length} reviews
                 </button>
