@@ -107,8 +107,6 @@
                 margin-bottom: 0;
                 font-family: circular-medium;
                 font-size: 4rem;
-                // top: 35%;
-                // color: greenyellow;
                 color: var(--logo-color);
                 text-shadow: 1px 1px 0 rgba(53, 53, 53, 0.1), 1px -1px 0 rgba(53, 53, 53, 0.1), -1px 1px 0 rgba(53, 53, 53, 0.1), -1px -1px 0 rgba(53, 53, 53, 0.1), 1px 0px 0 rgba(53, 53, 53, 0.1), 0px 1px 0 rgba(53, 53, 53, 0.1), -1px 0px 0 rgba(53, 53, 53, 0.1), 0px -1px 0 rgba(53, 53, 53, 0.1);
                 color: #fff;
@@ -120,7 +118,6 @@
                 position:relative;
                 text-align: center;
                 display: flex;
-                // bottom: 3%;
                 margin: 20px 0;
                 font-size: 36px;
                 width: -webkit-fit-content;
@@ -162,7 +159,6 @@
         position: relative;
         display: block;
         margin-top: 730px;
-        // height: 60vh;
         grid-column: 2;
         grid-row: 2;
         text-align: center;
