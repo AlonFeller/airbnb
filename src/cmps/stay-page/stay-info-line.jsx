@@ -64,7 +64,7 @@ export const StayInfoLine = ({ stay, setIsOpenModal, isOpenModal }) => {
     const openMsg = () => {
         chooseTxtMsg()
         setTimeout(() => {
-            // closeMsg()
+            closeMsg()
         }, 3000);
     }
 
