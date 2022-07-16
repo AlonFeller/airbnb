@@ -32,14 +32,14 @@ export function StayPage() {
         }
     }, [params.id])
 
-    // const chooseTxtMsg = () => {
-    //     let txtMsg = ''
-    //     console.log(savedLink)
-    //     if (savedLink) txtMsg = 'Link Copied to clipboard'
-    //     else if (likeHeart) txtMsg = 'Stay liked'
-    //     else txtMsg = 'Stay unliked'
-    //     setTextMsg(txtMsg)
-    // }
+    const chooseTxtMsg = () => {
+        let txtMsg = ''
+        console.log(savedLink)
+        if (savedLink) txtMsg = 'Link Copied to clipboard'
+        else if (likeHeart) txtMsg = 'Stay liked'
+        else txtMsg = 'Stay unliked'
+        setTextMsg(txtMsg)
+    }
 
     const onOpenReviewsModal = () => {
         if (openOrderModal) return
