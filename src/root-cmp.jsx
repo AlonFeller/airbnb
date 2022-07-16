@@ -29,7 +29,6 @@ export class RootCmp extends React.Component {
                     <Routes>
                         {routes.map(route => <Route key={route.path} exact={(route.label === 'exploreLocation')?
                          false : true} element={route.component} path={route.path} />)}
-                        {/* <Route path="explore/:location" element={<ExplorePage />} /> */}
                         <Route path="stay/:id" element={<StayPage />} />
                         <Route path="userbackoffice/" element={<UserBackOffice />}>
                                 <Route path="orders" element={<MyOrders />} />

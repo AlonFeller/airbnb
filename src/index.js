@@ -5,17 +5,14 @@ import { Provider } from 'react-redux'
 import {RootCmp} from './root-cmp'
 import {store} from './store/store'
 import { BrowserRouter as Router } from 'react-router-dom'
-// import './assets/styles/main.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    // <React.StrictMode>
     <Provider store={store}>
         <Router>
             <RootCmp />
         </Router>
         </Provider>
-    // </React.StrictMode >
 );
 
 // If you want to start measuring performance in your app, pass a function
