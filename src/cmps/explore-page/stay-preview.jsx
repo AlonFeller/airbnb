@@ -65,7 +65,7 @@ export const StayPreview = (props) => {
                 user.favorites.push(stay)
             }
 
-            // dispatch(updateUser(user))
+            dispatch(updateUser(user))
         }
 
     }

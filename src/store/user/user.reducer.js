@@ -2,6 +2,7 @@ import { userService } from '../../services/user.service.js'
 
 const initialState = {
     user: null,
+    userImg: null,
     users: [],
     checkInOut: { checkIn: null, checkOut: null },
     watchedUser: null
@@ -11,7 +12,7 @@ export function userReducer(state = initialState, action) {
     var newState = state;
     switch (action.type) {
         case 'SET_USER':
-            newState = { ...state, user: action.user }
+            newState = { ...state, user: action.user, userImg: (action.user?.imgUrl)?  (action.user.imgUrl) : null }
             break;
         case 'UPDATE_USER':
             newState = { ...state, user: action.user }

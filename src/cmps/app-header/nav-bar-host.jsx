@@ -4,7 +4,7 @@ import DehazeIcon from '@mui/icons-material/Dehaze';
 import { Dehaze } from "@mui/icons-material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDispatch, useSelector } from "react-redux";
-import { onLogout } from "../../store/user/user.actions";
+import { onLogout, removeUserImg } from "../../store/user/user.actions";
 import { useEffect, useState } from "react";
 import { toggleIsExplore } from "../../store/header/header.action";
 import { socketService } from "../../services/socket.service";
@@ -17,13 +17,17 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 export const NavBar = (props) => {
     const { isExplore, isPageScroll, isStay, isHome } = props
     const user = useSelector((state => state.userModule.user))
+    const userImg = useSelector((state => state.userModule.userImg))
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
+    
     const goTo = (path) => {
         navigate('/')
         navigate(path)
     }
+    
+    useEffect(() => {    
+    }, [user, userImg])
 
     useEffect(() => {
 
@@ -72,32 +76,20 @@ export const NavBar = (props) => {
     }
 
     const orderArrived = (order) => {
-        // if (order.buyer.name === user.name) return
-
-        // console.log('buyer', order.buyer.name);
-        // console.log('host', user._id);
         console.log('order arrived from', order.buyer.name);
         setIsNewNoti(true)
         setOrderNotifications([order.buyer.name, ...orderNotifications])
     }
-    const orderArrivedTest = (order) => {
-        console.log('order arrived');
-
-    }
-
-
-
-
+  
 
     return (
         <section className="header-navbar-container">
             <div className={(!isPageScroll && isHome) ? "header-navbar" : "header-navbar dark"}>
                 <div className="nav-btn explore" onClick={() => goTo('explore')}>Explore</div>
                 <div className="nav-btn host" onClick={() => goTo('host')}>Become a Host</div>
-                {/* <NotificationsIcon /> */}
                 <div className="user-navbar" onClick={displayLoginModal}>
                     <MenuRoundedIcon fontSize="small" className="dehaze" />
-                    {(user) ? <img src={user.imgUrl} alt="" className="user-img" /> : <AccountCircleIcon />}
+                    {(user) ? <img src={userImg} alt="" className="user-img" /> : <AccountCircleIcon />}
                     {isNewNoti && <div className="red-dot"></div>}
                     <div className={(isStay) ? "login-slide-modal stay-menu" : "login-slide-modal "} onMouseLeave={displayLoginModal} >
                         <div className="menu-btn-container">

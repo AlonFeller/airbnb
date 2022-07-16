@@ -25,6 +25,15 @@ export function removeUser(userId) {
         }
     }
 }
+export function removeUserImg() {
+    return async dispatch => {
+        try {
+            dispatch({ type: 'REMOVE_IMG'})
+        } catch (err) {
+            console.log('Cannot remove img', err)
+        }
+    }
+}
 
 export function onLogin(credentials) {
     return async (dispatch) => {
@@ -34,7 +43,6 @@ export function onLogin(credentials) {
                 type: 'SET_USER',
                 user
             })
-            console.log(user)
         } catch (err) {
             showErrorMsg('Cannot login')
             console.log('Cannot login', err)

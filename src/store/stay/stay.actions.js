@@ -104,7 +104,6 @@ export function updateStay(stay) {
 }
 
 export function setFilter(filterBy) {
-    console.log('action', filterBy);
     return (dispatch) => {
         return dispatch({
             type: 'SET_FILTERBY',

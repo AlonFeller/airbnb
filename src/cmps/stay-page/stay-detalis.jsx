@@ -12,23 +12,35 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
     const [isOrderModalOpen, setIsOrderModalOpen] = useState(false)
     const [currOrder, setCurrOrder] = useState()
 
-
+    
     useEffect(() => {
+        
+
+        
         document.addEventListener('scroll', setPosition)
         return () => {
             document.removeEventListener('scroll', setPosition)
+
         };
     }, []);
 
+    useEffect(() => {
+        currTime = Date.now()
+        return () => {
+            currTime = null
+            hostStayImgSrc = null
+        };
+    }, []);
+    
     const setPosition = (ev) => {
         const height = ev.target.scrollingElement.clientHeight
         setModalPosition(height)
-        // return
     }
+    let currTime
+
     const amenitiesModalClass = isOpenAmenitiesModal ? "amenities-screen screen-open" : "amenities-screen "
 
-    const hostStayImgSrc = stay.host.newPictureUrl ?? 'https://thispersondoesnotexist.com/image?cache=' + Date.now()
-
+    let hostStayImgSrc = stay.host.newPictureUrl ?? 'https://thispersondoesnotexist.com/image?cache=' + currTime
 
     const StayDetails = ({ stay }) => <section className="stay-details-shortly stay-gray-box-shadow">
         <div className="stay-host-info">
@@ -36,7 +48,7 @@ export const StayDetails = ({ stay, setIsOpenModal, isOpenModal }) => {
                 <h2>{stay.roomType} hosted by {stay.host.fullname}</h2>
                 <p>{stay.capacity} guests · {stay.bedrooms} bedrooms · {stay.beds} beds · {stay.bathrooms} baths</p>
             </div>
-            {/* <img className="stay-host-img" src='https://res.cloudinary.com/airzula/image/upload/v1654522004/airzula/alonSq.jpg' alt="" /> */}
+           
             <img className="stay-host-img" src={hostStayImgSrc} alt="" />
         </div>
     </section>

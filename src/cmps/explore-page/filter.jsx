@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import { loadStays, setFilter } from "../../store/stay/stay.actions"
 import { utilService } from "../../services/util.service"
+import debounce from "lodash.debounce"
 
 export const ExploreFilter = (props) => {
 
@@ -30,14 +31,14 @@ export const ExploreFilter = (props) => {
     const [smoking, setSmoking] = useState(false)
     const [isPriceOn, setIsPriceOn] = useState(false);
 
+    
     const handleRangeChange = (ev, data) => {
         setVal(data)
-        setTimeout(() => {
-            filterBy = { ...filterBy, minPrice: data[0], maxPrice: data[1] }
-            dispatch(setFilter(filterBy))
-        }, 200)
+        filterBy = { ...filterBy, minPrice: data[0], maxPrice: data[1] }
+        dispatch(setFilter(filterBy))
         dispatch(loadStays(filterBy))
     }
+    const debounceRange = debounce(handleRangeChange, 20)
 
     const setTag = (tag, isSelected) => {
 
@@ -87,14 +88,6 @@ export const ExploreFilter = (props) => {
         <section className='explore-filter'>
             <section className="filters-container">
                 <section className="filter-btns">
-                    {/* <div className="filter-form-label1">
-                    <label htmlFor="">Min price </label>
-                    <input type="number" name="minPrice" placeholder="Min price" onChange={onHandleChange} />
-                    </div>
-                    <div className="filter-form-label2">
-                    <label htmlFor="">Max price</label>
-                    <input type="number" name="maxPrice" placeholder="Max price" onChange={onHandleChange} />
-                </div> */}
                     <div className={(isPriceOn) ? "filter-label-btn-on" : "filter-label-btn"} onClick={() => addTagToFilter('isPriceOn')}><span>Price</span></div>
                     {(isPriceOn) ? <div className="slider-container">
                         <label htmlFor="">Price range</label>
@@ -104,9 +97,8 @@ export const ExploreFilter = (props) => {
                             max={2000}
                             valueLabelDisplay="auto"
                             value={val}
-                            onChange={handleRangeChange}
+                            onChange={debounceRange}
                         />
-                        {/* <div className="login-btn">Save</div> */}
                         <div className="price-range flex">
                             <div className="minmax-price">
                                 <div className="min-price">Min Price</div>

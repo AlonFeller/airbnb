@@ -86,38 +86,6 @@ export function LoginSignUp({ openMsg }) {
                     <TextField type="text" label="Username" variant="filled" id="filled-basic" name="username" placeholder="Username" required autoFocus onChange={handleChange} />
                     <TextField type="text" label="Password" variant="filled" id="filled-basic" name="password" placeholder="password"  required autoFocus onChange={handleChange} />
                     <TextField type="email" label="Email" variant="filled" id="filled-basic" name="email" placeholder="Email"  autoFocus onChange={handleChange} />
-                    {/* <input
-                        type="text"
-                        name="fullname"
-                        value={credentials.fullname}
-                        placeholder="Fullname"
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="username"
-                        value={credentials.username}
-                        placeholder="Username"
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={credentials.password}
-                        placeholder="Password"
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        value={credentials.email}
-                        placeholder="Email"
-                        onChange={handleChange}
-                    />
-                    <br /> */}
                     <ImgUploader onUploaded={onUploaded} />
                     <div onClick={onSignupUser} >
                         <AirBnbBtnBo btnInnerTxt='Sign up' />

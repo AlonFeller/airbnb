@@ -23,16 +23,15 @@ export const DateRanger = ({ onGetOrderDates, setIsReadyOrder }) => {
     }
     setIsReadyOrder(true)
     onGetOrderDates({ state })
-    console.log(onGetOrderDates({ state }))
   }, [state]);
 
   const handleCheckin = (date) => {
       setState([date, state[1]])
-      console.log(state);
+
   }
   const handleCheckout = (date) => {
       setState([state[0], date])
-      console.log(state);
+
   }
 
 
